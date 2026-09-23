@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Sitemap: https://canberrawaterproof.com.au/sitemap.xml
