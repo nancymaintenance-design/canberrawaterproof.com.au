@@ -74,6 +74,7 @@ function testPages() {
 
   const aranda = readFileSync('waterproofing/aranda/index.html', 'utf8');
   assert.equal((aranda.match(/<h1>Waterproofing Repairs in Aranda, ACT<\/h1>/g) || []).length, 1);
+  assert.match(aranda, /<h2>How MEL ONE approaches an Aranda enquiry<\/h2>/);
   assert.match(aranda, /<link rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\/aranda\/">/);
   for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry']) {
     assert.match(aranda.toLowerCase(), new RegExp(term));
