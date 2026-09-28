@@ -38,3 +38,34 @@ This content index summarises the visible MEL ONE website. It does not replace t
 - https://canberrawaterproof.com.au/industry-news/preparing-for-wet-weather/
 - https://canberrawaterproof.com.au/industry-news/what-to-photograph-before-a-quote/
 - https://canberrawaterproof.com.au/industry-news/understanding-repair-scopes/
+
+<!-- LOCAL_WATERPROOFING_INDEX:START -->
+## Local waterproofing information
+- Directory: https://www.canberrawaterproof.com.au/service-areas/
+- Public locality data: https://www.canberrawaterproof.com.au/data/local-waterproofing-services.json
+- These pages describe enquiry pathways and visible service information. They do not confirm a property-specific cause, scope, compliance outcome, quote, availability or attendance time.
+- https://www.canberrawaterproof.com.au/waterproofing/belconnen/ — Belconnen (district)
+- https://www.canberrawaterproof.com.au/waterproofing/gungahlin/ — Gungahlin (district)
+- https://www.canberrawaterproof.com.au/waterproofing/inner-north-city/ — Inner North & City (district)
+- https://www.canberrawaterproof.com.au/waterproofing/inner-south/ — Inner South (district)
+- https://www.canberrawaterproof.com.au/waterproofing/woden-valley/ — Woden Valley (district)
+- https://www.canberrawaterproof.com.au/waterproofing/weston-creek-molonglo/ — Weston Creek & Molonglo (district)
+- https://www.canberrawaterproof.com.au/waterproofing/tuggeranong/ — Tuggeranong (district)
+- https://www.canberrawaterproof.com.au/waterproofing/east-canberra/ — East Canberra (district)
+- https://www.canberrawaterproof.com.au/waterproofing/act-localities/ — ACT Localities (district)
+- https://www.canberrawaterproof.com.au/waterproofing/aranda/ — Aranda (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/bruce/ — Bruce (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/amaroo/ — Amaroo (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/casey/ — Casey (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/canberra-city/ — Canberra City (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/braddon/ — Braddon (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/kingston/ — Kingston (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/griffith/ — Griffith (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/woden/ — Woden (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/phillip/ — Phillip (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/weston/ — Weston (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/coombs/ — Coombs (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/kambah/ — Kambah (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/calwell/ — Calwell (locality)
+- https://www.canberrawaterproof.com.au/waterproofing/fyshwick/ — Fyshwick (locality)
+<!-- LOCAL_WATERPROOFING_INDEX:END -->

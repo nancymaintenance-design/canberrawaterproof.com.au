@@ -1,0 +1,393 @@
+{
+  "name": "MEL ONE Canberra locality waterproofing services",
+  "canonicalDirectory": "https://www.canberrawaterproof.com.au/service-areas/",
+  "lastModified": "2026-09-28",
+  "services": [
+    {
+      "name": "Leaking shower repairs",
+      "url": "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/"
+    },
+    {
+      "name": "Bathroom waterproofing",
+      "url": "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/"
+    },
+    {
+      "name": "Shower resealing and regrouting",
+      "url": "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/"
+    },
+    {
+      "name": "Balcony waterproofing",
+      "url": "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/"
+    },
+    {
+      "name": "Kitchen sealing",
+      "url": "https://www.canberrawaterproof.com.au/services/kitchen-sealing/"
+    },
+    {
+      "name": "External waterproofing",
+      "url": "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+    }
+  ],
+  "localities": [
+    {
+      "locality": "Belconnen",
+      "district": "Belconnen",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/belconnen/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Gungahlin",
+      "district": "Gungahlin",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/gungahlin/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Inner North & City",
+      "district": "Inner North & City",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/inner-north-city/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Inner South",
+      "district": "Inner South",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/inner-south/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Woden Valley",
+      "district": "Woden Valley",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/woden-valley/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Weston Creek & Molonglo",
+      "district": "Weston Creek & Molonglo",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/weston-creek-molonglo/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Tuggeranong",
+      "district": "Tuggeranong",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/tuggeranong/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "East Canberra",
+      "district": "East Canberra & ACT localities",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/east-canberra/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "ACT Localities",
+      "district": "Other ACT localities",
+      "type": "district",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/act-localities/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Aranda",
+      "district": "Belconnen",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/aranda/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Bruce",
+      "district": "Belconnen",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/bruce/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Amaroo",
+      "district": "Gungahlin",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/amaroo/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Casey",
+      "district": "Gungahlin",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/casey/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Canberra City",
+      "district": "Inner North & City",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/canberra-city/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Braddon",
+      "district": "Inner North & City",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/braddon/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Kingston",
+      "district": "Inner South",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/kingston/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Griffith",
+      "district": "Inner South",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/griffith/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Woden",
+      "district": "Woden Valley",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/woden/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Phillip",
+      "district": "Woden Valley",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/phillip/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Weston",
+      "district": "Weston Creek & Molonglo",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/weston/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Coombs",
+      "district": "Weston Creek & Molonglo",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/coombs/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Kambah",
+      "district": "Tuggeranong",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/kambah/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Calwell",
+      "district": "Tuggeranong",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/calwell/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    },
+    {
+      "locality": "Fyshwick",
+      "district": "East Canberra & ACT localities",
+      "type": "locality",
+      "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/fyshwick/",
+      "services": [
+        "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
+        "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/shower-resealing-regrouting/",
+        "https://www.canberrawaterproof.com.au/services/balcony-waterproofing/",
+        "https://www.canberrawaterproof.com.au/services/kitchen-sealing/",
+        "https://www.canberrawaterproof.com.au/services/external-waterproofing/"
+      ],
+      "lastModified": "2026-09-28"
+    }
+  ]
+}
