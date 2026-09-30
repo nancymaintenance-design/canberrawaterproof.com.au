@@ -68,13 +68,21 @@ function testPages() {
     const html = readFileSync(file, 'utf8');
     const context = html.match(/<p data-local-context>([^<]+)<\/p>/)?.[1];
     assert.ok(context, `${page.route} needs a visible local context paragraph`);
+    assert.equal(
+      html.match(/<h1>([^<]+)<\/h1>/)?.[1].replaceAll('&amp;', '&'),
+      `${page.focus.primary} in ${page.name}, Canberra`,
+      `${page.route} must use its assigned core service keyword in the H1`,
+    );
+    assert.match(html, new RegExp(page.focus.supporting[0], 'i'), `${page.route} must include its supporting service keyword`);
     localContexts.push(context);
   }
   assert.equal(new Set(localContexts).size, 24, 'every locality page needs distinct local context');
 
   const aranda = readFileSync('waterproofing/aranda/index.html', 'utf8');
-  assert.equal((aranda.match(/<h1>Waterproofing Repairs in Aranda, ACT<\/h1>/g) || []).length, 1);
-  assert.match(aranda, /<h2>How MEL ONE approaches an Aranda enquiry<\/h2>/);
+  assert.equal((aranda.match(/<h1>Bathroom Waterproofing in Aranda, Canberra<\/h1>/g) || []).length, 1);
+  assert.match(aranda, /<title>Bathroom Waterproofing in Aranda, Canberra \| MEL ONE<\/title>/);
+  assert.match(aranda, /<h2>Bathroom Waterproofing Services in Aranda<\/h2>/);
+  assert.match(aranda, /<h2>How MEL ONE delivers bathroom waterproofing in Aranda<\/h2>/);
   assert.match(aranda, /<link rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\/aranda\/">/);
   for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry']) {
     assert.match(aranda.toLowerCase(), new RegExp(term));
@@ -89,7 +97,8 @@ function testPages() {
   ]) {
     assert.match(aranda, new RegExp(`href="/services/${service}/"`));
   }
-  assert.match(aranda, /fast 30-minute enquiry responses/i);
+  assert.match(aranda, /fast 30-minute responses for Canberra waterproofing service requests/i);
+  assert.match(aranda, /Request Service/);
   assert.match(aranda, /<form[^>]+action="\/api\/contact"/);
   assert.match(aranda, /name="suburb"[^>]+value="Aranda"/);
 
@@ -158,7 +167,8 @@ function testRegression() {
       /subject to availability|not a promise of attendance/i,
       `${page.route} must not use sales-weakening response disclaimers`,
     );
-    assert.match(html, /fast 30-minute enquiry responses/i, `${page.route} must include the fast-response statement`);
+    assert.match(html, /fast 30-minute responses for Canberra waterproofing service requests/i, `${page.route} must include the fast-response statement`);
+    assert.doesNotMatch(html, /waterproofing enquiries|send enquiry/i, `${page.route} must use service language`);
   }
 }
 

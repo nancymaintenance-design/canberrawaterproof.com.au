@@ -1,6 +1,6 @@
 # MEL ONE | Canberra Waterproofing
 
-> English-language official website for MEL ONE waterproofing and leak repair enquiries in Canberra, ACT.
+> English-language official website for MEL ONE waterproofing and leak repair services in Canberra, ACT.
 
 ## Contact
 - Phone: 0482 422 607
@@ -8,7 +8,7 @@
 - Address: 121 Marcus Clarke St, Canberra ACT 2600
 
 ## Scope
-Bathrooms, leaking showers, resealing and regrouting, balconies, kitchens, laundry waterproofing, external water ingress and roof-leak enquiries. Scope, availability and appropriate trade coordination are confirmed for each property.
+Bathroom waterproofing, leaking shower repairs, resealing and regrouting, balcony waterproofing, kitchen and laundry waterproofing, external water-ingress repairs and roof-leak repairs. Scope and appropriate trade coordination are confirmed for each property.
 
 ## Important
 This content index summarises the visible MEL ONE website. It does not replace the visible pages, robots.txt or sitemap.
@@ -40,10 +40,10 @@ This content index summarises the visible MEL ONE website. It does not replace t
 - https://canberrawaterproof.com.au/industry-news/understanding-repair-scopes/
 
 <!-- LOCAL_WATERPROOFING_INDEX:START -->
-## Local waterproofing information
+## Local waterproofing services
 - Directory: https://www.canberrawaterproof.com.au/service-areas/
 - Public locality data: https://www.canberrawaterproof.com.au/data/local-waterproofing-services.json
-- These pages provide local waterproofing information, practical assessment guidance and direct ways to request a quote from MEL ONE.
+- These pages provide locality-specific waterproofing repair services, practical assessment guidance and direct ways to request service from MEL ONE.
 - https://www.canberrawaterproof.com.au/waterproofing/belconnen/ — Belconnen (district)
 - https://www.canberrawaterproof.com.au/waterproofing/gungahlin/ — Gungahlin (district)
 - https://www.canberrawaterproof.com.au/waterproofing/inner-north-city/ — Inner North & City (district)

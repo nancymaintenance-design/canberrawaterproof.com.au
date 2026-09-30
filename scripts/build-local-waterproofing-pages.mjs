@@ -16,34 +16,67 @@ export const SERVICES = [
 ];
 
 const LOCAL_CONTEXTS = {
-  belconnen: 'This Belconnen hub gives nearby owners and managers one place to compare bathroom, shower, balcony, roof, kitchen and external-water-entry enquiry pathways before they contact MEL ONE.',
-  gungahlin: 'This Gungahlin hub is designed for people who need to describe a water-entry concern clearly, then move from visible symptoms to a sensible repair discussion without assuming the cause.',
-  'inner-north-city': 'This Inner North and City hub helps apartment, townhouse, office and home enquiries start with the affected area, the timing of moisture and the information needed for a practical next conversation.',
-  'inner-south': 'This Inner South hub groups common wet-area and external-water-entry enquiry paths so a property owner or manager can identify the most relevant MEL ONE service information before requesting help.',
-  'woden-valley': 'This Woden Valley hub is for enquiries where the visible issue may be in a shower, bathroom, kitchen, balcony, roof or wall junction and the property needs a careful, evidence-led starting point.',
-  'weston-creek-molonglo': 'This Weston Creek and Molonglo hub explains how to prepare a waterproofing enquiry when moisture may be linked to a wet area, an outdoor surface, a drainage path or an external junction.',
-  tuggeranong: 'This Tuggeranong hub helps residents and property managers record what they have observed before a repair path is discussed, especially where a water issue changes after rain or regular use.',
-  'east-canberra': 'This East Canberra hub provides a clear route from a reported moisture symptom to relevant MEL ONE service information, practical assessment and a clear next step.',
-  'act-localities': 'This ACT Localities hub is a starting point for addresses outside the larger Canberra district groups, with local contact details and the same careful approach to describing a waterproofing concern.',
-  aranda: 'For an Aranda property, note whether moisture is confined to the shower or bathroom, appears after rain near a roof or wall junction, or is visible around a kitchen, balcony or external corner.',
-  bruce: 'For a Bruce waterproofing enquiry, a useful first record separates what happens during normal wet-area use from what appears after weather, because those timelines can lead to different next questions.',
-  amaroo: 'For an Amaroo home or managed property, include the affected room, the first visible sign and whether the issue changes after showering, rainfall, cleaning or plumbing use.',
-  casey: 'For a Casey property, MEL ONE can use clear photos and timing details to start a focused discussion about bathroom, shower, kitchen, balcony, roof or external-water-entry concerns.',
-  'canberra-city': 'For Canberra City enquiries, identify the exact room, unit or external area and any building-management context that may affect access, safe photography or the timing of a repair discussion.',
-  braddon: 'For a Braddon property, note whether the concern is inside a wet area, at a balcony or wall junction, below a roofline or near a kitchen so the enquiry can be directed to the most relevant information.',
-  kingston: 'For a Kingston waterproofing concern, it helps to record the location of water, whether it is recurring and which conditions make it more noticeable before a property-specific repair path is considered.',
-  griffith: 'For a Griffith property near the Manuka precinct, a helpful enquiry explains the affected surface and the sequence of events, rather than assuming that visible grout, sealant or staining identifies the cause.',
-  woden: 'For a Woden enquiry, include whether the area is a shower, bathroom, kitchen, balcony, roof or exterior junction and whether the symptom is active, historic or only appears in particular conditions.',
-  phillip: 'For a Phillip property, photos from a safe distance and a short timeline can help distinguish an initial moisture report from a confirmed cause, which requires the right level of investigation.',
-  weston: 'For a Weston home or managed property, MEL ONE can begin with the information you can safely provide about the affected area, moisture pattern, recent work and access requirements.',
-  coombs: 'For a Coombs waterproofing enquiry, describe the precise room or outdoor surface and when it becomes damp, rather than relying on a single visible finish or stain to explain the issue.',
-  kambah: 'For a Kambah property, the most useful initial detail is often the event that precedes the symptom: shower use, rain, cleaning, plumbing use or another repeatable condition.',
-  calwell: 'For a Calwell waterproofing concern, share the location, timing and any safe images of the affected area so MEL ONE can discuss the relevant service pathway before any repair scope is agreed.',
-  fyshwick: 'For a Fyshwick property, record whether the concern relates to a wet area, roof, balcony, kitchen, exterior surface or wall corner and include any site-access considerations in the enquiry.',
+  belconnen: 'Belconnen properties often need a practical wet-area repair plan for bathrooms, ensuites and shower floors, with clear attention to the affected surface and surrounding finishes.',
+  gungahlin: 'Gungahlin homeowners and managers can book focused bathroom and shower waterproofing services when water appears during normal wet-area use or after cleaning.',
+  'inner-north-city': 'Inner North and City apartments, townhouses, offices and homes benefit from clearly defined waterproofing services for wet areas, balconies and external junctions.',
+  'inner-south': 'Inner South properties commonly need bathroom or balcony waterproofing repairs that account for the exact room, outdoor surface and access conditions.',
+  'woden-valley': 'Woden Valley homes and managed buildings can arrange wet-area waterproofing, shower repair and kitchen sealing services with a clear description of the affected area.',
+  'weston-creek-molonglo': 'Weston Creek and Molonglo properties can book external waterproofing and balcony leak-repair services where moisture is linked to an outdoor surface, drainage path or wall junction.',
+  tuggeranong: 'Tuggeranong residents and property managers can request leaking shower and bathroom waterproofing repairs when water changes after regular use or rain.',
+  'east-canberra': 'East Canberra properties can arrange external waterproofing, water-ingress repair and roof-water-entry services with practical details about the affected building area.',
+  'act-localities': 'ACT Localities outside the larger district groups can access the same focused waterproofing repair services for bathrooms, showers, balconies, kitchens and external areas.',
+  aranda: 'Aranda homeowners can arrange bathroom waterproofing and leaking shower repairs for ensuites, shower bases, tiled wet areas and nearby wall or floor junctions.',
+  bruce: 'Bruce properties can book shower waterproofing and leaking shower repair services when water appears during normal shower use, at a shower base or around tiled junctions.',
+  amaroo: 'Amaroo homes and managed properties can access bathroom waterproofing and shower repair services for wet areas affected by showering, cleaning or plumbing use.',
+  casey: 'Casey homeowners can arrange shower resealing, regrouting and bathroom silicone replacement services for tired joints, damaged sealant and tiled shower finishes.',
+  'canberra-city': 'Canberra City apartments and commercial premises can arrange waterproofing services for bathrooms, showers, balconies and wet areas with building-management access considered.',
+  braddon: 'Braddon apartments and homes can book balcony waterproofing, leaking balcony repairs and external joint sealing for exposed surfaces and wall junctions.',
+  kingston: 'Kingston properties can access balcony waterproofing and bathroom waterproofing services for recurring moisture, tiled outdoor areas and wet-room repairs.',
+  griffith: 'Griffith homes can arrange leaking shower repairs, shower leak detection and shower resealing services for moisture around tiled shower walls, bases and screens.',
+  woden: 'Woden properties can book bathroom waterproofing, bathroom rewaterproofing and waterproofing-and-tiling services for wet areas that need a clear repair scope.',
+  phillip: 'Phillip homes and managed buildings can arrange kitchen sealing, kitchen sink leak repair and laundry waterproofing services for water around fixtures, joins and floors.',
+  weston: 'Weston homeowners can access external wall waterproofing, window leak repair and balcony waterproofing services for moisture at building edges and outdoor junctions.',
+  coombs: 'Coombs homes and apartments can book balcony waterproofing, balcony membrane repair and external waterproofing services for outdoor tiled areas and wall-floor junctions.',
+  kambah: 'Kambah properties can arrange leaking shower repairs, shower waterproofing and bathroom waterproofing services when moisture follows shower use or wet-area cleaning.',
+  calwell: 'Calwell homes can book laundry floor waterproofing, kitchen sealing and bathroom waterproofing services for water around fixtures, floors and adjacent surfaces.',
+  fyshwick: 'Fyshwick properties can access external waterproofing, water-ingress repair and roof leak repair services for exterior surfaces, rooflines and wall corners.',
 };
+
+const LOCAL_SERVICE_FOCUSES = {
+  belconnen: { primary: 'Bathroom Waterproofing', supporting: ['wet area waterproofing', 'waterproofing and tiling'], summary: 'Bathroom waterproofing services for family bathrooms, ensuites and shower floors.' },
+  gungahlin: { primary: 'Shower Waterproofing', supporting: ['bathroom waterproofing', 'shower repairs'], summary: 'Shower and bathroom waterproofing services for homes and managed properties.' },
+  'inner-north-city': { primary: 'Waterproofing Services', supporting: ['waterproofing contractors', 'wet area waterproofing'], summary: 'Waterproofing services for apartments, townhouses, offices and homes.' },
+  'inner-south': { primary: 'Balcony and Bathroom Waterproofing', supporting: ['balcony waterproofing', 'bathroom waterproofing'], summary: 'Waterproofing repairs for wet areas, balconies and external junctions.' },
+  'woden-valley': { primary: 'Bathroom Waterproofing', supporting: ['bathroom rewaterproofing', 'waterproofing and tiling'], summary: 'Bathroom waterproofing and rewaterproofing services for Woden Valley properties.' },
+  'weston-creek-molonglo': { primary: 'External Waterproofing', supporting: ['balcony waterproofing', 'water ingress repairs'], summary: 'External waterproofing and balcony leak-repair services for outdoor building surfaces.' },
+  tuggeranong: { primary: 'Leaking Shower Repairs', supporting: ['shower waterproofing', 'bathroom waterproofing'], summary: 'Leaking shower repair and bathroom waterproofing services for Tuggeranong properties.' },
+  'east-canberra': { primary: 'External Waterproofing', supporting: ['water ingress repairs', 'roof leak repairs'], summary: 'External waterproofing and water-ingress repair services for East Canberra properties.' },
+  'act-localities': { primary: 'Waterproofing Services', supporting: ['local waterproofer', 'remedial waterproofing'], summary: 'Local waterproofing repair services for ACT properties outside the main district hubs.' },
+  aranda: { primary: 'Bathroom Waterproofing', supporting: ['leaking shower repairs', 'wet area waterproofing'], summary: 'Bathroom waterproofing and leaking shower repair services for Aranda homes.' },
+  bruce: { primary: 'Shower Waterproofing', supporting: ['leaking shower repairs', 'shower base leak repair'], summary: 'Shower waterproofing and leaking shower repair services for Bruce properties.' },
+  amaroo: { primary: 'Bathroom Waterproofing', supporting: ['shower repairs', 'ensuite waterproofing'], summary: 'Bathroom, ensuite and shower waterproofing services for Amaroo homes.' },
+  casey: { primary: 'Shower Resealing and Regrouting', supporting: ['bathroom silicone replacement', 'shower screen resealing'], summary: 'Shower resealing, regrouting and silicone replacement services for Casey properties.' },
+  'canberra-city': { primary: 'Waterproofing Services', supporting: ['waterproofing contractors', 'bathroom waterproofing'], summary: 'Waterproofing services for Canberra City apartments, commercial premises and homes.' },
+  braddon: { primary: 'Balcony Waterproofing', supporting: ['leaking balcony repairs', 'external joint sealing'], summary: 'Balcony waterproofing and leaking balcony repair services for Braddon properties.' },
+  kingston: { primary: 'Balcony Waterproofing', supporting: ['bathroom waterproofing', 'balcony membrane replacement'], summary: 'Balcony and bathroom waterproofing services for Kingston homes and apartments.' },
+  griffith: { primary: 'Leaking Shower Repairs', supporting: ['shower leak detection', 'shower resealing'], summary: 'Leaking shower repair, detection and resealing services for Griffith properties.' },
+  woden: { primary: 'Bathroom Waterproofing', supporting: ['bathroom rewaterproofing', 'waterproofing and tiling'], summary: 'Bathroom waterproofing, rewaterproofing and tiling support for Woden properties.' },
+  phillip: { primary: 'Kitchen and Laundry Waterproofing', supporting: ['kitchen sink leak repair', 'laundry floor waterproofing'], summary: 'Kitchen sealing and laundry waterproofing services for Phillip homes and managed buildings.' },
+  weston: { primary: 'External Wall Waterproofing', supporting: ['window leak repairs', 'balcony waterproofing'], summary: 'External wall waterproofing and window leak-repair services for Weston properties.' },
+  coombs: { primary: 'Balcony Waterproofing', supporting: ['balcony membrane replacement', 'external waterproofing'], summary: 'Balcony waterproofing and external membrane repair services for Coombs properties.' },
+  kambah: { primary: 'Leaking Shower Repairs', supporting: ['shower waterproofing', 'bathroom waterproofing'], summary: 'Leaking shower repair and bathroom waterproofing services for Kambah homes.' },
+  calwell: { primary: 'Laundry and Kitchen Waterproofing', supporting: ['laundry floor waterproofing', 'kitchen sealing'], summary: 'Laundry floor waterproofing and kitchen sealing services for Calwell properties.' },
+  fyshwick: { primary: 'External Waterproofing', supporting: ['water ingress repairs', 'roof leak repairs'], summary: 'External waterproofing, water-ingress and roof leak-repair services for Fyshwick properties.' },
+};
+
+function focusServiceLabel(focus) {
+  return /services$/i.test(focus.primary) ? focus.primary : `${focus.primary} Services`;
+}
 
 function page(slug, name, district, kind, relatedLocalities) {
   const article = /^[aeiou]/i.test(name) ? 'an' : 'a';
+  const focus = LOCAL_SERVICE_FOCUSES[slug];
+  if (!focus) throw new Error(`missing service focus: ${slug}`);
   return {
     slug,
     name,
@@ -52,18 +85,19 @@ function page(slug, name, district, kind, relatedLocalities) {
     route: `/waterproofing/${slug}/`,
     relatedLocalities,
     localContext: LOCAL_CONTEXTS[slug],
+    focus,
     faq: [
       {
-        question: `What waterproofing enquiries can MEL ONE help organise in ${name}?`,
-        answer: `MEL ONE assesses bathroom, shower, kitchen, balcony, roof and external water-entry concerns for properties in ${name}, then recommends a clear repair path for the property.`,
+        question: `What ${focusServiceLabel(focus).toLowerCase()} does MEL ONE provide in ${name}?`,
+        answer: `MEL ONE provides ${focusServiceLabel(focus).toLowerCase()} in ${name}, including ${focus.supporting.join(' and ')} where those services suit the affected area and repair scope.`,
       },
       {
-        question: `How quickly can MEL ONE respond to ${article} ${name} waterproofing enquiry?`,
-        answer: 'MEL ONE provides fast 30-minute enquiry responses and clear next steps for Canberra waterproofing concerns. Include your suburb, affected area and photos so our team can prepare the most helpful response.',
+        question: `How quickly can MEL ONE respond to ${article} ${name} waterproofing service request?`,
+        answer: 'MEL ONE provides fast 30-minute responses for Canberra waterproofing service requests. Include your suburb, affected area and safe photos so our team can prepare the most helpful service response.',
       },
       {
-        question: `What should I send with ${article} ${name} waterproofing repair enquiry?`,
-        answer: 'Please include the property suburb, affected room or area, when the issue occurs, clear photos or video if safe, and any recent plumbing or building work. This helps MEL ONE understand the enquiry before discussing next steps.',
+        question: `What information helps MEL ONE plan ${article} ${name} waterproofing service?`,
+        answer: 'Please include the property suburb, affected room or area, when the issue occurs, safe photos or video, and any recent plumbing or building work. This helps MEL ONE prepare a focused waterproofing service plan.',
       },
     ],
   };
@@ -101,7 +135,7 @@ export function validatePages(pages) {
     throw new Error('expected exactly 24 locality page records');
   }
 
-  const fields = ['slug', 'name', 'district', 'kind', 'route', 'relatedLocalities', 'faq'];
+  const fields = ['slug', 'name', 'district', 'kind', 'route', 'relatedLocalities', 'faq', 'focus'];
   for (const item of pages) {
     for (const field of fields) {
       if (!(field in item)) throw new Error(`missing ${field} for locality record`);
@@ -109,6 +143,9 @@ export function validatePages(pages) {
     if (!/^[a-z0-9-]+$/.test(item.slug)) throw new Error(`invalid slug: ${item.slug}`);
     if (item.route !== `/waterproofing/${item.slug}/`) throw new Error(`invalid route: ${item.route}`);
     if (!item.localContext) throw new Error(`missing local context: ${item.slug}`);
+    if (!item.focus?.primary || !Array.isArray(item.focus.supporting) || item.focus.supporting.length < 2) {
+      throw new Error(`missing keyword focus: ${item.slug}`);
+    }
   }
 
   const slugs = pages.map((item) => item.slug);
@@ -150,8 +187,8 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-function serviceCards() {
-  return SERVICES.map(({ slug, name }) => `<article class="card"><h3>${escapeHtml(name)}</h3><p>Discuss the symptoms, affected area and safe photos with MEL ONE before agreeing a repair path.</p><a href="/services/${slug}/">Explore ${escapeHtml(name)}</a></article>`).join('');
+function serviceCards(page) {
+  return SERVICES.map(({ slug, name }) => `<article class="card"><h3>${escapeHtml(name)}</h3><p>MEL ONE provides focused repair services for the affected area, with safe photos and property details used to plan the work.</p><a href="/services/${slug}/">Explore ${escapeHtml(name)}</a></article>`).join('');
 }
 
 function relatedLinks(page, pageMap) {
@@ -167,7 +204,7 @@ function visibleFaqs(page) {
 }
 
 function contactForm(page) {
-  return `<form class="form" action="/api/contact" method="post" data-enquiry-form><h2>Request waterproofing help in ${escapeHtml(page.name)}.</h2><p>Tell us what you have noticed. A clear description helps MEL ONE discuss the next practical step.</p><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><label>Name<input name="name" required></label><label for="suburb">Suburb<input id="suburb" name="suburb" value="${escapeHtml(page.name)}" required></label><div class="two"><label>Phone<input name="phone" type="tel"></label><label>Email for your confirmation<input name="email" type="email" autocomplete="email" required></label></div><label>Affected area<select name="area" required><option>Shower</option><option>Bathroom</option><option>Balcony</option><option>Kitchen</option><option>Laundry</option><option>External</option><option>Roof</option><option>Not sure</option></select></label><label>Tell us about the problem<textarea name="message" rows="6" required></textarea></label><button class="button primary" type="submit">Send enquiry</button><p class="form-status" data-form-status role="status" aria-live="polite"></p><p><small>Your enquiry is sent securely to MEL ONE. We use your details only to respond to this request; do not include financial, identity or access information.</small></p></form>`;
+  return `<form class="form" action="/api/contact" method="post" data-enquiry-form><h2>Book ${escapeHtml(page.focus.primary.toLowerCase())} in ${escapeHtml(page.name)}.</h2><p>Tell us about the affected area and the repair service you need. A clear description helps MEL ONE prepare the right service response.</p><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><label>Name<input name="name" required></label><label for="suburb">Suburb<input id="suburb" name="suburb" value="${escapeHtml(page.name)}" required></label><div class="two"><label>Phone<input name="phone" type="tel"></label><label>Email for your service confirmation<input name="email" type="email" autocomplete="email" required></label></div><label>Affected area<select name="area" required><option>Shower</option><option>Bathroom</option><option>Balcony</option><option>Kitchen</option><option>Laundry</option><option>External</option><option>Roof</option><option>Other waterproofing service</option></select></label><label>Tell us about the repair needed<textarea name="message" rows="6" required></textarea></label><button class="button primary" type="submit">Request Service</button><p class="form-status" data-form-status role="status" aria-live="polite"></p><p><small>Your service request is sent securely to MEL ONE. We use your details only to respond to this request; do not include financial, identity or access information.</small></p></form>`;
 }
 
 function pageCopy(page, position) {
@@ -180,8 +217,8 @@ function pageCopy(page, position) {
       : 'when water appears in a room, ceiling, wall or outdoor surface';
   return {
     localPhrase,
-    intro: `MEL ONE provides waterproofing and leak-repair support in ${localPhrase}, ACT. We help owners, tenants, property managers and builders move from visible symptoms to a clear repair discussion. Bathroom waterproofing, leaking showers, roof-water entry, kitchen moisture, balcony leaks and external wall-corner issues all receive a focused, property-specific approach.`,
-    detail: `For ${propertyPhrase} in ${localPhrase}, note what you can see and when it happens. Staining, loose finishes, recurring mould, damp carpet, bubbling paint, cracked sealant or water at an adjoining surface give our experienced team a strong starting point for a focused assessment and practical repair recommendation.`,
+    intro: `MEL ONE provides ${page.focus.primary.toLowerCase()} in ${localPhrase}, ACT. ${page.focus.summary} Our experienced repair team supports owners, tenants, property managers and builders with focused work for bathrooms, showers, balconies, kitchens, roofs and external water-entry areas.`,
+    detail: `For ${propertyPhrase} in ${localPhrase}, MEL ONE can plan ${page.focus.primary.toLowerCase()} alongside ${page.focus.supporting.join(' and ')}. Staining, loose finishes, recurring mould, damp carpet, bubbling paint, cracked sealant or water at an adjoining surface give our experienced team useful details for a focused assessment and practical repair recommendation.`,
     symptoms: `Water-entry signs often appear ${entryPhrase}. If water is actively entering a property, protect people and belongings first, follow any safe building procedures and arrange urgent assistance where needed. Do not remove tiles, membranes or fixtures simply to investigate a cause unless a qualified professional has advised that approach.`,
   };
 }
@@ -219,16 +256,16 @@ function schemasFor(page) {
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: `Waterproofing Repairs in ${page.name}, ACT`,
-        description: `Waterproofing and leak-repair enquiry information for ${page.name}, ACT.`,
+        name: `${page.focus.primary} in ${page.name}, Canberra | MEL ONE`,
+        description: `${page.focus.summary} MEL ONE provides ${page.focus.supporting.join(', ')} in ${page.name}, Canberra.`,
         inLanguage: 'en-AU',
       },
       {
         '@type': 'Service',
-        name: `Waterproofing repair enquiries in ${page.name}`,
+        name: `${page.focus.primary} in ${page.name}`,
         provider: { '@id': `${SITE_URL}/#business` },
         areaServed: { '@type': 'AdministrativeArea', name: `${page.name}, ACT` },
-        serviceType: 'Waterproofing and leak repair enquiry',
+        serviceType: `${page.focus.primary}; ${page.focus.supporting.join('; ')}`,
         url,
       },
       {
@@ -247,10 +284,10 @@ function schemasFor(page) {
 function renderPage(page, pageMap, position) {
   const copy = pageCopy(page, position);
   const url = `${SITE_URL}${page.route}`;
-  const title = `Waterproofing Repairs in ${page.name}, ACT | MEL ONE`;
-  const description = `Waterproofing and leak-repair enquiry information for ${page.name}, ACT. Discuss bathrooms, showers, balconies, kitchens, roofs and external water entry with MEL ONE.`;
+  const title = `${page.focus.primary} in ${page.name}, Canberra | MEL ONE`;
+  const description = `${page.focus.summary} MEL ONE also provides ${page.focus.supporting.join(', ')} in ${page.name}, Canberra ACT. Call 0482 422 607 to request service.`;
   const article = /^[aeiou]/i.test(page.name) ? 'an' : 'a';
-  return `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png"><link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow"><link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">${JSON.stringify(schemasFor(page))}</script></head><body><a class="skip" href="#main">Skip to content</a><div class="top"><div class="wrap"><span>Canberra waterproofing enquiries</span><span>0482 422 607 · riley@melonemaintenance.com.au</span></div></div><header class="header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="MEL ONE home"><img src="/assets/mel-one-logo.png" alt="MEL ONE" width="58" height="58"><span class="brand-name">MEL ONE</span></a><nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/services/">Services</a><a href="/service-areas/" aria-current="page">Service Areas</a><a href="/about/">About Us</a><a href="/guides/">Guides</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a class="button primary" href="#enquiry">Request a Quote</a></nav></div></header><main id="main"><section class="page-intro"><div class="wrap"><p class="eyebrow">${escapeHtml(page.district)} service area</p><h1>Waterproofing Repairs in ${escapeHtml(page.name)}, ACT</h1><p class="lede">Practical local information for bathroom, shower, balcony, kitchen, roof and external water-entry enquiries.</p><p class="crumbs"><a href="/">Home</a> / <a href="/service-areas/">Service areas</a> / ${escapeHtml(page.name)}</p></div></section><article class="section wrap article"><p>${escapeHtml(copy.intro)}</p><p data-local-context>${escapeHtml(page.localContext)}</p><p>${escapeHtml(copy.detail)}</p><div class="callout"><strong>Clear first step:</strong> Send the suburb, affected area, timing and safe photos where available. Our team uses these details to prepare a focused assessment and clear next steps.</div><h2>Waterproofing services in ${escapeHtml(page.name)}</h2><p>These service pages explain common enquiry pathways and help MEL ONE prepare a clear, property-specific repair recommendation.</p><div class="grid">${serviceCards()}</div><h2>Common water-entry signs in ${escapeHtml(page.name)}</h2><p>${escapeHtml(copy.symptoms)}</p><ul><li>Discolouration, bubbling paint or a musty smell near a wet area.</li><li>Water that appears outside a shower, below a balcony or at a ceiling after weather.</li><li>Damaged grout, sealant, tiles, flashings or external junctions that need assessment.</li><li>Recurring moisture near a kitchen, bathroom, laundry, roofline or wall corner.</li></ul><h2>How MEL ONE approaches ${article} ${escapeHtml(page.name)} enquiry</h2><p>MEL ONE has more than ten years in the waterproofing industry and a standardised repair team with experienced repair professionals. The team works methodically: understand the symptoms, ask about timing and recent work, review safe photos where available, and discuss an appropriate next step before agreeing a repair path.</p><p>MEL ONE has been trusted by more than ten thousand customers. Our experienced team provides fast 30-minute enquiry responses and clear next steps for Canberra waterproofing concerns.</p><h2>What to send with a waterproofing enquiry</h2><ol><li>Your ${escapeHtml(page.name)} property suburb and the room or external area affected.</li><li>When the issue appears: after showering, rain, cleaning, plumbing use or at another time.</li><li>Clear photos or video from a safe position, plus any recent plumbing, renovation or maintenance work.</li><li>Your preferred contact details and a suitable time to discuss the enquiry.</li></ol><section class="about-faq"><h2>${escapeHtml(page.name)} waterproofing FAQs</h2>${visibleFaqs(page)}</section><h2>Related Canberra service areas</h2><p>Use a nearby information page where it better matches the property location, or contact MEL ONE with the exact suburb.</p><div class="locality-grid">${relatedLinks(page, pageMap)}</div></article><section class="section wrap two" id="enquiry"><div class="contact-details"><p class="eyebrow">Contact MEL ONE</p><h2>Discuss a ${escapeHtml(page.name)} waterproofing concern.</h2><p>121 Marcus Clarke St, Canberra, ACT 2600</p><p><a href="tel:+61482422607">0482 422 607</a><br><a href="mailto:riley@melonemaintenance.com.au">riley@melonemaintenance.com.au</a></p><p>For urgent matters, call directly. For non-urgent enquiries, include photos and timing details where safe to do so.</p></div>${contactForm(page)}</section></main><footer class="footer"><div class="wrap footer-grid"><div><img src="/assets/mel-one-logo.png" alt="MEL ONE" width="70" height="56"><p>Waterproofing and leak repair enquiries across Canberra.</p><p>121 Marcus Clarke St, Canberra, ACT 2600</p></div><div><p class="eyebrow">Explore</p><a href="/services/">Services</a><a href="/service-areas/">Service Areas</a><a href="/about/">About Us</a><a href="/guides/">Guides</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div><div><p class="eyebrow">Contact</p><a href="tel:+61482422607">0482 422 607</a><a href="mailto:riley@melonemaintenance.com.au">riley@melonemaintenance.com.au</a><a href="/privacy-policy/">Privacy Policy</a></div></div></footer><nav class="mobile" aria-label="Quick contact"><a href="tel:+61482422607">Call</a><a href="#enquiry">Request a Quote</a></nav><script src="/assets/enquiry-form.js" defer></script></body></html>`;
+  return `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png"><link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow"><link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">${JSON.stringify(schemasFor(page))}</script></head><body><a class="skip" href="#main">Skip to content</a><div class="top"><div class="wrap"><span>Canberra waterproofing repair services</span><span>0482 422 607 · riley@melonemaintenance.com.au</span></div></div><header class="header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="MEL ONE home"><img src="/assets/mel-one-logo.png" alt="MEL ONE" width="58" height="58"><span class="brand-name">MEL ONE</span></a><nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/services/">Services</a><a href="/service-areas/" aria-current="page">Service Areas</a><a href="/about/">About Us</a><a href="/guides/">Guides</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a class="button primary" href="#enquiry">Request a Quote</a></nav></div></header><main id="main"><section class="page-intro"><div class="wrap"><p class="eyebrow">${escapeHtml(page.district)} service area</p><h1>${escapeHtml(page.focus.primary)} in ${escapeHtml(page.name)}, Canberra</h1><p class="lede">${escapeHtml(page.focus.summary)} Serving ${escapeHtml(page.name)}, Canberra ACT with practical repair services.</p><p class="crumbs"><a href="/">Home</a> / <a href="/service-areas/">Service areas</a> / ${escapeHtml(page.name)}</p></div></section><article class="section wrap article"><p>${escapeHtml(copy.intro)}</p><p data-local-context>${escapeHtml(page.localContext)}</p><p>${escapeHtml(copy.detail)}</p><div class="callout"><strong>Book a focused repair service:</strong> Send the suburb, affected area, timing and safe photos where available. Our team uses these details to prepare the right waterproofing service response.</div><h2>${escapeHtml(focusServiceLabel(page.focus))} in ${escapeHtml(page.name)}</h2><p>MEL ONE provides ${escapeHtml(page.focus.primary.toLowerCase())}, plus ${escapeHtml(page.focus.supporting.join(' and '))}, for property-specific waterproofing repairs.</p><div class="grid">${serviceCards(page)}</div><h2>Common water-entry signs in ${escapeHtml(page.name)}</h2><p>${escapeHtml(copy.symptoms)}</p><ul><li>Discolouration, bubbling paint or a musty smell near a wet area.</li><li>Water that appears outside a shower, below a balcony or at a ceiling after weather.</li><li>Damaged grout, sealant, tiles, flashings or external junctions that need assessment.</li><li>Recurring moisture near a kitchen, bathroom, laundry, roofline or wall corner.</li></ul><h2>How MEL ONE delivers ${escapeHtml(page.focus.primary.toLowerCase())} in ${escapeHtml(page.name)}</h2><p>MEL ONE has more than ten years in the waterproofing industry and a standardised repair team with experienced repair professionals. The team works methodically: review the affected area, ask about timing and recent work, use safe photos where available, and prepare a practical repair plan before work is agreed.</p><p>MEL ONE has been trusted by more than ten thousand customers. Our experienced team provides fast 30-minute responses for Canberra waterproofing service requests and helps customers book the right repair service.</p><h2>What to include in a waterproofing service request</h2><ol><li>Your ${escapeHtml(page.name)} property suburb and the room or external area affected.</li><li>When the issue appears: after showering, rain, cleaning, plumbing use or at another time.</li><li>Clear photos or video from a safe position, plus any recent plumbing, renovation or maintenance work.</li><li>Your preferred contact details and a suitable time to arrange the service.</li></ol><section class="about-faq"><h2>${escapeHtml(page.name)} waterproofing FAQs</h2>${visibleFaqs(page)}</section><h2>Related Canberra service areas</h2><p>Use a nearby service page where it better matches the property location, or request service with the exact suburb.</p><div class="locality-grid">${relatedLinks(page, pageMap)}</div></article><section class="section wrap two" id="enquiry"><div class="contact-details"><p class="eyebrow">Contact MEL ONE</p><h2>Book ${escapeHtml(page.focus.primary.toLowerCase())} in ${escapeHtml(page.name)}.</h2><p>121 Marcus Clarke St, Canberra, ACT 2600</p><p><a href="tel:+61482422607">0482 422 607</a><br><a href="mailto:riley@melonemaintenance.com.au">riley@melonemaintenance.com.au</a></p><p>For urgent matters, call directly. For planned waterproofing services, include safe photos and timing details so MEL ONE can prepare the repair response.</p></div>${contactForm(page)}</section></main><footer class="footer"><div class="wrap footer-grid"><div><img src="/assets/mel-one-logo.png" alt="MEL ONE" width="70" height="56"><p>Waterproofing and leak repair services across Canberra.</p><p>121 Marcus Clarke St, Canberra, ACT 2600</p></div><div><p class="eyebrow">Explore</p><a href="/services/">Services</a><a href="/service-areas/">Service Areas</a><a href="/about/">About Us</a><a href="/guides/">Guides</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div><div><p class="eyebrow">Contact</p><a href="tel:+61482422607">0482 422 607</a><a href="mailto:riley@melonemaintenance.com.au">riley@melonemaintenance.com.au</a><a href="/privacy-policy/">Privacy Policy</a></div></div></footer><nav class="mobile" aria-label="Quick contact"><a href="tel:+61482422607">Call</a><a href="#enquiry">Request a Quote</a></nav><script src="/assets/enquiry-form.js" defer></script></body></html>`;
 }
 
 function writeFeed() {
@@ -333,7 +370,7 @@ function writeDiscoveryResources() {
   let llms = readFileSync(llmsPath, 'utf8');
   llms = llms.replace(/\n<!-- LOCAL_WATERPROOFING_INDEX:START -->[\s\S]*?<!-- LOCAL_WATERPROOFING_INDEX:END -->\n?/g, '\n');
   const localityIndex = LOCALITY_PAGES.map((page) => `- ${SITE_URL}${page.route} — ${page.name} (${page.kind})`).join('\n');
-  llms = `${llms.trimEnd()}\n\n<!-- LOCAL_WATERPROOFING_INDEX:START -->\n## Local waterproofing information\n- Directory: ${SITE_URL}/service-areas/\n- Public locality data: ${SITE_URL}/data/local-waterproofing-services.json\n- These pages provide local waterproofing information, practical assessment guidance and direct ways to request a quote from MEL ONE.\n${localityIndex}\n<!-- LOCAL_WATERPROOFING_INDEX:END -->\n`;
+  llms = `${llms.trimEnd()}\n\n<!-- LOCAL_WATERPROOFING_INDEX:START -->\n## Local waterproofing services\n- Directory: ${SITE_URL}/service-areas/\n- Public locality data: ${SITE_URL}/data/local-waterproofing-services.json\n- These pages provide locality-specific waterproofing repair services, practical assessment guidance and direct ways to request service from MEL ONE.\n${localityIndex}\n<!-- LOCAL_WATERPROOFING_INDEX:END -->\n`;
   writeFileSync(llmsPath, llms);
 }
 
@@ -349,7 +386,7 @@ function verifyBuild() {
     if (!html.includes(`name="suburb" value="${escapeHtml(page.name)}"`)) {
       throw new Error(`generated suburb field is missing for ${page.slug}`);
     }
-    if (!html.includes('fast 30-minute enquiry responses')) {
+    if (!html.includes('fast 30-minute responses for Canberra waterproofing service requests')) {
       throw new Error(`fast-response statement is missing for ${page.slug}`);
     }
   }
