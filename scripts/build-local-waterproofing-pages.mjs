@@ -23,7 +23,7 @@ const LOCAL_CONTEXTS = {
   'woden-valley': 'This Woden Valley hub is for enquiries where the visible issue may be in a shower, bathroom, kitchen, balcony, roof or wall junction and the property needs a careful, evidence-led starting point.',
   'weston-creek-molonglo': 'This Weston Creek and Molonglo hub explains how to prepare a waterproofing enquiry when moisture may be linked to a wet area, an outdoor surface, a drainage path or an external junction.',
   tuggeranong: 'This Tuggeranong hub helps residents and property managers record what they have observed before a repair path is discussed, especially where a water issue changes after rain or regular use.',
-  'east-canberra': 'This East Canberra hub provides a clear route from a reported moisture symptom to the relevant MEL ONE service information, while keeping diagnosis, scope and attendance subject to the actual enquiry.',
+  'east-canberra': 'This East Canberra hub provides a clear route from a reported moisture symptom to relevant MEL ONE service information, practical assessment and a clear next step.',
   'act-localities': 'This ACT Localities hub is a starting point for addresses outside the larger Canberra district groups, with local contact details and the same careful approach to describing a waterproofing concern.',
   aranda: 'For an Aranda property, note whether moisture is confined to the shower or bathroom, appears after rain near a roof or wall junction, or is visible around a kitchen, balcony or external corner.',
   bruce: 'For a Bruce waterproofing enquiry, a useful first record separates what happens during normal wet-area use from what appears after weather, because those timelines can lead to different next questions.',
@@ -55,7 +55,7 @@ function page(slug, name, district, kind, relatedLocalities) {
     faq: [
       {
         question: `What waterproofing enquiries can MEL ONE help organise in ${name}?`,
-        answer: `MEL ONE can discuss bathroom, shower, kitchen, balcony, roof and external water-entry enquiries for properties in ${name}. The right repair path depends on the site and the cause of the water entry.`,
+        answer: `MEL ONE assesses bathroom, shower, kitchen, balcony, roof and external water-entry concerns for properties in ${name}, then recommends a clear repair path for the property.`,
       },
       {
         question: `How quickly can MEL ONE respond to ${article} ${name} waterproofing enquiry?`,
@@ -182,7 +182,7 @@ function pageCopy(page, position) {
     localPhrase,
     intro: `MEL ONE provides waterproofing and leak-repair support in ${localPhrase}, ACT. We help owners, tenants, property managers and builders move from visible symptoms to a clear repair discussion. Bathroom waterproofing, leaking showers, roof-water entry, kitchen moisture, balcony leaks and external wall-corner issues all receive a focused, property-specific approach.`,
     detail: `For ${propertyPhrase} in ${localPhrase}, note what you can see and when it happens. Staining, loose finishes, recurring mould, damp carpet, bubbling paint, cracked sealant or water at an adjoining surface give our experienced team a strong starting point for a focused assessment and practical repair recommendation.`,
-    symptoms: `A concern may become visible ${entryPhrase}. If water is actively entering a property, protect people and belongings first, follow any safe building procedures and arrange urgent assistance where needed. Do not remove tiles, membranes or fixtures simply to investigate a cause unless a qualified professional has advised that approach.`,
+    symptoms: `Water-entry signs often appear ${entryPhrase}. If water is actively entering a property, protect people and belongings first, follow any safe building procedures and arrange urgent assistance where needed. Do not remove tiles, membranes or fixtures simply to investigate a cause unless a qualified professional has advised that approach.`,
   };
 }
 
