@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const SITE_URL = 'https://www.canberrawaterproof.com.au';
 const LAST_MODIFIED = '2026-09-28';
+const GA4_TAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-5VJJKNSHLD"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5VJJKNSHLD');</script>`;
 
 export const SERVICES = [
   { slug: 'leaking-shower-repairs', name: 'Leaking shower repairs' },
@@ -269,6 +270,18 @@ function writePages() {
   }
 }
 
+function addAnalyticsToLocalityPages() {
+  const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+  for (const page of LOCALITY_PAGES) {
+    const target = resolve(root, page.route.slice(1), 'index.html');
+    const html = readFileSync(target, 'utf8');
+    const withAnalytics = html.includes("gtag('config','G-5VJJKNSHLD')")
+      ? html
+      : html.replace('</head>', `${GA4_TAG}</head>`);
+    writeFileSync(target, withAnalytics);
+  }
+}
+
 function writeDiscoveryResources() {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
   const pageMap = new Map(LOCALITY_PAGES.map((item) => [item.slug, item]));
@@ -328,6 +341,7 @@ function verifyBuild() {
   validatePages(LOCALITY_PAGES);
   writeFeed();
   writePages();
+  addAnalyticsToLocalityPages();
   writeDiscoveryResources();
   const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
   for (const page of LOCALITY_PAGES) {
@@ -359,6 +373,7 @@ try {
     validatePages(LOCALITY_PAGES);
     writeFeed();
     writePages();
+    addAnalyticsToLocalityPages();
     writeDiscoveryResources();
   } else {
     throw new Error(`unknown command: ${command}`);
