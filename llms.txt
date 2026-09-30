@@ -43,7 +43,7 @@ This content index summarises the visible MEL ONE website. It does not replace t
 ## Local waterproofing information
 - Directory: https://www.canberrawaterproof.com.au/service-areas/
 - Public locality data: https://www.canberrawaterproof.com.au/data/local-waterproofing-services.json
-- These pages describe enquiry pathways and visible service information. They do not confirm a property-specific cause, scope, compliance outcome, quote, availability or attendance time.
+- These pages provide local waterproofing information, practical assessment guidance and direct ways to request a quote from MEL ONE.
 - https://www.canberrawaterproof.com.au/waterproofing/belconnen/ — Belconnen (district)
 - https://www.canberrawaterproof.com.au/waterproofing/gungahlin/ — Gungahlin (district)
 - https://www.canberrawaterproof.com.au/waterproofing/inner-north-city/ — Inner North & City (district)

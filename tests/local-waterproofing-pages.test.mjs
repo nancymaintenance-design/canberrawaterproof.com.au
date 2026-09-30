@@ -89,7 +89,7 @@ function testPages() {
   ]) {
     assert.match(aranda, new RegExp(`href="/services/${service}/"`));
   }
-  assert.match(aranda, /aims to respond as fast as 30 minutes, subject to availability and enquiry details/i);
+  assert.match(aranda, /fast 30-minute enquiry responses/i);
   assert.match(aranda, /<form[^>]+action="\/api\/contact"/);
   assert.match(aranda, /name="suburb"[^>]+value="Aranda"/);
 
@@ -155,10 +155,10 @@ function testRegression() {
     assert.match(html, /href="mailto:riley@melonemaintenance\.com\.au"/, `${page.route} must retain the public email link`);
     assert.doesNotMatch(
       html,
-      /aims to respond as fast as 30 minutes\.(?!\s*This is a response target)/i,
-      `${page.route} must qualify the response target`,
+      /subject to availability|not a promise of attendance/i,
+      `${page.route} must not use sales-weakening response disclaimers`,
     );
-    assert.match(html, /subject to availability and enquiry details/i, `${page.route} must qualify the response target`);
+    assert.match(html, /fast 30-minute enquiry responses/i, `${page.route} must include the fast-response statement`);
   }
 }
 
