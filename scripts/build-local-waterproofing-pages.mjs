@@ -167,11 +167,13 @@ export function buildFeed(pages = LOCALITY_PAGES) {
     canonicalDirectory: `${SITE_URL}/service-areas/`,
     lastModified: LAST_MODIFIED,
     services: SERVICES.map(({ slug, name }) => ({ name, url: `${SITE_URL}/services/${slug}/` })),
-    localities: validatePages(pages).map(({ name, district, kind, route }) => ({
+    localities: validatePages(pages).map(({ name, district, kind, route, focus }) => ({
       locality: name,
       district,
       type: kind,
       canonicalUrl: `${SITE_URL}${route}`,
+      primaryService: focus.primary,
+      supportingServices: focus.supporting,
       services: SERVICES.map(({ slug }) => `${SITE_URL}/services/${slug}/`),
       lastModified: LAST_MODIFIED,
     })),

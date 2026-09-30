@@ -34,6 +34,11 @@
       "district": "Belconnen",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/belconnen/",
+      "primaryService": "Bathroom Waterproofing",
+      "supportingServices": [
+        "wet area waterproofing",
+        "waterproofing and tiling"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -49,6 +54,11 @@
       "district": "Gungahlin",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/gungahlin/",
+      "primaryService": "Shower Waterproofing",
+      "supportingServices": [
+        "bathroom waterproofing",
+        "shower repairs"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -64,6 +74,11 @@
       "district": "Inner North & City",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/inner-north-city/",
+      "primaryService": "Waterproofing Services",
+      "supportingServices": [
+        "waterproofing contractors",
+        "wet area waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -79,6 +94,11 @@
       "district": "Inner South",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/inner-south/",
+      "primaryService": "Balcony and Bathroom Waterproofing",
+      "supportingServices": [
+        "balcony waterproofing",
+        "bathroom waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -94,6 +114,11 @@
       "district": "Woden Valley",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/woden-valley/",
+      "primaryService": "Bathroom Waterproofing",
+      "supportingServices": [
+        "bathroom rewaterproofing",
+        "waterproofing and tiling"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -109,6 +134,11 @@
       "district": "Weston Creek & Molonglo",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/weston-creek-molonglo/",
+      "primaryService": "External Waterproofing",
+      "supportingServices": [
+        "balcony waterproofing",
+        "water ingress repairs"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -124,6 +154,11 @@
       "district": "Tuggeranong",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/tuggeranong/",
+      "primaryService": "Leaking Shower Repairs",
+      "supportingServices": [
+        "shower waterproofing",
+        "bathroom waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -139,6 +174,11 @@
       "district": "East Canberra & ACT localities",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/east-canberra/",
+      "primaryService": "External Waterproofing",
+      "supportingServices": [
+        "water ingress repairs",
+        "roof leak repairs"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -154,6 +194,11 @@
       "district": "Other ACT localities",
       "type": "district",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/act-localities/",
+      "primaryService": "Waterproofing Services",
+      "supportingServices": [
+        "local waterproofer",
+        "remedial waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -169,6 +214,11 @@
       "district": "Belconnen",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/aranda/",
+      "primaryService": "Bathroom Waterproofing",
+      "supportingServices": [
+        "leaking shower repairs",
+        "wet area waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -184,6 +234,11 @@
       "district": "Belconnen",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/bruce/",
+      "primaryService": "Shower Waterproofing",
+      "supportingServices": [
+        "leaking shower repairs",
+        "shower base leak repair"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -199,6 +254,11 @@
       "district": "Gungahlin",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/amaroo/",
+      "primaryService": "Bathroom Waterproofing",
+      "supportingServices": [
+        "shower repairs",
+        "ensuite waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -214,6 +274,11 @@
       "district": "Gungahlin",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/casey/",
+      "primaryService": "Shower Resealing and Regrouting",
+      "supportingServices": [
+        "bathroom silicone replacement",
+        "shower screen resealing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -229,6 +294,11 @@
       "district": "Inner North & City",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/canberra-city/",
+      "primaryService": "Waterproofing Services",
+      "supportingServices": [
+        "waterproofing contractors",
+        "bathroom waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -244,6 +314,11 @@
       "district": "Inner North & City",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/braddon/",
+      "primaryService": "Balcony Waterproofing",
+      "supportingServices": [
+        "leaking balcony repairs",
+        "external joint sealing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -259,6 +334,11 @@
       "district": "Inner South",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/kingston/",
+      "primaryService": "Balcony Waterproofing",
+      "supportingServices": [
+        "bathroom waterproofing",
+        "balcony membrane replacement"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -274,6 +354,11 @@
       "district": "Inner South",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/griffith/",
+      "primaryService": "Leaking Shower Repairs",
+      "supportingServices": [
+        "shower leak detection",
+        "shower resealing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -289,6 +374,11 @@
       "district": "Woden Valley",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/woden/",
+      "primaryService": "Bathroom Waterproofing",
+      "supportingServices": [
+        "bathroom rewaterproofing",
+        "waterproofing and tiling"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -304,6 +394,11 @@
       "district": "Woden Valley",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/phillip/",
+      "primaryService": "Kitchen and Laundry Waterproofing",
+      "supportingServices": [
+        "kitchen sink leak repair",
+        "laundry floor waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -319,6 +414,11 @@
       "district": "Weston Creek & Molonglo",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/weston/",
+      "primaryService": "External Wall Waterproofing",
+      "supportingServices": [
+        "window leak repairs",
+        "balcony waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -334,6 +434,11 @@
       "district": "Weston Creek & Molonglo",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/coombs/",
+      "primaryService": "Balcony Waterproofing",
+      "supportingServices": [
+        "balcony membrane replacement",
+        "external waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -349,6 +454,11 @@
       "district": "Tuggeranong",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/kambah/",
+      "primaryService": "Leaking Shower Repairs",
+      "supportingServices": [
+        "shower waterproofing",
+        "bathroom waterproofing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -364,6 +474,11 @@
       "district": "Tuggeranong",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/calwell/",
+      "primaryService": "Laundry and Kitchen Waterproofing",
+      "supportingServices": [
+        "laundry floor waterproofing",
+        "kitchen sealing"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",
@@ -379,6 +494,11 @@
       "district": "East Canberra & ACT localities",
       "type": "locality",
       "canonicalUrl": "https://www.canberrawaterproof.com.au/waterproofing/fyshwick/",
+      "primaryService": "External Waterproofing",
+      "supportingServices": [
+        "water ingress repairs",
+        "roof leak repairs"
+      ],
       "services": [
         "https://www.canberrawaterproof.com.au/services/leaking-shower-repairs/",
         "https://www.canberrawaterproof.com.au/services/bathroom-waterproofing/",

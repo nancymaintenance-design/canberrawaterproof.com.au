@@ -143,6 +143,10 @@ function testDiscovery() {
     new Set(feed.localities.map((item) => item.canonicalUrl)),
     new Set(manifest.pages.map((page) => `${canonicalHost}${page.route}`)),
   );
+  for (const locality of feed.localities) {
+    assert.ok(locality.primaryService, `${locality.locality} needs a primary service in the public feed`);
+    assert.ok(locality.supportingServices?.length >= 2, `${locality.locality} needs supporting services in the public feed`);
+  }
   assert.match(llms, /https:\/\/www\.canberrawaterproof\.com\.au\/service-areas\//);
   assert.match(llms, /https:\/\/www\.canberrawaterproof\.com\.au\/data\/local-waterproofing-services\.json/);
 }
