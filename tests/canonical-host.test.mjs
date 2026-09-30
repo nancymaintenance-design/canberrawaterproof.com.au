@@ -23,6 +23,10 @@ test('published pages, sitemap and robots use the www canonical origin', () => {
     assert.doesNotMatch(html, /https:\/\/canberrawaterproof\.com\.au/);
   }
   assert.match(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'), new RegExp(canonicalOrigin.replaceAll('.', '\\.'), 'g'));
+  const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+  assert.doesNotMatch(sitemap, /https:\/\/canberrawaterproof\.com\.au\//, 'sitemap excludes non-canonical apex URLs');
+  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  assert.equal(new Set(urls).size, urls.length, 'sitemap has no duplicate URLs');
   assert.match(fs.readFileSync(path.join(root, 'robots.txt'), 'utf8'), new RegExp(`Sitemap: ${canonicalOrigin.replaceAll('.', '\\.')}`));
 });
 
