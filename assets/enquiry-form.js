@@ -7,7 +7,7 @@ if (form && status) {
     if (!form.reportValidity()) return;
     const button = form.querySelector('button[type="submit"]');
     const payload = Object.fromEntries(new FormData(form).entries());
-    status.textContent = 'Sending your enquiry…';
+    status.textContent = 'Sending your service request…';
     status.dataset.state = 'pending';
     if (button) button.disabled = true;
     try {
@@ -17,14 +17,14 @@ if (form && status) {
         body: JSON.stringify(payload)
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || 'We could not send your enquiry.');
+      if (!response.ok) throw new Error(result.error || 'We could not send your service request.');
       form.reset();
       status.textContent = result.confirmationSent
-        ? 'Thank you. Your enquiry has been sent to MEL ONE. Please check your email for a confirmation.'
-        : 'Thank you. Your enquiry has been sent to MEL ONE.';
+        ? 'Thank you. Your service request has been sent to MEL ONE. Please check your email for confirmation.'
+        : 'Thank you. Your service request has been sent to MEL ONE.';
       status.dataset.state = 'success';
     } catch (error) {
-      status.textContent = error.message || 'We could not send your enquiry. Please call MEL ONE directly.';
+      status.textContent = error.message || 'We could not send your service request. Please call MEL ONE directly.';
       status.dataset.state = 'error';
     } finally {
       if (button) button.disabled = false;

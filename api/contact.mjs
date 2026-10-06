@@ -10,33 +10,33 @@ const escapeHtml = (value) => text(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-function validateEnquiry(input = {}) {
-  const enquiry = {
+function validateServiceRequest(input = {}) {
+  const request = {
     name: text(input.name), phone: text(input.phone), email: text(input.email),
     suburb: text(input.suburb), area: text(input.area), message: text(input.message), website: text(input.website)
   };
-  if (enquiry.website) return { error: 'Please submit a valid enquiry.' };
-  if (!enquiry.name || !enquiry.suburb || !enquiry.area || !enquiry.message) return { error: 'Please complete the required enquiry details.' };
-  if (!enquiry.email || !EMAIL_PATTERN.test(enquiry.email)) return { error: 'Please enter a valid email address for your confirmation.' };
-  if (enquiry.phone && enquiry.phone.length < 6) return { error: 'Please enter a valid phone number or leave the field blank.' };
-  if (Object.values(enquiry).some((value) => value.length > MAX_FIELD_LENGTH)) return { error: 'One or more fields are too long.' };
-  return { value: enquiry };
+  if (request.website) return { error: 'Please submit a valid service request.' };
+  if (!request.name || !request.suburb || !request.area || !request.message) return { error: 'Please complete the required service details.' };
+  if (!request.email || !EMAIL_PATTERN.test(request.email)) return { error: 'Please enter a valid email address for your service confirmation.' };
+  if (request.phone && request.phone.length < 6) return { error: 'Please enter a valid phone number or leave the field blank.' };
+  if (Object.values(request).some((value) => value.length > MAX_FIELD_LENGTH)) return { error: 'One or more fields are too long.' };
+  return { value: request };
 }
 
-function ownerEmail(enquiry, from) {
-  const safe = Object.fromEntries(Object.entries(enquiry).map(([key, value]) => [key, escapeHtml(value)]));
-  return { from, to: [RECIPIENT], reply_to: enquiry.email, subject: `New Canberra waterproofing enquiry — ${enquiry.name}`,
-    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>New website enquiry</h1><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone || 'Not provided'}</p><p><strong>Suburb or postcode:</strong> ${safe.suburb}</p><p><strong>Affected area:</strong> ${safe.area}</p><hr><p><strong>What needs attention:</strong></p><p>${safe.message.replaceAll('\n', '<br>')}</p></body></html>`,
-    text: `New MEL ONE Canberra website enquiry\n\nName: ${enquiry.name}\nEmail: ${enquiry.email}\nPhone: ${enquiry.phone || 'Not provided'}\nSuburb or postcode: ${enquiry.suburb}\nAffected area: ${enquiry.area}\n\nWhat needs attention:\n${enquiry.message}` };
+function ownerEmail(request, from) {
+  const safe = Object.fromEntries(Object.entries(request).map(([key, value]) => [key, escapeHtml(value)]));
+  return { from, to: [RECIPIENT], reply_to: request.email, subject: `New Canberra waterproofing service request — ${request.name}`,
+    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>New waterproofing service request</h1><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone || 'Not provided'}</p><p><strong>Suburb or postcode:</strong> ${safe.suburb}</p><p><strong>Affected area:</strong> ${safe.area}</p><hr><p><strong>Repair service needed:</strong></p><p>${safe.message.replaceAll('\n', '<br>')}</p></body></html>`,
+    text: `New MEL ONE Canberra waterproofing service request\n\nName: ${request.name}\nEmail: ${request.email}\nPhone: ${request.phone || 'Not provided'}\nSuburb or postcode: ${request.suburb}\nAffected area: ${request.area}\n\nRepair service needed:\n${request.message}` };
 }
 
-function confirmationEmail(enquiry, from) {
-  const customerName = escapeHtml(enquiry.name);
-  const area = escapeHtml(enquiry.area);
-  const suburb = escapeHtml(enquiry.suburb);
-  return { from, to: [enquiry.email], reply_to: RECIPIENT, subject: 'We’ve received your enquiry — MEL ONE Canberra',
-    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>Thank you for contacting MEL ONE.</h1><p>Hi ${customerName},</p><p>We have received your enquiry about the ${area} at ${suburb}.</p><p>Our team will review the details provided. If we need further information, we will contact you using the details in your enquiry.</p><p>This email confirms receipt of your enquiry only; it is not a booking or a confirmed scope of work.</p><p>For urgent enquiries, call <a href="tel:+61482422607">0482 422 607</a>.</p><p>Kind regards,<br>MEL ONE Canberra Waterproofing</p></body></html>`,
-    text: `Hi ${enquiry.name},\n\nWe have received your enquiry about the ${enquiry.area} at ${enquiry.suburb}.\n\nOur team will review the details provided. If we need further information, we will contact you using the details in your enquiry.\n\nThis email confirms receipt of your enquiry only; it is not a booking or a confirmed scope of work.\n\nFor urgent enquiries, call 0482 422 607.\n\nKind regards,\nMEL ONE Canberra Waterproofing` };
+function confirmationEmail(request, from) {
+  const customerName = escapeHtml(request.name);
+  const area = escapeHtml(request.area);
+  const suburb = escapeHtml(request.suburb);
+  return { from, to: [request.email], reply_to: RECIPIENT, subject: 'Your waterproofing service request is received — MEL ONE',
+    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>Your waterproofing service request is received.</h1><p>Hi ${customerName},</p><p>We have received your request for ${area} work in ${suburb}.</p><p>Our team will review the service details and contact you using the information you provided.</p><p>For urgent waterproofing assistance, call <a href="tel:+61482422607">0482 422 607</a>.</p><p>Kind regards,<br>MEL ONE Canberra Waterproofing</p></body></html>`,
+    text: `Hi ${request.name},\n\nWe have received your service request for ${request.area} work in ${request.suburb}.\n\nOur team will review the service details and contact you using the information you provided.\n\nFor urgent waterproofing assistance, call 0482 422 607.\n\nKind regards,\nMEL ONE Canberra Waterproofing` };
 }
 
 async function sendEmail(apiKey, payload) {
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed.' });
   try {
-    const validation = validateEnquiry(req.body || {});
+    const validation = validateServiceRequest(req.body || {});
     if (validation.error) return res.status(400).json(validation);
     const apiKey = process.env.RESEND_API_KEY;
     const from = process.env.RESEND_FROM_EMAIL;
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
     const ownerResponse = await sendEmail(apiKey, ownerEmail(validation.value, from));
     if (!ownerResponse.ok) {
       console.error('Resend rejected owner notification:', ownerResponse.status, await ownerResponse.text());
-      return res.status(502).json({ error: 'We could not send your enquiry. Please call MEL ONE directly.' });
+      return res.status(502).json({ error: 'We could not send your service request. Please call MEL ONE directly.' });
     }
     const confirmationResponse = await sendEmail(apiKey, confirmationEmail(validation.value, from));
     if (!confirmationResponse.ok) console.error('Resend could not send customer confirmation:', confirmationResponse.status, await confirmationResponse.text());
