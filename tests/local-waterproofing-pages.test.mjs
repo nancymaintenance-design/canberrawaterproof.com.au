@@ -97,12 +97,23 @@ function testPages() {
   ]) {
     assert.match(aranda, new RegExp(`href="/services/${service}/"`));
   }
+  for (const phrase of [
+    'shower bases, screens, tiled wall-floor junctions',
+    'bathrooms, ensuites and wet areas',
+    'grout, silicone, shower-screen edges and tiled joints',
+    'balcony thresholds, drainage points, tiled surfaces',
+    'sink edges, splashbacks, benchtop junctions',
+    'external wall junctions, window edges, roofline details',
+  ]) {
+    assert.match(aranda, new RegExp(phrase), `Aranda service card is missing: ${phrase}`);
+  }
+  assert.doesNotMatch(aranda, /plans leaking shower repairs around the affected surface/i);
   assert.match(aranda, /10\+ years/i);
   assert.match(aranda, /10,000\+ customers/i);
   assert.match(aranda, /fast 30-minute response/i);
   assert.match(aranda, /Licensed and insured/i);
   assert.match(aranda, /Request Service/);
-  assert.match(aranda, /<form[^>]+action="\/api\/contact"/);
+  assert.match(aranda, /<form[^>]+action="\/api\/contact"[^>]+data-service-form/);
   assert.match(aranda, /name="suburb"[^>]+value="Aranda"/);
 
   const visibleQuestions = [...aranda.matchAll(/data-faq-question="([^"]+)"/g)].map((match) => match[1]);
@@ -178,7 +189,8 @@ function testRegression() {
     assert.match(html, /10\+ years/i, `${page.route} must include the experience statement`);
     assert.match(html, /10,000\+ customers/i, `${page.route} must include the customer-trust statement`);
     assert.match(html, new RegExp(`${page.focus.primary} in ${page.name}`), `${page.route} must lead with its local service keyword`);
-    assert.doesNotMatch(html, /waterproofing enquiries|send enquiry/i, `${page.route} must use service language`);
+    assert.match(html, /data-service-form/, `${page.route} must use the service booking form`);
+    assert.doesNotMatch(html, /plans (?:leaking shower repairs|bathroom waterproofing|shower resealing and regrouting|balcony waterproofing|kitchen sealing|external waterproofing) around the affected surface/i, `${page.route} must use service-specific card copy`);
   }
 }
 

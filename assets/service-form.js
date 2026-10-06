@@ -1,4 +1,4 @@
-const form = document.querySelector('[data-enquiry-form]');
+const form = document.querySelector('[data-service-form]');
 const status = document.querySelector('[data-form-status]');
 
 if (form && status) {
