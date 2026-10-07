@@ -27,26 +27,15 @@ function replaceHeading(html, oldHeading, newHeading) {
   return html.replaceAll(`<h2>${oldHeading}</h2>`, `<h2>${newHeading}</h2>`);
 }
 
-function addFaqSchema(html, path, core, symptom) {
-  const faq = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': `${origin}${path}#service-faq`,
-    mainEntity: [
-      { '@type': 'Question', name: `Who can assess ${symptom} in Canberra?`, acceptedAnswer: { '@type': 'Answer', text: `MEL ONE takes Canberra service requests for ${core}. Share the affected area, when the issue occurs and clear photos where safe; the next step is based on the accessible condition and agreed scope.` } },
-      { '@type': 'Question', name: `What information helps when booking ${core}?`, acceptedAnswer: { '@type': 'Answer', text: 'Include the Canberra suburb, property type, affected area, timing, visible changes and relevant previous repair information. This helps define whether waterproofing, sealing, drainage, plumbing or another trade pathway should be considered.' } }
-    ]
-  };
-  const markup = `<script type="application/ld+json">${JSON.stringify(faq)}</script>`;
-  // Rerunning this script must be idempotent: retain exactly one generated FAQ block.
-  html = html.replace(/<script type="application\/ld\+json">(?=[^<]*#service-faq)[\s\S]*?<\/script>/g, '');
-  return html.replace('</script><script async src="https://www.googletagmanager.com', `</script>${markup}<script async src="https://www.googletagmanager.com`);
+function addFaqSchema(html) {
+  // FAQ markup belongs only to questions and answers shown on the page.
+  return html.replace(/<script type="application\/ld\+json">(?=[^<]*#service-faq)[\s\S]*?<\/script>/g, '');
 }
 
 function placeClosingSectionAtArticleEnd(html, section) {
   // Service pages contain related-service <article> cards. The closing content must
   // sit after the final article body, never inside one of those narrow cards.
-  html = html.replace(/<section class="intent-summary">[\s\S]*?<\/section>/g, '');
+  html = html.replace(/<section class="(?:intent-summary|service-assessment)">[\s\S]*?<\/section>/g, '');
   const closingArticle = html.lastIndexOf('</article>');
   if (closingArticle === -1) throw new Error('Expected a page-level article closing tag');
   const before = html.slice(0, closingArticle).replace(/(?:[ \t\r]*\n)+[ \t\r]*$/, '\n');
@@ -67,7 +56,7 @@ for (const [slug, detail] of Object.entries(services)) {
   html = replaceHeading(html, 'Service boundaries', `When might ${detail.core} need another trade pathway?`);
   html = replaceHeading(html, 'Quote factors', `Which property details change a ${detail.core} quote?`);
   html = replaceHeading(html, 'Related guides', `Which MEL ONE guides explain ${detail.core} choices?`);
-  const close = `<section class="intent-summary"><h2>How can Canberra property owners arrange ${detail.core} for ${detail.symptom}?</h2><p>MEL ONE provides ${detail.core} for Canberra homes and properties where the visible issue needs a clear repair pathway. Share the suburb, affected area, timing and safe photos so we can identify whether the next step is ${detail.alternative}.</p><p>For Canberra searches such as “${detail.core} near me”, “${detail.core} Canberra” or “who can assess ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">waterproofing service form</a>. The final service scope is confirmed for the property before work proceeds.</p></section>`;
+  const close = `<section class="service-assessment"><h2>How do you arrange an on-site assessment with MEL ONE?</h2><p>Tell us your Canberra suburb and the affected area or planned work. MEL ONE arranges an on-site assessment, checks the water-entry cause or installation requirements and confirms the work plan and written quote. We arrange appropriately qualified trades where required and identify the responsible contractor in the quote.</p><p>Call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
   html = addFaqSchema(html, path, detail.core, detail.symptom);
   writeFileSync(file, html);
@@ -84,7 +73,7 @@ for (const [slug, detail] of Object.entries(guides)) {
   html = replaceHeading(html, 'How repair scopes differ', `How do repair options differ for ${detail.symptom}?`);
   html = replaceHeading(html, 'What to record before you request service', `What should you record before requesting ${detail.core}?`);
   html = replaceHeading(html, 'Next step with MEL ONE', `How can you arrange the right ${detail.core} service in Canberra?`);
-  const close = `<section class="intent-summary"><h2>What is the next step for ${detail.symptom} in Canberra?</h2><p>This guide explains the questions that help separate ${detail.core} from other possible repair paths. The next practical step is to record the affected area, timing and visible signs, then arrange a property-specific assessment.</p><p>If you are searching for “${detail.core} Canberra”, “${detail.core} near me” or “who can inspect ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. The suitable scope is confirmed after the relevant property details are reviewed.</p></section>`;
+  const close = `<section class="service-assessment"><h2>How do you arrange an on-site assessment with MEL ONE?</h2><p>Tell us your Canberra suburb and the affected area or planned work. MEL ONE arranges an on-site assessment, checks the water-entry cause or installation requirements and confirms the work plan and written quote. We arrange appropriately qualified trades where required and identify the responsible contractor in the quote.</p><p>Call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
   html = addFaqSchema(html, path, detail.core, detail.symptom);
   writeFileSync(file, html);
