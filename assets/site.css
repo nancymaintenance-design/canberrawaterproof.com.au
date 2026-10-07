@@ -37,3 +37,9 @@
 
 /* Gold is reserved for dark panels; a deeper amber keeps process numbers readable on pale content panels. */
 .num{color:#8b5600}.band .num{color:var(--gold)}
+
+.intent-summary{margin-top:48px;padding:30px;background:#fff;border-top:4px solid var(--teal)}.intent-summary h2{font-size:clamp(1.65rem,3vw,2.4rem);max-width:28ch}.intent-summary p{max-width:74ch}.intent-summary a{font-weight:800;text-underline-offset:3px}
+
+.footer-identity{margin-top:24px;padding-top:18px;border-top:1px solid #3b5663;color:#d8e5e7}.footer-identity p{margin:0 0 8px}
+
+.service-grid-more{margin:32px 0 0;text-align:center}.service-grid-more .button{min-width:250px}.intent-guide{max-width:860px}.intent-guide .lede{color:#30424c}.guide-answer{margin-top:clamp(2.8rem,5vw,4.3rem);padding-top:1.2rem;border-top:1px solid var(--line)}.guide-answer h2,.guide-conclusion h2{max-width:25ch;font-size:clamp(1.7rem,3vw,2.55rem);line-height:1.17;overflow-wrap:break-word}.guide-answer p,.guide-conclusion p{max-width:72ch}.guide-conclusion{margin-top:4rem;padding:1.4rem 1.6rem 1.7rem;background:#fff;border-left:5px solid var(--gold)}@media(max-width:620px){.guide-conclusion{padding:1.2rem}.service-grid-more .button{width:100%}}
