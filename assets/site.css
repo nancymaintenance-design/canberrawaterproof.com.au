@@ -33,4 +33,7 @@
 .local-trust{margin:34px 0;padding:30px;background:linear-gradient(135deg,#092333,#102f46);border-top:5px solid var(--gold);color:#fff}.local-trust h2{max-width:22ch;font-size:clamp(1.8rem,3.2vw,2.75rem)}.local-trust .eyebrow{color:var(--aqua)}.local-trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 20px}.local-trust-grid article{padding:16px;background:#ffffff10;border:1px solid #ffffff2b}.local-trust-grid strong{display:block;color:var(--gold);font-size:1.28rem;line-height:1.15}.local-trust-grid span{display:block;margin-top:8px;color:#dbe9ec;font-size:.93rem;line-height:1.45}.local-trust-note{margin:0!important;color:#fff!important;line-height:1.6}.local-trust-note a{color:#fff;text-underline-offset:3px;text-decoration-color:var(--aqua)}@media(max-width:760px){.local-trust{padding:24px 20px}.local-trust-grid{grid-template-columns:1fr}}
 
 /* Light page introductions need dark body copy and a visible outline CTA. */
-.page-intro .eyebrow{color:#005f63}.page-intro .lede{color:#243f4b}.page-intro .secondary{background:#fff;color:#102c45;border-color:#274e5e}.page-intro .secondary:hover,.page-intro .secondary:focus{background:#f5b007;color:#111c25}
+.lede{color:#243f4b}.secondary{background:#fff;color:#102c45;border-color:#274e5e}.hero .lede{color:#e3ecee}.hero .secondary,.band .secondary,.knowledge-rail .secondary,.about-contact .secondary{background:transparent;color:#fff;border-color:#c5d6d8}.secondary:hover,.secondary:focus{background:#f5b007;color:#111c25;border-color:#f5b007}.page-intro .eyebrow{color:#005f63}
+
+/* Gold is reserved for dark panels; a deeper amber keeps process numbers readable on pale content panels. */
+.num{color:#8b5600}.band .num{color:var(--gold)}
