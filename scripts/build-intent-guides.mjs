@@ -67,6 +67,9 @@ const guides = [
 ];
 
 for (const guide of guides) {
+  // The quotation guide is maintained as a longer project-specific article;
+  // do not replace its comparison table, source links or visible FAQ.
+  if (guide.slug === 'waterproofing-retiling-quote') continue;
   const file = resolve(root, 'guides', guide.slug, 'index.html');
   let html = readFileSync(file, 'utf8');
   const description = guide.intro;

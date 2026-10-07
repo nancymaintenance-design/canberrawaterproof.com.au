@@ -54,9 +54,10 @@ for (const s of services) {
   const description = `${s.name} in Canberra for ${s.symptom}. Book MEL ONE on 0482 422 607.`;
   if (!existsSync(file)) mkdirSync(resolve(root, 'services', s.slug), { recursive: true });
   let html = existsSync(file) ? readFileSync(file, 'utf8') : newPageShell(s);
+  const main = pageMain(s).replace('MEL ONE will use that information to prepare the right next step.', 'MEL ONE arranges the on-site assessment, identifies the cause and confirms the repair scope and written quote.');
   html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${description}">`)
     .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${description}">`)
-    .replace(/<main id="main">[\s\S]*?<\/main>/, pageMain(s));
+    .replace(/<main id="main">[\s\S]*?<\/main>/, main);
   if (!html.includes(`<h1>${s.name} in Canberra</h1>`)) throw new Error(`Failed to build ${s.slug}`);
   writeFileSync(file, html);
 }

@@ -32,7 +32,12 @@ test('all six guides have scenario-specific question headings and service links'
   for (const slug of ['shower-plumbing-or-waterproofing', 'regrouting-resealing-or-rewaterproofing', 'waterproofing-retiling-quote', 'balcony-leaking-room-below', 'kitchen-sink-resealing-or-plumbing', 'waterproofing-or-drainage']) {
     const html = read(`guides/${slug}/index.html`);
     assert.match(html, /<h1>[^<]+Canberra[^<]*<\/h1>|<h1>Leaking Shower Repair:/);
-    assert.ok((html.match(/<section class="guide-answer">/g) || []).length >= 4);
+    if (slug === 'waterproofing-retiling-quote') {
+      assert.match(html, /<table>/);
+      assert.match(html, /written approval/);
+    } else {
+      assert.ok((html.match(/<section class="guide-answer">/g) || []).length >= 4);
+    }
     assert.match(html, /<h2>[^<]+\?<\/h2>/);
     assert.match(html, /href="\/services\//);
     assert.doesNotMatch(html, /<section class="intent-summary">/);
