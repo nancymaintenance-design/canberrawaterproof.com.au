@@ -52,7 +52,7 @@ const typo = 'MEL ONE organises waterproofing service service requests across Ca
 const fixed = 'Find MEL ONE waterproofing and leak repair services across Canberra’s nine districts, with local information for each area.';
 update('service-areas/index.html', (html) => html.replaceAll(typo, fixed));
 
-const guideTitle = 'Will Regrouting or Resealing Fix a Leaking Shower?';
+const guideTitle = 'Shower Regrouting & Resealing in Canberra: Will It Fix a Leaking Shower?';
 update('guides/regrouting-resealing-or-rewaterproofing/index.html', (html) => html
   .replaceAll('Leaking Shower Repair: Regrouting, Resealing or Rewaterproofing?', guideTitle)
   .replace(/<title>[^<]*<\/title>/, `<title>${guideTitle} | MEL ONE</title>`)

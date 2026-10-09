@@ -86,7 +86,7 @@ function testPages() {
   assert.equal((aranda.match(/<h1>Bathroom Waterproofing in Aranda<\/h1>/g) || []).length, 1);
   assert.match(aranda, /<title>Bathroom Waterproofing Aranda \| MEL ONE<\/title>/);
   assert.match(aranda, /<h2>Bathroom Waterproofing Services in Aranda<\/h2>/);
-  assert.match(aranda, /<h2>How MEL ONE delivers bathroom waterproofing in Aranda<\/h2>/);
+  assert.match(aranda, /<h2>How the Ellis team carries out bathroom waterproofing in Aranda<\/h2>/);
   assert.match(aranda, /<link rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\/aranda\/">/);
   for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry']) {
     assert.match(aranda.toLowerCase(), new RegExp(term));
@@ -114,7 +114,7 @@ function testPages() {
   assert.doesNotMatch(aranda, /plans leaking shower repairs around the affected surface/i);
   assert.match(aranda, /10\+ years/i);
   assert.match(aranda, /10,000\+ customers/i);
-  assert.match(aranda, /fast 30-minute response/i);
+  assert.match(aranda, /Ellis team can be on site in as little as 30 minutes after contact/i);
   assert.match(aranda, /Licensed and insured/i);
   assert.match(aranda, /Request Service/);
   assert.match(aranda, /<form[^>]+action="\/api\/contact"[^>]+data-service-form/);
@@ -189,12 +189,8 @@ function testRegression() {
     assert.match(html, /<form[^>]+action="\/api\/contact"/, `${page.route} must retain the contact endpoint`);
     assert.match(html, /href="tel:\+61482422607"/, `${page.route} must retain the public phone link`);
     assert.match(html, /href="mailto:riley@melonemaintenance\.com\.au"/, `${page.route} must retain the public email link`);
-    assert.doesNotMatch(
-      html,
-      /subject to availability|not a promise of attendance/i,
-      `${page.route} must not use sales-weakening response disclaimers`,
-    );
-    assert.match(html, /fast 30-minute response/i, `${page.route} must include the fast-response statement`);
+    assert.match(html, /Ellis team can be on site in as little as 30 minutes after contact/i, `${page.route} must describe urgent on-site attendance accurately`);
+    assert.match(html, /Arrival timing depends on current availability, the address and safe access/i, `${page.route} must keep the attendance conditions clear`);
     assert.match(html, /10\+ years/i, `${page.route} must include the experience statement`);
     assert.match(html, /10,000\+ customers/i, `${page.route} must include the customer-trust statement`);
     assert.match(html, new RegExp(`${page.focus.primary} in ${page.name}`), `${page.route} must lead with its local service keyword`);

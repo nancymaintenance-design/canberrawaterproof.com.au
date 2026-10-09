@@ -35,7 +35,7 @@ function removeHiddenFaqSchema(html) {
 function placeClosingSectionAtArticleEnd(html, section) {
   // Service pages contain related-service <article> cards. The closing content must
   // sit after the final article body, never inside one of those narrow cards.
-  html = html.replace(/<section class="intent-summary">[\s\S]*?<\/section>/g, '');
+  html = html.replace(/<section class="(?:intent-summary|service-assessment)">[\s\S]*?<\/section>/g, '');
   const closingArticle = html.lastIndexOf('</article>');
   if (closingArticle === -1) throw new Error('Expected a page-level article closing tag');
   const before = html.slice(0, closingArticle).replace(/(?:[ \t\r]*\n)+[ \t\r]*$/, '\n');
@@ -55,7 +55,7 @@ for (const [slug, detail] of Object.entries(services)) {
   html = replaceHeading(html, 'Service boundaries', `When might ${detail.core} need another trade pathway?`);
   html = replaceHeading(html, 'Quote factors', `Which property details change a ${detail.core} quote?`);
   html = replaceHeading(html, 'Related guides', `Which MEL ONE guides explain ${detail.core} choices?`);
-  const close = `<section class="intent-summary"><h2>How can Canberra property owners arrange ${detail.core} for ${detail.symptom}?</h2><p>MEL ONE provides ${detail.core} for Canberra homes and properties where the visible issue needs a clear repair pathway. Share the suburb, affected area, timing and safe photos so we can identify whether the next step is ${detail.alternative}.</p><p>For Canberra searches such as “${detail.core} near me”, “${detail.core} Canberra” or “who can assess ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">waterproofing service form</a>. The final service scope is confirmed for the property before work proceeds.</p></section>`;
+  const close = `<section class="service-assessment"><h2>How do you arrange an on-site assessment with MEL ONE?</h2><p>Tell us your Canberra suburb and the affected area or planned work. The Ellis team completes an on-site assessment, checks the water-entry cause or installation requirements and confirms the repair plan and written quote. The team completes the agreed waterproofing work directly; any separately licensed task is identified in the quote with its responsible licensed professional.</p><p>Call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
   html = removeHiddenFaqSchema(html);
   writeFileSync(file, html);
@@ -71,7 +71,7 @@ for (const [slug, detail] of Object.entries(guides)) {
   html = replaceHeading(html, 'How repair scopes differ', `How do repair options differ for ${detail.symptom}?`);
   html = replaceHeading(html, 'What to record before you request service', `What should you record before requesting ${detail.core}?`);
   html = replaceHeading(html, 'Next step with MEL ONE', `How can you arrange the right ${detail.core} service in Canberra?`);
-  const close = `<section class="intent-summary"><h2>What is the next step for ${detail.symptom} in Canberra?</h2><p>This guide explains the questions that help separate ${detail.core} from other possible repair paths. The next practical step is to record the affected area, timing and visible signs, then arrange a property-specific assessment.</p><p>If you are searching for “${detail.core} Canberra”, “${detail.core} near me” or “who can inspect ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. The suitable scope is confirmed after the relevant property details are reviewed.</p></section>`;
+  const close = `<section class="service-assessment"><h2>How do you arrange an on-site assessment with MEL ONE?</h2><p>Tell us your Canberra suburb and the affected area or planned work. The Ellis team completes an on-site assessment, checks the water-entry cause or installation requirements and confirms the repair plan and written quote. The team completes the agreed waterproofing work directly; any separately licensed task is identified in the quote with its responsible licensed professional.</p><p>Call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
   html = removeHiddenFaqSchema(html);
   writeFileSync(file, html);
