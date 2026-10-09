@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
+import { applySocialLinks } from './social-links.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const pagePath = resolve(root, 'services', 'bathroom-waterproofing', 'index.html');
@@ -10,7 +12,7 @@ const main = `<main id="main">
   <section class="page-intro service-hero">
     <div class="wrap service-hero-grid">
       <div>
-        <p class="eyebrow">MEL ONE waterproofing service</p>
+        <p class="eyebrow">Ellis team · MEL ONE waterproofing</p>
         <h1>Bathroom Waterproofing &amp; Retiling in Canberra</h1>
         <p class="lede">A clearly scoped bathroom waterproofing and retiling service for leaking showers, failed wet-area finishes and bathrooms affected by water entry.</p>
         <div class="actions"><a class="button primary" href="#booking">Book Bathroom Waterproofing</a><a class="button secondary" href="tel:+61482422607">Call 0482 422 607</a></div>
@@ -45,5 +47,6 @@ html = html
   .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${description}">`)
   .replace(/"description":"Removal, preparation, waterproofing and retiling can be planned as one agreed scope\."/g, `"description":"${description}"`)
   .replace(/<main id="main">[\s\S]*?<\/main>/, main);
+html = applySocialLinks(applyOnsiteResponseCopy(html, 'Canberra'));
 
 writeFileSync(pagePath, html);

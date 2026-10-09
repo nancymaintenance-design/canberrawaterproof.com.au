@@ -3,7 +3,6 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
-const origin = 'https://www.canberrawaterproof.com.au';
 
 const services = {
   'leaking-shower-repairs': { core: 'leaking shower repairs', symptom: 'water escaping from a shower, stained finishes or recurring moisture', alternative: 'resealing, regrouting or full waterproofing renewal' },
@@ -27,20 +26,10 @@ function replaceHeading(html, oldHeading, newHeading) {
   return html.replaceAll(`<h2>${oldHeading}</h2>`, `<h2>${newHeading}</h2>`);
 }
 
-function addFaqSchema(html, path, core, symptom) {
-  const faq = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': `${origin}${path}#service-faq`,
-    mainEntity: [
-      { '@type': 'Question', name: `Who can assess ${symptom} in Canberra?`, acceptedAnswer: { '@type': 'Answer', text: `MEL ONE takes Canberra service requests for ${core}. Share the affected area, when the issue occurs and clear photos where safe; the next step is based on the accessible condition and agreed scope.` } },
-      { '@type': 'Question', name: `What information helps when booking ${core}?`, acceptedAnswer: { '@type': 'Answer', text: 'Include the Canberra suburb, property type, affected area, timing, visible changes and relevant previous repair information. This helps define whether waterproofing, sealing, drainage, plumbing or another trade pathway should be considered.' } }
-    ]
-  };
-  const markup = `<script type="application/ld+json">${JSON.stringify(faq)}</script>`;
-  // Rerunning this script must be idempotent: retain exactly one generated FAQ block.
-  html = html.replace(/<script type="application\/ld\+json">(?=[^<]*#service-faq)[\s\S]*?<\/script>/g, '');
-  return html.replace('</script><script async src="https://www.googletagmanager.com', `</script>${markup}<script async src="https://www.googletagmanager.com`);
+function removeHiddenFaqSchema(html) {
+  // These generated questions were not displayed on the page. Keep schema
+  // limited to user-visible information rather than adding hidden FAQ markup.
+  return html.replace(/<script type="application\/ld\+json">(?=[^<]*#service-faq)[\s\S]*?<\/script>/g, '');
 }
 
 function placeClosingSectionAtArticleEnd(html, section) {
@@ -54,7 +43,6 @@ function placeClosingSectionAtArticleEnd(html, section) {
 }
 
 for (const [slug, detail] of Object.entries(services)) {
-  const path = `/services/${slug}/`;
   const file = resolve(root, 'services', slug, 'index.html');
   let html = readFileSync(file, 'utf8');
   html = replaceHeading(html, 'When to get it checked', `When should you book ${detail.core} in Canberra?`);
@@ -69,12 +57,11 @@ for (const [slug, detail] of Object.entries(services)) {
   html = replaceHeading(html, 'Related guides', `Which MEL ONE guides explain ${detail.core} choices?`);
   const close = `<section class="intent-summary"><h2>How can Canberra property owners arrange ${detail.core} for ${detail.symptom}?</h2><p>MEL ONE provides ${detail.core} for Canberra homes and properties where the visible issue needs a clear repair pathway. Share the suburb, affected area, timing and safe photos so we can identify whether the next step is ${detail.alternative}.</p><p>For Canberra searches such as “${detail.core} near me”, “${detail.core} Canberra” or “who can assess ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">waterproofing service form</a>. The final service scope is confirmed for the property before work proceeds.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
-  html = addFaqSchema(html, path, detail.core, detail.symptom);
+  html = removeHiddenFaqSchema(html);
   writeFileSync(file, html);
 }
 
 for (const [slug, detail] of Object.entries(guides)) {
-  const path = `/guides/${slug}/`;
   const file = resolve(root, 'guides', slug, 'index.html');
   let html = readFileSync(file, 'utf8');
   html = replaceHeading(html, 'What to look for', `What should you check before booking ${detail.core}?`);
@@ -86,7 +73,7 @@ for (const [slug, detail] of Object.entries(guides)) {
   html = replaceHeading(html, 'Next step with MEL ONE', `How can you arrange the right ${detail.core} service in Canberra?`);
   const close = `<section class="intent-summary"><h2>What is the next step for ${detail.symptom} in Canberra?</h2><p>This guide explains the questions that help separate ${detail.core} from other possible repair paths. The next practical step is to record the affected area, timing and visible signs, then arrange a property-specific assessment.</p><p>If you are searching for “${detail.core} Canberra”, “${detail.core} near me” or “who can inspect ${detail.symptom}?”, call <a href="tel:+61482422607">0482 422 607</a> or use the <a href="/contact/">MEL ONE service form</a>. The suitable scope is confirmed after the relevant property details are reviewed.</p></section>`;
   html = placeClosingSectionAtArticleEnd(html, close);
-  html = addFaqSchema(html, path, detail.core, detail.symptom);
+  html = removeHiddenFaqSchema(html);
   writeFileSync(file, html);
 }
 

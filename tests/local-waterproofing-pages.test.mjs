@@ -145,7 +145,7 @@ function testDiscovery() {
     assert.equal((sitemap.match(new RegExp(`<loc>${canonical}<\\/loc>`, 'g')) || []).length, 1, `sitemap must list ${page.route} once`);
   }
   for (const page of manifest.pages.filter((item) => !item.indexable)) {
-    assert.doesNotMatch(directory, new RegExp(`href="${page.route}"`), `directory should send ${page.route} to the enquiry flow`);
+    assert.match(directory, new RegExp(`href="${page.route}"`), `directory should let visitors open ${page.route}`);
     const canonical = `${canonicalHost}${page.route}`;
     assert.equal((sitemap.match(new RegExp(`<loc>${canonical}<\\/loc>`, 'g')) || []).length, 0, `sitemap must exclude ${page.route}`);
   }
@@ -154,10 +154,10 @@ function testDiscovery() {
   const buttons = [...directory.matchAll(/<a class="locality-button" href="([^"]+)">([^<]+)<\/a>/g)];
   assert.ok(buttons.length > 0, 'service area directory must retain locality buttons');
   for (const [, href, name] of buttons) {
-    if (selectedNames.get(name)?.indexable) {
-      assert.equal(href, selectedNames.get(name).route, `${name} should link to its indexed district guide`);
+    if (selectedNames.has(name)) {
+      assert.equal(href, selectedNames.get(name).route, `${name} should link to its guide`);
     } else {
-      assert.match(href, /^\/contact\/\?suburb=/, `${name} should keep its contact pre-fill link`);
+      assert.match(href, /^\/contact\/\?suburb=/, `${name} without a guide should prefill Contact`);
     }
   }
 

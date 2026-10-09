@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applySocialLinks } from './social-links.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const guides = [
@@ -11,11 +12,11 @@ const guides = [
       ['Is a shower leak from the plumbing or the waterproofing?', 'A supply-pipe fault may show water even when the shower is not in use. A waste or fitting problem can appear while water is draining. Moisture that follows shower spray may involve screen seals, tiled junctions or the concealed waterproofing layer. These are clues, not a diagnosis: testing and accessible inspection determine the actual path.'],
       ['What if the carpet next to the shower gets wet after use?', 'Record how soon the carpet becomes damp, whether the skirting or wall paint has changed and whether the pattern follows each shower. A wet adjacent room or bubbling paint behind a shower deserves attention because water may have travelled beyond the visible joint. Avoid repeatedly covering the surface with silicone before the source is understood.'],
       ['Can a leaking shower be repaired without removing tiles?', 'A local seal or grout repair may suit a confirmed surface-junction issue. If the membrane or substrate is affected, access beneath tiles and a defined waterproofing and retiling scope may be needed. A plumber should address a confirmed pipe or waste fault. The right path depends on the finding, not on a universal no-tile-removal promise.'],
-      ['What should you send when booking leaking shower repairs?', 'Share your Canberra suburb, when water appears, photos of the shower and adjacent damage, and any earlier resealing or regrouting. MEL ONE can use those details to arrange an assessment and explain whether the service is sealing, plumbing coordination or wet-area waterproofing.']
+      ['What should you send when booking leaking shower repairs?', 'Share your Canberra suburb, when water appears, photos of the shower and adjacent damage, and any earlier resealing or regrouting. The Ellis team uses those details to prepare for an on-site assessment and explain whether the work is sealing or wet-area waterproofing. Plumbing faults require a licensed plumber.']
     ]
   },
   {
-    slug: 'regrouting-resealing-or-rewaterproofing', title: 'Leaking Shower Repair: Regrouting, Resealing or Rewaterproofing?', image: 'guide-resealing.jpg', alt: 'Shower grout, sealant and waterproofing layers shown during assessment', service: ['shower-resealing-regrouting', 'Shower Resealing & Regrouting'],
+    slug: 'regrouting-resealing-or-rewaterproofing', title: 'Will Regrouting or Resealing Fix a Leaking Shower?', image: 'guide-resealing.jpg', alt: 'Shower grout, sealant and waterproofing layers shown during assessment', service: ['shower-resealing-regrouting', 'Shower Resealing & Regrouting'],
     intro: 'Grout, silicone and a waterproofing membrane do different jobs. Knowing which layer has failed helps a Canberra property owner choose a repair scope that addresses the water path.',
     sections: [
       ['Will regrouting fix a leaking shower?', 'Regrouting renews worn tile joints and can improve the finish of a shower. Grout is not a substitute for the waterproofing membrane behind or beneath the tiles. If a shower still leaks after regrouting, the source should be reassessed before another surface treatment is applied.'],
@@ -28,10 +29,10 @@ const guides = [
     slug: 'waterproofing-retiling-quote', title: 'Bathroom Waterproofing and Retiling Quote in Canberra: What Is Included?', image: 'guide-retile-quote.jpg', alt: 'MEL ONE measuring a bathroom for waterproofing and tiling work', service: ['bathroom-waterproofing', 'Bathroom Waterproofing & Retiling'],
     intro: 'A useful bathroom waterproofing quote separates removal, substrate work, membrane installation and tile reinstatement. That makes the proposed repair easier to compare and schedule.',
     sections: [
-      ['What should a bathroom waterproofing and retiling quote include?', 'Check that the affected area, tile removal, disposal, substrate repairs, membrane system, wall and floor junctions, floor waste and threshold details are identified. The quote should also show tiling, grout, silicone, fixtures and any related trade work included in the price. An itemised scope helps prevent a membrane-only quote being mistaken for a finished bathroom.'],
+      ['What should a bathroom waterproofing and retiling quote include?', 'Check that the affected area, tile removal, disposal, substrate repairs, membrane system, wall and floor junctions, floor waste and threshold details are identified. The quote should also show tiling, grout, silicone, fixtures and any separate licensed work and whether it is included in the price. An itemised scope helps prevent a membrane-only quote being mistaken for a finished bathroom.'],
       ['Can only the shower be waterproofed instead of the whole bathroom?', 'The answer depends on the wet-area layout, how the existing waterproofing connects to adjoining surfaces and the condition found after access. A shower-only scope may be practical, while another property may need a larger repair area. Ask the contractor to mark the exact boundary and how the new work joins the retained finishes.'],
       ['How long before tiles can be installed over waterproofing?', 'Preparation, membrane coats and cure time depend on the specified product, substrate and site conditions. A quote should describe the sequence rather than promise a universal same-day finish. For a home with only one bathroom, discuss temporary access and scheduling before work begins.'],
-      ['What information helps MEL ONE prepare a written quote?', 'Provide the Canberra suburb, bathroom size, clear photos, leak history and whether you have already purchased tiles. Explain if the shower must remain usable during part of the project. MEL ONE can then discuss the waterproofing and tiling labour, materials and finishing scope relevant to that property.']
+      ['What information helps MEL ONE prepare a written quote?', 'Provide the Canberra suburb, bathroom size, clear photos, leak history and whether you have already purchased tiles. Explain if the shower must remain usable during part of the project. The Ellis team can explain the waterproofing and tiling labour, materials and finishing included in that property’s scope.']
     ]
   },
   {
@@ -41,7 +42,7 @@ const guides = [
       ['What should be checked when a balcony leaks into the room below?', 'Record whether the stain follows ordinary rain, wind-driven rain or washing the balcony. The assessment should review accessible tiles, edge details, door thresholds, drainage outlets and the underside. Water can move along the assembly before it appears inside, so the visible ceiling mark does not prove the membrane failed directly above it.'],
       ['Does standing water on a balcony need drainage work or waterproofing?', 'Persistent pooling may indicate falls or outlet restrictions; moisture below may also involve membrane and junction details. Drainage and waterproofing are related but separate parts of the balcony system. The repair scope should state which issue is being addressed and whether both require work.'],
       ['Can balcony tiles be removed, waterproofing renewed and tiles replaced?', 'Yes, where inspection supports that scope. A written plan should identify tile and substrate removal, preparation, membrane and edge details, curing, new falls or drainage work if specified, and the final tiled finish. A local joint repair is a different service and should not be presented as a full membrane replacement.'],
-      ['What should you send for a balcony leak assessment?', 'Share safe photos of the balcony surface, door threshold, outlets and room below, plus the timing of rain and any previous repairs. MEL ONE can use this information to arrange a Canberra balcony waterproofing assessment and define the next step.']
+      ['What should you send for a balcony leak assessment?', 'Share safe photos of the balcony surface, door threshold, outlets and room below, plus the timing of rain and any previous repairs. The Ellis team reviews this information before inspecting the Canberra balcony and setting out the waterproofing scope.']
     ]
   },
   {
@@ -61,7 +62,7 @@ const guides = [
       ['Do I need waterproofing or better drainage beside my house?', 'Standing water against an external wall is a drainage and ground-level observation; dampness inside may involve a separate wall or threshold detail. An inspection should trace runoff, outlets, downpipes, surface levels and accessible junctions before deciding whether drainage changes, sealing or waterproofing are required.'],
       ['What if rainwater comes under a back door?', 'Check when it happens, whether the water reaches the threshold from outside and whether the external surface slopes toward the door. A threshold seal, flashing or drainage change can each be relevant. Replacing one seal without reviewing the direction of water may leave the main cause untouched.'],
       ['Can a leaking retaining wall affect a garage after rain?', 'Yes, a garage wall next to retained soil can show dampness after rain. The symptom does not by itself establish whether the cause is drainage, a wall junction, membrane access or structural movement. A separate <a href="/services/retaining-wall-waterproofing/">retaining wall waterproofing service page</a> explains the investigation and scope boundaries.'],
-      ['What should you record before booking external water-entry repairs?', 'Photograph the wall, ground, downpipes, outlets and interior moisture when safe. Note the rainfall pattern and whether ponding remains after rain. MEL ONE can use that evidence to plan an external waterproofing or drainage assessment for the Canberra property.']
+      ['What should you record before booking external water-entry repairs?', 'Photograph the wall, ground, downpipes, outlets and interior moisture when safe. Note the rainfall pattern and whether ponding remains after rain. The Ellis team assesses the Canberra property’s waterproofing needs and identifies any separate drainage work in the written scope.']
     ]
   }
 ];
@@ -89,5 +90,5 @@ for (const guide of guides) {
     if (item['@type'] === 'BreadcrumbList') item.itemListElement[2].name = guide.title;
   }
   html = html.replace(schemaMatch[0], `<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
-  writeFileSync(file, html);
+  writeFileSync(file, applySocialLinks(html));
 }
