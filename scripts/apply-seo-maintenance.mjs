@@ -37,13 +37,8 @@ export const contentChanges = Object.fromEntries([
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
 
-export function applySeoHtml(html, path, { keywords = {}, images = {}, photoSections = {} } = {}) {
- const photos = photoSections[path];
- if (photos && !html.includes('<!-- supplied-project-photos:start -->')) {
-  if (!html.includes('</main>')) throw new Error(`Missing photo insertion anchor: ${path}`);
-  html = html.replace('</main>',`${photos}</main>`);
- }
- if (path === 'case-studies/index.html' && photos) {
+export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
+ if (path === 'case-studies/index.html') {
   html = html.replace('<p class="eyebrow">Real project photos to be added</p>', '');
  }
  const source = keywords[path];
@@ -129,7 +124,6 @@ export function maintainSite(root = ownRoot) {
  root=resolve(root);
  const keywords=JSON.parse(readFileSync(resolve(root,'data/keyword-content-sections.json'),'utf8'));
  const images=JSON.parse(readFileSync(resolve(root,'data/responsive-images.json'),'utf8'));
- const photoSections=JSON.parse(readFileSync(resolve(root,'data/project-photo-sections.json'),'utf8'));
  const changed=[];
  function update(path,transform) {
   const file=resolve(root,path), before=readFileSync(file,'utf8'), after=transform(before);
@@ -142,7 +136,7 @@ export function maintainSite(root = ownRoot) {
    if(entry.isDirectory()) walk(file);
    else if(entry.name.endsWith('.html')) {
     const path=relative(root,file).replaceAll('\\','/');
-    update(path,html=>applySeoHtml(html,path,{keywords,images,photoSections}));
+    update(path,html=>applySeoHtml(html,path,{keywords,images}));
    }
   }
  }

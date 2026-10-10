@@ -1,5 +1,7 @@
 # Supplied project photo delivery · 10 October 2026
 
+Correction after user feedback: the appended photo groups have been removed from the gallery and all three service pages. The original gallery cases and two distinct substantive images on each service page are complete, so no replacement is needed. The nine supplied originals and 36 WebP derivatives remain available as materials; they are not displayed on these four pages.
+
 Nine user-supplied PNG originals are preserved byte-for-byte under descriptive asset names. Each was inspected before encoding; all are 1448 × 1086. Location/month labels below are user-confirmed. No image generation, cropping, logo/text removal or collage rearrangement was used.
 
 | Source photo | Asset filename | Confirmed group | Visible stage caption |
@@ -14,9 +16,9 @@ Nine user-supplied PNG originals are preserved byte-for-byte under descriptive a
 | 6 | barton-block-retaining-wall-collage.png | Barton · April 2026 | Block wall · Construction and visible finished face |
 | 9 | barton-concrete-retaining-wall-collage.png | Barton · April 2026 | Concrete wall · Construction and visible finished face |
 
-Each group appears on its matching service page and on `/case-studies/`, with a link to the service. Balcony order is 3, 1, 2, 4, 5; floor preparation already has treated wall upstands, and broad membrane coverage is a stage rather than whole-project completion. The two Barton collages are separate examples showing construction and visible finished faces; they do not establish concealed waterproofing or one before/after project. Existing marketing, keyword sections, service imagery and old cases remain intact. Only the obsolete “Real project photos to be added” eyebrow was removed.
+The table records the supplied material mapping, not current page placement. Floor preparation already has treated wall upstands, and broad membrane coverage is a stage rather than whole-project completion. The two Barton collages are separate examples showing construction and visible finished faces; they do not establish concealed waterproofing or one before/after project. Existing marketing, keyword sections, service imagery and old cases remain intact. The obsolete “Real project photos to be added” eyebrow remains removed.
 
-All additions use `picture` via the existing responsive transformer, with four WebP candidates (480, 800, 1200, 1448px), factual alt text, actual dimensions, lazy loading and asynchronous decoding. Sharp quality 82 matches the existing image pipeline. The original files total 27,445,057 bytes; all 36 WebP derivatives total 5,480,866 bytes. Existing 42 manifest entries and their derivatives were not regenerated.
+The retained materials have four WebP candidates (480, 800, 1200, 1448px) in the responsive manifest. Sharp quality 82 matches the existing image pipeline. The original files total 27,445,057 bytes; all 36 WebP derivatives total 5,480,866 bytes. No image assets or manifest entries were changed during the correction.
 
 ## Provenance
 
@@ -36,10 +38,10 @@ Source identifiers below are clipboard filenames supplied for this batch. The SH
 
 ## Repeatable maintenance
 
-`data/project-photo-sections.json` records the additive marked sections. `node scripts/apply-seo-maintenance.mjs` restores a missing marked block and responsive sources; it preserves an existing authored photo block. The supported locality generator already calls this maintenance path. Historical service/gallery generators can rebuild their main content; run maintenance afterwards to restore these additions. Existing historical generator copy changes remain outside this photo batch.
+`data/project-photo-sections.json` is empty and the photo insertion hook has been removed. `node scripts/apply-seo-maintenance.mjs` and supported locality generation preserve the curated pages without reintroducing the withdrawn groups. Protected keywords, schema, conversion support and responsive image maintenance remain intact.
 
 `sitemap.xml` records 2026-10-10 for all four touched pages. Balcony/external already had that date; retaining wall and gallery now gain it. Other dates remain unchanged.
 
-Verified: focused suite 24/24; full `node --test tests/*.test.mjs` suite 69/69; serial full suite 69/69; maintenance reports no changed files. A first parallel attempt hit a Windows lock while the fixture copied live generated locality pages; the fixture now generates its own locality pages and the standard suite passes.
+Correction verified: focused suite 24/24; full `node --test tests/*.test.mjs` suite 69/69; maintenance reports no changed files. Tests check original content/image references, no reintroduction after maintenance/generation, retained asset hashes and working local routes.
 
 Local preview: [project gallery](http://127.0.0.1:4176/case-studies/), [balcony](http://127.0.0.1:4176/services/balcony-waterproofing/), [external](http://127.0.0.1:4176/services/external-waterproofing/), [retaining wall](http://127.0.0.1:4176/services/retaining-wall-waterproofing/). This batch is local-only.
