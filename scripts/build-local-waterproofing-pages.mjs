@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
 import { applySocialLinks } from './social-links.mjs';
+import { maintainSite } from './apply-seo-maintenance.mjs';
 
 const SITE_URL = 'https://www.canberrawaterproof.com.au';
 const LAST_MODIFIED = '2026-10-06';
@@ -446,6 +447,7 @@ function verifyBuild() {
   writePages();
   addAnalyticsToLocalityPages();
   writeDiscoveryResources();
+  maintainSite();
   const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
   for (const page of LOCALITY_PAGES) {
     const html = readFileSync(resolve(root, page.route.slice(1), 'index.html'), 'utf8');
@@ -481,6 +483,7 @@ try {
     writePages();
     addAnalyticsToLocalityPages();
     writeDiscoveryResources();
+    maintainSite();
   } else {
     throw new Error(`unknown command: ${command}`);
   }
