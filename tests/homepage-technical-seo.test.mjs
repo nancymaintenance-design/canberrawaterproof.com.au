@@ -53,7 +53,7 @@ test('carousel changes active and accessibility state together', () => {
       querySelectorAll: () => elements,
       querySelector: (selector) => selector === '.hero' ? { addEventListener() {} } : button,
     },
-    matchMedia: () => ({ matches: true }),
+    matchMedia: () => ({ matches: true, addEventListener() {} }),
     clearInterval() {},
     setInterval() { throw new Error('carousel should start paused in this test'); },
   };
@@ -66,6 +66,60 @@ test('carousel changes active and accessibility state together', () => {
       assert.equal(element.attributes.has('inert'), index !== selected);
     });
   }
+});
+
+test('entering mobile view resets the carousel and stops autoplay until desktop returns', () => {
+  const elements = slides.map((_, index) => {
+    const attributes = new Map(index === 0 ? [['aria-hidden', 'false']] : [['aria-hidden', 'true'], ['inert', '']]);
+    let active = index === 0;
+    return {
+      attributes,
+      classList: { toggle(name, enabled) { if (name === 'is-active') active = enabled; } },
+      setAttribute(name, value) { attributes.set(name, value); },
+      toggleAttribute(name, enabled) { if (enabled) attributes.set(name, ''); else attributes.delete(name); },
+      get active() { return active; },
+    };
+  });
+  const button = { textContent: '', setAttribute() {} };
+  const activeTimers = new Set();
+  let schedules = 0;
+  let mobileListener;
+  const mobile = {
+    matches: false,
+    addEventListener(type, listener) { if (type === 'change') mobileListener = listener; },
+  };
+  const context = {
+    document: {
+      querySelectorAll: () => elements,
+      querySelector: (selector) => selector === '.hero' ? { addEventListener() {} } : button,
+    },
+    matchMedia: (query) => query === '(max-width:620px)' ? mobile : { matches: false, addEventListener() {} },
+    clearInterval(id) { activeTimers.delete(id); },
+    setInterval() { const id = ++schedules; activeTimers.add(id); return id; },
+  };
+  const script = [...html.matchAll(/<script>(.*?)<\/script>/gs)].at(-1)?.[1];
+  assert.ok(script);
+  vm.runInNewContext(script, context);
+  assert.equal(activeTimers.size, 1, 'desktop starts autoplay');
+  vm.runInNewContext('show(2)', context);
+  assert.equal(elements[2].active, true);
+  assert.equal(typeof mobileListener, 'function', 'the mobile media query has a change listener');
+
+  mobile.matches = true;
+  mobileListener({ matches: true });
+  assert.equal(elements[0].active, true);
+  assert.equal(elements[0].attributes.get('aria-hidden'), 'false');
+  assert.equal(elements[0].attributes.has('inert'), false);
+  assert.equal(elements[2].active, false);
+  assert.equal(elements[2].attributes.get('aria-hidden'), 'true');
+  assert.equal(elements[2].attributes.has('inert'), true);
+  assert.equal(activeTimers.size, 0, 'mobile stops the desktop timer');
+  assert.equal(schedules, 1, 'mobile schedules no replacement timer');
+
+  mobile.matches = false;
+  mobileListener({ matches: false });
+  assert.equal(activeTimers.size, 1, 'autoplay resumes on desktop');
+  assert.equal(schedules, 2);
 });
 
 test('tablet widths retain the main navigation until the mobile fallback appears', () => {
@@ -90,6 +144,6 @@ test('the sole LocalBusiness links its existing images and visible social profil
   assert.deepEqual(businesses[0].sameAs, [
     'https://www.instagram.com/melone.maintenance1/',
     'https://www.youtube.com/@MelOneMaintenance',
-    'https://www.tiktok.com/@melonemaintenance5',
+    'https://www.tiktok.com/@melonemaintenance5/',
   ]);
 });
