@@ -4,7 +4,7 @@
 
 Photos use WebP quality 82 at 480, 800, 1200 and original width without upscaling. The transparent logo uses lossless WebP at 58/116/174/340/510 pixels; the original PNG remains the fallback. Existing img tags, alt text, width/height, loading and fetchpriority remain exact inside picture. Active homepage hero remains eager/high priority; inactive images retain lazy loading. Carousel selectors target figures and descendant images, so wrappers preserve functionality; scoped CSS preserves full-height hero/card crops. Article images retain natural aspect ratio. CSS decorative background remains the original JPEG fallback: current site.css hides that pseudo-element, so no extra responsive CSS requests were introduced. A derivative is inventoried for future supported use.
 
-The transformer is idempotent and skips existing picture elements. It selects sizes from the actual hero/card/article/logo layout and does not rewrite marketing copy, metadata, keyword blocks or originals. Header logo is displayed in its existing 58px square with object-fit containment; candidates keep the original approximately 1.25 aspect ratio.
+The transformer is idempotent, rebuilds its managed picture/source markup from exact fallback img tags, and skips authored picture elements. Sizes follow hero, guide/news/service cards, workflow grid, article, about gallery, homepage field-notes and distinct header/footer logo layouts. Header logo is displayed in its existing 58px square with object-fit containment; footer is190px including20px padding (170px image content), with340/510px candidates forDPR2/3. Candidates keep the original approximately1.25 aspect ratio.
 
 ## Reproduction
 
@@ -22,7 +22,7 @@ Run `node scripts/optimise-site-images.mjs --root <site-root> --sharp <sharp-mod
 | /assets/bathroom-finished-wide.png | 2730323 | 480 / 18914 | 1586 / 178120 |
 | /assets/bathroom-membrane-application.png | 3158683 | 480 / 31414 | 1586 / 278422 |
 | /assets/case-canberra-bathroom.jpg | 244683 | 480 / 28214 | 1448 / 171154 |
-| /assets/detail-balcony.jpg | 316948 | 480 / 30146 | 1536 / 261774 |
+| /assets/detail-balcony.jpg | 316748 | 480 / 30146 | 1536 / 261774 |
 | /assets/detail-external.jpg | 353598 | 480 / 42538 | 1536 / 292714 |
 | /assets/detail-kitchen.jpg | 290425 | 480 / 35480 | 1536 / 213608 |
 | /assets/detail-laundry.jpg | 236223 | 480 / 26100 | 1536 / 157294 |
