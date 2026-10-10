@@ -55,6 +55,18 @@
 - [ ] Document every audit action as implemented/already present/pending evidence/pending production verification/user-protected. Prepare specific evidence checklist for regional content, About/team, reviews, cases, guide authors, GSC/GA4/GBP, IndexNow key/production submission, CSP report endpoint and production PSI. Do not equate the checklist with completion of external work.
 - [ ] Run focused tests then full suite once; verify local hrefs/JSON-LD, single H1/self canonical for sitemap pages and diff preservation. Self-review and commit only owned changes. Final independent review follows.
 
+### Task 3: Privacy-minimised conversion measurement hooks
+
+**Files:** Create `assets/conversion-events.js`, `tests/conversion-events.test.mjs`, `docs/seo/2026-10-10-conversion-tracking.md`; modify `assets/service-form.js` only at successful response event hook; modify SEO maintenance script to include one deferred conversion script in public HTML and retain it after supported regeneration.
+
+**Interfaces:** Browser classic script installs one delegated click handler and a safe `window.melOneTrackLead()` function. Reuse existing GA4 `gtag`; no new account, tag container, measurement ID or production dependency. Maintenance applies the deferred script once.
+
+- [ ] Tests first: one phone/email/booking intent event on corresponding click, no event on unrelated/cancelled clicks, no duplicate handlers on repeated init, no failures/navigation prevention if gtag absent/throws, no events on localhost/127.0.0.1/::1, form generate_lead only on accepted successful response, no form-derived fields/URL queries in payload.
+- [ ] Implement phone_click, email_click, booking_click as intent events only; generate_lead means accepted contact request, not confirmed paid customer. Only fixed `method` or `contact_type` enum values are sent. Never send phone/email href, free text, name, suburb, full URL, form fields or user identifiers. Honour existing gtag/consent state; no consent bypass or storage. Keep local previews silent.
+- [ ] Add `window.melOneTrackLead?.()` after successful API response; analytics failures must never change form success or double-submit. No live form submission or outbound analytics tests.
+- [ ] Document event meanings, privacy boundaries, GA4 key-event configuration and DebugView as pending authorised production/account work. Existing automatic GA4 collection and consent configuration are not audited or changed by these hooks.
+- [ ] Run focused red/green tests and full suite once, self-review and commit owned files. Independent review follows.
+
 ## Controller deliverables
 
 - Maintain task/review ledger and independent review packages.
