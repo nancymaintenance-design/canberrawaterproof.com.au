@@ -30,6 +30,14 @@ test('unrelated, external contact and cancelled clicks emit nothing', async () =
  await b.click('/contact/', true);
  assert.deepEqual(b.events, []);
 });
+test('same-origin booking fragments emit intent while unrelated external and cancelled fragments do not', async () => {
+ const b = browser();
+ for (const href of ['#booking', '/waterproofing/woden/#booking', 'https://www.canberrawaterproof.com.au/waterproofing/woden/?name=secret#booking']) await b.click(href);
+ assert.deepEqual(b.events, Array.from({length:3}, () => ['event','booking_click',{contact_type:'booking'}]));
+ for (const href of ['#other', '/waterproofing/woden/#other', 'https://other.test/waterproofing/woden/#booking']) await b.click(href);
+ await b.click('#booking', true);
+ assert.equal(b.events.length, 3);
+});
 test('loopback previews suppress all new events', async () => {
  for (const host of ['localhost','127.0.0.1','::1','[::1]']) {
   const b = browser(host); await b.click('tel:secret');

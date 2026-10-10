@@ -6,7 +6,7 @@ The custom hooks reuse the existing GA4 `gtag` and its consent state. They add n
 | --- | --- | --- |
 | `phone_click` | An uncancelled phone-link click; intent only | `contact_type: phone` |
 | `email_click` | An uncancelled email-link click; intent only | `contact_type: email` |
-| `booking_click` | An uncancelled same-origin `/contact/` link click; intent only | `contact_type: booking` |
+| `booking_click` | An uncancelled same-origin `/contact/` or `#booking` link click, including locality booking fragments and same-origin URL forms; intent only | `contact_type: booking` |
 | `generate_lead` | Contact API accepted a service request | `method: contact_form` |
 
 Lead measurement requires a successful HTTP response and JSON `{ok:true, confirmationSent:boolean}`. `confirmationSent:false` still represents an accepted request and counts once. A lead is not a confirmed paid customer, appointment, or completed job. Clicking contact links does not establish that contact took place.

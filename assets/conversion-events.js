@@ -19,7 +19,7 @@
     else {
       try {
         const url = new URL(href, window.location.origin);
-        if (url.origin === window.location.origin && url.pathname === '/contact/') type = 'booking';
+        if (url.origin === window.location.origin && (url.pathname === '/contact/' || url.hash === '#booking')) type = 'booking';
       } catch { return; }
     }
     if (!type) return;
