@@ -21,6 +21,16 @@ test('only the initial hero image is high priority while inactive images defer l
   }
 });
 
+test('all lazy homepage images decode asynchronously without changing the LCP image', () => {
+  const images = [...html.matchAll(/<img\b([^>]*)>/g)].map((match) => match[1]);
+  const lazyImages = images.filter((attributes) => /\bloading="lazy"/.test(attributes));
+  assert.ok(lazyImages.length > 2, 'homepage content images are included');
+  for (const attributes of lazyImages) {
+    assert.match(attributes, /\bdecoding="async"/);
+  }
+  assert.doesNotMatch(slides[0][2], /\bdecoding="async"/);
+});
+
 test('only the initial hero slide is exposed to assistive technology', () => {
   assert.equal(slides.length, 3);
   assert.match(slides[0][1], /\baria-hidden="false"/);
