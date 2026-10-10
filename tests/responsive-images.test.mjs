@@ -3,6 +3,29 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { applyResponsiveImages } from '../scripts/responsive-images.mjs';
 const manifest = {'/assets/photo.jpg': {width:1200,height:800,candidates:[{width:480,url:'/assets/responsive/photo-480.webp'},{width:1200,url:'/assets/responsive/photo-1200.webp'}]}};
+test('grid covers and workflow photos use grid widths while article covers stay wide',()=>{
+ const img='<img src="/assets/photo.jpg" alt="Detail">';
+ const grid='(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), (max-width: 1240px) calc((100vw - 74px) / 3), 389px';
+ for(const cover of ['guide-cover','news-cover']) {
+  assert.ok(applyResponsiveImages(`<article class="card"><figure class="${cover}">${img}</figure></article>`,manifest).includes(`sizes="${grid}"`));
+  assert.ok(applyResponsiveImages(`<article class="article"><figure class="${cover}">${img}</figure></article>`,manifest).includes('sizes="(max-width: 830px) calc(100vw - 40px), 790px"'));
+ }
+ assert.ok(applyResponsiveImages(`<article class="workflow-step"><figure class="process-image">${img}</figure></article>`,manifest).includes('389px'));
+});
+test('managed stale source sizes are repaired, unmanaged pictures remain untouched',()=>{
+ const img='<img src="/assets/photo.jpg" alt="Detail">';
+ const stale=`<article class="card"><figure class="news-cover"><picture data-responsive-image><source sizes="790px">${img}</picture></figure></article>`;
+ const repaired=applyResponsiveImages(stale,manifest);
+ assert.ok(repaired.includes('389px'));assert.ok(repaired.includes(img));assert.equal(applyResponsiveImages(repaired,manifest),repaired);
+ const unmanaged=`<picture><source srcset="external.webp">${img}</picture>`;
+ assert.equal(applyResponsiveImages(unmanaged,manifest),unmanaged);
+});
+test('header and footer logos use their distinct displayed content widths',()=>{
+ const logo='<img src="/assets/logo.png" alt="Brand">';
+ const data={'/assets/logo.png':manifest['/assets/photo.jpg']};
+ assert.ok(applyResponsiveImages(`<header><a class="brand">${logo}</a></header>`,data).includes('sizes="58px"'));
+ assert.ok(applyResponsiveImages(`<footer class="footer"><div class="footer-grid"><div>${logo}</div></div></footer>`,data).includes('sizes="170px"'));
+});
 test('adds WebP source while preserving fallback, attributes and hero priority', () => {
  const img='<img fetchpriority="high" src="/assets/photo.jpg" alt="Original detail" width="1200" height="800">';
  const out=applyResponsiveImages(img,manifest);
