@@ -17,6 +17,7 @@ export function applyResponsiveImages(html, manifest) {
   const grid='(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), (max-width: 1240px) calc((100vw - 74px) / 3), 389px';
   let sizes='(max-width: 830px) calc(100vw - 40px), 790px';
   if(has('hero-slide')) sizes='100vw';
+  else if(has('supplied-project-photo-grid')) sizes='(max-width: 560px) calc(100vw - 40px), (max-width: 800px) calc((100vw - 57px) / 2), (max-width: 830px) calc((100vw - 74px) / 3), 252px';
   else if(src.includes('logo')) sizes=has('footer')?'170px':'58px';
   else if(has('service-card-image')||has('process-image')||((has('guide-cover')||has('news-cover'))&&has('card'))) sizes=grid;
   else if(has('about-photo')) sizes='(max-width: 620px) calc(100vw - 42px), (max-width: 1020px) calc((100vw - 61px) / 2), 480px';

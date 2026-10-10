@@ -1,4 +1,310 @@
 {
+  "/assets/woden-valley-balcony-floor-preparation.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2929131,
+    "sha256": "aaf01495e5b52b6a7b64242ad8dc73e9f65fb59921f7071b2dee6138f6965781",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/woden-valley-balcony-floor-preparation-480.webp",
+        "bytes": 26470
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/woden-valley-balcony-floor-preparation-800.webp",
+        "bytes": 77172
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/woden-valley-balcony-floor-preparation-1200.webp",
+        "bytes": 165000
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/woden-valley-balcony-floor-preparation-1448.webp",
+        "bytes": 222994
+      }
+    ]
+  },
+  "/assets/woden-valley-balcony-membrane-application.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2794326,
+    "sha256": "e2e019b07f4ef93670a0003875432a52c8e3beff588123cf0e54d32249067332",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/woden-valley-balcony-membrane-application-480.webp",
+        "bytes": 32660
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/woden-valley-balcony-membrane-application-800.webp",
+        "bytes": 84746
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/woden-valley-balcony-membrane-application-1200.webp",
+        "bytes": 161436
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/woden-valley-balcony-membrane-application-1448.webp",
+        "bytes": 215378
+      }
+    ]
+  },
+  "/assets/woden-valley-balcony-partial-coating.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2839487,
+    "sha256": "0c15ebbee495cb4f0694ef01e799eaac3f9e7d667a5b9838137fe619c080b1b3",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/woden-valley-balcony-partial-coating-480.webp",
+        "bytes": 30724
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/woden-valley-balcony-partial-coating-800.webp",
+        "bytes": 83104
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/woden-valley-balcony-partial-coating-1200.webp",
+        "bytes": 165378
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/woden-valley-balcony-partial-coating-1448.webp",
+        "bytes": 221508
+      }
+    ]
+  },
+  "/assets/woden-valley-balcony-drain-junction-detail.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 3355329,
+    "sha256": "6f3514b28bb0b1f378ceec2b3eab9c7ef3744c8f7d93bf175feb616078e76b51",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/woden-valley-balcony-drain-junction-detail-480.webp",
+        "bytes": 37436
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/woden-valley-balcony-drain-junction-detail-800.webp",
+        "bytes": 116964
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/woden-valley-balcony-drain-junction-detail-1200.webp",
+        "bytes": 238644
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/woden-valley-balcony-drain-junction-detail-1448.webp",
+        "bytes": 322048
+      }
+    ]
+  },
+  "/assets/woden-valley-balcony-broad-membrane-coverage.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 3097007,
+    "sha256": "4b30e09f4c71715ab31b1556037f85ca76ac6db91afdd8343f9c878cbbd7240e",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/woden-valley-balcony-broad-membrane-coverage-480.webp",
+        "bytes": 29392
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/woden-valley-balcony-broad-membrane-coverage-800.webp",
+        "bytes": 91364
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/woden-valley-balcony-broad-membrane-coverage-1200.webp",
+        "bytes": 199990
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/woden-valley-balcony-broad-membrane-coverage-1448.webp",
+        "bytes": 276892
+      }
+    ]
+  },
+  "/assets/weetangera-external-wall-joint-application.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2678244,
+    "sha256": "411d86a2b1a010dbd4e6a366656dcfb34154958b666297da389858ae3efa119a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/weetangera-external-wall-joint-application-480.webp",
+        "bytes": 32464
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/weetangera-external-wall-joint-application-800.webp",
+        "bytes": 76810
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/weetangera-external-wall-joint-application-1200.webp",
+        "bytes": 148112
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/weetangera-external-wall-joint-application-1448.webp",
+        "bytes": 192572
+      }
+    ]
+  },
+  "/assets/weetangera-external-wall-joint-sealing-collage.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 2894127,
+    "sha256": "e4e2dcf33c6402aea9fb618e25e42beaa3b3251361375910f435dc80587f16c4",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/weetangera-external-wall-joint-sealing-collage-480.webp",
+        "bytes": 33628
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/weetangera-external-wall-joint-sealing-collage-800.webp",
+        "bytes": 87890
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/weetangera-external-wall-joint-sealing-collage-1200.webp",
+        "bytes": 182882
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/weetangera-external-wall-joint-sealing-collage-1448.webp",
+        "bytes": 251360
+      }
+    ]
+  },
+  "/assets/barton-block-retaining-wall-collage.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 3373403,
+    "sha256": "c6a7d73a395232bd2e9f4500d13055753ed849ceae038ee44a71bb10189c083f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/barton-block-retaining-wall-collage-480.webp",
+        "bytes": 54358
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/barton-block-retaining-wall-collage-800.webp",
+        "bytes": 137560
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/barton-block-retaining-wall-collage-1200.webp",
+        "bytes": 272986
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/barton-block-retaining-wall-collage-1448.webp",
+        "bytes": 356844
+      }
+    ]
+  },
+  "/assets/barton-concrete-retaining-wall-collage.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 3484003,
+    "sha256": "237a6c36934d73de061facce140b4c2194590ceea913feaade59ec13f2054ec1",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/barton-concrete-retaining-wall-collage-480.webp",
+        "bytes": 51132
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/barton-concrete-retaining-wall-collage-800.webp",
+        "bytes": 138786
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/barton-concrete-retaining-wall-collage-1200.webp",
+        "bytes": 284290
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/barton-concrete-retaining-wall-collage-1448.webp",
+        "bytes": 379892
+      }
+    ]
+  },
   "/assets/about-team-site.jpg": {
     "width": 1499,
     "height": 1049,

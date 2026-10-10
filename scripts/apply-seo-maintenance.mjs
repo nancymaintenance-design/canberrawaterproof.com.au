@@ -26,17 +26,26 @@ const guideServices = {
 };
 
 // Fixed content-change evidence: eight keyword additions in 5077296 (2026-10-10),
-// plus four guides that gained related-reading content in this task. The quote
-// and drainage guides already have two contextual services and a CTA; no date
-// is inferred for their schema-only changes or for the retaining-wall service.
+// plus four guides that gained related-reading content, and the supplied photo
+// batch on three services and the gallery. Quote and drainage guides already
+// have related content; no date is inferred for their schema-only changes.
 export const contentChanges = Object.fromEntries([
  ...Object.keys(serviceNames).filter(slug=>slug!=='retaining-wall-waterproofing').map(slug=>`${HOST}/services/${slug}/`),
  ...['shower-plumbing-or-waterproofing','regrouting-resealing-or-rewaterproofing','balcony-leaking-room-below','kitchen-sink-resealing-or-plumbing'].map(slug=>`${HOST}/guides/${slug}/`),
+ `${HOST}/services/retaining-wall-waterproofing/`, `${HOST}/case-studies/`,
 ].map(url=>[url,'2026-10-10']));
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
 
-export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
+export function applySeoHtml(html, path, { keywords = {}, images = {}, photoSections = {} } = {}) {
+ const photos = photoSections[path];
+ if (photos && !html.includes('<!-- supplied-project-photos:start -->')) {
+  if (!html.includes('</main>')) throw new Error(`Missing photo insertion anchor: ${path}`);
+  html = html.replace('</main>',`${photos}</main>`);
+ }
+ if (path === 'case-studies/index.html' && photos) {
+  html = html.replace('<p class="eyebrow">Real project photos to be added</p>', '');
+ }
  const source = keywords[path];
  if (source) {
   const present = [...html.matchAll(keywordPattern)];
@@ -120,6 +129,7 @@ export function maintainSite(root = ownRoot) {
  root=resolve(root);
  const keywords=JSON.parse(readFileSync(resolve(root,'data/keyword-content-sections.json'),'utf8'));
  const images=JSON.parse(readFileSync(resolve(root,'data/responsive-images.json'),'utf8'));
+ const photoSections=JSON.parse(readFileSync(resolve(root,'data/project-photo-sections.json'),'utf8'));
  const changed=[];
  function update(path,transform) {
   const file=resolve(root,path), before=readFileSync(file,'utf8'), after=transform(before);
@@ -132,7 +142,7 @@ export function maintainSite(root = ownRoot) {
    if(entry.isDirectory()) walk(file);
    else if(entry.name.endsWith('.html')) {
     const path=relative(root,file).replaceAll('\\','/');
-    update(path,html=>applySeoHtml(html,path,{keywords,images}));
+    update(path,html=>applySeoHtml(html,path,{keywords,images,photoSections}));
    }
   }
  }
