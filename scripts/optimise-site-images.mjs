@@ -31,7 +31,7 @@ for(const url of [...references].sort()) {
  const input=await readFile(path.join(root,url));
  const meta=await sharp(input).metadata();
  const logo=url.includes('logo');
- const widths=[...new Set((logo?[58,116,174]:[480,800,1200,meta.width]).filter(w=>w<=meta.width))].sort((a,b)=>a-b);
+ const widths=[...new Set((logo?[58,116,174,340,510]:[480,800,1200,meta.width]).filter(w=>w<=meta.width))].sort((a,b)=>a-b);
  const candidates=[];
  for(const width of widths) {
   const output=`/assets/responsive/${path.parse(url).name}-${width}.webp`;

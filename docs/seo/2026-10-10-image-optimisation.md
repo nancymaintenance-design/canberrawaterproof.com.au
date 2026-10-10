@@ -1,8 +1,8 @@
 # Responsive image delivery — 2026-10-10
 
-42 referenced original images (including gallery PNGs and the decorative CSS reference) have 167 WebP candidates. Originals total 24,896,666 bytes; the largest candidate for each original totals 8,518,208 bytes (65.79% reduction). The smallest candidates total 1,270,266 bytes (94.90% reduction). All derivatives together occupy 18,823,142 bytes: this is storage, not a page transfer estimate. Logo comparison includes resizing to display/DPR dimensions; photographs compare largest/native widths. These are measured file sizes, not measured Core Web Vitals gains.
+42 referenced original images (including gallery PNGs and the decorative CSS reference) have 169 WebP candidates. Originals total 24,896,666 bytes; the largest candidate for each original totals 8,557,506 bytes (65.63% reduction). The smallest candidates total 1,270,266 bytes (94.90% reduction). All derivatives together occupy 18,902,700 bytes: this is storage, not a page transfer estimate. Logo comparison includes resizing to display/DPR dimensions; photographs compare largest/native widths. These are measured file sizes, not measured Core Web Vitals gains.
 
-Photos use WebP quality 82 at 480, 800, 1200 and original width without upscaling. The transparent logo uses lossless WebP at 58/116/174 pixels; the original PNG remains the fallback. Existing img tags, alt text, width/height, loading and fetchpriority remain exact inside picture. Active homepage hero remains eager/high priority; inactive images retain lazy loading. Carousel selectors target figures and descendant images, so wrappers preserve functionality; scoped CSS preserves full-height hero/card crops. Article images retain natural aspect ratio. CSS decorative background remains the original JPEG fallback: current site.css hides that pseudo-element, so no extra responsive CSS requests were introduced. A derivative is inventoried for future supported use.
+Photos use WebP quality 82 at 480, 800, 1200 and original width without upscaling. The transparent logo uses lossless WebP at 58/116/174/340/510 pixels; the original PNG remains the fallback. Existing img tags, alt text, width/height, loading and fetchpriority remain exact inside picture. Active homepage hero remains eager/high priority; inactive images retain lazy loading. Carousel selectors target figures and descendant images, so wrappers preserve functionality; scoped CSS preserves full-height hero/card crops. Article images retain natural aspect ratio. CSS decorative background remains the original JPEG fallback: current site.css hides that pseudo-element, so no extra responsive CSS requests were introduced. A derivative is inventoried for future supported use.
 
 The transformer is idempotent and skips existing picture elements. It selects sizes from the actual hero/card/article/logo layout and does not rewrite marketing copy, metadata, keyword blocks or originals. Header logo is displayed in its existing 58px square with object-fit containment; candidates keep the original approximately 1.25 aspect ratio.
 
@@ -22,7 +22,7 @@ Run `node scripts/optimise-site-images.mjs --root <site-root> --sharp <sharp-mod
 | /assets/bathroom-finished-wide.png | 2730323 | 480 / 18914 | 1586 / 178120 |
 | /assets/bathroom-membrane-application.png | 3158683 | 480 / 31414 | 1586 / 278422 |
 | /assets/case-canberra-bathroom.jpg | 244683 | 480 / 28214 | 1448 / 171154 |
-| /assets/detail-balcony.jpg | 316748 | 480 / 30146 | 1536 / 261774 |
+| /assets/detail-balcony.jpg | 316948 | 480 / 30146 | 1536 / 261774 |
 | /assets/detail-external.jpg | 353598 | 480 / 42538 | 1536 / 292714 |
 | /assets/detail-kitchen.jpg | 290425 | 480 / 35480 | 1536 / 213608 |
 | /assets/detail-laundry.jpg | 236223 | 480 / 26100 | 1536 / 157294 |
@@ -40,7 +40,7 @@ Run `node scripts/optimise-site-images.mjs --root <site-root> --sharp <sharp-mod
 | /assets/mel-one-hero-balcony.jpg | 293450 | 480 / 31444 | 1536 / 223720 |
 | /assets/mel-one-hero-bathroom.jpg | 231680 | 480 / 22404 | 1536 / 156468 |
 | /assets/mel-one-hero-external.jpg | 298733 | 480 / 31790 | 1536 / 229236 |
-| /assets/mel-one-logo.png | 484272 | 58 / 2644 | 174 / 11616 |
+| /assets/mel-one-logo.png | 484272 | 58 / 2644 | 510 / 50914 |
 | /assets/news-photograph-enquiry.jpg | 179921 | 480 / 21156 | 1448 / 108562 |
 | /assets/news-repair-scope.jpg | 260746 | 480 / 31266 | 1448 / 187174 |
 | /assets/news-wet-weather.jpg | 280916 | 480 / 39246 | 1448 / 211746 |

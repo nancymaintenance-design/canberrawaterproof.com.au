@@ -61,4 +61,6 @@ test('generated candidates resolve, have truthful widths, preserve original hash
  }
  assert.equal(data['/assets/mel-one-logo.png'].hasAlpha,true);
  assert.equal(data['/assets/mel-one-logo.png'].lossless,true);
+ assert.ok(data['/assets/mel-one-logo.png'].candidates.some(c=>c.width===340));
+ assert.ok(data['/assets/mel-one-logo.png'].candidates.some(c=>c.width===510));
 });

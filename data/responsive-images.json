@@ -908,6 +908,18 @@
         "height": 139,
         "url": "/assets/responsive/mel-one-logo-174.webp",
         "bytes": 11616
+      },
+      {
+        "width": 340,
+        "height": 272,
+        "url": "/assets/responsive/mel-one-logo-340.webp",
+        "bytes": 28644
+      },
+      {
+        "width": 510,
+        "height": 408,
+        "url": "/assets/responsive/mel-one-logo-510.webp",
+        "bytes": 50914
       }
     ]
   },
