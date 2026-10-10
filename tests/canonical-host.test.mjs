@@ -32,5 +32,8 @@ test('published pages, sitemap and robots use the www canonical origin', () => {
 
 test('apex requests permanently redirect to the www canonical origin', () => {
   const config = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
-  assert.equal(config.redirects[0].destination, 'https://www.canberrawaterproof.com.au/:path*');
+  const hostRedirect = config.redirects.find((rule) =>
+    rule.has?.some((condition) => condition.type === 'host' && condition.value === 'canberrawaterproof.com.au'));
+  assert.equal(hostRedirect?.destination, 'https://www.canberrawaterproof.com.au/:path*');
+  assert.equal(hostRedirect?.permanent, true);
 });

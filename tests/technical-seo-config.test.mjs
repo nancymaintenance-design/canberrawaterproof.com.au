@@ -18,6 +18,16 @@ test('the existing apex host redirect is preserved', () => {
     rule.has?.some((condition) => condition.type === 'host' && condition.value === 'canberrawaterproof.com.au')));
 });
 
+test('the index redirect precedes the apex host redirect', () => {
+  const indexRedirect = config.redirects.findIndex((rule) => rule.source === '/index.html');
+  const hostRedirect = config.redirects.findIndex((rule) =>
+    rule.has?.some((condition) => condition.type === 'host' && condition.value === 'canberrawaterproof.com.au'));
+
+  assert.ok(indexRedirect >= 0);
+  assert.ok(hostRedirect >= 0);
+  assert.ok(indexRedirect < hostRedirect);
+});
+
 test('thank-you remains crawlable while its page remains noindex', () => {
   assert.doesNotMatch(robots, /^Disallow:\s*\/thank-you\/$/m);
   assert.match(thankYou, /<meta name="robots" content="noindex,follow">/);
