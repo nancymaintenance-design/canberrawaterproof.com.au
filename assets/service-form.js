@@ -23,6 +23,9 @@ if (form && status) {
         ? 'Thank you. Your service request has been sent to MEL ONE. Please check your email for confirmation.'
         : 'Thank you. Your service request has been sent to MEL ONE.';
       status.dataset.state = 'success';
+      if (result.ok === true && typeof result.confirmationSent === 'boolean') {
+        try { window.melOneTrackLead?.(); } catch { /* Keep the accepted request successful. */ }
+      }
     } catch (error) {
       status.textContent = error.message || 'We could not send your service request. Please call MEL ONE directly.';
       status.dataset.state = 'error';

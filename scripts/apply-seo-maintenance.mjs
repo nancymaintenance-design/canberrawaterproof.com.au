@@ -92,6 +92,9 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
   const output=JSON.stringify(data);
   return output===JSON.stringify(JSON.parse(json)) ? whole : open+output.replace(/</g,'\\u003c')+close;
  });
+ if (!/<script\b[^>]*src=["']\/assets\/conversion-events\.js["']/.test(html)) {
+  html=html.replace('</head>','<script src="/assets/conversion-events.js" defer></script></head>');
+ }
  return applyResponsiveImages(html,images);
 }
 
