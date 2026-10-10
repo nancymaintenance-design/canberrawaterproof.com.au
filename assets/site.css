@@ -115,6 +115,9 @@ h1,h2,h3{font-family:var(--field-display);letter-spacing:-.025em;line-height:1.1
 @media(max-width:800px){.area-service-grid,.case-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.area-service-grid,.case-photo-grid{grid-template-columns:1fr}}
 
+/* Responsive wrappers preserve the existing image sizing and crop rules. */
+.hero-slide>picture,.service-card-image>picture{display:block;width:100%;height:100%}
+.brand>picture{display:flex;align-items:center;flex:0 0 58px;width:58px}
 /* Keep card surfaces visually consistent across the site. */
 .card,.form,.callout,.contact-callout,.locality-button,.scope-grid article,.step,.workflow-step,.intent-summary,.guide-conclusion,.field-note-stage,.field-notes-photo,.field-notes-next,.field-note-rail,.local-trust,.local-trust-grid article,.detail-evidence,.about-photo,.about-note,.about-credentials,.about-contact,.about-faq details,.contact-team-photo,.news-cover,.guide-cover,.service-hero-image,.service-card-image,.photo-slot,.case-study,.case-study-image{border-radius:14px}
 .hero-slide:after{display:block;background:linear-gradient(90deg,#07131df4 12%,#07131da8 52%,#07131d35)}

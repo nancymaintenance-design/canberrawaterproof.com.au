@@ -1,0 +1,1424 @@
+{
+  "/assets/about-team-site.jpg": {
+    "width": 1499,
+    "height": 1049,
+    "bytes": 284917,
+    "sha256": "9538b9b3a83b223af15d0f579618c70a06a1d13d2bbe0718ca367aeac80382d9",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 336,
+        "url": "/assets/responsive/about-team-site-480.webp",
+        "bytes": 37806
+      },
+      {
+        "width": 800,
+        "height": 560,
+        "url": "/assets/responsive/about-team-site-800.webp",
+        "bytes": 86764
+      },
+      {
+        "width": 1200,
+        "height": 840,
+        "url": "/assets/responsive/about-team-site-1200.webp",
+        "bytes": 152800
+      },
+      {
+        "width": 1499,
+        "height": 1049,
+        "url": "/assets/responsive/about-team-site-1499.webp",
+        "bytes": 207342
+      }
+    ]
+  },
+  "/assets/about-team-workshop.jpg": {
+    "width": 1499,
+    "height": 1049,
+    "bytes": 276075,
+    "sha256": "3357f91a9625176efb16a028aac939dfaed91d12f62da731f90132432b405edd",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 336,
+        "url": "/assets/responsive/about-team-workshop-480.webp",
+        "bytes": 38562
+      },
+      {
+        "width": 800,
+        "height": 560,
+        "url": "/assets/responsive/about-team-workshop-800.webp",
+        "bytes": 85606
+      },
+      {
+        "width": 1200,
+        "height": 840,
+        "url": "/assets/responsive/about-team-workshop-1200.webp",
+        "bytes": 145362
+      },
+      {
+        "width": 1499,
+        "height": 1049,
+        "url": "/assets/responsive/about-team-workshop-1499.webp",
+        "bytes": 192460
+      }
+    ]
+  },
+  "/assets/balcony-waterproofing-after.png": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2727552,
+    "sha256": "dc6c56c5c3dec7d255605d476a69b4c6c6acce55f1952255f86865dc004a6497",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/balcony-waterproofing-after-480.webp",
+        "bytes": 16008
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/balcony-waterproofing-after-800.webp",
+        "bytes": 50166
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/balcony-waterproofing-after-1200.webp",
+        "bytes": 112356
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/balcony-waterproofing-after-1536.webp",
+        "bytes": 177292
+      }
+    ]
+  },
+  "/assets/balcony-waterproofing-before.png": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2995754,
+    "sha256": "7fc2538bf3b4c9f0c6138b91d4b658f3716fcc16f7b8fac42564009ca4be61de",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/balcony-waterproofing-before-480.webp",
+        "bytes": 26392
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/balcony-waterproofing-before-800.webp",
+        "bytes": 73756
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/balcony-waterproofing-before-1200.webp",
+        "bytes": 158156
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/balcony-waterproofing-before-1536.webp",
+        "bytes": 245404
+      }
+    ]
+  },
+  "/assets/balcony-waterproofing-during.png": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2816393,
+    "sha256": "220a077bb6f2f3f3b6711ecfde1ec1ed071b3d63e88d690a9984444fe90cc861",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/balcony-waterproofing-during-480.webp",
+        "bytes": 27550
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/balcony-waterproofing-during-800.webp",
+        "bytes": 68784
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/balcony-waterproofing-during-1200.webp",
+        "bytes": 134720
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/balcony-waterproofing-during-1536.webp",
+        "bytes": 203880
+      }
+    ]
+  },
+  "/assets/bathroom-finished-wide.png": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 2730323,
+    "sha256": "83ee73434de786aeaa198e0de739f000e2f55fd14aa7a332a2eafe8e0b7a8305",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/bathroom-finished-wide-480.webp",
+        "bytes": 18914
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/bathroom-finished-wide-800.webp",
+        "bytes": 52224
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/bathroom-finished-wide-1200.webp",
+        "bytes": 109762
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/bathroom-finished-wide-1586.webp",
+        "bytes": 178120
+      }
+    ]
+  },
+  "/assets/bathroom-membrane-application.png": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 3158683,
+    "sha256": "ead5a7b3c163643a21531298944f2607191e18296c1f9d72528e98d473678134",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/bathroom-membrane-application-480.webp",
+        "bytes": 31414
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/bathroom-membrane-application-800.webp",
+        "bytes": 88594
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/bathroom-membrane-application-1200.webp",
+        "bytes": 178156
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/bathroom-membrane-application-1586.webp",
+        "bytes": 278422
+      }
+    ]
+  },
+  "/assets/case-canberra-bathroom.jpg": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 244683,
+    "sha256": "af2366b0607e140eed0d8e283e89059b9ffeec47299127f27d8e239ed1574246",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/case-canberra-bathroom-480.webp",
+        "bytes": 28214
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/case-canberra-bathroom-800.webp",
+        "bytes": 65632
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/case-canberra-bathroom-1200.webp",
+        "bytes": 126624
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/case-canberra-bathroom-1448.webp",
+        "bytes": 171154
+      }
+    ]
+  },
+  "/assets/detail-balcony.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 316748,
+    "sha256": "d2ce6d6e07cb80116d3d46ed48a676d46284aa6e1e37ea2ed6cfde63468934ff",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-balcony-480.webp",
+        "bytes": 30146
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-balcony-800.webp",
+        "bytes": 82556
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-balcony-1200.webp",
+        "bytes": 171814
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-balcony-1536.webp",
+        "bytes": 261774
+      }
+    ]
+  },
+  "/assets/detail-external.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 353598,
+    "sha256": "4343e4090df8eb8bf6222c404bccf7e46aa8b358680a5a37bf4d29e55b1339bd",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-external-480.webp",
+        "bytes": 42538
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-external-800.webp",
+        "bytes": 108712
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-external-1200.webp",
+        "bytes": 206968
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-external-1536.webp",
+        "bytes": 292714
+      }
+    ]
+  },
+  "/assets/detail-kitchen.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 290425,
+    "sha256": "3e957d1ebc919e87bbc8b680cd79a4de6564b62b205d09c262616ca7174403f4",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-kitchen-480.webp",
+        "bytes": 35480
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-kitchen-800.webp",
+        "bytes": 83460
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-kitchen-1200.webp",
+        "bytes": 151888
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-kitchen-1536.webp",
+        "bytes": 213608
+      }
+    ]
+  },
+  "/assets/detail-laundry.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 236223,
+    "sha256": "282c08bc03e36f82ad86af60eda98e8f089b4836d7342b31a1495435360331f1",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-laundry-480.webp",
+        "bytes": 26100
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-laundry-800.webp",
+        "bytes": 59184
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-laundry-1200.webp",
+        "bytes": 110034
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-laundry-1536.webp",
+        "bytes": 157294
+      }
+    ]
+  },
+  "/assets/detail-resealing.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 218758,
+    "sha256": "c8428c63606c3e0403bd627821857e76f9385eef79bfe902b4f08206ef64a7a3",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-resealing-480.webp",
+        "bytes": 21588
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-resealing-800.webp",
+        "bytes": 49854
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-resealing-1200.webp",
+        "bytes": 92478
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-resealing-1536.webp",
+        "bytes": 135504
+      }
+    ]
+  },
+  "/assets/detail-retaining-wall.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 371759,
+    "sha256": "68688f98923b595fe5219e017638184ca97bc8e5ae338df0e75021b4f3100829",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-retaining-wall-480.webp",
+        "bytes": 38766
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-retaining-wall-800.webp",
+        "bytes": 98592
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-retaining-wall-1200.webp",
+        "bytes": 188744
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-retaining-wall-1536.webp",
+        "bytes": 275152
+      }
+    ]
+  },
+  "/assets/detail-roof.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 396102,
+    "sha256": "1d87667210085474fa2db205c448d2bb97aa8835d6f26776300c659b095dfbd4",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-roof-480.webp",
+        "bytes": 43444
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-roof-800.webp",
+        "bytes": 116752
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-roof-1200.webp",
+        "bytes": 235630
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-roof-1536.webp",
+        "bytes": 354862
+      }
+    ]
+  },
+  "/assets/detail-shower.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 304815,
+    "sha256": "a616a8f9d46c073b1d654456522b182db4fb567d7f885397d992d3435ac68ed9",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/detail-shower-480.webp",
+        "bytes": 29500
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/detail-shower-800.webp",
+        "bytes": 77846
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/detail-shower-1200.webp",
+        "bytes": 156738
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/detail-shower-1536.webp",
+        "bytes": 237420
+      }
+    ]
+  },
+  "/assets/guide-balcony.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 315834,
+    "sha256": "d363359ad47c126acab86a9bfcf41052393b02cba1c5a761e88d94f56cae5a31",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-balcony-480.webp",
+        "bytes": 37624
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-balcony-800.webp",
+        "bytes": 88954
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-balcony-1200.webp",
+        "bytes": 165250
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-balcony-1586.webp",
+        "bytes": 247972
+      }
+    ]
+  },
+  "/assets/guide-drainage.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 305591,
+    "sha256": "8232f09f17a2bc385eace646eb881c5461ef800ecacaa49d4c498c2ca83995fc",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-drainage-480.webp",
+        "bytes": 40242
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-drainage-800.webp",
+        "bytes": 90260
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-drainage-1200.webp",
+        "bytes": 162786
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-drainage-1586.webp",
+        "bytes": 237914
+      }
+    ]
+  },
+  "/assets/guide-kitchen.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 198388,
+    "sha256": "2c03601a8e8838a88e4e436d60a8c71362dbae41e6678a3a8d968a663bbc2940",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-kitchen-480.webp",
+        "bytes": 23588
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-kitchen-800.webp",
+        "bytes": 48148
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-kitchen-1200.webp",
+        "bytes": 83662
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-kitchen-1586.webp",
+        "bytes": 121168
+      }
+    ]
+  },
+  "/assets/guide-resealing.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 251371,
+    "sha256": "12aeb008465e08a6749590b24e6ef68b0746a1eab5b9bf42371a786edb29e61e",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-resealing-480.webp",
+        "bytes": 25672
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-resealing-800.webp",
+        "bytes": 63390
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-resealing-1200.webp",
+        "bytes": 117264
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-resealing-1586.webp",
+        "bytes": 174684
+      }
+    ]
+  },
+  "/assets/guide-retile-quote.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 220211,
+    "sha256": "b02876ccddfd407816a1817ab9eaba443822ec357253dd0f7de415b0a15b1789",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-retile-quote-480.webp",
+        "bytes": 25272
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-retile-quote-800.webp",
+        "bytes": 56266
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-retile-quote-1200.webp",
+        "bytes": 95520
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-retile-quote-1586.webp",
+        "bytes": 140522
+      }
+    ]
+  },
+  "/assets/guide-shower-plumbing.jpg": {
+    "width": 1586,
+    "height": 992,
+    "bytes": 198972,
+    "sha256": "73b2838b7fbd24bd0de51e5263f793274d6457ab7fa68fd575e38953b80e5b8f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 300,
+        "url": "/assets/responsive/guide-shower-plumbing-480.webp",
+        "bytes": 20846
+      },
+      {
+        "width": 800,
+        "height": 500,
+        "url": "/assets/responsive/guide-shower-plumbing-800.webp",
+        "bytes": 45428
+      },
+      {
+        "width": 1200,
+        "height": 751,
+        "url": "/assets/responsive/guide-shower-plumbing-1200.webp",
+        "bytes": 79550
+      },
+      {
+        "width": 1586,
+        "height": 992,
+        "url": "/assets/responsive/guide-shower-plumbing-1586.webp",
+        "bytes": 118214
+      }
+    ]
+  },
+  "/assets/hero-decorative.jpg": {
+    "width": 1916,
+    "height": 821,
+    "bytes": 309591,
+    "sha256": "8c67eac34492f8067ec7305bdb736083ca58392a680ead915791c0de150d1bf3",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 205,
+        "url": "/assets/responsive/hero-decorative-480.webp",
+        "bytes": 11954
+      },
+      {
+        "width": 800,
+        "height": 343,
+        "url": "/assets/responsive/hero-decorative-800.webp",
+        "bytes": 44894
+      },
+      {
+        "width": 1200,
+        "height": 514,
+        "url": "/assets/responsive/hero-decorative-1200.webp",
+        "bytes": 112082
+      },
+      {
+        "width": 1916,
+        "height": 821,
+        "url": "/assets/responsive/hero-decorative-1916.webp",
+        "bytes": 268204
+      }
+    ]
+  },
+  "/assets/mel-one-hero-balcony.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 293450,
+    "sha256": "77ee102e7916803ababc608590aefd46fff743593be8f6d20d946b65758d8876",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/mel-one-hero-balcony-480.webp",
+        "bytes": 31444
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/mel-one-hero-balcony-800.webp",
+        "bytes": 78066
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/mel-one-hero-balcony-1200.webp",
+        "bytes": 154694
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/mel-one-hero-balcony-1536.webp",
+        "bytes": 223720
+      }
+    ]
+  },
+  "/assets/mel-one-hero-bathroom.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 231680,
+    "sha256": "b5e091f60722ee618f89787869beede782903b5b9caae4e27e5c63e09ea74ff6",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/mel-one-hero-bathroom-480.webp",
+        "bytes": 22404
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/mel-one-hero-bathroom-800.webp",
+        "bytes": 54686
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/mel-one-hero-bathroom-1200.webp",
+        "bytes": 106338
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/mel-one-hero-bathroom-1536.webp",
+        "bytes": 156468
+      }
+    ]
+  },
+  "/assets/mel-one-hero-external.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 298733,
+    "sha256": "dbf36d9952fe6100a7370f2cc689543d6a3c14f80941aba1ca6988a063777910",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/mel-one-hero-external-480.webp",
+        "bytes": 31790
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/mel-one-hero-external-800.webp",
+        "bytes": 80516
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/mel-one-hero-external-1200.webp",
+        "bytes": 161410
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/mel-one-hero-external-1536.webp",
+        "bytes": 229236
+      }
+    ]
+  },
+  "/assets/mel-one-logo.png": {
+    "width": 1402,
+    "height": 1122,
+    "bytes": 484272,
+    "sha256": "999439f6424e853bbeabd9749e6e6d4047ea93f525e6061d9854908f2278ee12",
+    "hasAlpha": true,
+    "lossless": true,
+    "candidates": [
+      {
+        "width": 58,
+        "height": 46,
+        "url": "/assets/responsive/mel-one-logo-58.webp",
+        "bytes": 2644
+      },
+      {
+        "width": 116,
+        "height": 93,
+        "url": "/assets/responsive/mel-one-logo-116.webp",
+        "bytes": 6390
+      },
+      {
+        "width": 174,
+        "height": 139,
+        "url": "/assets/responsive/mel-one-logo-174.webp",
+        "bytes": 11616
+      }
+    ]
+  },
+  "/assets/news-photograph-enquiry.jpg": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 179921,
+    "sha256": "75842d383a0fa874e3a0ff103436043a8e6ab7beef85ca8f6197d8f2c1c84fa6",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/news-photograph-enquiry-480.webp",
+        "bytes": 21156
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/news-photograph-enquiry-800.webp",
+        "bytes": 48230
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/news-photograph-enquiry-1200.webp",
+        "bytes": 83722
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/news-photograph-enquiry-1448.webp",
+        "bytes": 108562
+      }
+    ]
+  },
+  "/assets/news-repair-scope.jpg": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 260746,
+    "sha256": "6e8e3a2011f6ddbe079de3ec40e9f32d726748cc0bde2e6062bf0bea9a8b1113",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/news-repair-scope-480.webp",
+        "bytes": 31266
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/news-repair-scope-800.webp",
+        "bytes": 80098
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/news-repair-scope-1200.webp",
+        "bytes": 147054
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/news-repair-scope-1448.webp",
+        "bytes": 187174
+      }
+    ]
+  },
+  "/assets/news-wet-weather.jpg": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 280916,
+    "sha256": "53fb30ee10963474d068f4f13a800cfebc550f6863988341854f60f3e6cf1a55",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/news-wet-weather-480.webp",
+        "bytes": 39246
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/news-wet-weather-800.webp",
+        "bytes": 90624
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/news-wet-weather-1200.webp",
+        "bytes": 163470
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "url": "/assets/responsive/news-wet-weather-1448.webp",
+        "bytes": 211746
+      }
+    ]
+  },
+  "/assets/process-assess.jpg": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 288025,
+    "sha256": "43c0e2bd803edc66ddb5e33bdc0889e3a81b61ac82cc9401eaee82a8cadda72f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 480,
+        "url": "/assets/responsive/process-assess-480.webp",
+        "bytes": 51500
+      },
+      {
+        "width": 800,
+        "height": 800,
+        "url": "/assets/responsive/process-assess-800.webp",
+        "bytes": 115664
+      },
+      {
+        "width": 1200,
+        "height": 1200,
+        "url": "/assets/responsive/process-assess-1200.webp",
+        "bytes": 201022
+      },
+      {
+        "width": 1254,
+        "height": 1254,
+        "url": "/assets/responsive/process-assess-1254.webp",
+        "bytes": 214792
+      }
+    ]
+  },
+  "/assets/process-confirm.jpg": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 289654,
+    "sha256": "5473b2171907e295bbdad01d78801845dd7f7f9236b4c4be59c94917e06f99b0",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 480,
+        "url": "/assets/responsive/process-confirm-480.webp",
+        "bytes": 49788
+      },
+      {
+        "width": 800,
+        "height": 800,
+        "url": "/assets/responsive/process-confirm-800.webp",
+        "bytes": 115606
+      },
+      {
+        "width": 1200,
+        "height": 1200,
+        "url": "/assets/responsive/process-confirm-1200.webp",
+        "bytes": 205682
+      },
+      {
+        "width": 1254,
+        "height": 1254,
+        "url": "/assets/responsive/process-confirm-1254.webp",
+        "bytes": 219756
+      }
+    ]
+  },
+  "/assets/process-record.jpg": {
+    "width": 1254,
+    "height": 1254,
+    "bytes": 288744,
+    "sha256": "e0284e9f0fd55cda66ff862924242b702eb3ca5681392c140a97ef51479d08f7",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 480,
+        "url": "/assets/responsive/process-record-480.webp",
+        "bytes": 48620
+      },
+      {
+        "width": 800,
+        "height": 800,
+        "url": "/assets/responsive/process-record-800.webp",
+        "bytes": 113816
+      },
+      {
+        "width": 1200,
+        "height": 1200,
+        "url": "/assets/responsive/process-record-1200.webp",
+        "bytes": 203470
+      },
+      {
+        "width": 1254,
+        "height": 1254,
+        "url": "/assets/responsive/process-record-1254.webp",
+        "bytes": 218074
+      }
+    ]
+  },
+  "/assets/service-balcony.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 332156,
+    "sha256": "df90ff1628d06c082a1c790b69abcb9246f8512dc294f6cd5025bf02686bd99f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-balcony-480.webp",
+        "bytes": 32642
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-balcony-800.webp",
+        "bytes": 87680
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-balcony-1200.webp",
+        "bytes": 185398
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-balcony-1536.webp",
+        "bytes": 283086
+      }
+    ]
+  },
+  "/assets/service-bathroom.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 184870,
+    "sha256": "05118744588815b125b671f6c7d8a1b07406f207294ab89988004b8b72a0d865",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-bathroom-480.webp",
+        "bytes": 18018
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-bathroom-800.webp",
+        "bytes": 41348
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-bathroom-1200.webp",
+        "bytes": 76124
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-bathroom-1536.webp",
+        "bytes": 113986
+      }
+    ]
+  },
+  "/assets/service-external.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 325696,
+    "sha256": "bb8fd3abb68235d5aca61f1280b3eef43686a4af0c4004a90dcd46416efec44d",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-external-480.webp",
+        "bytes": 36200
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-external-800.webp",
+        "bytes": 94144
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-external-1200.webp",
+        "bytes": 178798
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-external-1536.webp",
+        "bytes": 265202
+      }
+    ]
+  },
+  "/assets/service-kitchen.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 238772,
+    "sha256": "9feb7a6330edc68b126b0c3b9b1507512c0f6a7684454c21d205e60d7f3d3689",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-kitchen-480.webp",
+        "bytes": 29392
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-kitchen-800.webp",
+        "bytes": 65572
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-kitchen-1200.webp",
+        "bytes": 112166
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-kitchen-1536.webp",
+        "bytes": 159850
+      }
+    ]
+  },
+  "/assets/service-laundry.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 243289,
+    "sha256": "4aa3a1498202efc5b23be2285d44eacb50b8cd525103acf0a0d5fbc5488c3b9d",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-laundry-480.webp",
+        "bytes": 26598
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-laundry-800.webp",
+        "bytes": 64422
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-laundry-1200.webp",
+        "bytes": 121450
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-laundry-1536.webp",
+        "bytes": 173584
+      }
+    ]
+  },
+  "/assets/service-resealing.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 207502,
+    "sha256": "8f4dd078169a21f59493a1dffc61862813b322036c6b180d484a3dd042168f4b",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-resealing-480.webp",
+        "bytes": 22674
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-resealing-800.webp",
+        "bytes": 50350
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-resealing-1200.webp",
+        "bytes": 91622
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-resealing-1536.webp",
+        "bytes": 129932
+      }
+    ]
+  },
+  "/assets/service-retaining-wall.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 402006,
+    "sha256": "9a5b35d6dd1a2be5b8e8bd86d16362a74996918bad9ce82838f5fda6e18a0f2d",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-retaining-wall-480.webp",
+        "bytes": 36446
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-retaining-wall-800.webp",
+        "bytes": 100654
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-retaining-wall-1200.webp",
+        "bytes": 202380
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-retaining-wall-1536.webp",
+        "bytes": 314436
+      }
+    ]
+  },
+  "/assets/service-roof.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 306919,
+    "sha256": "8f1b1847fd77701d621770554e8582ac4eb64c132472ed111770f5e2ed50cc5a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-roof-480.webp",
+        "bytes": 37230
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-roof-800.webp",
+        "bytes": 86848
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-roof-1200.webp",
+        "bytes": 163528
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-roof-1536.webp",
+        "bytes": 240660
+      }
+    ]
+  },
+  "/assets/service-shower.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 236549,
+    "sha256": "62d03573237230bcf6cb56864b14e3a67b132d26052b81d787ff932bf1f710cc",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 320,
+        "url": "/assets/responsive/service-shower-480.webp",
+        "bytes": 23588
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "url": "/assets/responsive/service-shower-800.webp",
+        "bytes": 57186
+      },
+      {
+        "width": 1200,
+        "height": 800,
+        "url": "/assets/responsive/service-shower-1200.webp",
+        "bytes": 110274
+      },
+      {
+        "width": 1536,
+        "height": 1024,
+        "url": "/assets/responsive/service-shower-1536.webp",
+        "bytes": 165248
+      }
+    ]
+  }
+}

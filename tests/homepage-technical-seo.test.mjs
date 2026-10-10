@@ -8,7 +8,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'assets/site.css'), 'utf8');
 const hero = html.match(/<div class="hero-slides"[^>]*>(.*?)<\/div>/s)?.[1];
-const slides = [...(hero ?? '').matchAll(/<figure\b([^>]*)><img\b([^>]*)><\/figure>/g)];
+const slides = [...(hero ?? '').matchAll(/<figure\b([^>]*)>(?:<picture\b[^>]*><source\b[^>]*>)?<img\b([^>]*)>(?:<\/picture>)?<\/figure>/g)];
 
 test('only the initial hero image is high priority while inactive images defer loading', () => {
   assert.equal(slides.length, 3);
