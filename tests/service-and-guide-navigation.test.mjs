@@ -8,13 +8,13 @@ const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const read = path => readFileSync(resolve(root, path), 'utf8');
 const firstGridCards = html => [...html.match(/<div class="grid">([\s\S]*?)<\/div>/)?.[1].matchAll(/<article class="card">/g) || []].length;
 
-test('home has six service cards and a route to nine complete services', () => {
+test('home has six service cards and a route to eleven complete services', () => {
   const home = read('index.html');
   const index = read('services/index.html');
   assert.equal(firstGridCards(home), 6);
-  assert.match(home, /href="\/services\/">View All 9 Waterproofing Services<\/a>/);
-  assert.equal(firstGridCards(index), 9);
-  for (const slug of ['laundry-waterproofing', 'roof-waterproofing', 'retaining-wall-waterproofing']) {
+  assert.match(home, /href="\/services\/">View All 11 Waterproofing Services<\/a>/);
+  assert.equal(firstGridCards(index), 11);
+  for (const slug of ['laundry-waterproofing', 'roof-waterproofing', 'retaining-wall-waterproofing', 'tile-regrouting', 'commercial-waterproofing']) {
     assert.match(index, new RegExp(`href="/services/${slug}/"`));
     assert.ok(existsSync(resolve(root, 'services', slug, 'index.html')));
     const detail = read(`services/${slug}/index.html`);

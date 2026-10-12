@@ -15,6 +15,8 @@ const serviceNames = {
  'laundry-waterproofing':'Laundry Waterproofing',
  'roof-waterproofing':'Roof Waterproofing',
  'retaining-wall-waterproofing':'Retaining Wall Waterproofing',
+ 'tile-regrouting':'Tile Regrouting',
+ 'commercial-waterproofing':'Commercial Waterproofing',
 };
 const guideServices = {
  'shower-plumbing-or-waterproofing':['leaking-shower-repairs','bathroom-waterproofing'],
@@ -30,7 +32,7 @@ const guideServices = {
 // batch on three services and the gallery. Quote and drainage guides already
 // have related content; no date is inferred for their schema-only changes.
 export const contentChanges = Object.fromEntries([
- ...Object.keys(serviceNames).filter(slug=>slug!=='retaining-wall-waterproofing').map(slug=>`${HOST}/services/${slug}/`),
+ ...Object.keys(serviceNames).filter(slug=>!['retaining-wall-waterproofing','tile-regrouting','commercial-waterproofing'].includes(slug)).map(slug=>`${HOST}/services/${slug}/`),
  ...['shower-plumbing-or-waterproofing','regrouting-resealing-or-rewaterproofing','balcony-leaking-room-below','kitchen-sink-resealing-or-plumbing'].map(slug=>`${HOST}/guides/${slug}/`),
  `${HOST}/services/retaining-wall-waterproofing/`, `${HOST}/case-studies/`,
 ].map(url=>[url,'2026-10-10']));

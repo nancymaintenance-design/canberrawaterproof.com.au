@@ -40,7 +40,8 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
   'case-studies/index.html':'f48629bfad888abc92338582a53045c21780de34dde939abfe45aaea5cd03f5f',
  };
  for(const path of paths) {
-  const original=read(path).replaceAll('\r\n','\n');
+  // Approved additive copy is excluded; every byte of the original page stays protected.
+  const original=read(path).replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'');
   assert.equal(hash(original),originalHashes[path],path);
  }
 });
