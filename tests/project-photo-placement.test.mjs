@@ -41,7 +41,10 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
  };
  for(const path of paths) {
   // Approved additive copy is excluded; every byte of the original page stays protected.
-  const original=read(path).replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'');
+  const original=read(path).replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'')
+   .replace('<script src="/assets/mobile-navigation.js" defer></script>','')
+   .replace('<button class="navigation-toggle" type="button" data-navigation-toggle aria-expanded="false" aria-controls="main-navigation" hidden>Menu</button>','')
+   .replace('<nav id="main-navigation" class="nav"','<nav class="nav"');
   assert.equal(hash(original),originalHashes[path],path);
  }
 });

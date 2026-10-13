@@ -122,3 +122,20 @@ h1,h2,h3{font-family:var(--field-display);letter-spacing:-.025em;line-height:1.1
 .card,.form,.callout,.contact-callout,.locality-button,.scope-grid article,.step,.workflow-step,.intent-summary,.guide-conclusion,.field-note-stage,.field-notes-photo,.field-notes-next,.field-note-rail,.local-trust,.local-trust-grid article,.detail-evidence,.about-photo,.about-note,.about-credentials,.about-contact,.about-faq details,.contact-team-photo,.news-cover,.guide-cover,.service-hero-image,.service-card-image,.photo-slot,.case-study,.case-study-image{border-radius:14px}
 .hero-slide:after{display:block;background:linear-gradient(90deg,#07131df4 12%,#07131da8 52%,#07131d35)}
 .footer-social{margin-top:22px}.footer-social .eyebrow{color:var(--gold);margin-bottom:8px}.footer-social-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}.footer .footer-social-links a{display:inline-flex;align-items:center;gap:.5em;margin:0;color:#f3f7f7;font-weight:800;text-decoration:none;line-height:1.35}.footer .footer-social-links a:hover,.footer .footer-social-links a:focus{color:var(--gold);text-decoration:underline;text-underline-offset:3px}.footer-social-links svg{display:block;width:1em;height:1em;flex:0 0 1em}
+
+/* Progressive navigation uses the existing links and the established palette. */
+.navigation-toggle[hidden],.nav[hidden]{display:none!important}
+.navigation-toggle{min-height:44px;padding:8px 16px;border:1px solid var(--gold);border-radius:5px;background:transparent;color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.navigation-toggle:hover,.navigation-toggle:active{background:var(--gold);color:var(--ink)}
+.navigation-toggle:focus-visible,.nav a:focus-visible,.mobile a:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+@media(max-width:620px){
+ html{scroll-padding-top:120px;scroll-padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+ body{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+ .header-inner{justify-content:space-between;gap:10px}
+ .header .nav{display:flex;flex:0 0 100%;align-items:stretch;justify-content:flex-start;gap:4px;max-height:calc(100dvh - 200px);overflow-y:auto;padding:8px 3px 12px;font-size:.9rem}
+ .header .nav a{display:flex;align-items:center;min-height:44px;padding:8px 12px}
+ .header .nav .button{width:100%}
+ .mobile{padding-bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+ .mobile a{line-height:1.4;display:flex;align-items:center;justify-content:center;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

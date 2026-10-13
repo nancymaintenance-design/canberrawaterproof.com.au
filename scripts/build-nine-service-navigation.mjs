@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const homeFile = resolve(root, 'index.html');
@@ -23,7 +24,7 @@ const serviceGrid = `<div class="grid">${[...cards, ...newCards, ...additionalCa
 services = services.replace(/<div class="grid">[\s\S]*?<\/div>/, serviceGrid)
   .replace(/<article class="card"><h3>Laundry Waterproofing<\/h3>[\s\S]*?<\/article><article class="card"><h3>Roof Leaks [\s\S]*?<\/article>/, '');
 if (!services.includes(serviceGrid)) throw new Error('Services grid replacement failed');
-writeFileSync(servicesFile, services);
+writeFileSync(servicesFile, applyMobileNavigation(services));
 
 const homeGrid = `<div class="grid">${cards.join('')}</div><p class="service-grid-more"><a class="button primary" href="/services/">View All 11 Waterproofing Services</a></p>`;
 home = home.replace(/<div class="grid">[\s\S]*?<\/div>(?:<p class="service-grid-more">[\s\S]*?<\/p>)*/, homeGrid);
@@ -44,7 +45,7 @@ if (!home.includes(areaSection)) throw new Error('Featured service areas replace
 const heroLede = '<p class="lede">The Ellis team carries out waterproofing repairs for homeowners, landlords and property managers across bathrooms, showers, balconies, kitchens and external areas. Tell us where the problem is to discuss the right repair scope.</p>';
 const responseNote = '<p class="hero-response-note">For urgent Canberra jobs, the Ellis team can be on site in as little as 30 minutes after contact. Arrival timing depends on current availability, the address and safe access.</p>';
 if (home.includes(heroLede) && !home.includes(responseNote)) home = home.replace(heroLede, `${heroLede}${responseNote}`);
-writeFileSync(homeFile, home);
+writeFileSync(homeFile, applyMobileNavigation(home));
 
 const sitemapFile = resolve(root, 'sitemap.xml');
 let sitemap = readFileSync(sitemapFile, 'utf8');

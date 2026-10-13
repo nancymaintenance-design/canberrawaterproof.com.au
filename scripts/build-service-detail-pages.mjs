@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
 import { applySocialLinks } from './social-links.mjs';
+import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const services = [
@@ -62,5 +63,5 @@ for (const s of services) {
     .replace(/<main id="main">[\s\S]*?<\/main>/, main);
   html = applySocialLinks(applyOnsiteResponseCopy(html, 'Canberra'));
   if (!html.includes(`<h1>${s.name} in Canberra</h1>`)) throw new Error(`Failed to build ${s.slug}`);
-  writeFileSync(file, html);
+  writeFileSync(file, applyMobileNavigation(html));
 }

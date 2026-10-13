@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applySocialLinks } from './social-links.mjs';
+import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const guides = [
@@ -90,5 +91,5 @@ for (const guide of guides) {
     if (item['@type'] === 'BreadcrumbList') item.itemListElement[2].name = guide.title;
   }
   html = html.replace(schemaMatch[0], `<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
-  writeFileSync(file, applySocialLinks(html));
+  writeFileSync(file, applyMobileNavigation(applySocialLinks(html)));
 }

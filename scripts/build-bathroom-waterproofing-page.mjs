@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
 import { applySocialLinks } from './social-links.mjs';
+import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const pagePath = resolve(root, 'services', 'bathroom-waterproofing', 'index.html');
@@ -50,4 +51,4 @@ html = html
   .replace(/<main id="main">[\s\S]*?<\/main>/, main);
 html = applySocialLinks(applyOnsiteResponseCopy(html, 'Canberra'));
 
-writeFileSync(pagePath, html);
+writeFileSync(pagePath, applyMobileNavigation(html));

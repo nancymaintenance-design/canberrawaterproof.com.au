@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyResponsiveImages } from './responsive-images.mjs';
+import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -101,7 +102,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (!/<script\b[^>]*src=["']\/assets\/conversion-events\.js["']/.test(html)) {
   html=html.replace('</head>','<script src="/assets/conversion-events.js" defer></script></head>');
  }
- return applyResponsiveImages(html,images);
+ return applyMobileNavigation(applyResponsiveImages(html,images));
 }
 
 export function applyLlms(text) {
