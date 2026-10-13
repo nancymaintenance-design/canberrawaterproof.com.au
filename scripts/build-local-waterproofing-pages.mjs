@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
 import { applySocialLinks } from './social-links.mjs';
 import { maintainSite } from './apply-seo-maintenance.mjs';
+import { applyDistrictExplanation } from './district-explanation.mjs';
 
 const SITE_URL = 'https://www.canberrawaterproof.com.au';
 const LAST_MODIFIED = '2026-10-06';
@@ -356,7 +357,7 @@ function writePages() {
   for (const [position, page] of LOCALITY_PAGES.entries()) {
     const target = resolve(root, page.route.slice(1), 'index.html');
     mkdirSync(dirname(target), { recursive: true });
-    const html = applySocialLinks(applyOnsiteResponseCopy(renderPage(page, pageMap, position), page.name)).replace(
+    const html = applyDistrictExplanation(applySocialLinks(applyOnsiteResponseCopy(renderPage(page, pageMap, position), page.name)), page).replace(
       '<link rel="stylesheet" href="/assets/site.css">',
       `<meta property="og:image" content="${SITE_URL}/assets/mel-one-hero-bathroom.jpg"><link rel="stylesheet" href="/assets/site.css">`,
     );
@@ -471,7 +472,15 @@ function fail(message) {
 
 const [command, value] = process.argv.slice(2);
 try {
-  if (command === '--validate-json') {
+  if (command === '--district-explanation') {
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+    for (const page of LOCALITY_PAGES.filter(item => item.kind === 'district')) {
+      const target = resolve(root, page.route.slice(1), 'index.html');
+      const before = readFileSync(target, 'utf8');
+      const after = applyDistrictExplanation(before, page);
+      if (after !== before) writeFileSync(target, after);
+    }
+  } else if (command === '--validate-json') {
     validatePages(JSON.parse(value));
   } else if (command === '--check') {
     process.stdout.write(`${JSON.stringify(buildManifest())}\n`);
