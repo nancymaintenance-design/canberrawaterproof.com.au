@@ -6,6 +6,9 @@ import { applyMobileNavigation } from './mobile-navigation.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
+// User-confirmed office reception hours; site visits are arranged separately.
+const receptionHours = 'Office reception: daily 09:00–21:00. On-site work by arrangement.';
+const hoursMarkup = `<p class="office-hours">${receptionHours}</p>`;
 const serviceNames = {
  'leaking-shower-repairs':'Leaking Shower Repairs',
  'bathroom-waterproofing':'Bathroom Waterproofing &amp; Retiling',
@@ -41,6 +44,18 @@ const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- key
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
 
 export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
+ html = html.replace(/<footer\b[\s\S]*?<\/footer>/, footer =>
+  footer.includes('class="office-hours"') ? footer : footer.replace('<p>121 Marcus Clarke St, Canberra, ACT 2600</p>', '<p>121 Marcus Clarke St, Canberra, ACT 2600</p>'+hoursMarkup));
+ if (path === 'contact/index.html') {
+  html = html.replace(/<div class="contact-details">[\s\S]*?<\/div>/, block =>
+   block.includes('class="office-hours"') ? block : block.replace('<p>121 Marcus Clarke St, Canberra, ACT 2600</p>', '<p>121 Marcus Clarke St, Canberra, ACT 2600</p>'+hoursMarkup));
+ }
+ html = html.replace(/<img\b[^>]*src="\/assets\/mel-one-logo\.png"[^>]*>/g, image => {
+  if (/\bwidth="\d+"/.test(image) && /\bheight="\d+"/.test(image)) return image;
+  return image.replace(/\s(?:width|height)="[^"]*"/g,'').replace(/>$/, ' width="1402" height="1122">');
+ });
+ html = html.replace(/<footer\b[\s\S]*?<\/footer>/, footer => footer.replace(/<img\b[^>]*src="\/assets\/mel-one-logo\.png"[^>]*>/g, image =>
+  image.replace(/\s(?:loading|decoding)="[^"]*"/g,'').replace(/>$/, ' loading="lazy" decoding="async">')));
  if (path === 'case-studies/index.html') {
   html = html.replace('<p class="eyebrow">Real project photos to be added</p>', '');
  }
@@ -81,6 +96,11 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
    service.provider={'@id':HOST+'/#business'};
   }
   if(business) {
+   business.openingHoursSpecification=[{
+    '@type':'OpeningHoursSpecification',
+    dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    opens:'09:00',closes:'21:00',
+   }];
    if(logo) business.logo=HOST+logo;
    if(socials.length) {
     const seen=new Set();
@@ -94,6 +114,9 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
   for(const node of nodes.filter(n=>['Article','BlogPosting','NewsArticle'].includes(n['@type']))) {
    if(page?.['@id']) node.mainEntityOfPage={'@id':page['@id']};
    if(business) node.publisher={'@id':HOST+'/#business'};
+   if(business && node.author?.['@type']==='Organization' && node.author.name==='MEL ONE') {
+    node.author={...node.author,'@id':HOST+'/#business',url:HOST+'/about/'};
+   }
    if(visibleImage) node.image=new URL(visibleImage,HOST).href;
   }
   const output=JSON.stringify(data);
@@ -108,6 +131,10 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
 export function applyLlms(text) {
  text=text.replaceAll('\r\n','\n');
  text=text.replaceAll('https://canberrawaterproof.com.au','https://www.canberrawaterproof.com.au');
+ if (!text.includes('- '+receptionHours)) {
+  text=text.replace(/(- Address: 121 Marcus Clarke St, Canberra ACT 2600)(\n|$)/, '$1\n- '+receptionHours+'$2');
+ }
+ text=text.replace(/(## Scope\n)[\s\S]*?(\n\n## )/, '$1Bathroom waterproofing, leaking shower repairs, shower resealing and regrouting, tile regrouting, balcony waterproofing, kitchen sealing, laundry waterproofing, external waterproofing, roof waterproofing, retaining-wall waterproofing and commercial waterproofing. Scope and appropriate trade coordination are confirmed for each property.$2');
  const missing=[...Object.keys(serviceNames).map(s=>`/services/${s}/`),'/case-studies/'].filter(p=>!text.includes(HOST+p));
  if(missing.length) text=text.trimEnd()+'\n\n## Additional services and project photos\n'+missing.map(p=>'- '+HOST+p).join('\n')+'\n';
  return text;

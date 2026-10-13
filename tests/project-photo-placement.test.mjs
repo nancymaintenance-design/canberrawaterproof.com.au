@@ -40,11 +40,15 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
   'case-studies/index.html':'f48629bfad888abc92338582a53045c21780de34dde939abfe45aaea5cd03f5f',
  };
  for(const path of paths) {
-  // Approved additive copy is excluded; every byte of the original page stays protected.
+  // Approved additive copy and confirmed shared business metadata are excluded;
+  // all original marketing, project images and case copy retain their original hashes.
   const original=read(path).replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'')
    .replace('<script src="/assets/mobile-navigation.js" defer></script>','')
    .replace('<button class="navigation-toggle" type="button" data-navigation-toggle aria-expanded="false" aria-controls="main-navigation" hidden>Menu</button>','')
-   .replace('<nav id="main-navigation" class="nav"','<nav class="nav"');
+   .replace('<nav id="main-navigation" class="nav"','<nav class="nav"')
+   .replace('<p class="office-hours">Office reception: daily 09:00–21:00. On-site work by arrangement.</p>','')
+   .replace(',"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"21:00"}]','')
+   .replace(/<footer\b[\s\S]*?<\/footer>/, footer => footer.replace(' loading="lazy" decoding="async"',''));
   assert.equal(hash(original),originalHashes[path],path);
  }
 });
