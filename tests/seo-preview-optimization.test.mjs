@@ -62,5 +62,5 @@ test('guide links are labelled as guides, not services', () => {
   const guideSection = html.match(/Guides for homeowners[\s\S]*?<\/section>/i)?.[0];
   assert.ok(guideSection);
   assert.doesNotMatch(guideSection, /MEL ONE SERVICE/i);
-  assert.match(guideSection, /MEL ONE GUIDE/i);
+  assert.match(guideSection, /MEL ONE (?:waterproofing )?GUIDE/i);
 });

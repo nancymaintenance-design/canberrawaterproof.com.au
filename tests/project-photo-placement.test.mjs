@@ -31,6 +31,28 @@ const groups = [
  ]},
 ];
 const paths = [...groups.map(g=>`services/${g.slug}/index.html`),gallery];
+// Exact user-approved heading/eyebrow edits only. Original body/image hashes stay fixed.
+const approvedHeadingEdits = [
+ ['What should I give the strata manager if the unit below is affected?','What balcony leak information should I give the strata manager?'],
+ ['Does rainwater under a back door need more silicone?','Do back-door leaks need silicone or external waterproofing repairs?'],
+ ['What if water pools against the side wall?','Does water pooling against a wall need drainage or waterproofing repairs?'],
+ ['Book MEL ONE','Book MEL ONE waterproofing'],
+ ['Follow MEL ONE','Follow MEL ONE waterproofing'],
+ ['Explore','Explore waterproofing services'],
+ ['Contact','Waterproofing contact'],
+ ['MEL ONE project photos','MEL ONE waterproofing project photos'],
+ ['MEL ONE field notes','MEL ONE waterproofing projects'],
+ ['Photographs that show the work.','Bathroom and balcony waterproofing project photos.'],
+ ['Your property is the next field note','Book a waterproofing property assessment'],
+];
+function restoreApprovedHeadingText(html) {
+ for(const [before,after] of approvedHeadingEdits) {
+  html=html.replaceAll('>'+after+'<','>'+before+'<')
+   .replaceAll('"name":"'+after+'"','"name":"'+before+'"')
+   .replaceAll('data-faq-question="'+after+'"','data-faq-question="'+before+'"');
+ }
+ return html;
+}
 
 test('original marketing, keywords, imagery and cases remain unchanged without appended photo groups',()=>{
  const originalHashes={
@@ -49,7 +71,7 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
    .replace('<p class="office-hours">Office reception: daily 09:00–21:00. On-site work by arrangement.</p>','')
    .replace(',"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"21:00"}]','')
    .replace(/<footer\b[\s\S]*?<\/footer>/, footer => footer.replace(' loading="lazy" decoding="async"',''));
-  assert.equal(hash(original),originalHashes[path],path);
+  assert.equal(hash(restoreApprovedHeadingText(original)),originalHashes[path],path);
  }
 });
 

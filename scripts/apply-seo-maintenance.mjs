@@ -3,6 +3,7 @@ import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyResponsiveImages } from './responsive-images.mjs';
 import { applyMobileNavigation } from './mobile-navigation.mjs';
+import { applyKeywordHeadings } from './keyword-headings.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -62,7 +63,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  const source = keywords[path];
  if (source) {
   const present = [...html.matchAll(keywordPattern)];
-  if (present.length > 1 || (present.length && present[0][0] !== source)) throw new Error(`Protected keyword section differs: ${path}`);
+  if (present.length > 1 || (present.length && applyKeywordHeadings(present[0][0],path) !== applyKeywordHeadings(source,path))) throw new Error(`Protected keyword section differs: ${path}`);
   if (!present.length) {
    if (!html.includes('</main>')) throw new Error(`Missing keyword insertion anchor: ${path}`);
    html = html.replace('</main>',`${source}</main>`);
@@ -125,7 +126,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (!/<script\b[^>]*src=["']\/assets\/conversion-events\.js["']/.test(html)) {
   html=html.replace('</head>','<script src="/assets/conversion-events.js" defer></script></head>');
  }
- return applyMobileNavigation(applyResponsiveImages(html,images));
+ return applyKeywordHeadings(applyMobileNavigation(applyResponsiveImages(html,images)),path);
 }
 
 export function applyLlms(text) {
