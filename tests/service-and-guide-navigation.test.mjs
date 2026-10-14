@@ -28,7 +28,7 @@ test('home has six service cards and a route to eleven complete services', () =>
   assert.match(retaining, /src="\/assets\/detail-retaining-wall.jpg"/);
 });
 
-test('all six guides have scenario-specific question headings and service links', () => {
+test('all six guides have scenario-specific declarative headings and service links', () => {
   for (const slug of ['shower-plumbing-or-waterproofing', 'regrouting-resealing-or-rewaterproofing', 'waterproofing-retiling-quote', 'balcony-leaking-room-below', 'kitchen-sink-resealing-or-plumbing', 'waterproofing-or-drainage']) {
     const html = read(`guides/${slug}/index.html`);
     assert.match(html, /<h1>[^<]+Canberra[^<]*<\/h1>|<h1>Leaking Shower Repair:/);
@@ -38,7 +38,8 @@ test('all six guides have scenario-specific question headings and service links'
     } else {
       assert.ok((html.match(/<section class="guide-answer">/g) || []).length >= 4);
     }
-    assert.match(html, /<h2>[^<]+\?<\/h2>/);
+    assert.doesNotMatch(html, /<h[1-6]\b[^>]*>[^<]*\?[^<]*<\/h[1-6]>/);
+    assert.match(html, /<h2>[^<]*(?:waterproof|leak|grout|reseal|membrane|seal|quote|plumb|drain)[^<]*<\/h2>/i);
     assert.match(html, /href="\/services\//);
     assert.doesNotMatch(html, /<section class="intent-summary">/);
   }

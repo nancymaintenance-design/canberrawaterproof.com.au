@@ -23,8 +23,9 @@ let aligned = 0;
 for (const file of files) {
   const before = readFileSync(file, 'utf8');
   const visibleAnswers = new Map();
-  for (const match of before.matchAll(/<details\b[^>]*>[\s\S]*?<summary>([\s\S]*?)<\/summary>[\s\S]*?<p(?:\s+data-faq-answer)?[^>]*>([\s\S]*?)<\/p>[\s\S]*?<\/details>/gi)) {
-    visibleAnswers.set(plainText(match[1]), plainText(match[2]));
+  for (const match of before.matchAll(/<details\b[^>]*>[\s\S]*?<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi)) {
+    const answer = [...match[2].matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(p => plainText(p[1])).join(' ');
+    visibleAnswers.set(plainText(match[1]), answer);
   }
   if (!visibleAnswers.size) continue;
 

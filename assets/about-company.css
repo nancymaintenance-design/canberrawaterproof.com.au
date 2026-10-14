@@ -1,0 +1,27 @@
+/* About company content uses the shared typefaces and navy/gold/teal palette. */
+.about-company .about-article{max-width:var(--reading-max,1100px)}
+.about-company-intro,.about-project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center}
+.about-company-intro>* ,.about-project>*{min-width:0}
+.about-company .article h2{margin-top:0;max-width:none}
+.about-company .eyebrow{color:#005f63}
+.about-company .about-photo figcaption{font-size:.9rem;line-height:1.5;color:#405662}
+.about-company .about-photo img{aspect-ratio:4/3}
+.about-advantages,.about-capabilities,.about-project,.about-company .about-credentials,.about-company .about-contact{margin-top:clamp(36px,5vw,60px)}
+.about-advantage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:24px}
+.about-advantage-grid article{padding:24px;background:#fff;border-top:4px solid var(--teal);border-radius:14px}
+.about-advantage-grid article:first-child{border-color:var(--gold)}
+.about-company h3{font-size:1.25rem;line-height:1.25;margin:0 0 12px}
+.about-advantage-grid p,.about-capability-grid p{font-size:1rem;line-height:1.6;margin:0}
+.about-company .about-response{padding:20px 24px;background:var(--navy);color:#fff;border-left:4px solid var(--gold);border-radius:10px;margin:22px 0 0}
+.about-company .about-contact .eyebrow{color:var(--aqua)}
+.about-capability-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;margin-top:12px}
+.about-capability-grid article{padding:20px 0;border-bottom:1px solid var(--line)}
+.about-capability-grid a{color:var(--navy);text-underline-offset:4px;text-decoration-thickness:1px}
+.about-scope-note{max-width:80ch;margin-top:24px}
+.about-company .about-credentials{padding:clamp(22px,3vw,34px)}
+.about-company .about-contact .eyebrow{color:var(--aqua)}
+.about-company .about-contact .text-link{color:#fff}
+.about-company .about-contact .secondary-dark:hover{background:var(--gold);color:var(--ink)}
+@media(max-width:900px){.about-advantage-grid{grid-template-columns:1fr}.about-advantage-grid article{padding:20px}}
+@media(max-width:760px){.about-company-intro,.about-project,.about-capability-grid{grid-template-columns:1fr}.about-company .about-photo{max-width:560px;width:100%}.about-company .about-photo img{aspect-ratio:4/3}.about-project{gap:24px}}
+@media(max-width:620px){.about-company .about-contact-details{grid-template-columns:1fr;gap:3px}.about-company .about-contact-details dd{margin-bottom:12px}.about-company .about-contact .actions>a{width:100%;text-align:center}}

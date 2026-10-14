@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 import { applyResponsiveImages } from './responsive-images.mjs';
 import { applyMobileNavigation } from './mobile-navigation.mjs';
 import { applyKeywordHeadings } from './keyword-headings.mjs';
+import { applyDeclarativeContent } from './declarative-content.mjs';
+import { applyFaqCategories } from './faq-categories.mjs';
+import { applyAboutCompany } from './about-company.mjs';
+import { applyRoofCaseStudy } from './case-study-project.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -45,6 +49,21 @@ const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- key
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
 
 export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
+ if (path === 'services/index.html') {
+  const covers = [
+   ['tile-regrouting','tile-regrouting-after','Tiled floor after regrouting with renewed tile joints'],
+   ['commercial-waterproofing','commercial-roof-waterproofing-work','Worker applying waterproofing on a commercial roof around rooftop equipment'],
+  ];
+  html = html.replace(/<article class="card">[\s\S]*?<\/article>/g, card => {
+   if (/<img\b/.test(card)) return card;
+   const cover = covers.find(([slug]) => card.includes(`href="/services/${slug}/"`));
+   if (!cover) return card;
+   const [,name,alt] = cover;
+   const sizes = '(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), (max-width: 1240px) calc((100vw - 74px) / 3), 389px';
+   const photo = `<figure class="service-card-image"><picture><source type="image/webp" srcset="${[480,800,1200].map(width=>`/assets/projects/${name}-${width}.webp ${width}w`).join(', ')}" sizes="${sizes}"><img src="/assets/projects/${name}.jpg" alt="${alt}" loading="lazy" decoding="async" width="1200" height="900"></picture></figure>`;
+   return card.replace('<article class="card">','<article class="card">'+photo);
+  });
+ }
  html = html.replace(/<footer\b[\s\S]*?<\/footer>/, footer =>
   footer.includes('class="office-hours"') ? footer : footer.replace('<p>121 Marcus Clarke St, Canberra, ACT 2600</p>', '<p>121 Marcus Clarke St, Canberra, ACT 2600</p>'+hoursMarkup));
  if (path === 'contact/index.html') {
@@ -63,7 +82,8 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  const source = keywords[path];
  if (source) {
   const present = [...html.matchAll(keywordPattern)];
-  if (present.length > 1 || (present.length && applyKeywordHeadings(present[0][0],path) !== applyKeywordHeadings(source,path))) throw new Error(`Protected keyword section differs: ${path}`);
+  const editorial = block => applyDeclarativeContent(applyKeywordHeadings(block,path),path);
+  if (present.length > 1 || (present.length && editorial(present[0][0]) !== editorial(source))) throw new Error(`Protected keyword section differs: ${path}`);
   if (!present.length) {
    if (!html.includes('</main>')) throw new Error(`Missing keyword insertion anchor: ${path}`);
    html = html.replace('</main>',`${source}</main>`);
@@ -126,7 +146,11 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (!/<script\b[^>]*src=["']\/assets\/conversion-events\.js["']/.test(html)) {
   html=html.replace('</head>','<script src="/assets/conversion-events.js" defer></script></head>');
  }
- return applyKeywordHeadings(applyMobileNavigation(applyResponsiveImages(html,images)),path);
+ html = applyDeclarativeContent(applyKeywordHeadings(applyMobileNavigation(applyResponsiveImages(html,images)),path),path);
+ if (path === 'about/index.html') html = applyAboutCompany(html);
+ if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
+ if (path === 'faq/index.html') html = applyFaqCategories(html);
+ return html;
 }
 
 export function applyLlms(text) {

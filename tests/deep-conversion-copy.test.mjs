@@ -19,7 +19,8 @@ test('contact and generated local forms explain assessment and optional email ph
   }
 });
 test('photo-only diagnosis FAQ directly explains concealed limitations and consent',()=>{
-  const text=visible(read('about/index.html'));assert.match(text,/do not confirm a concealed leak source/i);assert.match(text,/agree[^.]*access|access[^.]*agree/i);
+  const text=visible(read('faq/index.html'));assert.match(text,/do not confirm a concealed leak source/i);
+  assert.match(text,/confirms any access, repair and retiling work in the written quote/i);
 });
 test('all FAQ schema answers match the public rendered text',()=>{
   for(const p of pages()){const h=read(p),text=visible(h);for(const m of h.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)){const data=JSON.parse(m[1]);for(const item of data['@graph']||[data])if(item['@type']==='FAQPage')for(const qa of item.mainEntity){assert.ok(text.includes(qa.name),p+': '+qa.name);assert.ok(text.includes(qa.acceptedAnswer.text),p+': '+qa.name);}}}
