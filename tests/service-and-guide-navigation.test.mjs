@@ -36,7 +36,7 @@ test('all six guides have scenario-specific declarative headings and service lin
       assert.match(html, /<table>/);
       assert.match(html, /written approval/);
     } else {
-      assert.ok((html.match(/<section class="guide-answer">/g) || []).length >= 4);
+      assert.ok((html.match(/<section class="deep-guide-section"/g) || []).length >= 8);
     }
     assert.doesNotMatch(html, /<h[1-6]\b[^>]*>[^<]*\?[^<]*<\/h[1-6]>/);
     assert.match(html, /<h2>[^<]*(?:waterproof|leak|grout|reseal|membrane|seal|quote|plumb|drain)[^<]*<\/h2>/i);

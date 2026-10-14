@@ -8,6 +8,7 @@ import { applyDeclarativeContent } from './declarative-content.mjs';
 import { applyFaqCategories } from './faq-categories.mjs';
 import { applyAboutCompany } from './about-company.mjs';
 import { applyRoofCaseStudy } from './case-study-project.mjs';
+import { applyDeepGuide } from './deep-guides.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -150,6 +151,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (path === 'about/index.html') html = applyAboutCompany(html);
  if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
  if (path === 'faq/index.html') html = applyFaqCategories(html);
+ html = applyDeepGuide(html,path);
  return html;
 }
 

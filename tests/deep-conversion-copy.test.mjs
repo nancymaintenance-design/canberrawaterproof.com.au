@@ -47,5 +47,5 @@ test('quote preparation accepts first contact without dimensions, photos or tile
   assert.match(text,/Measurements and photographs are not needed before first contact/i);
   assert.match(text,/do not need to collect every item/i);
   assert.match(text,/installation requirements/i);
-  assert.match(text,/No\. Contact MEL ONE before choosing tiles/i);
+  assert.match(text,/Tile selection can wait: contact MEL ONE before choosing tiles/i);
 });
