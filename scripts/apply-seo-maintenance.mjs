@@ -9,6 +9,7 @@ import { applyFaqCategories } from './faq-categories.mjs';
 import { applyAboutCompany } from './about-company.mjs';
 import { applyRoofCaseStudy } from './case-study-project.mjs';
 import { applyDeepGuide } from './deep-guides.mjs';
+import { applyEnquiryFlow } from './enquiry-flow.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -152,7 +153,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
  if (path === 'faq/index.html') html = applyFaqCategories(html);
  html = applyDeepGuide(html,path);
- return html;
+ return applyEnquiryFlow(html,path);
 }
 
 export function applyLlms(text) {

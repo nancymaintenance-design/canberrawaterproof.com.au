@@ -43,6 +43,22 @@
 .footer-identity{margin-top:24px;padding-top:18px;border-top:1px solid #3b5663;color:#d8e5e7}.footer-identity p{margin:0 0 8px}
 .article table{width:100%;border-collapse:collapse;table-layout:fixed;margin:1.5rem 0;background:#fff;font-size:.94rem;line-height:1.45}.article caption{text-align:left;font-weight:800;color:var(--navy);margin-bottom:.5rem}.article th,.article td{padding:.8rem;border:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}.article thead th{background:#dcebed;color:var(--navy)}.article tbody th{width:30%;text-align:left;color:var(--navy)}@media(max-width:620px){.article table{font-size:.83rem}.article th,.article td{padding:.5rem}}
 
+/* Enquiry controls share the established gold, ink and native field styling. */
+.nav .button.primary,.nav .button.primary:hover,.nav .button.primary:focus,.nav .button.primary[aria-current]{color:var(--ink);background:var(--gold)}
+.nav .button.primary:focus-visible{outline:3px solid var(--white);outline-offset:4px}
+.form :is(input,select,textarea):focus-visible,.form button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+#service-form,.form :is(input,select,textarea){scroll-margin-top:180px}
+.form .two{align-items:start}
+.form-field{min-width:0}
+.field-error{display:block;min-height:1.5em;color:#a32828;font-size:.88rem;font-weight:700;margin-top:4px}
+.field-error[hidden]{visibility:hidden}
+.form [aria-invalid="true"]{border:2px solid #a32828}
+.form textarea{min-height:180px;resize:vertical}
+.form button[type="submit"]{min-width:210px;cursor:pointer;margin-top:18px}
+.form button:disabled{transform:none;box-shadow:none;cursor:wait}
+.form-status{min-height:5em;overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav .button,.form button{transition:none;transform:none}.nav .button:hover,.nav .button:focus,.form button:hover,.form button:focus{transform:none}}
+
 .service-grid-more{margin:32px 0 0;text-align:center}.service-grid-more .button{min-width:250px}.intent-guide{max-width:860px}.intent-guide .lede{color:#30424c}.guide-answer{margin-top:clamp(2.8rem,5vw,4.3rem);padding-top:1.2rem;border-top:1px solid var(--line)}.guide-answer h2,.guide-conclusion h2{max-width:25ch;font-size:clamp(1.7rem,3vw,2.55rem);line-height:1.17;overflow-wrap:break-word}.guide-answer p,.guide-conclusion p{max-width:72ch}.guide-conclusion{margin-top:4rem;padding:1.4rem 1.6rem 1.7rem;background:#fff;border-left:5px solid var(--gold)}@media(max-width:620px){.guide-conclusion{padding:1.2rem}.service-grid-more .button{width:100%}}
 
 /* Field Notes: a restrained inspection-line motif built around real MEL ONE work. */

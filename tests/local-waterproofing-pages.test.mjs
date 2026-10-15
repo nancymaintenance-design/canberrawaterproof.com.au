@@ -1,14 +1,19 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync as readSource, cpSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const generator = 'scripts/build-local-waterproofing-pages.mjs';
+const reports = resolve('../reports/2026-10-15-rectification/sdd');
+mkdirSync(reports, { recursive: true });
+const fixture = mkdtempSync(resolve(reports, 'task-1-locality-fixture-'));
+const generator = resolve(fixture, 'scripts/build-local-waterproofing-pages.mjs');
+const readFileSync = (path, ...options) => readSource(resolve(fixture, path), ...options);
 const canonicalHost = 'https://www.canberrawaterproof.com.au';
 
 function runGenerator(args) {
   return spawnSync(process.execPath, [generator, ...args], {
     encoding: 'utf8',
+    cwd: fixture,
   });
 }
 
@@ -66,7 +71,7 @@ function testPages() {
   const manifest = JSON.parse(runGenerator(['--check']).stdout);
   const localContexts = [];
   for (const page of manifest.pages) {
-    const file = resolve('.', page.route.slice(1), 'index.html');
+    const file = resolve(fixture, page.route.slice(1), 'index.html');
     assert.ok(existsSync(file), `missing generated page: ${page.route}`);
     const html = readFileSync(file, 'utf8');
     const context = html.match(/<p data-local-context>([^<]+)<\/p>/)?.[1];
@@ -116,7 +121,7 @@ function testPages() {
   assert.match(aranda, /10,000\+ customers/i);
   assert.match(aranda, /Ellis team can be on site in as little as 30 minutes after contact/i);
   assert.match(aranda, /Licensed and insured/i);
-  assert.match(aranda, /Request Service/);
+  assert.match(aranda, /<button class="button primary" type="submit">Request assessment<\/button>/);
   assert.match(aranda, /<form[^>]+action="\/api\/contact"[^>]+data-service-form/);
   assert.match(aranda, /name="suburb"[^>]+value="Aranda"/);
 
@@ -183,7 +188,7 @@ function testRegression() {
 
   const manifest = JSON.parse(runGenerator(['--check']).stdout);
   for (const page of manifest.pages) {
-    const file = resolve('.', page.route.slice(1), 'index.html');
+    const file = resolve(fixture, page.route.slice(1), 'index.html');
     assert.ok(existsSync(file), `missing route directory for ${page.route}`);
     const html = readFileSync(file, 'utf8');
     assert.match(html, /<form[^>]+action="\/api\/contact"/, `${page.route} must retain the contact endpoint`);
@@ -201,6 +206,10 @@ function testRegression() {
 
 const runAll = process.argv.length === 2;
 
+try {
+for (const path of ['scripts', 'data', 'services', 'guides', 'contact', 'service-areas', 'waterproofing', 'llms.txt', 'sitemap.xml']) {
+  cpSync(resolve(path), resolve(fixture, path), { recursive: true });
+}
 if (process.argv.includes('--contract') || runAll) {
   testContract();
   console.log('locality generator contract: pass');
@@ -219,4 +228,10 @@ if (process.argv.includes('--discovery') || runAll) {
 if (process.argv.includes('--regression') || runAll) {
   testRegression();
   console.log('locality regression: pass');
+}
+} finally {
+  // Remove only this test's exact mkdtemp directory after checking its owner.
+  assert.equal(resolve(fixture, '..'), reports);
+  assert.ok(fixture.startsWith(resolve(reports, 'task-1-locality-fixture-')));
+  rmSync(fixture, { recursive: true, force: true });
 }

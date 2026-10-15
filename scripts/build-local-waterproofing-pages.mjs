@@ -5,6 +5,7 @@ import { applyOnsiteResponseCopy } from './onsite-response-copy.mjs';
 import { applySocialLinks } from './social-links.mjs';
 import { maintainSite } from './apply-seo-maintenance.mjs';
 import { applyDistrictExplanation } from './district-explanation.mjs';
+import { applyEnquiryFlow } from './enquiry-flow.mjs';
 
 const SITE_URL = 'https://www.canberrawaterproof.com.au';
 const LAST_MODIFIED = '2026-10-06';
@@ -357,7 +358,7 @@ function writePages() {
   for (const [position, page] of LOCALITY_PAGES.entries()) {
     const target = resolve(root, page.route.slice(1), 'index.html');
     mkdirSync(dirname(target), { recursive: true });
-    const html = applyDistrictExplanation(applySocialLinks(applyOnsiteResponseCopy(renderPage(page, pageMap, position), page.name)), page).replace(
+    const html = applyEnquiryFlow(applyDistrictExplanation(applySocialLinks(applyOnsiteResponseCopy(renderPage(page, pageMap, position), page.name)), page), `waterproofing/${page.slug}/index.html`).replace(
       '<link rel="stylesheet" href="/assets/site.css">',
       `<meta property="og:image" content="${SITE_URL}/assets/mel-one-hero-bathroom.jpg"><link rel="stylesheet" href="/assets/site.css">`,
     );

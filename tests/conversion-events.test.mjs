@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import vm from 'node:vm';
 import { applySeoHtml } from '../scripts/apply-seo-maintenance.mjs';
+import { serviceFormBrowser, validEnquiry } from './helpers/service-form-browser.mjs';
 const sourceUrl = new URL('../assets/conversion-events.js', import.meta.url);
 const source = existsSync(sourceUrl) ? readFileSync(sourceUrl, 'utf8') : '';
 function browser(hostname = 'www.canberrawaterproof.com.au', gtag) {
@@ -54,13 +55,12 @@ test('missing or throwing analytics never breaks click or lead hook', async () =
  }
 });
 async function submit(response, throwingHook = false) {
- let handler, leads = 0, resets = 0, requests = 0;
- const status = { dataset: {} }, button = {};
- const form = { addEventListener: (_, fn) => { handler = fn; }, reportValidity: () => true, querySelector: () => button, reset: () => resets++ };
- const context = { document: { querySelector: selector => selector === '[data-service-form]' ? form : status }, window: { melOneTrackLead: (...args) => { assert.deepEqual(args, []); leads++; if (throwingHook) throw Error('analytics'); } }, FormData: class { entries() { return [['name','secret'],['email','private@example.test']]; } }, fetch: async () => { requests++; return response; } };
- vm.runInNewContext(readFileSync(new URL('../assets/service-form.js',import.meta.url),'utf8'), context);
- await handler({preventDefault() {}});
- return {leads, resets, requests, state:status.dataset.state, disabled:button.disabled};
+ let leads = 0, requests = 0;
+ const browser = serviceFormBrowser({ values: validEnquiry,
+  hook: (...args) => { assert.deepEqual(args, []); leads++; if (throwingHook) throw Error('analytics'); },
+  fetch: async () => { requests++; return response; } });
+ await browser.submit();
+ return {leads, resets:browser.resets, requests, state:browser.status.dataset.state, disabled:browser.button.disabled};
 }
 test('lead fires once only for accepted response including unconfirmed email', async () => {
  for (const confirmationSent of [true,false]) {

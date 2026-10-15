@@ -9,6 +9,7 @@ import { createServer } from 'node:http';
 import { applySeoHtml, applySitemap, maintainSite } from '../scripts/apply-seo-maintenance.mjs';
 import { applyDeclarativeContent } from '../scripts/declarative-content.mjs';
 import { applyRoofCaseStudy } from '../scripts/case-study-project.mjs';
+import { applyEnquiryFlow } from '../scripts/enquiry-flow.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const read = path => readFileSync(join(root, path), 'utf8');
@@ -64,12 +65,12 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
   'case-studies/index.html':'f48629bfad888abc92338582a53045c21780de34dde939abfe45aaea5cd03f5f',
  };
  for(const path of paths) {
-  // Keep the historical content hashes; permit only the explicit Oct14
-  // editorial transform on the previously approved release, not arbitrary edits.
+  // Keep historical content hashes; allow the approved editorial, case and
+  // enquiry transforms, while the exact comparison still rejects other edits.
   const baseline=execFileSync('git',['show',`13a086571453cc7f2589f373d46ceaf86562b2fb:${path}`],{cwd:root,encoding:'utf8'});
   const editorial=applyDeclarativeContent(baseline,path);
-  const approved=path===gallery ? applyRoofCaseStudy(editorial) : editorial;
-  assert.equal(read(path).replaceAll('\r\n','\n'),approved.replaceAll('\r\n','\n'),path+' approved editorial changes and relocated roof case only');
+  const approved=applyEnquiryFlow(path===gallery ? applyRoofCaseStudy(editorial) : editorial,path);
+  assert.equal(read(path).replaceAll('\r\n','\n'),approved.replaceAll('\r\n','\n'),path+' approved editorial, roof case and enquiry changes only');
   // Approved additive copy and confirmed shared business metadata are excluded;
   // all original marketing, project images and case copy retain their original hashes.
   const original=baseline.replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'')
