@@ -29,7 +29,7 @@ export function applyEnquiryFlow(html, path) {
   if (path === 'contact/index.html') {
     html = html.replace(/<section class="page-intro">[\s\S]*?<\/section>/, opening => {
       opening = opening.replace(' You can submit this form without photos. If you have photos taken safely, email them to riley@melonemaintenance.com.au.', '');
-      return opening.includes('href="#service-form"') ? opening : opening.replace('</div></section>', '<div class="actions"><a class="button primary" href="#service-form">Describe the repair</a><a class="button secondary" href="tel:+61482422607">Call 0482 422 607</a></div></div></section>');
+      return opening.includes('href="#service-form"') ? opening : opening.replace('</div></section>', '<div class="actions"><a class="button primary" href="#service-form">Describe the repair</a><a class="button secondary" href="tel:+611300838722">Call 0482 422 607</a></div></div></section>');
     });
   }
   html = html.replace(/<form\b[^>]*data-service-form[^>]*>[\s\S]*?<\/form>/g, form => {

@@ -35,7 +35,7 @@ function confirmationEmail(request, from) {
   const area = escapeHtml(request.area);
   const suburb = escapeHtml(request.suburb);
   return { from, to: [request.email], reply_to: RECIPIENT, subject: 'Your waterproofing service request is received — MEL ONE',
-    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>Your waterproofing service request is received.</h1><p>Hi ${customerName},</p><p>We have received your request for ${area} work in ${suburb}.</p><p>Our team will review the service details and contact you using the information you provided.</p><p>For urgent waterproofing assistance, call <a href="tel:+61482422607">0482 422 607</a>.</p><p>Kind regards,<br>MEL ONE Canberra Waterproofing</p></body></html>`,
+    html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>Your waterproofing service request is received.</h1><p>Hi ${customerName},</p><p>We have received your request for ${area} work in ${suburb}.</p><p>Our team will review the service details and contact you using the information you provided.</p><p>For urgent waterproofing assistance, call <a href="tel:+611300838722">0482 422 607</a>.</p><p>Kind regards,<br>MEL ONE Canberra Waterproofing</p></body></html>`,
     text: `Hi ${request.name},\n\nWe have received your service request for ${request.area} work in ${request.suburb}.\n\nOur team will review the service details and contact you using the information you provided.\n\nFor urgent waterproofing assistance, call 0482 422 607.\n\nKind regards,\nMEL ONE Canberra Waterproofing` };
 }
 

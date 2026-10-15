@@ -195,7 +195,7 @@ function testRegression() {
     assert.ok(existsSync(file), `missing route directory for ${page.route}`);
     const html = readFileSync(file, 'utf8');
     assert.match(html, /<form[^>]+action="\/api\/contact"/, `${page.route} must retain the contact endpoint`);
-    assert.match(html, /href="tel:\+61482422607"/, `${page.route} must retain the public phone link`);
+    assert.match(html, /href="tel:\+611300838722"/, `${page.route} must retain the public phone link`);
     assert.match(html, /href="mailto:riley@melonemaintenance\.com\.au"/, `${page.route} must retain the public email link`);
     assert.match(html, /Ellis team can be on site in as little as 30 minutes after contact/i, `${page.route} must describe urgent on-site attendance accurately`);
     assert.match(html, /Arrival timing depends on current availability, the address and safe access/i, `${page.route} must keep the attendance conditions clear`);

@@ -22,7 +22,7 @@ function browser(hostname = 'www.canberrawaterproof.com.au', gtag) {
 test('delegated intents emit fixed enums once and preserve navigation', async () => {
  const b = browser(); b.init();
  assert.equal(b.handlers.length, 1);
- for (const href of ['tel:+61482422607', 'mailto:private@example.test?body=secret', '/contact/?name=secret']) await b.click(href);
+ for (const href of ['tel:+611300838722', 'mailto:private@example.test?body=secret', '/contact/?name=secret']) await b.click(href);
  assert.deepEqual(b.events, [['event','phone_click',{contact_type:'phone'}],['event','email_click',{contact_type:'email'}],['event','booking_click',{contact_type:'booking'}]]);
 });
 test('unrelated, external contact and cancelled clicks emit nothing', async () => {

@@ -1,4 +1,4 @@
-const PHONE_LINK = '<a href="tel:+61482422607">0482 422 607</a>';
+const PHONE_LINK = '<a href="tel:+611300838722">0482 422 607</a>';
 
 export function applyOnsiteResponseCopy(html, area = 'Canberra') {
   const urgentAttendance = `For urgent jobs in ${area}, the Ellis team can be on site in as little as 30 minutes after contact. Arrival timing depends on current availability, the address and safe access.`;
