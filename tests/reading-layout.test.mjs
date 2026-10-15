@@ -39,8 +39,23 @@ test('Contact opening offers a direct form route while retaining controls and en
  const opening=after.match(/<section class="page-intro">[\s\S]*?<\/section>/)[0];
  assert.match(opening,/href="#service-form"/);
  assert.match(opening,/href="tel:\+61482422607"/);
+ assert.doesNotMatch(opening,/photos|riley@/i,'opening leaves the full photo instructions in their dedicated place');
+ const safety=before.match(/<p class="wrap">Photos are optional:[\s\S]*?<\/p>/)[0];
+ assert.ok(after.includes(safety),'retain the complete optional-photo and safety instructions');
  assert.equal(after.match(/<form\b[\s\S]*?<\/form>/)[0],before.match(/<form\b[\s\S]*?<\/form>/)[0]);
  assert.equal(applySeoHtml(after,'contact/index.html'),after);
+});
+
+test('home assessment action uses the direct form path while discovery actions retain their destinations',()=>{
+ const before=read('index.html'),after=applySeoHtml(before,'index.html');
+ const hero=after.match(/<section class="hero">[\s\S]*?<\/section>/)[0];
+ assert.match(hero,/<a class="button primary" href="\/contact\/#service-form">Request assessment<\/a>/);
+ assert.match(hero,/href="tel:\+61482422607"/);
+ for(const href of ['/services/','/case-studies/','/service-areas/']){
+  const action=before.match(new RegExp('<a class="button primary" href="'+href+'">[\\s\\S]*?<\\/a>'))[0];
+  assert.ok(after.includes(action),'retain discovery action '+href);
+ }
+ assert.equal(applySeoHtml(after,'index.html'),after);
 });
 
 for(const guide of deepGuides)test(`${guide.slug} offers a reading column and sourced distinctions without removing depth`,()=>{

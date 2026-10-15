@@ -8,6 +8,9 @@ const labels = { name: 'Name (required)', phone: 'Phone (optional)', email: 'Ema
 const autocomplete = { name: 'name', phone: 'tel', email: 'email' };
 
 export function applyEnquiryFlow(html, path) {
+  // Only assessment destinations are normalised; service/project discovery links retain their labels.
+  html = html.replace(/<a\b([^>]*class="button primary"[^>]*)>[\s\S]*?<\/a>/g, (whole, attributes) =>
+    /href="\/contact\/(?:#service-form)?"/.test(attributes) ? `<a${attributes.replace(/href="[^"]*"/, 'href="/contact/#service-form"')}>Request assessment</a>` : whole);
   html = html.replace(/<nav\b[^>]*class="mobile"[\s\S]*?<\/nav>/g, nav => nav.replace(
     /<a\b[^>]*href="(?:\/contact\/(?:#service-form)?|#(?:booking|service-form))"[^>]*>[\s\S]*?<\/a>/g,
     '<a href="/contact/#service-form">Request assessment</a>',
@@ -24,8 +27,10 @@ export function applyEnquiryFlow(html, path) {
     ));
   }
   if (path === 'contact/index.html') {
-    html = html.replace(/<section class="page-intro">[\s\S]*?<\/section>/, opening =>
-      opening.includes('href="#service-form"') ? opening : opening.replace('</div></section>', '<div class="actions"><a class="button primary" href="#service-form">Describe the repair</a><a class="button secondary" href="tel:+61482422607">Call 0482 422 607</a></div></div></section>'));
+    html = html.replace(/<section class="page-intro">[\s\S]*?<\/section>/, opening => {
+      opening = opening.replace(' You can submit this form without photos. If you have photos taken safely, email them to riley@melonemaintenance.com.au.', '');
+      return opening.includes('href="#service-form"') ? opening : opening.replace('</div></section>', '<div class="actions"><a class="button primary" href="#service-form">Describe the repair</a><a class="button secondary" href="tel:+61482422607">Call 0482 422 607</a></div></div></section>');
+    });
   }
   html = html.replace(/<form\b[^>]*data-service-form[^>]*>[\s\S]*?<\/form>/g, form => {
     form = form.replace(/<form\b([^>]*)>/, (_, attributes) => `<form${attributes.replace(/\s(?:id="[^"]*"|novalidate)/g, '')} id="service-form" novalidate>`);
