@@ -7,15 +7,14 @@ const host='https://www.canberrawaterproof.com.au';
 const escape=text=>text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const json=value=>JSON.stringify(value).replaceAll('<','\\u003c');
 const label=slug=>slug.split('-').join(' ');
-const leadSentence=html=>html.match(/<p>([\s\S]*?)<\/p>/)[1].replace(/<[^>]*>/g,'').split(/(?<=\.)\s/)[0];
 
 function renderReading(guide,cover) {
  const aid=reading[guide.slug];
  const contents=`<nav class="deep-guide-toc" aria-label="Article contents"><h2>Waterproofing guide contents</h2><ol>${guide.sections.map(s=>`<li><a href="#${s.id}">${escape(s.title)}</a></li>`).join('')}</ol><p><a href="#guide-questions">Related questions</a> · <a href="#guide-sources">Sources</a></p></nav>`;
- const distinctions=`<section class="deep-guide-distinctions" aria-labelledby="guide-distinctions"><h2 id="guide-distinctions">Waterproofing repair distinctions</h2><div class="deep-guide-copy"><table><caption>Selected distinctions from this guide</caption><thead><tr><th scope="col">Consideration</th><th scope="col">Starting point for assessment</th></tr></thead><tbody>${aid.distinctions.map(([id,title])=>{
+ const distinctions=`<section class="deep-guide-distinctions" aria-labelledby="guide-distinctions"><h2 id="guide-distinctions">Waterproofing repair distinctions</h2><div class="deep-guide-copy"><table><caption>Selected distinctions from this guide</caption><thead><tr><th scope="col">Consideration</th><th scope="col">Starting point for assessment</th></tr></thead><tbody>${aid.distinctions.map(([id,title,summary])=>{
   const section=guide.sections.find(s=>s.id===id);
   if(!section)throw new Error(`Unknown reading section ${guide.slug}#${id}`);
-  return `<tr><th scope="row"><a href="#${id}">${escape(title)}</a></th><td>${leadSentence(section.html)}</td></tr>`;
+  return `<tr><th scope="row"><a href="#${id}">${escape(title)}</a></th><td>${escape(summary)}</td></tr>`;
  }).join('')}</tbody></table><p class="deep-guide-caption">Read the linked sections for context, limitations and supporting references.</p></div></section>`;
  return `<div class="deep-guide-layout">${contents}<div class="deep-guide-overview"><section class="deep-guide-summary" aria-labelledby="guide-summary"><h2 id="guide-summary">${escape(aid.title)}</h2><p>${escape(guide.intro)}</p></section>${cover}</div></div><div class="deep-guide-body">${guide.sections.map((s,index)=>`<section class="deep-guide-section" aria-labelledby="${s.id}"><h2 id="${s.id}">${escape(s.title)}</h2><div class="deep-guide-copy">${s.html}</div></section>${index===0?distinctions:''}`).join('')}</div>`;
 }

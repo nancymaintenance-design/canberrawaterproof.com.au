@@ -55,6 +55,15 @@ for(const guide of deepGuides)test(`${guide.slug} offers a reading column and so
  for(const section of guide.sections)assert.ok(after.includes(section.html),`retained full section ${section.id}`);
  for(const section of matrix.knowledge_matrix.sections)assert.ok(plain(after).includes(section.content),'feed reflects visible full section');
  assert.deepEqual([...after.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...before.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]));
- for(const table of before.matchAll(/<table\b[\s\S]*?<\/table>/g))assert.ok(after.includes(table[0]));
+ for(const section of guide.sections)for(const table of section.html.matchAll(/<table\b[\s\S]*?<\/table>/g))assert.ok(after.includes(table[0]),'authored full-context tables remain intact');
  assert.equal(applySeoHtml(after,path),after);
+});
+
+test('guide comparison rows state the practical material and quote boundaries',()=>{
+ const quote=applySeoHtml(read('guides/waterproofing-retiling-quote/index.html'),'guides/waterproofing-retiling-quote/index.html');
+ const quoteRow=quote.match(/<tr><th scope="row"><a href="#comparable-quotes">[\s\S]*?<\/tr>/)[0];
+ assert.match(plain(quoteRow),/removal.*preparation.*waterproofing.*reinstatement/i,'a scope comparison names the work being compared');
+ const shower=applySeoHtml(read('guides/regrouting-resealing-or-rewaterproofing/index.html'),'guides/regrouting-resealing-or-rewaterproofing/index.html');
+ const materialRow=shower.match(/<tr><th scope="row"><a href="#grout-silicone-membrane">[\s\S]*?<\/tr>/)[0];
+ assert.match(plain(materialRow),/grout.*silicone.*membrane/i,'the material comparison distinguishes all three roles');
 });

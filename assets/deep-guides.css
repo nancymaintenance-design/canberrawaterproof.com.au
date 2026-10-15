@@ -1,4 +1,4 @@
-.deep-guide{max-width:var(--max);padding-top:32px;padding-bottom:40px;--guide-rail:280px;--guide-gap:clamp(28px,4vw,56px)}
+.deep-guide{--guide-rail:280px;--guide-gap:clamp(28px,4vw,56px);--guide-measure:76ch;max-width:calc(var(--guide-rail) + var(--guide-gap) + var(--guide-measure));padding-top:32px;padding-bottom:40px}
 .deep-guide .deep-guide-heading{background:none;position:static;border:0;padding:0;margin:0 0 28px}
 .deep-guide h1{font-size:clamp(2rem,3.6vw,3.2rem);max-width:30ch;line-height:1.13}
 .deep-guide .lede{max-width:70ch}
@@ -6,7 +6,7 @@
 .deep-guide p,.deep-guide li{line-height:1.75;overflow-wrap:anywhere}
 .deep-guide .deep-guide-byline{font-size:.92rem;color:#40545f}
 .deep-guide-layout,.deep-guide-section,.deep-guide-distinctions,.deep-guide-questions,.deep-guide-sources{display:grid;grid-template-columns:var(--guide-rail) minmax(0,1fr);gap:var(--guide-gap);align-items:start}
-.deep-guide-overview,.deep-guide-copy{min-width:0;max-width:70ch}
+.deep-guide-overview,.deep-guide-copy{min-width:0}
 .deep-guide-summary{border-left:4px solid var(--gold);padding-left:22px;margin-bottom:24px}
 .deep-guide-summary p{margin:0 0 14px}
 .deep-guide-summary h2{font-size:1.45rem}
@@ -36,10 +36,10 @@
 .deep-guide .guide-conclusion p{max-width:70ch}
 @media(max-width:1000px){.deep-guide{--guide-rail:230px;--guide-gap:28px}}
 @media(max-width:800px){
+ .deep-guide{max-width:var(--guide-measure)}
  .deep-guide-layout,.deep-guide-section,.deep-guide-distinctions,.deep-guide-questions,.deep-guide-sources{grid-template-columns:minmax(0,1fr);gap:12px}
  .deep-guide-toc{margin-bottom:16px}
  .deep-guide-toc ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
- .deep-guide-copy,.deep-guide-overview{max-width:none}
  .deep-guide .guide-cover img{aspect-ratio:16/9}
 }
 @media(max-width:620px){
