@@ -599,7 +599,7 @@ h1,h2,h3{font-family:var(--field-display);letter-spacing:-.025em;line-height:1.1
 
 
 /* Site-wide reading rhythm: shared widths and bounded, content-led spacing. */
-:root{--reading-max:1100px;--prose-max:70ch;--section-space:clamp(32px,4vw,56px);--scroll-thumb:#627d89;--scroll-track:#e1eaed;--scroll-hover:#405e6d;--scroll-active:#102c45}
+:root{--reading-max:1100px;--section-space:clamp(32px,4vw,56px);--scroll-thumb:#627d89;--scroll-track:#e1eaed;--scroll-hover:#405e6d;--scroll-active:#102c45}
 
 html{scroll-padding-top:110px;scrollbar-color:var(--scroll-thumb) var(--scroll-track)}
 
@@ -644,7 +644,8 @@ html{scroll-padding-top:110px;scrollbar-color:var(--scroll-thumb) var(--scroll-t
 
 .guide-answer h2,.guide-conclusion h2{max-width:none}
 
-.article>p,.article>ul,.article>ol,.service-story>p,.service-list,.service-steps,.intent-guide>p,.guide-answer p,.guide-conclusion p{max-width:var(--prose-max)}
+/* Single-column copy fills its composition; dedicated guide columns own their reading measure. */
+.service-story>p,.service-list,.service-steps,.intent-guide>p,.guide-answer p,.guide-conclusion p{max-width:none}
 
 .service-story>p:last-child{margin-bottom:0}
 

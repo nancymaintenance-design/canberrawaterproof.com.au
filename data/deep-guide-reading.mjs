@@ -24,7 +24,7 @@ export default {
   distinctions: [
    ['paving-boundary','Paving or elevated balcony','Ground-level paving and an elevated balcony over an occupied room need different investigations. Identify what lies below the outdoor surface.'],
    ['resealing-limits','Local sealing','Local sealing treats the specified joint or detail; it does not replace concealed waterproofing. Confirm the entry path and repair boundary.'],
-   ['tile-removal','Access through finishes','Tile removal depends on the confirmed cause, access and connection to the surrounding system. A surface photo cannot establish a repair without removal.'],
+   ['tile-removal','Access through finishes','Tile removal depends on the confirmed cause, access and connection to the surrounding system. A surface photograph cannot confirm whether a repair without tile removal is feasible.'],
   ],
  },
  'waterproofing-or-drainage': {

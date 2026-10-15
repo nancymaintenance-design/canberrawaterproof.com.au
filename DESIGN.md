@@ -28,7 +28,6 @@ rounded:
 spacing:
   page-max: "1200px"
   article-max: "1100px"
-  prose-max: "70ch"
   guide-prose-max: "76ch"
   section-min: "32px"
   section-max: "56px"
@@ -58,11 +57,11 @@ Navy and midnight frame the site. The sticky header has an opaque `#0b1a26` surf
 
 ## Typography
 
-`--field-body` maps to the body stack above; `--field-display` maps to headings. Body type is 17px, falling to 16px at 620px. Long guide prose uses line-height 1.75 and a 76ch column; shared body copy uses 1.65 with a 70ch maximum. Display scale belongs to page titles, while card titles, form titles and supporting contact/map headings have their own smaller scale. Public copy remains English with Australian spelling. FAQ questions retain question form; other headings remain topical and declarative.
+`--field-body` maps to the body stack above; `--field-display` maps to headings. Body type is 17px, falling to 16px at 620px. Long guide prose uses line-height 1.75 and a 76ch column; shared body copy uses 1.65 and the width of its actual composition. Display scale belongs to page titles, while card titles, form titles and supporting contact/map headings have their own smaller scale. Public copy remains English with Australian spelling. FAQ questions retain question form; other headings remain topical and declarative.
 
 ## Layout
 
-The page wrapper is 1200px with 20px side gutters. Shared article/evidence surfaces can reach 1100px; long prose remains bounded by `--prose-max:70ch`. Deep guides centre their complete editorial composition around a 76ch reading column plus supporting heading rail and gap, so images, tables and prose fill the same actual column without an unused strip inside it. Sections use `--section-space:clamp(32px,4vw,56px)` and natural document height. Do not add viewport-height shells, arbitrary minimum section heights or filler to complete an 11-card collection.
+The page wrapper is 1200px with 20px side gutters. Shared article/evidence surfaces can reach 1100px; single-column service/detail copy fills that composition rather than sitting in a shorter left-aligned measure below a wider heading. Deep guides centre their complete editorial composition around a 76ch reading column plus supporting heading rail and gap, so images, tables and prose fill the same actual column without an unused strip inside it. Their controlled measure is local to that purposeful composition. Sections use `--section-space:clamp(32px,4vw,56px)` and natural document height. Do not add viewport-height shells, arbitrary minimum section heights or filler to complete an 11-card collection.
 
 Shared collections use three columns, two at 900px and one at 620px. Guide opening contents occupy a 280px supporting column, narrowed to 230px at 1000px. Each subject section repeats the same heading/content relationship down the article. At 800px this becomes one natural column; only the contents list temporarily uses two columns before falling to one at 620px. The article and full contents are not sticky. Existing useful tables, eight authored subject sections, FAQs, source lists and machine-readable content are retained.
 
@@ -80,7 +79,7 @@ Existing content cards use 14px corners, buttons 5px and native fields 4px. Para
 
 ## Components
 
-Runtime mapping: `colors.ink/navy/midnight/teal/aqua/gold/paper/white/line` mirror like-named variables in `assets/site.css`; `colors.primary` is the documented action alias of `--gold`, and `colors.header` mirrors `.header`'s opaque surface. `typography.body/display` mirror `--field-body/--field-display`; `spacing.page-max/article-max/prose-max` mirror `--max/--reading-max/--prose-max`; `spacing.guide-prose-max` mirrors `--guide-measure` in `assets/deep-guides.css`. Radius values mirror shared card, button and field rules. There is no second runtime token source.
+Runtime mapping: `colors.ink/navy/midnight/teal/aqua/gold/paper/white/line` mirror like-named variables in `assets/site.css`; `colors.primary` is the documented action alias of `--gold`, and `colors.header` mirrors `.header`'s opaque surface. `typography.body/display` mirror `--field-body/--field-display`; `spacing.page-max/article-max` mirror `--max/--reading-max`; `spacing.guide-prose-max` mirrors `--guide-measure` in `assets/deep-guides.css`. Radius values mirror shared card, button and field rules. There is no second runtime token source.
 
 Primary assessment navigation retains dark text on gold for default, hover, focus, active and current-page states. Focus remains visible. Native buttons and links own their usual semantics; native `details/summary` own FAQ disclosure and native anchors own category navigation. Category script owns measured scroll offsets and `aria-current="location"` only.
 
