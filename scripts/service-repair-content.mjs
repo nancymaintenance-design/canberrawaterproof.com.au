@@ -14,7 +14,7 @@ export function applyServiceRepairContent(html,path){
  html=html.replace('<span class="evidence-label">MEL ONE assessment process</span><strong>From the reported symptom to a defined repair scope</strong><p>We review the accessible details, identify the appropriate repair pathway and record the agreed work in clear stages.</p>',`<span class="evidence-label">${item.caption}</span><p>${item.detail}</p>`);
  // Hero carries the complete conditional urgent-attendance message. Booking owns
  // optional photos, direct contact and the location-specific safety information.
- html=html.replace(/(<section class="service-booking"[^>]*>[\s\S]*?<h2>[^<]*<\/h2>)<p>Call [\s\S]*?<\/p>/,`$1<p>Request an <a href="/contact/?service=${slug}#service-form">on-site assessment and written quote</a>, or call <a href="tel:+611300838722">0482 422 607</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au or contact us without them.</p><p class="service-access">${item.access}</p>`);
+ html=html.replace(/(<section class="service-booking"[^>]*>[\s\S]*?<h2>[^<]*<\/h2>)<p>Call [\s\S]*?<\/p>/,`$1<p>Request an <a href="/contact/?service=${slug}#service-form">on-site assessment and written quote</a>, or call <a href="tel:+61482422607">0482 422 607</a>. Photos are optional: email safely taken photos to riley@melonemaintenance.com.au or contact us without them.</p><p class="service-access">${item.access}</p>`);
  html=html.replace('<p>The Ellis team completes an on-site assessment, explains the likely water-entry cause or installation requirements, and confirms the repair plan and written quote.</p>','');
  html=html.replace('<p>No. A coating described as roof paint','<p>A coating described as roof paint');
  return html;

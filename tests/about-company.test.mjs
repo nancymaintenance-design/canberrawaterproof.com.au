@@ -68,7 +68,7 @@ test('About metadata matches company content and removes retired FAQ schema refe
  assert.equal(graph.find(n => n['@type'] === 'WebPage').mainEntity, undefined);
  assert.equal(graph.find(n => n['@type'] === 'WebPage').name, result.match(/<h1>([^<]+)<\/h1>/)[1]);
  assert.equal(graph.find(n => n['@type'] === 'WebPage').description, result.match(/<meta name="description" content="([^"]+)"/)[1]);
- assert.match(result, /href="tel:\+611300838722"/);
+ assert.match(result, /href="tel:\+61482422607"/);
  assert.match(result, /href="mailto:riley@melonemaintenance.com.au"/);
 });
 

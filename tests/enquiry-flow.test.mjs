@@ -137,11 +137,11 @@ test('network, server and malformed responses preserve inputs and offer understa
 
 test('supported maintenance restores enquiry markup without changing content, imagery or legacy booking anchors', () => {
   const path = 'services/roof-waterproofing/index.html';
-  const fixture = '<html><head></head><body><nav class="nav"><a class="button primary" href="#booking">Book</a></nav><main><section class="page-intro service-hero"><div class="actions"><a class="button primary" href="#booking">Book roof</a></div></section><article id="booking">Preserved facts<img src="/assets/original.jpg" alt="Original"></article></main><nav class="mobile" aria-label="Quick contact"><a href="tel:+611300838722">Call</a><a href="/contact/">Book Waterproofing Service</a></nav></body></html>';
+  const fixture = '<html><head></head><body><nav class="nav"><a class="button primary" href="#booking">Book</a></nav><main><section class="page-intro service-hero"><div class="actions"><a class="button primary" href="#booking">Book roof</a></div></section><article id="booking">Preserved facts<img src="/assets/original.jpg" alt="Original"></article></main><nav class="mobile" aria-label="Quick contact"><a href="tel:+61482422607">Call</a><a href="/contact/">Book Waterproofing Service</a></nav></body></html>';
   const output = applySeoHtml(fixture, path);
   assert.ok(output.includes('href="/contact/?service=roof-waterproofing#service-form"'));
   assert.ok(output.includes('<article id="booking">Preserved facts<img src="/assets/original.jpg" alt="Original"></article>'));
-  assert.ok(output.includes('<nav class="mobile" aria-label="Quick contact"><a href="tel:+611300838722">Call</a><a href="/contact/#service-form">Request assessment</a></nav>'),'quick contact leads directly to the same assessment form');
+  assert.ok(output.includes('<nav class="mobile" aria-label="Quick contact"><a href="tel:+61482422607">Call</a><a href="/contact/#service-form">Request assessment</a></nav>'),'quick contact leads directly to the same assessment form');
   const locality = readFileSync(new URL('../waterproofing/belconnen/index.html', import.meta.url), 'utf8').replace(/(<nav class="mobile"[^>]*>[\s\S]*?<a href=")[^"]*(">Request assessment<\/a><\/nav>)/,'$1#booking$2');
   const localOutput = applySeoHtml(locality, 'waterproofing/belconnen/index.html');
   assert.match(localOutput.match(/<nav class="mobile"[\s\S]*?<\/nav>/)[0], /href="\/contact\/#service-form">Request assessment/,'locality maintenance also replaces its historical booking shortcut');
