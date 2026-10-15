@@ -6,9 +6,9 @@
   const header = document.querySelector('.header');
   const links = [...navigation.querySelectorAll('.faq-category-links a')];
   const headings = links.map(link => document.getElementById(link.hash.slice(1)));
-  const mobile = matchMedia('(max-width: 760px)');
+  const compact = matchMedia('(max-width: 760px), (max-height: 600px)');
   root.classList.add('faq-enhanced');
-  const occupiedBar = () => mobile.matches && getComputedStyle(navigation).position === 'sticky' ? Math.ceil(navigation.getBoundingClientRect().height) : 0;
+  const occupiedBar = () => compact.matches && getComputedStyle(navigation).position === 'sticky' ? Math.ceil(navigation.getBoundingClientRect().height) : 0;
   const offsets = () => {
     root.style.setProperty('--faq-header-height', `${Math.ceil(header?.getBoundingClientRect().height || 0)}px`);
     root.style.setProperty('--faq-bar-height', `${occupiedBar()}px`);

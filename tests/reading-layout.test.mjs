@@ -34,6 +34,18 @@ test('FAQ offsets follow occupied sticky surfaces when the menu expands',()=>{
  assert.equal(attributes[0]['aria-current'],'location');
 });
 
+test('short landscape FAQ reserves the compact category bar below the desktop header',()=>{
+ const styles={},attributes=[{}, {}, {}];
+ const links=attributes.map((attrs,i)=>({hash:'#category-'+i,setAttribute:(key,value)=>attrs[key]=value,removeAttribute:key=>delete attrs[key]}));
+ const navigation={querySelectorAll:()=>links,getBoundingClientRect:()=>({height:68})};
+ const header={getBoundingClientRect:()=>({height:85})};
+ const context={document:{documentElement:{classList:{add(){}},style:{setProperty:(k,v)=>styles[k]=v}},querySelector:s=>s==='.faq-navigation'?navigation:header,getElementById:id=>({getBoundingClientRect:()=>({top:Number(id.at(-1))*300})})},matchMedia:query=>({matches:query.includes('max-height: 600px')}),getComputedStyle:()=>({position:'sticky'}),window:{},addEventListener(){},requestAnimationFrame:fn=>fn()};
+ vm.runInNewContext(read('assets/faq-navigation.js'),context);
+ assert.equal(styles['--faq-header-height'],'85px');
+ assert.equal(styles['--faq-bar-height'],'68px','844×390 uses the compact bar rather than a tall sidebar');
+ assert.equal(attributes[0]['aria-current'],'location');
+});
+
 test('Contact opening offers a direct form route while retaining controls and enquiry endpoint',()=>{
  const before=read('contact/index.html'),after=applySeoHtml(before,'contact/index.html');
  const opening=after.match(/<section class="page-intro">[\s\S]*?<\/section>/)[0];

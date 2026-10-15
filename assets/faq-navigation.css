@@ -24,7 +24,8 @@ html:has(.faq-page){--faq-header-height:85px;--faq-bar-height:0px;scroll-padding
 .faq-category details a{color:#005f63;text-underline-offset:3px}
 .faq-category-links>a:focus-visible,.faq-category summary:focus-visible,.faq-navigation-help a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
 .faq-source-note{font-size:.9rem;color:#405967}
-@media(max-width:760px){
+/* A short landscape viewport needs the same compact category row as a phone. */
+@media(max-width:760px),(max-height:600px){
  html:has(.faq-page){--faq-header-height:170px;--faq-bar-height:68px}
  .faq-page .header{position:relative}
  html.faq-enhanced .faq-page .header{position:sticky}
@@ -43,4 +44,5 @@ html:has(.faq-page){--faq-header-height:85px;--faq-bar-height:0px;scroll-padding
  .faq-page:has(.navigation-toggle[aria-expanded="true"]) .faq-navigation{position:static}
 }
 @media(max-width:620px){html:has(.faq-page){--faq-header-height:85px}.faq-page .page-intro{padding-block:24px 18px}.faq-page .faq-introduction{margin-bottom:24px}}
-@media(max-width:760px){html:not(.faq-enhanced):has(.faq-page){--faq-header-height:0px}}
+@media(min-width:761px) and (max-height:600px){html:has(.faq-page){--faq-header-height:85px}}
+@media(max-width:760px),(max-height:600px){html:not(.faq-enhanced):has(.faq-page){--faq-header-height:0px}}
