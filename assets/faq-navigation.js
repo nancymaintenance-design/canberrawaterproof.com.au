@@ -8,12 +8,13 @@
   const headings = links.map(link => document.getElementById(link.hash.slice(1)));
   const mobile = matchMedia('(max-width: 760px)');
   root.classList.add('faq-enhanced');
+  const occupiedBar = () => mobile.matches && getComputedStyle(navigation).position === 'sticky' ? Math.ceil(navigation.getBoundingClientRect().height) : 0;
   const offsets = () => {
     root.style.setProperty('--faq-header-height', `${Math.ceil(header?.getBoundingClientRect().height || 0)}px`);
-    root.style.setProperty('--faq-bar-height', `${mobile.matches ? Math.ceil(navigation.getBoundingClientRect().height) : 0}px`);
+    root.style.setProperty('--faq-bar-height', `${occupiedBar()}px`);
   };
   const active = () => {
-    const offset = (header?.getBoundingClientRect().height || 0) + (mobile.matches ? navigation.getBoundingClientRect().height : 0) + 24;
+    const offset = (header?.getBoundingClientRect().height || 0) + occupiedBar() + 24;
     let current = 0;
     headings.forEach((heading, index) => { if (heading && heading.getBoundingClientRect().top <= offset) current = index; });
     links.forEach((link, index) => {

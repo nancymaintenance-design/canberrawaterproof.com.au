@@ -25,7 +25,7 @@ html:has(.faq-page){--faq-header-height:85px;--faq-bar-height:0px;scroll-padding
 .faq-category-links>a:focus-visible,.faq-category summary:focus-visible,.faq-navigation-help a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
 .faq-source-note{font-size:.9rem;color:#405967}
 @media(max-width:760px){
- html:has(.faq-page){--faq-header-height:0px;--faq-bar-height:94px}
+ html:has(.faq-page){--faq-header-height:170px;--faq-bar-height:68px}
  .faq-page .header{position:relative}
  html.faq-enhanced .faq-page .header{position:sticky}
  .faq-page .faq{padding-top:26px}
@@ -33,11 +33,14 @@ html:has(.faq-page){--faq-header-height:85px;--faq-bar-height:0px;scroll-padding
  .faq-navigation{top:var(--faq-header-height);z-index:20;margin:0 -20px 28px;padding:10px 14px;border:0;border-bottom:2px solid var(--gold);border-radius:0;box-shadow:0 4px 12px #102c4514}
  .faq-navigation>.eyebrow,.faq-navigation-help{display:none}
  .faq-category-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
- .faq-category-links>a{display:flex;align-items:center;justify-content:center;min-height:72px;padding:9px 6px;border-left:0;border-bottom:3px solid transparent;text-align:center;font-size:clamp(.7rem,2.4vw,.88rem);line-height:1.35}
+ .faq-category-links>a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 6px;border-left:0;border-bottom:3px solid transparent;text-align:center;font-size:clamp(.78rem,2.4vw,.9rem);line-height:1.35;overflow-wrap:anywhere}
  .faq-category-links>a:hover,.faq-category-links>a[aria-current="location"]{border-left:0;border-bottom-color:var(--teal)}
  .faq-category-links small{display:none}
  .faq-category{margin-bottom:34px}
  .faq-category details{padding-inline:17px}
  .faq-category details[open]{padding-left:14px}
  .faq-category summary{padding-block:17px}
+ .faq-page:has(.navigation-toggle[aria-expanded="true"]) .faq-navigation{position:static}
 }
+@media(max-width:620px){html:has(.faq-page){--faq-header-height:85px}.faq-page .page-intro{padding-block:24px 18px}.faq-page .faq-introduction{margin-bottom:24px}}
+@media(max-width:760px){html:not(.faq-enhanced):has(.faq-page){--faq-header-height:0px}}

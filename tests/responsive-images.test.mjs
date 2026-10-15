@@ -3,6 +3,13 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { applyResponsiveImages } from '../scripts/responsive-images.mjs';
 const manifest = {'/assets/photo.jpg': {width:1200,height:800,candidates:[{width:480,url:'/assets/responsive/photo-480.webp'},{width:1200,url:'/assets/responsive/photo-1200.webp'}]}};
+test('case collection photographs follow the card columns rather than the wide detail image',()=>{
+ const img='<img src="/assets/photo.jpg" alt="Roof project">';
+ const cards=applyResponsiveImages(`<div class="grid case-photo-grid"><figure>${img}</figure></div>`,manifest);
+ assert.ok(cards.includes('363px'),'case cards use their padded three-column desktop widths');
+ const detail=applyResponsiveImages(`<article class="article"><figure class="case-study-image">${img}</figure></article>`,manifest);
+ assert.ok(detail.includes('790px'),'detail evidence keeps its separate width');
+});
 test('grid covers and workflow photos use grid widths while article covers stay wide',()=>{
  const img='<img src="/assets/photo.jpg" alt="Detail">';
  const grid='(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), (max-width: 1240px) calc((100vw - 74px) / 3), 389px';
