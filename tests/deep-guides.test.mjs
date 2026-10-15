@@ -5,6 +5,24 @@ import {applySeoHtml} from '../scripts/apply-seo-maintenance.mjs';
 const root=new URL('../',import.meta.url);
 const read=p=>readFileSync(new URL(p,root),'utf8');
 const slugs=['shower-plumbing-or-waterproofing','regrouting-resealing-or-rewaterproofing','waterproofing-retiling-quote','balcony-leaking-room-below','kitchen-sink-resealing-or-plumbing','waterproofing-or-drainage'];
+test('quote guide regeneration keeps one complete photo instruction with a short safety enquiry link elsewhere',()=>{
+ const path='guides/waterproofing-retiling-quote/index.html',shipped=read(path);
+ const legacy='<p class="wrap">Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos. Do not remove finishes, climb onto roofs or approach hazards to take them.</p>';
+ const fixture=shipped.replace(/(<\/article>)<p class="wrap">[\s\S]*?<\/p>/,'$1'+legacy);
+ const result=applySeoHtml(fixture,path),main=result.match(/<main\b[\s\S]*?<\/main>/)[0];
+ assert.equal((main.match(/riley@melonemaintenance\.com\.au/g)||[]).length,1,'one full email/photo instruction');
+ const complete=[...main.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/g)].filter(m=>/Photos are optional/.test(m[0])&&/riley@/.test(m[0]));
+ assert.equal(complete.length,1);assert.match(complete[0][0],/Belconnen, Gungahlin, Woden Valley/);assert.match(complete[0][0],/contact us without them/);
+ const safety=main.match(/<\/article>([\s\S]*?)<\/main>/)[1];
+ assert.match(safety,/href="\/contact\/#service-form"/);assert.doesNotMatch(safety,/riley@|Photos are optional/);
+ assert.match(safety,/Do not remove finishes, climb onto roofs or approach hazards/);
+ const matrix=JSON.parse(result.match(/<script id="llm-entity-json" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+ const plain=main.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+ for(const section of matrix.knowledge_matrix.sections)assert.ok(plain.includes(section.content),'visible/feed content: '+section.id);
+ assert.equal(matrix.article_metadata.date_modified,'2026-10-14');
+ assert.deepEqual([...result.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...shipped.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]));
+ assert.equal(applySeoHtml(result,path),result);
+});
 // Catch regeneration silently restoring shallow articles or divorcing the feed from visible answers.
 for(const slug of slugs)test(`${slug} regenerates deep visible content and matching two-layer feed`,()=>{
  const path=`guides/${slug}/index.html`;

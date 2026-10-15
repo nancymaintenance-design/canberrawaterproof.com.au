@@ -24,6 +24,7 @@ export function applyDeepGuide(html,path) {
  html=html.replace(oldArticle,finalBody);
  html=html.replace(/<div class="wrap crumbs">[\s\S]*?<\/div>/,`<div class="wrap crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / ${escape(guide.title)}</div>`);
  html=html.replace('Photos are optional; contact us without them.','Photos are optional: email safely taken photos to riley@melonemaintenance.com.au or contact us without them. The Ellis team completes an on-site assessment and confirms the repair plan and written quote.');
+ if(guide.slug==='waterproofing-retiling-quote')html=html.replace('<p class="wrap">Photos are optional: email safely taken photos to riley@melonemaintenance.com.au. You can contact us without photos. Do not remove finishes, climb onto roofs or approach hazards to take them.</p>','<p class="wrap">For enquiry details, <a href="/contact/#service-form">request a waterproofing assessment</a>. Do not remove finishes, climb onto roofs or approach hazards to take photographs.</p>');
  if(guide.slug==='waterproofing-retiling-quote')html=html.replace('<nav class="deep-guide-toc"','<p>Measurements and photographs are not needed before first contact. You do not need to collect every item before asking about repair or installation requirements. Tile selection can wait: contact MEL ONE before choosing tiles.</p><nav class="deep-guide-toc"');
  // Sources and the knowledge matrix reflect visible content, not hidden marketing claims.
  html=html.replace(/<script id="llm-entity-json" type="application\/json">[\s\S]*?<\/script>/g,'');
