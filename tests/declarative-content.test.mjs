@@ -5,7 +5,7 @@ import { applyDeclarativeContent } from '../scripts/declarative-content.mjs';
 test('service headings become declarative without changing anchors or repair boundaries', () => {
  const source='<main><h1>Shower Resealing & Regrouting in Canberra</h1><h2 id="scope">What can shower resealing and regrouting in Canberra include?</h2><p>Grout is not a waterproofing membrane.</p><h2>Can silicone repair a concealed waterproofing membrane?</h2></main>';
  const result=applyDeclarativeContent(source,'services/shower-resealing-regrouting/index.html');
- assert.match(result, /<h2 id="scope">Shower resealing and regrouting scope<\/h2>/);
+ assert.match(result, /<h2 id="scope">Grout and silicone repair scope<\/h2>/);
  assert.match(result, /<h2>Silicone repair and concealed membrane failure<\/h2>/);
  assert.match(result, /<h1>Shower Resealing & Regrouting in Canberra<\/h1>/);
  assert.match(result, /Grout is not a waterproofing membrane/);
@@ -32,16 +32,18 @@ test('geographic edits affect visible content while preserving addresses, claims
  assert.match(result, /<footer>Canberra office<\/footer>/);
 });
 
-test('near-me service headings use existing sections and retain booking claims with real coverage', () => {
- const service='<main><h2>Compare Canberra waterproofing and leak repair services.</h2><p>Choose the service for the affected area.</p></main>';
+test('topical service coverage headings retain existing localities, anchors and booking conditions', () => {
+ const service='<main><h2 id="coverage">Waterproofing Services Near Me</h2><p>Choose the service for the affected area in Belconnen, Gungahlin and Woden Valley.</p></main>';
  const result=applyDeclarativeContent(service,'services/index.html');
- assert.match(result, /<h2>Waterproofing Services Near Me<\/h2>/);
+ assert.match(result, /<h2 id="coverage">Waterproofing service coverage<\/h2>/);
+ assert.doesNotMatch(result,/Near Me/);
  assert.match(result, /Belconnen, Gungahlin and Woden Valley/);
- const bathroom='<main><section class="service-booking" id="booking"><h2>How do you book bathroom waterproofing in Canberra?</h2><p>Call for a fast 30-minute response.</p></section></main>';
+ const bathroom='<main><section class="service-booking" id="booking"><h2>Bathroom Waterproofing Near Me</h2><p>Belconnen, Gungahlin and Woden Valley. Arrival depends on current availability, the address and safe access.</p></section></main>';
  const booked=applyDeclarativeContent(bathroom,'services/bathroom-waterproofing/index.html');
- assert.match(booked, /<h2>Bathroom Waterproofing Near Me<\/h2>/);
+ assert.match(booked, /<h2>Book bathroom waterproofing<\/h2>/);
+ assert.doesNotMatch(booked,/Near Me/);
  assert.match(booked, /Belconnen, Gungahlin and Woden Valley/);
- assert.match(booked, /Call for a fast 30-minute response\./);
+ assert.match(booked, /Arrival depends on current availability, the address and safe access/);
  assert.equal(applyDeclarativeContent(booked,'services/bathroom-waterproofing/index.html'),booked);
  assert.equal(applyDeclarativeContent(result,'services/index.html'),result);
 });

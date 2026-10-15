@@ -232,3 +232,6 @@ html{scroll-padding-top:110px;scrollbar-color:var(--scroll-thumb) var(--scroll-t
  .field-note-stage{margin-bottom:28px}
 }
 @media(forced-colors:active){html{scrollbar-color:auto}}
+
+/* Collection cards use H2 semantics with the established card-title scale. */
+.card h2{font-size:1.3rem;line-height:1.12;margin:0 0 17px}

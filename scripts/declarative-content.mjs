@@ -113,16 +113,43 @@ export const declarativeReplacements = {
  'Contact MEL ONE for Canberra waterproofing.':'Contact MEL ONE for waterproofing repairs.',
  'Waterproofing repair guides for Canberra homeowners.':'Waterproofing repair guides for homeowners.',
  'Canberra bathroom waterproofing and tiling project':'Bathroom waterproofing and tiling project',
- 'Compare Canberra waterproofing and leak repair services.':'Waterproofing Services Near Me',
- 'Compare waterproofing and leak repair services.':'Waterproofing Services Near Me',
- 'How do you book bathroom waterproofing in Canberra?':'Bathroom Waterproofing Near Me',
- 'Book bathroom waterproofing':'Bathroom Waterproofing Near Me',
+ 'Compare Canberra waterproofing and leak repair services.':'Waterproofing service coverage',
+ 'Compare waterproofing and leak repair services.':'Waterproofing service coverage',
+ 'Waterproofing Services Near Me':'Waterproofing service coverage',
+ 'How do you book bathroom waterproofing in Canberra?':'Book bathroom waterproofing',
+ 'Bathroom Waterproofing Near Me':'Book bathroom waterproofing',
+ 'Bathroom waterproofing that addresses the failed wet area, not just the visible symptom':'Bathroom leak assessment and membrane renewal',
+ 'What the bathroom waterproofing service can include':'Bathroom waterproofing scope',
+ 'A straightforward process from assessment to finished bathroom':'Bathroom assessment, preparation and reinstatement',
+ 'Bathroom waterproofing and tiling project':'Bathroom waterproofing work photographs',
+ 'Leaking shower repairs scope':'Shower repair scope',
+ 'Shower resealing and regrouting scope':'Grout and silicone repair scope',
+ 'Balcony waterproofing and leak repairs scope':'Balcony repair scope',
+ 'Kitchen sealing and resealing scope':'Kitchen joint sealing scope',
+ 'External waterproofing and water ingress repairs scope':'External waterproofing repair scope',
+ 'External repair scope':'External waterproofing repair scope',
+ 'External water-entry inspection locations':'External water ingress inspection locations',
+ 'Laundry waterproofing scope':'Laundry membrane repair scope',
+ 'Roof leak repairs and waterproofing scope':'Roof waterproofing scope',
+ 'Retaining wall waterproofing scope':'Retaining wall repair scope',
+ 'Book leaking shower repairs':'Request shower leak assessment',
+ 'Book shower resealing and regrouting':'Request shower joint repairs',
+ 'Book balcony waterproofing and leak repairs':'Request balcony assessment',
+ 'Book kitchen sealing and resealing':'Request kitchen sealing',
+ 'Book external waterproofing and water ingress repairs':'Request external leak assessment',
+ 'Book roof leak repairs and waterproofing':'Request roof leak assessment',
+ 'Discuss your tile joints with the Ellis team':'Request tile regrouting',
+ 'Discuss commercial waterproofing with the Ellis team':'Request commercial waterproofing',
+ 'Waterproofing & leak repair services.':'Waterproofing and Leak Repair Services in Canberra',
+ 'Waterproofing & leak repair guides.':'Waterproofing and Leak Repair Guides in Canberra',
  'Waterproofing service areas across Canberra and the ACT':'Waterproofing coverage across ACT districts',
  'Tile regrouting and epoxy grout in Canberra':'Tile regrouting and epoxy grout',
  'Commercial waterproofing in Canberra':'Commercial waterproofing',
 };
 
 const bodyReplacements = {
+ 'No. Ponding describes water remaining':'Ponding describes water remaining',
+ 'No. Resealing a confirmed joint leak':'Resealing a confirmed joint leak',
  'Choose a district to see local information and the MEL ONE service that matches the affected area.':'Find a local waterproofer for Belconnen, Gungahlin, Woden Valley and surrounding ACT districts. Choose your district and the service that matches the affected area.',
  'That gives Canberra property owners':'That gives local property owners',
  'Explore the related MEL ONE Canberra waterproofing service.':'Explore the related MEL ONE waterproofing service.',
@@ -171,6 +198,8 @@ function rename(text,tag) {
 export function applyDeclarativeContent(html,file,changes) {
  file=file.replaceAll('\\','/');
  if(file==='faq/index.html')return html;
+ const protectedFragment=html.startsWith('<!-- keyword-content-expansion:start -->');
+ if(protectedFragment)html='<main>'+html+'</main>';
  // Apply only to visible headings/title, retaining markup and every existing id.
  html=html.replace(/<(title|h[1-6])\b([^>]*)>([\s\S]*?)<\/\1>/gi,(whole,tag,attrs,content)=>{
   const before=plain(content),after=rename(before,tag.toLowerCase());
@@ -210,5 +239,5 @@ export function applyDeclarativeContent(html,file,changes) {
   });
   return a+main+b;
  });
- return html;
+ return protectedFragment?html.slice(6,-7):html;
 }

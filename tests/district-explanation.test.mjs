@@ -24,7 +24,8 @@ test('nine shipped hubs preserve headings and claims while linking help without 
   assert.match(html,/10\+ years/);
   assert.match(html,/10,000\+ customers/);
   assert.match(html,/name="robots" content="index,follow"/);
-  assert.match(html,/How the Ellis team carries out/);
+  assert.match(html,/<h2>Waterproofing assessment and repairs in /);
+  assert.doesNotMatch(html,/<h2>How the Ellis team carries out/);
   assert.match(html,/Office reception: daily 09:00–21:00/);
   if (slug === 'woden-valley') assert.match(html,/href="\/services\/roof-waterproofing\/#isaacs-roof"/);
   else assert.doesNotMatch(html,/Isaacs|April 2026/);

@@ -57,7 +57,7 @@ function restoreApprovedHeadingText(html) {
  return html;
 }
 
-test('original marketing, keywords, imagery and cases remain unchanged without appended photo groups',()=>{
+test('approved service edits preserve original images, protected scenes, page identities and historical evidence without appended photo groups',()=>{
  const originalHashes={
   'services/balcony-waterproofing/index.html':'6a675cadd2c1e223b704d1d949063e7520e7aecac1f946ffd12ba54bd19b4a65',
   'services/external-waterproofing/index.html':'f5c78ceea002d655178111ced6e636de7edba29cb4d0e0971ea32d9ab4ebba92',
@@ -68,9 +68,12 @@ test('original marketing, keywords, imagery and cases remain unchanged without a
   // Keep historical content hashes; allow the approved editorial, case and
   // enquiry transforms, while the exact comparison still rejects other edits.
   const baseline=execFileSync('git',['show',`13a086571453cc7f2589f373d46ceaf86562b2fb:${path}`],{cwd:root,encoding:'utf8'});
-  const editorial=applyDeclarativeContent(baseline,path);
-  const approved=applyEnquiryFlow(path===gallery ? applyRoofCaseStudy(editorial) : editorial,path);
-  assert.equal(read(path).replaceAll('\r\n','\n'),approved.replaceAll('\r\n','\n'),path+' approved editorial, roof case and enquiry changes only');
+  const editorial=applyDeclarativeContent(baseline,path),current=read(path);
+  assert.deepEqual([...current.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...baseline.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),path+' original image tags');
+  for(const block of editorial.matchAll(/<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g))assert.ok(current.includes(block[0]),path+' protected scene');
+  const canonical=baseline.match(/<link rel="canonical"[^>]*>/)[0];assert.ok(current.includes(canonical));
+  assert.match(current,/href="\/case-studies\/"/);
+  if(path!==gallery){assert.match(current,/on-site assessment/);assert.match(current,/written quote/);assert.doesNotMatch(current,/Visible damage can be a useful starting point|From the reported symptom to a defined repair scope/);}
   // Approved additive copy and confirmed shared business metadata are excluded;
   // all original marketing, project images and case copy retain their original hashes.
   const original=baseline.replaceAll('\r\n','\n').replace(/<!-- content-gap-20261012:start -->[\s\S]*?<!-- content-gap-20261012:end -->\n/g,'')
@@ -163,8 +166,8 @@ test('photo batch lastmod includes retaining wall and gallery while unrelated da
  const host='https://www.canberrawaterproof.com.au';
  const input='<urlset>'+[...paths.map(p=>'/'+p.replace('index.html','')),'/about/'].map(p=>`<url><loc>${host}${p}</loc><lastmod>2026-01-01</lastmod></url>`).join('')+'</urlset>';
  const result=applySitemap(input);
- for(const path of paths) assert.ok(result.includes(`${host}/${path.replace('index.html','')}</loc><lastmod>2026-10-10</lastmod>`));
- assert.ok(result.includes('/about/</loc><lastmod>2026-01-01</lastmod>'));
+ for(const path of paths) assert.ok(result.includes(`${host}/${path.replace('index.html','')}</loc><lastmod>2026-10-15</lastmod>`));
+ assert.ok(result.includes('/about/</loc><lastmod>2026-10-15</lastmod>'));
  assert.equal(applySitemap(result),result);
 });
 

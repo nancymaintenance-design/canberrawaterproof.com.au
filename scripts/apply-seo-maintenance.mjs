@@ -10,6 +10,10 @@ import { applyAboutCompany } from './about-company.mjs';
 import { applyRoofCaseStudy } from './case-study-project.mjs';
 import { applyDeepGuide } from './deep-guides.mjs';
 import { applyEnquiryFlow } from './enquiry-flow.mjs';
+import { applyServiceRepairContent } from './service-repair-content.mjs';
+import { applyProjectEvidenceNavigation } from './project-evidence-navigation.mjs';
+import { applyEditorialPresentation } from './editorial-presentation.mjs';
+import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -38,15 +42,15 @@ const guideServices = {
  'waterproofing-or-drainage':['external-waterproofing','retaining-wall-waterproofing'],
 };
 
-// Fixed content-change evidence: eight keyword additions in 5077296 (2026-10-10),
-// plus four guides that gained related-reading content, and the supplied photo
-// batch on three services and the gallery. Quote and drainage guides already
-// have related content; no date is inferred for their schema-only changes.
+// Fixed significant-content dates: guide expansion on 14 October, then the
+// service/company/project editorial revision and collection semantics on 15 October.
+// Shared navigation and contextual evidence links alone do not reset article dates.
 export const contentChanges = Object.fromEntries([
- ...Object.keys(serviceNames).filter(slug=>!['retaining-wall-waterproofing','tile-regrouting','commercial-waterproofing'].includes(slug)).map(slug=>`${HOST}/services/${slug}/`),
- ...['shower-plumbing-or-waterproofing','regrouting-resealing-or-rewaterproofing','balcony-leaking-room-below','kitchen-sink-resealing-or-plumbing'].map(slug=>`${HOST}/guides/${slug}/`),
- `${HOST}/services/retaining-wall-waterproofing/`, `${HOST}/case-studies/`,
-].map(url=>[url,'2026-10-10']));
+ ...Object.keys(guideServices).map(slug=>[`${HOST}/guides/${slug}/`,'2026-10-14']),
+ ...Object.keys(serviceNames).map(slug=>[`${HOST}/services/${slug}/`,'2026-10-15']),
+ ...['services','guides','industry-news','about','case-studies'].map(slug=>[`${HOST}/${slug}/`,'2026-10-15']),
+ ...['belconnen','gungahlin','inner-north-city','inner-south','woden-valley','weston-creek-molonglo','tuggeranong','east-canberra','act-localities'].map(slug=>[`${HOST}/waterproofing/${slug}/`,'2026-10-15']),
+]);
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
 
@@ -153,6 +157,13 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
  if (path === 'faq/index.html') html = applyFaqCategories(html);
  html = applyDeepGuide(html,path);
+ html = applyServiceRepairContent(html,path);
+ html = applyProjectEvidenceNavigation(html,path);
+ if (['services/index.html','guides/index.html','industry-news/index.html'].includes(path)) {
+  html=html.replace(/<article class="card[^"]*">[\s\S]*?<\/article>/g,card=>card.replace(/<h3\b/g,'<h2').replace(/<\/h3>/g,'</h2>'));
+ }
+ html = applyEditorialPresentation(html,path);
+ html = applyLocalityContactCopy(html,path);
  return applyEnquiryFlow(html,path);
 }
 

@@ -429,7 +429,7 @@ function writeDiscoveryResources() {
 
   const sitemapPath = resolve(root, 'sitemap.xml');
   let sitemap = readFileSync(sitemapPath, 'utf8');
-  const routePattern = new RegExp(`<url><loc>${SITE_URL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\/waterproofing\\/[a-z0-9-]+\\/<\\/loc><\\/url>`, 'g');
+  const routePattern = new RegExp(`<url>\\s*<loc>${SITE_URL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\/waterproofing\\/[a-z0-9-]+\\/<\\/loc>\\s*(?:<lastmod>[^<]+<\\/lastmod>\\s*)?<\\/url>`, 'g');
   sitemap = sitemap.replace(routePattern, '');
   const routeEntries = LOCALITY_PAGES.filter((page) => page.indexable).map((page) => `<url><loc>${SITE_URL}${page.route}</loc></url>`).join('');
   sitemap = sitemap.replace('</urlset>', `${routeEntries}</urlset>`);

@@ -10,7 +10,7 @@ const label=slug=>slug.split('-').join(' ');
 export function applyDeepGuide(html,path) {
  const guide=deepGuides.find(item=>path===`guides/${item.slug}/index.html`);
  if(path==='guides/index.html') {
-  for(const item of deepGuides) html=html.replace(new RegExp(`(<h3><a href="/guides/${item.slug}/">)[^<]*(</a></h3>)`,'g'),'$1'+escape(item.title.replace(/ in Canberra$/,''))+'$2');
+  for(const item of deepGuides) html=html.replace(new RegExp(`(<h[23]><a href="/guides/${item.slug}/">)[^<]*(</a></h[23]>)`,'g'),'$1'+escape(item.title.replace(/ in Canberra$/,''))+'$2');
   return html;
  }
  if(!guide)return html;

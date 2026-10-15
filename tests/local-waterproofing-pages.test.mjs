@@ -91,7 +91,8 @@ function testPages() {
   assert.equal((aranda.match(/<h1>Bathroom Waterproofing in Aranda<\/h1>/g) || []).length, 1);
   assert.match(aranda, /<title>Bathroom Waterproofing Aranda \| MEL ONE<\/title>/);
   assert.match(aranda, /<h2>Bathroom Waterproofing Services in Aranda<\/h2>/);
-  assert.match(aranda, /<h2>How the Ellis team carries out bathroom waterproofing in Aranda<\/h2>/);
+  assert.match(aranda, /<h2>Waterproofing assessment and repairs in Aranda<\/h2>/);
+  assert.doesNotMatch(aranda, /backed by proven experience/);
   assert.match(aranda, /<link rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\/aranda\/">/);
   for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry']) {
     assert.match(aranda.toLowerCase(), new RegExp(term));
@@ -120,7 +121,9 @@ function testPages() {
   assert.match(aranda, /10\+ years/i);
   assert.match(aranda, /10,000\+ customers/i);
   assert.match(aranda, /Ellis team can be on site in as little as 30 minutes after contact/i);
-  assert.match(aranda, /Licensed and insured/i);
+  assert.match(aranda, /Company and insurance/i);
+  assert.match(aranda, /AUD 20 million Public &amp; Products Liability/);
+  assert.doesNotMatch(aranda, /<strong>Licensed and insured/);
   assert.match(aranda, /<button class="button primary" type="submit">Request assessment<\/button>/);
   assert.match(aranda, /<form[^>]+action="\/api\/contact"[^>]+data-service-form/);
   assert.match(aranda, /name="suburb"[^>]+value="Aranda"/);

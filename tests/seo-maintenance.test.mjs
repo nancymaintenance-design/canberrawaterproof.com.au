@@ -62,10 +62,10 @@ test('lastmod only changes manifest content pages and retains other dates',()=>{
  const fn=api.applySitemap;
  const xml=`<urlset><url><loc>${host}/guides/shower-plumbing-or-waterproofing/</loc></url><url><loc>${host}/services/bathroom-waterproofing/</loc></url><url><loc>${host}/guides/waterproofing-or-drainage/</loc></url><url><loc>${host}/about/</loc><lastmod>2025-01-01</lastmod></url><url><loc>${host}/</loc></url></urlset>`;
  const output=fn(xml);
- assert.ok(output.includes('/guides/shower-plumbing-or-waterproofing/</loc><lastmod>2026-10-10</lastmod>'));
- assert.ok(output.includes('/services/bathroom-waterproofing/</loc><lastmod>2026-10-10</lastmod>'));
- assert.ok(output.includes('/guides/waterproofing-or-drainage/</loc></url>'));
- assert.ok(output.includes('/about/</loc><lastmod>2025-01-01</lastmod>'));
+ assert.ok(output.includes('/guides/shower-plumbing-or-waterproofing/</loc><lastmod>2026-10-14</lastmod>'));
+ assert.ok(output.includes('/services/bathroom-waterproofing/</loc><lastmod>2026-10-15</lastmod>'));
+ assert.ok(output.includes('/guides/waterproofing-or-drainage/</loc><lastmod>2026-10-14</lastmod>'));
+ assert.ok(output.includes('/about/</loc><lastmod>2026-10-15</lastmod>'));
  assert.ok(output.includes(`${host}/</loc></url>`));
  assert.equal(fn(output),output);
 });
@@ -96,7 +96,8 @@ test('supported locality generation restores maintenance and is repeatable in is
   const local=readFileSync(join(root,'waterproofing/belconnen/index.html'),'utf8');
   assert.ok(local.includes('<picture data-responsive-image>'));
   assert.ok(graph(local).find(n=>n['@type']==='WebPage').mainEntity);
-  assert.ok(readFileSync(join(root,'sitemap.xml'),'utf8').includes('<lastmod>2026-10-10</lastmod>'));
+  assert.ok(readFileSync(join(root,'sitemap.xml'),'utf8').includes('<lastmod>2026-10-14</lastmod>'));
+  for(const region of local.matchAll(/<nav\b[^>]*class="nav"[\s\S]*?<\/nav>|<footer\b[\s\S]*?<\/footer>/g))assert.ok(region[0].includes('href="/case-studies/"'),'regenerated shared Projects navigation');
   assert.deepEqual(api.maintainSite(root).changed,[]);
   const result2=spawnSync(process.execPath,[join(root,'scripts/build-local-waterproofing-pages.mjs'),'--verify'],{encoding:'utf8',cwd:root});
   assert.equal(result2.status,0,result2.stderr);
