@@ -68,6 +68,40 @@ test('invalid input focuses the first field, associates guidance and preserves e
   await browser.submit(); assert.equal(browser.focused, 'message');
 });
 
+test('native email type mismatches show linked guidance and preserve values without dispatch', async () => {
+  for (const email of ['a,b@example.com', 'a@example..com', 'a@example.com,']) {
+    let requests = 0, leads = 0;
+    const browser = serviceFormBrowser({ values: { ...validEnquiry, email }, nativeValidity: { email: { typeMismatch: true } },
+      hook: () => { leads++; }, fetch: async () => { requests++; return { ok: true, json: async () => ({ ok: true, confirmationSent: false }) }; } });
+    await browser.submit();
+    const field = browser.fields.get('email'), error = browser.errors.get(field.getAttribute('aria-describedby'));
+    assert.equal(field.getAttribute('type'), 'email');
+    assert.equal(requests, 0, email); assert.equal(leads, 0); assert.equal(browser.resets, 0);
+    assert.equal(browser.status.dataset.state, 'error'); assert.equal(browser.focused, 'email');
+    assert.equal(field.getAttribute('aria-invalid'), 'true'); assert.equal(error.hidden, false);
+    assert.match(error.textContent, /email address.*name@example\.com/);
+    assert.equal(field.value, email); assert.equal(browser.fields.get('message').value, validEnquiry.message);
+  }
+});
+
+test('native-valid email still observes the existing server address constraint', async () => {
+  let requests = 0;
+  const browser = serviceFormBrowser({ values: { ...validEnquiry, email: 'test@localhost' }, nativeValidity: { email: { typeMismatch: false } },
+    fetch: async () => { requests++; return { ok: true, json: async () => ({ ok: true, confirmationSent: false }) }; } });
+  await browser.submit();
+  assert.equal(requests, 0); assert.equal(browser.focused, 'email');
+  assert.equal(browser.fields.get('email').getAttribute('aria-invalid'), 'true');
+});
+
+test('native-valid email that meets the server constraint dispatches and succeeds', async () => {
+  let requests = 0;
+  const email = 'test+assessment@example.test';
+  const browser = serviceFormBrowser({ values: { ...validEnquiry, email }, nativeValidity: { email: { typeMismatch: false } },
+    fetch: async (_, init) => { requests++; assert.equal(JSON.parse(init.body).email, email); return { ok: true, json: async () => ({ ok: true, confirmationSent: false }) }; } });
+  await browser.submit();
+  assert.equal(requests, 1); assert.equal(browser.status.dataset.state, 'success'); assert.equal(browser.resets, 1);
+});
+
 test('pending locks duplicate dispatch, retains button label and announces received request without confirming a visit', async () => {
   let finish, requests = 0, leads = 0;
   const browser = serviceFormBrowser({ values: validEnquiry, hook: (...args) => { assert.deepEqual(args, []); leads++; },

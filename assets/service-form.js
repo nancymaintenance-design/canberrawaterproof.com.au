@@ -42,7 +42,7 @@
       const value = fields[name].value.trim();
       let message = !value ? requiredMessages[name] || '' : '';
       if (value.length > 4000) message = 'Use 4,000 characters or fewer.';
-      else if (name === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) message = requiredMessages.email;
+      else if (name === 'email' && value && (fields[name].validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))) message = requiredMessages.email;
       else if (name === 'phone' && value && value.length < 6) message = 'Enter a phone number with at least 6 characters, or leave it blank.';
       fieldError(name, message);
       if (message && !first) first = fields[name];

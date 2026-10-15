@@ -3,7 +3,7 @@ import vm from 'node:vm';
 
 // The only substituted boundaries are the DOM and network; execute the shipped
 // script against controls derived from the real contact markup.
-export function serviceFormBrowser({ search = '', values = {}, fetch: request, hook } = {}) {
+export function serviceFormBrowser({ search = '', values = {}, nativeValidity = {}, fetch: request, hook } = {}) {
   const html = readFileSync(new URL('../../contact/index.html', import.meta.url), 'utf8');
   const fields = new Map(), errors = new Map();
   let focused, submit, resets = 0;
@@ -12,6 +12,9 @@ export function serviceFormBrowser({ search = '', values = {}, fetch: request, h
     const attributes = Object.fromEntries([...attrs.matchAll(/([\w-]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
     const initial = attributes.value || (tag === 'select' && !html.includes('<option value="">') ? 'Shower' : '');
     fields.set(name, { name, id: attributes.id, value: initial,
+      // Browser-owned constraint results are supplied at the DOM boundary;
+      // do not reproduce the platform's email parser in this helper.
+      get validity() { return { typeMismatch: false, ...nativeValidity[name] }; },
       getAttribute: key => attributes[key] ?? null,
       setAttribute: (key, value) => { attributes[key] = String(value); },
       removeAttribute: key => { delete attributes[key]; },
