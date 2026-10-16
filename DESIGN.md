@@ -45,6 +45,8 @@ components:
 
 ## Overview
 
+Language update (2026-10-16): public pages now have matching Australian English and Simplified Chinese versions. Existing English content stays at its current routes and Chinese content uses `/zh/`. `assets/bilingual.css` owns Chinese font stacks, reading spacing and the compact language navigation; the established colours, photographs and layout remain shared. Source copy and reviewed Chinese translations must be maintained together using `scripts/bilingual-site.mjs`; generated Chinese pages are never edited separately. The previous English-only notes below describe the original design baseline.
+
 This is an English (en-AU) brand and content site for Canberra and ACT property owners and managers. Its job is to explain the boundary of a possible repair, show accurately described project photography and help people request an on-site assessment. The existing field-notes motif uses an inspection line, real site images and restrained gold rules. Preserve that identity; an admin dashboard, cosmetic rebrand or invented project evidence would be inappropriate.
 
 The approved rectification preserves the navy, gold and teal palette, current type stacks and all assigned image assets. Its deliberate visual move is a guide layout in which section headings support a controlled reading column, rather than making long prose span the page.

@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "languages": [
+    "en-AU",
+    "zh-Hans"
+  ],
+  "pages": {
+    "404.html": {
+      "en": "/404.html",
+      "zh": "/zh/404.html",
+      "sourceHash": "0af6cdd7657a1fa447554dd58daef2d27ae6817520ef851b621487144a8d1707",
+      "translationHash": "cc5a4b4bd19bb587307bae6ab901febff84fd27cd428c9e481e03ecb4854864b"
+    },
+    "about/index.html": {
+      "en": "/about/",
+      "zh": "/zh/about/",
+      "sourceHash": "4bb4bc988a28b200d87bc3a517caf66ec3bd7f8825814b93b3c80227c56a02bc",
+      "translationHash": "3c939c88ce233c0a1e08ee6500001b16175146592548877da13f8f0dd820fd82"
+    },
+    "case-studies/index.html": {
+      "en": "/case-studies/",
+      "zh": "/zh/case-studies/",
+      "sourceHash": "7eedc3128923b4bd33077eb5d5eb5deb7673d126a43237abc581e121288a8245",
+      "translationHash": "75f5139928836302bee8412457505c61c40ab4c0b08d4c970854b7aac5b74d10"
+    },
+    "contact/index.html": {
+      "en": "/contact/",
+      "zh": "/zh/contact/",
+      "sourceHash": "d55d60b476c1b8021f04f942863188da44f11dc025a4bbbf8922c5cf0963d9c5",
+      "translationHash": "d3b4d2166cfc853e381dc126df303bfcb729d64f8cc2ebcc12aa9d4adedd12ee"
+    },
+    "faq/index.html": {
+      "en": "/faq/",
+      "zh": "/zh/faq/",
+      "sourceHash": "4c4f4c69486601a775a77becb54af86c0e303cfabf8aa3ceb2c878d1a85a35f3",
+      "translationHash": "4458e23462b3707313357abbe0544cf9efa6264ad7334487838af4d06ec5ddd2"
+    },
+    "guides/balcony-leaking-room-below/index.html": {
+      "en": "/guides/balcony-leaking-room-below/",
+      "zh": "/zh/guides/balcony-leaking-room-below/",
+      "sourceHash": "104d0e846f002d56b7ee8174978ac81e1bd58f7ccdc4c1d7bd67d28e90d20309",
+      "translationHash": "2a6d6b045844f8aa1e64f0c811261aa8158260d05e553d2248aea6a3afb081d1"
+    },
+    "guides/index.html": {
+      "en": "/guides/",
+      "zh": "/zh/guides/",
+      "sourceHash": "b77c5199592daad5fde0f8ed01ec1acbcd6ddf5aaa0a1950f6de6940ca0298f8",
+      "translationHash": "e0fe13abf5531ddf59053f610f87d350c048316f210e446c5324c9d094156938"
+    },
+    "guides/kitchen-sink-resealing-or-plumbing/index.html": {
+      "en": "/guides/kitchen-sink-resealing-or-plumbing/",
+      "zh": "/zh/guides/kitchen-sink-resealing-or-plumbing/",
+      "sourceHash": "b9752e04a7437cba132784b34e2ba57cd36d4de2c35c788fec8d4e23ccfb0b2e",
+      "translationHash": "51dc344f683e18836d47d7ad4691dc91f820250feb05eb590beaae822d4af75a"
+    },
+    "guides/regrouting-resealing-or-rewaterproofing/index.html": {
+      "en": "/guides/regrouting-resealing-or-rewaterproofing/",
+      "zh": "/zh/guides/regrouting-resealing-or-rewaterproofing/",
+      "sourceHash": "5133b8923d9fdca40ab5ad94fd0c234d422fa5e13a99d6b0f0a4026a709c86f2",
+      "translationHash": "f5f59ec603a9daa949d03fe2f2882f509fc4cd65c7c2eaf24d2027af7f9fe220"
+    },
+    "guides/shower-plumbing-or-waterproofing/index.html": {
+      "en": "/guides/shower-plumbing-or-waterproofing/",
+      "zh": "/zh/guides/shower-plumbing-or-waterproofing/",
+      "sourceHash": "e10ef679f0fa91a496d594d174df02b21736bfb8a08436104606a9cbe90ec4a5",
+      "translationHash": "91d16f6f275f5de3c32e1c63deb382174386edca3c9a272f64b57fa874e70de4"
+    },
+    "guides/waterproofing-or-drainage/index.html": {
+      "en": "/guides/waterproofing-or-drainage/",
+      "zh": "/zh/guides/waterproofing-or-drainage/",
+      "sourceHash": "71f10482e1ce7ff8d1e0bceed3f3680dc9c57a983ae9f4a03c011853fcd88680",
+      "translationHash": "9c9a2f37821906c1a2365ed83d2f03a78fca7e2901f1b192e4ca6df18ca354e7"
+    },
+    "guides/waterproofing-retiling-quote/index.html": {
+      "en": "/guides/waterproofing-retiling-quote/",
+      "zh": "/zh/guides/waterproofing-retiling-quote/",
+      "sourceHash": "2a3fbd448d27bd7ecf8630e25c83ccd35ad20a211b5429b8149d374f81986161",
+      "translationHash": "ad9778c8d81e0d59c29c7fb8021dd0d8bafe5a701786d5f768efe98e50bf5470"
+    },
+    "index.html": {
+      "en": "/",
+      "zh": "/zh/",
+      "sourceHash": "149b6ec9a4b917431d1e1274d937c252cee265d6efe3548112c8808f91bb3658",
+      "translationHash": "6d3541b6b6a6ab488705c4f64eae467034037cf89ab8bff4560c57ac64119cbd"
+    },
+    "industry-news/index.html": {
+      "en": "/industry-news/",
+      "zh": "/zh/industry-news/",
+      "sourceHash": "eb7c8176193d2d54fa1873db0042bb3271ca5ea834df2146685dce9db85e25c9",
+      "translationHash": "8c60e77406b1735f4d3bf016e3756934c4725daf870d622de6ec38b783d70597"
+    },
+    "industry-news/preparing-for-wet-weather/index.html": {
+      "en": "/industry-news/preparing-for-wet-weather/",
+      "zh": "/zh/industry-news/preparing-for-wet-weather/",
+      "sourceHash": "fb9ed1067f63042430e097d59621e31486fca6c28ec7a49b2c3215a4935cc89c",
+      "translationHash": "f629e50ff3b7f87600ef6b7ba6469687db4e509ac34067af76f3bcede4d54b73"
+    },
+    "industry-news/understanding-repair-scopes/index.html": {
+      "en": "/industry-news/understanding-repair-scopes/",
+      "zh": "/zh/industry-news/understanding-repair-scopes/",
+      "sourceHash": "fcec8fe68b1ae58d3ccb34d77ee4b2fd42792771db7a184c2c1e48d1f7c40d78",
+      "translationHash": "cc5c2f774b69d9b08f0ddbd3ab9d9671fa9ca5015efec539a5a78abd3e9b4da5"
+    },
+    "industry-news/what-to-photograph-before-a-quote/index.html": {
+      "en": "/industry-news/what-to-photograph-before-a-quote/",
+      "zh": "/zh/industry-news/what-to-photograph-before-a-quote/",
+      "sourceHash": "855c2d4d354bacfefbff7bb22a869c47b5d390fa31bd92c84679848e4f8117a8",
+      "translationHash": "901f3525bf8add6246082346154bec6b03addda39da70d7105c2fc82e3ce4112"
+    },
+    "privacy-policy/index.html": {
+      "en": "/privacy-policy/",
+      "zh": "/zh/privacy-policy/",
+      "sourceHash": "4fb37f280e3eb7ff5feb2752b032f4e07379c33f6e8f79804b774aebbc12369a",
+      "translationHash": "fa4530f07923731faf3d9f2515adbf29339293f8af22e24abf1778927ff4a060"
+    },
+    "service-areas/index.html": {
+      "en": "/service-areas/",
+      "zh": "/zh/service-areas/",
+      "sourceHash": "10c655ba4edf7e558e6375535226caef756c5c611cf68e36c2df87dbf663e230",
+      "translationHash": "4737b6ef76b83f17b150baaed11cd6ee09d52a20b2d48024bf32a1984e3ce60a"
+    },
+    "services/balcony-waterproofing/index.html": {
+      "en": "/services/balcony-waterproofing/",
+      "zh": "/zh/services/balcony-waterproofing/",
+      "sourceHash": "500e2fb1194a302d58896e77ebc10ec04200d5cefb918f312c032b7561e49d03",
+      "translationHash": "8515d8ac10c88a26fff0eb36190de2d54afdaca183fa15bbf36cda0c0778afd4"
+    },
+    "services/bathroom-waterproofing/index.html": {
+      "en": "/services/bathroom-waterproofing/",
+      "zh": "/zh/services/bathroom-waterproofing/",
+      "sourceHash": "8fe2a872561b1b37e18b45a673c9f8716204ab0502e49d3e796d70a1e40f4649",
+      "translationHash": "b8d203a1a16575a7c9c46941d140fb72b053c195215029508fbe3ff36c8a5407"
+    },
+    "services/commercial-waterproofing/index.html": {
+      "en": "/services/commercial-waterproofing/",
+      "zh": "/zh/services/commercial-waterproofing/",
+      "sourceHash": "71c2ec36c17561558ed7884584478fe936b2478003202184437f911130fa0c8e",
+      "translationHash": "9ea0abe757048ed769cf21c3be53c34dcd413a19574143c54ef4517cdc5218c8"
+    },
+    "services/external-waterproofing/index.html": {
+      "en": "/services/external-waterproofing/",
+      "zh": "/zh/services/external-waterproofing/",
+      "sourceHash": "7bef4bad5f66a8f7c3ecd1e12966670d318a3da20696d67e348ed2bcb9ddbd47",
+      "translationHash": "c162c79cf068839d5032803dd62b01b11675e7374ebfc9c1e1d72cad9e7e8d12"
+    },
+    "services/index.html": {
+      "en": "/services/",
+      "zh": "/zh/services/",
+      "sourceHash": "511b142ebbcab78fbb75d1fea50864ae808948f8fa05ee1141217e44c1c78b62",
+      "translationHash": "e606e21dbe6a140767b2a96b6b377681c7a36780ef0a5f7ebdefa1e76e316f58"
+    },
+    "services/kitchen-sealing/index.html": {
+      "en": "/services/kitchen-sealing/",
+      "zh": "/zh/services/kitchen-sealing/",
+      "sourceHash": "8b408044e285ef541fa618b360873a2e0ff8b8588343e00be36dccbe306f5447",
+      "translationHash": "8c35dc595b0d68dd6c0021d77feba5d8965ef3fd363c95a8876079b6612a5659"
+    },
+    "services/laundry-waterproofing/index.html": {
+      "en": "/services/laundry-waterproofing/",
+      "zh": "/zh/services/laundry-waterproofing/",
+      "sourceHash": "f127cfbc28516b67dff7bea4d67675ae325211ad7231cd826416517f081c3dc3",
+      "translationHash": "2a24b678f6320055129f62c093404a8d49c8d974d4ab20199e60df32526b9aa9"
+    },
+    "services/leaking-shower-repairs/index.html": {
+      "en": "/services/leaking-shower-repairs/",
+      "zh": "/zh/services/leaking-shower-repairs/",
+      "sourceHash": "51e667127d623c9a6cabf39b484f2acc16ace67d8282e0b52b839a3b9c2826a4",
+      "translationHash": "6e08d0ed88be55ebed6173134c725ca4100371ad0de3a535e21ab2b6265bbc46"
+    },
+    "services/retaining-wall-waterproofing/index.html": {
+      "en": "/services/retaining-wall-waterproofing/",
+      "zh": "/zh/services/retaining-wall-waterproofing/",
+      "sourceHash": "f3e8fdb42a0479a6c69659b9a00f851bba528eecfd8d044606445b6b27fb9574",
+      "translationHash": "c6476e7c39691c1e314ad3e5e1af18d16c8f33f1f70e60ff446779f82038bd60"
+    },
+    "services/roof-waterproofing/index.html": {
+      "en": "/services/roof-waterproofing/",
+      "zh": "/zh/services/roof-waterproofing/",
+      "sourceHash": "af6a4a8ffff909ef8fbad68cde0c7013bc6b4fe5b87f13f8b438ce9637f9c630",
+      "translationHash": "e63ba7c7ee768717df21cd5717662192855fca8d6d7142ffde78d2847e92f6eb"
+    },
+    "services/shower-resealing-regrouting/index.html": {
+      "en": "/services/shower-resealing-regrouting/",
+      "zh": "/zh/services/shower-resealing-regrouting/",
+      "sourceHash": "e81e47daa80d4d4c2188b0d099902712d532470440e234b4549931163d1e84f0",
+      "translationHash": "b6625784dd10a22e26c97b39610f9da25a04b4d49f745076a2e30c6936c0648e"
+    },
+    "services/tile-regrouting/index.html": {
+      "en": "/services/tile-regrouting/",
+      "zh": "/zh/services/tile-regrouting/",
+      "sourceHash": "9cc6589cfed6d836df1d68cc818ee5008af98021a69013b1f608bdbf554f7063",
+      "translationHash": "6d11416e48c044f19482bea3b9ba7f5a928997bbb83219ed029b77b93ec2ba0a"
+    },
+    "thank-you/index.html": {
+      "en": "/thank-you/",
+      "zh": "/zh/thank-you/",
+      "sourceHash": "2bb97ab45be8b668a072830a435938e513fa30e239c6c5ff0615e7b0977336e6",
+      "translationHash": "4dce0dbe683849da2990a8a07af3163a7749dc033d70f635a1f6cf7716083743"
+    },
+    "waterproofing/act-localities/index.html": {
+      "en": "/waterproofing/act-localities/",
+      "zh": "/zh/waterproofing/act-localities/",
+      "sourceHash": "abe31f5907c1fdf51a6931dc2d88fb84cc13b5b128df6bde818431e4caf03811",
+      "translationHash": "2ed995c0007edbbb1b73e4d4c752c739669081637e29768dc992470843aba798"
+    },
+    "waterproofing/amaroo/index.html": {
+      "en": "/waterproofing/amaroo/",
+      "zh": "/zh/waterproofing/amaroo/",
+      "sourceHash": "1b1337611a39f8bfe783968f3e6d1cd9956e2e028ce80b32c2ba077d84053c49",
+      "translationHash": "ce23e33ff39441ce5d0f4d8aef42175d68c67605651afc21926aae82e4811f9d"
+    },
+    "waterproofing/aranda/index.html": {
+      "en": "/waterproofing/aranda/",
+      "zh": "/zh/waterproofing/aranda/",
+      "sourceHash": "70d52c312404984e5baf5785db87fe8ca1c6056a43c7049a2440382aca8a0ee4",
+      "translationHash": "4f1a6ae29f8fabbaa4161c0736d6cfb5ae3fa2121a6d4fd816a6bf5d7a05893e"
+    },
+    "waterproofing/belconnen/index.html": {
+      "en": "/waterproofing/belconnen/",
+      "zh": "/zh/waterproofing/belconnen/",
+      "sourceHash": "4625da0c74ebb9a50a46bffde1c19a4f9980e4bb89979bf33a01a99f426c3ada",
+      "translationHash": "c78860904ddcc1762999c6354f5698be2a93364bfefc8d9c550ec09545f716e2"
+    },
+    "waterproofing/braddon/index.html": {
+      "en": "/waterproofing/braddon/",
+      "zh": "/zh/waterproofing/braddon/",
+      "sourceHash": "a1c07325b675b9b7dd57573ad2ae1a1e1a9942d6f628b870cc685746acbdfa9b",
+      "translationHash": "a3610d7571b34692d2c40f3172b7c316751f58b1e69354c6bf9d4860b5587346"
+    },
+    "waterproofing/bruce/index.html": {
+      "en": "/waterproofing/bruce/",
+      "zh": "/zh/waterproofing/bruce/",
+      "sourceHash": "e28b263b0a8cbcd8db92009937c8f0fa5c4815232a4a12928528952438ad4d03",
+      "translationHash": "9707b6a29aade5b668f9e0a9415544e3a8ca49e064cbe47568f9f49108cf6b96"
+    },
+    "waterproofing/calwell/index.html": {
+      "en": "/waterproofing/calwell/",
+      "zh": "/zh/waterproofing/calwell/",
+      "sourceHash": "717dec3a4b47303396e8b3d3fb380669ec4506ab84cc39090d18493199b2ce03",
+      "translationHash": "98b58df07f12dc59826aa175a5f7314509d751e98b336c909cebeeb81482f165"
+    },
+    "waterproofing/canberra-city/index.html": {
+      "en": "/waterproofing/canberra-city/",
+      "zh": "/zh/waterproofing/canberra-city/",
+      "sourceHash": "6d13b4ea138d05d88f7f69af7d39dc6658353c92338841e13f1c7f6684d28fd9",
+      "translationHash": "092fe20375fb4ebf0d6997670470cd422c5d70852c5430e985d9b522d22059da"
+    },
+    "waterproofing/casey/index.html": {
+      "en": "/waterproofing/casey/",
+      "zh": "/zh/waterproofing/casey/",
+      "sourceHash": "3b84ef167f5813d7897d8652b79239b8805765ff9f463a0ad0be755c20585b2f",
+      "translationHash": "9e4f4ccb9a48101b8a2a0aa4d061c8ba2d99ae2e5cde8c416cb716da65277136"
+    },
+    "waterproofing/coombs/index.html": {
+      "en": "/waterproofing/coombs/",
+      "zh": "/zh/waterproofing/coombs/",
+      "sourceHash": "f8ef003ace3e6d255b774a2489977e4843c791378c3ebd5fd0db763ea62a4321",
+      "translationHash": "c4af091f5b8852e5a8f47ccb66564d2a9d23b903001d582bc3fc353b6c727b96"
+    },
+    "waterproofing/east-canberra/index.html": {
+      "en": "/waterproofing/east-canberra/",
+      "zh": "/zh/waterproofing/east-canberra/",
+      "sourceHash": "d68755955f96776aa475844b0eecb849553db0e424324b04b64e0f4b1c953076",
+      "translationHash": "fa357a447a63121cf15868fbba69d8be85678a258aac61cdba5fb2c131fdb3a3"
+    },
+    "waterproofing/fyshwick/index.html": {
+      "en": "/waterproofing/fyshwick/",
+      "zh": "/zh/waterproofing/fyshwick/",
+      "sourceHash": "760e49fb70215e2115541281b1e2a8a0f34a6335a32dd746d828b0a6ca78aa57",
+      "translationHash": "0ec37dc9ff575941c175ecdbdb1ec68db01d1cd4d3c76bfa80f05fcebcb23c52"
+    },
+    "waterproofing/griffith/index.html": {
+      "en": "/waterproofing/griffith/",
+      "zh": "/zh/waterproofing/griffith/",
+      "sourceHash": "fccc6b81d061eb5c0657cf101c840d9455eac2928725e444701283c4c0b9e425",
+      "translationHash": "9f5b969cd26904abe1320c45b5489c6a83781032c85dd3ab794c7538985d05e8"
+    },
+    "waterproofing/gungahlin/index.html": {
+      "en": "/waterproofing/gungahlin/",
+      "zh": "/zh/waterproofing/gungahlin/",
+      "sourceHash": "94aed2a0becf221efb1d594a191495f2c8074c19dd595e85c60c4a9219fb75da",
+      "translationHash": "908699f2d6efadb37915e759558d2cbbf2baf969408abdb6e517afddfb7a4a40"
+    },
+    "waterproofing/inner-north-city/index.html": {
+      "en": "/waterproofing/inner-north-city/",
+      "zh": "/zh/waterproofing/inner-north-city/",
+      "sourceHash": "a8f12685bb17d20453fbe3eace09b6646cdb9f244a439ca5c0dd0cb3d6dea801",
+      "translationHash": "b2b8a2f5d9cabf43fc53397cdfe31133bb21425999a846cc3797003606093d3b"
+    },
+    "waterproofing/inner-south/index.html": {
+      "en": "/waterproofing/inner-south/",
+      "zh": "/zh/waterproofing/inner-south/",
+      "sourceHash": "f144c9a7604ef0e58964dc81ec11daa73a2cd30fd99a9da7ccb955775cf46fae",
+      "translationHash": "a78ce49b8cca819d76f335a4dde74e4feb021af1ac591d119036b7214a21801c"
+    },
+    "waterproofing/kambah/index.html": {
+      "en": "/waterproofing/kambah/",
+      "zh": "/zh/waterproofing/kambah/",
+      "sourceHash": "eb434a6f87779efae2d211cd87b41201691153e0e4b4fb5c96940b90e034f304",
+      "translationHash": "4c22b858a2bdf0f69af18057d76b4e13057f386276dadbc9ee48b77ec3a02bac"
+    },
+    "waterproofing/kingston/index.html": {
+      "en": "/waterproofing/kingston/",
+      "zh": "/zh/waterproofing/kingston/",
+      "sourceHash": "41fe27ca326fc4842b8e70bb2396e23910f0d6ee912461fda18fa6b16d8afe42",
+      "translationHash": "0d566d7b661368d48893aaf2d24d5969e60339b92ed3127de601108d204576fb"
+    },
+    "waterproofing/phillip/index.html": {
+      "en": "/waterproofing/phillip/",
+      "zh": "/zh/waterproofing/phillip/",
+      "sourceHash": "b6999ae63bca40cae2db81974ed91782f5defd98d5aaa37aa96ede076435bbab",
+      "translationHash": "dcc1079f6ebd127827f011b686ab032c52e86cfc529b3fa8617a111ecffd4f20"
+    },
+    "waterproofing/tuggeranong/index.html": {
+      "en": "/waterproofing/tuggeranong/",
+      "zh": "/zh/waterproofing/tuggeranong/",
+      "sourceHash": "8e4bbad36d2b733c2930dd2cd94811ac716754c540b5eb5fffaa39eac261604c",
+      "translationHash": "591fcab3fb87df160bfdfd6439cd7f9c06ac36a3c9af6ecb26c136c57a81a71a"
+    },
+    "waterproofing/weston-creek-molonglo/index.html": {
+      "en": "/waterproofing/weston-creek-molonglo/",
+      "zh": "/zh/waterproofing/weston-creek-molonglo/",
+      "sourceHash": "8ce004fcf4a4091c20e7ed3b30627ef0667e722a395d9eaa52e12fbabf2dbdce",
+      "translationHash": "a97b7359775ec51a78497dca8cdaa2b821bad04c188ed2ab771d4927526f6c63"
+    },
+    "waterproofing/weston/index.html": {
+      "en": "/waterproofing/weston/",
+      "zh": "/zh/waterproofing/weston/",
+      "sourceHash": "56f45a52648cbd7d2cc36f8d82bd4b9b08676355bc621292926a379237600a3d",
+      "translationHash": "08525ab89cbf878707e35de9233c8e3d050afcaf09851f41f491df0221e20beb"
+    },
+    "waterproofing/woden-valley/index.html": {
+      "en": "/waterproofing/woden-valley/",
+      "zh": "/zh/waterproofing/woden-valley/",
+      "sourceHash": "f18e5b629d493d13ccee7674c067d9d3a37423bb4a4c97aac348b00cac1ca744",
+      "translationHash": "bb303ef7e12e8b8260f442ccad758c93d86dccbc187ec197c47b6b6a15511ad7"
+    },
+    "waterproofing/woden/index.html": {
+      "en": "/waterproofing/woden/",
+      "zh": "/zh/waterproofing/woden/",
+      "sourceHash": "158028b929f1be6538bd7f2dd56a8203a679e8ea0553915967f3688b77dfba14",
+      "translationHash": "fc1737d83da91d57161e88effb506699e90791c604d5458700a97fe928c0dca9"
+    }
+  }
+}

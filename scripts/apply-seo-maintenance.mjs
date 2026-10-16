@@ -14,6 +14,8 @@ import { applyServiceRepairContent } from './service-repair-content.mjs';
 import { applyProjectEvidenceNavigation } from './project-evidence-navigation.mjs';
 import { applyEditorialPresentation } from './editorial-presentation.mjs';
 import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
+import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
+import { existsSync } from 'node:fs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://www.canberrawaterproof.com.au';
@@ -200,18 +202,22 @@ export function maintainSite(root = ownRoot) {
  }
  function walk(dir) {
   for(const entry of readdirSync(dir,{withFileTypes:true})) {
-   if(entry.name.startsWith('.') || ['node_modules','assets'].includes(entry.name)) continue;
+   if(entry.name.startsWith('.') || ['node_modules','assets','zh'].includes(entry.name)) continue;
    const file=resolve(dir,entry.name);
    if(entry.isDirectory()) walk(file);
    else if(entry.name.endsWith('.html')) {
     const path=relative(root,file).replaceAll('\\','/');
-    update(path,html=>applySeoHtml(html,path,{keywords,images}));
+    update(path,html=>{
+     const maintained=applySeoHtml(html,path,{keywords,images});
+     return existsSync(resolve(root,'data/i18n/zh-Hans.json')) ? decorateEnglish(maintained,path) : maintained;
+    });
    }
   }
  }
  walk(root);
  update('llms.txt',applyLlms);
  update('sitemap.xml',applySitemap);
+ if (existsSync(resolve(root,'data/i18n/zh-Hans.json'))) changed.push(...buildBilingual(root).changed);
  return {changed,keywordSections:Object.keys(keywords).length,contentChangePages:Object.keys(contentChanges).length};
 }
 

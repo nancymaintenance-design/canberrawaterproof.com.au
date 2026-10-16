@@ -20,6 +20,7 @@ function validateServiceRequest(input = {}) {
   if (!request.email || !EMAIL_PATTERN.test(request.email)) return { error: 'Please enter a valid email address for your service confirmation.' };
   if (request.phone && request.phone.length < 6) return { error: 'Please enter a valid phone number or leave the field blank.' };
   if (Object.values(request).some((value) => value.length > MAX_FIELD_LENGTH)) return { error: 'One or more fields are too long.' };
+  if (input.locale === 'zh-Hans') request.locale = 'zh-Hans';
   return { value: request };
 }
 
@@ -34,6 +35,13 @@ function confirmationEmail(request, from) {
   const customerName = escapeHtml(request.name);
   const area = escapeHtml(request.area);
   const suburb = escapeHtml(request.suburb);
+  if (request.locale === 'zh-Hans') {
+    const areas = { Shower:'淋浴间', Bathroom:'浴室', Balcony:'阳台', Kitchen:'厨房', Laundry:'洗衣房', External:'室外区域', Roof:'屋顶', 'Retaining wall':'挡土墙', 'Tiled area':'瓷砖区域', 'Commercial property':'商业物业', 'Not sure / Other':'其他区域' };
+    const chineseArea = escapeHtml(areas[request.area] || request.area);
+    return { from, to:[request.email], reply_to:RECIPIENT, subject:'已收到您的防水服务申请 — MEL ONE',
+      html:`<!doctype html><html lang="zh-Hans"><body style="font-family:Arial,'Microsoft YaHei',sans-serif;color:#162a3a;line-height:1.75"><h1>已收到您的防水服务申请</h1><p>${customerName}，您好：</p><p>我们已收到您位于 ${suburb} 的${chineseArea}服务申请。</p><p>团队会查看您提供的信息并与您联系，商定现场评估安排。到访时间尚未确认。</p><p>如需紧急防水协助，请致电 <a href="tel:+61482422607">0482 422 607</a>。</p><p>MEL ONE 堪培拉防水团队</p></body></html>`,
+      text:`${request.name}，您好：\n\n我们已收到您位于 ${request.suburb} 的${areas[request.area] || request.area}服务申请。团队会查看您提供的信息并与您联系，商定现场评估安排。到访时间尚未确认。\n\n如需紧急防水协助，请致电 0482 422 607。\n\nMEL ONE 堪培拉防水团队` };
+  }
   return { from, to: [request.email], reply_to: RECIPIENT, subject: 'Your waterproofing service request is received — MEL ONE',
     html: `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#162a3a;line-height:1.55"><h1>Your waterproofing service request is received.</h1><p>Hi ${customerName},</p><p>We have received your request for ${area} work in ${suburb}.</p><p>Our team will review the service details and contact you using the information you provided.</p><p>For urgent waterproofing assistance, call <a href="tel:+61482422607">0482 422 607</a>.</p><p>Kind regards,<br>MEL ONE Canberra Waterproofing</p></body></html>`,
     text: `Hi ${request.name},\n\nWe have received your service request for ${request.area} work in ${request.suburb}.\n\nOur team will review the service details and contact you using the information you provided.\n\nFor urgent waterproofing assistance, call 0482 422 607.\n\nKind regards,\nMEL ONE Canberra Waterproofing` };

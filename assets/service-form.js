@@ -2,6 +2,7 @@
   const form = document.querySelector('[data-service-form]');
   const status = document.querySelector('[data-form-status]');
   if (!form || !status) return;
+  const t = window.melOneText || (text => text);
 
   // Only these existing service routes can choose a visible affected area.
   const serviceAreas = {
@@ -20,13 +21,13 @@
   fields.area.value = Object.hasOwn(serviceAreas, service) ? serviceAreas[service] : '';
   if (query.get('suburb')) fields.suburb.value = query.get('suburb').slice(0, 4000);
 
-  const requiredMessages = {
+  const requiredMessages = Object.fromEntries(Object.entries({
     name: 'Enter your name.', suburb: 'Enter your suburb or postcode.',
     email: 'Enter your email address, for example name@example.com.',
     area: 'Choose the affected area, or select Not sure / Other.',
     message: 'Describe the repair needed or when the problem occurs.'
-  };
-  const failure = 'We could not confirm your request was received. Your details are still here. Please call 0482 422 607 for help before trying again.';
+  }).map(([key, value]) => [key, t(value)]));
+  const failure = t('We could not confirm your request was received. Your details are still here. Please call 0482 422 607 for help before trying again.');
   let pending = false;
 
   function fieldError(name, message) {
@@ -41,14 +42,14 @@
     for (const name of names) {
       const value = fields[name].value.trim();
       let message = !value ? requiredMessages[name] || '' : '';
-      if (value.length > 4000) message = 'Use 4,000 characters or fewer.';
+      if (value.length > 4000) message = t('Use 4,000 characters or fewer.');
       else if (name === 'email' && value && (fields[name].validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))) message = requiredMessages.email;
-      else if (name === 'phone' && value && value.length < 6) message = 'Enter a phone number with at least 6 characters, or leave it blank.';
+      else if (name === 'phone' && value && value.length < 6) message = t('Enter a phone number with at least 6 characters, or leave it blank.');
       fieldError(name, message);
       if (message && !first) first = fields[name];
     }
     if (first) {
-      status.textContent = 'Please check the highlighted fields and try again.';
+      status.textContent = t('Please check the highlighted fields and try again.');
       status.dataset.state = 'error'; first.focus(); return false;
     }
     return true;
@@ -64,8 +65,9 @@
     if (pending || !validate()) return;
     pending = true;
     button.disabled = true; form.setAttribute('aria-busy', 'true');
-    status.textContent = 'Sending your assessment request…'; status.dataset.state = 'pending';
+    status.textContent = t('Sending your assessment request…'); status.dataset.state = 'pending';
     const payload = Object.fromEntries(new FormData(form).entries());
+    if (document.documentElement?.lang?.startsWith('zh')) payload.locale = 'zh-Hans';
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
@@ -76,7 +78,7 @@
       const result = await response.json();
       if (!response.ok || result.ok !== true || typeof result.confirmationSent !== 'boolean') throw new Error('Request not confirmed');
       form.reset();
-      status.textContent = 'Thank you. MEL ONE has received your assessment request. Your visit time is not confirmed; our team will contact you to discuss the assessment.';
+      status.textContent = t('Thank you. MEL ONE has received your assessment request. Your visit time is not confirmed; our team will contact you to discuss the assessment.');
       status.dataset.state = 'success';
       try { window.melOneTrackLead?.(); } catch { /* Analytics must not change an accepted request. */ }
     } catch {

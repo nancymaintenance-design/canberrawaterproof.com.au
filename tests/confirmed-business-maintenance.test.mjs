@@ -83,7 +83,7 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
   }
  };
  walk(new URL('../',import.meta.url));
- assert.equal(pages.length, 56);
+ assert.equal(pages.length, 112);
  let authors = 0;
  for (const html of pages) {
   const graph = nodes(html);
@@ -92,16 +92,16 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
   assert.equal(business.openingHoursSpecification[0].closes, '21:00');
   assert.equal(business.openingHoursSpecification[0].dayOfWeek.length, 7);
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/)[0];
-  assert.match(footer, /Office reception: daily 09:00–21:00/);
+  assert.match(footer, /<html lang="zh-Hans">/.test(html) ? /办公室接待时间：每天 09:00–21:00/ : /Office reception: daily 09:00–21:00/);
   assert.match(footer.match(/<img\b[^>]*>/)[0], /loading="lazy" decoding="async"/);
   for (const article of graph.filter(n => ['Article','NewsArticle','BlogPosting'].includes(n['@type']))) {
    authors++;
    assert.equal(article.author['@id'], host+'/#business');
-   assert.equal(article.author.url, host+'/about/');
+   assert.equal(article.author.url, host+(/<html lang="zh-Hans">/.test(html)?'/zh/about/':'/about/'));
   }
  }
- assert.equal(authors, 9);
- assert.equal((source('sitemap.xml').match(/<loc>/g)||[]).length, 39);
+ assert.equal(authors, 18);
+ assert.equal((source('sitemap.xml').match(/<loc>/g)||[]).length, 78);
  const locality = pages.filter(html => /rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\//.test(html));
  assert.equal(locality.filter(html => /name="robots" content="noindex,follow"/.test(html)).length,15);
  assert.equal(locality.filter(html => /name="robots" content="index,follow"/.test(html)).length,9);

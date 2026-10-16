@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readdirSync,readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {applyKeywordHeadings} from '../scripts/keyword-headings.mjs';
-const keyword=/waterproof|leak|grout|reseal|seal(?:ing|ant)|membrane|til(?:e|ing)|drain|moisture|damp|bathroom|shower|balcon|retaining.wall|roof|kitchen|laundry|water.ingress|wet.area/i;
+const keyword=/waterproof|leak|grout|reseal|seal(?:ing|ant)|membrane|til(?:e|ing)|drain|moisture|damp|bathroom|shower|balcon|retaining.wall|roof|kitchen|laundry|water.ingress|wet.area|防水|漏水|泄漏|进水|雨水|渗|填缝|密封|硅|膜|排水|潮湿|湿气|湿纹|低湿|水分|浴室|卫生间|淋浴|阳台|挡土墙|屋顶|厨房|洗衣|水泥浆|积水|水管|瓷砖|铺砖/i;
 function pages(dir){return readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.name.startsWith('.')||['node_modules','scripts','tests','assets'].includes(e.name)?[]:e.isDirectory()?pages(resolve(dir,e.name)):e.name.endsWith('.html')?[resolve(dir,e.name)]:[]);}
 test('every shipped page title and H1–H6 describes a waterproofing service, issue or scenario',()=>{
  const failures=[];
