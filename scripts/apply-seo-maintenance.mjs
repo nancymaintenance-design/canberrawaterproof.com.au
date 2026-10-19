@@ -16,6 +16,7 @@ import { applyEditorialPresentation } from './editorial-presentation.mjs';
 import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
 import { authoredHtml } from './schema-feed-site.mjs';
+import { renderLlms } from './llms-curation.mjs';
 import { existsSync } from 'node:fs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -218,7 +219,7 @@ export function maintainSite(root = ownRoot) {
   }
  }
  walk(root);
- update('llms.txt',applyLlms);
+ update('llms.txt',existsSync(resolve(root,'vercel.json'))&&existsSync(resolve(root,'data/llms-curation.json')) ? ()=>renderLlms(root) : applyLlms);
  update('sitemap.xml',applySitemap);
  if (existsSync(resolve(root,'data/i18n/zh-Hans.json'))) changed.push(...buildBilingual(root).changed);
  return {changed,keywordSections:Object.keys(keywords).length,contentChangePages:Object.keys(contentChanges).length};

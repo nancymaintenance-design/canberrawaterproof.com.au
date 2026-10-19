@@ -61,9 +61,10 @@ test('404 logos reserve intrinsic layout and only footer logo loads lazily', () 
  assert.equal(applySeoHtml(output, '404.html'), output);
 });
 
-// Catches stale scope/hours after the public content index is regenerated.
-test('llms maintenance updates confirmed scope and reception hours while retaining discovery URLs', () => {
- const input = source('llms.txt').replace(/^- Office reception:.*\n/m, '').replace(/(## Scope\n)[\s\S]*?(\n\n## )/, '$1Bathroom waterproofing and leaking shower repairs.$2');
+// Legacy partial-content roots still use the historical repair helper; the full
+// website now uses the separately tested curated bilingual generator.
+test('legacy llms maintenance updates confirmed scope and reception hours while retaining discovery URLs', () => {
+ const input = '# MEL ONE\n\n## Contact\n- Address: 121 Marcus Clarke St, Canberra ACT 2600\n\n## Scope\nBathroom waterproofing and leaking shower repairs.\n\n## Pages\n- '+host+'/waterproofing/belconnen/\n';
  const output = applyLlms(input);
  assert.match(output, /Office reception: daily 09:00–21:00/);
  assert.match(output, /On-site work by arrangement/);

@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "route": "/",
+      "group": "home",
+      "role": "home",
+      "reason": "Existing primary navigation and contact/company destination.",
+      "en": {
+        "label": "Home",
+        "summary": "Overview of MEL ONE waterproofing and leak repairs, with routes to services, project photographs and contact.",
+        "evidence": "The Ellis team carries out waterproofing repairs for homeowners, landlords and property managers across bathro"
+      },
+      "zh": {
+        "label": "首页",
+        "summary": "MEL ONE 防水与漏水维修概览，可继续查看服务、施工照片和联系入口。",
+        "evidence": "Ellis团队为房主、房东和物业经理进行浴室、淋浴、阳台、厨房和外部区域的防水维修。告诉我们问题出在哪里，讨论正确的维修范围。"
+      }
+    },
+    {
+      "route": "/services/",
+      "group": "services",
+      "role": "service-hub",
+      "reason": "Existing primary navigation and contact/company destination.",
+      "en": {
+        "label": "Waterproofing service directory",
+        "summary": "Eleven service types, with links to the existing service pages and a distinction between local repair and waterproofing renewal.",
+        "evidence": "Explore eleven waterproofing and leak repair services for bathrooms, showers, balconies, kitchens, laundries, "
+      },
+      "zh": {
+        "label": "防水服务总览",
+        "summary": "列出十一类服务及对应页面，区分局部维修和防水层更新。",
+        "evidence": "探索浴室、淋浴间、阳台、厨房、洗衣房、屋顶、挡土墙和外部进水口的十一项防水和渗漏维修服务。我们的Ellis团队现场检查受影响区域并确认维修范围和书面报价。"
+      }
+    },
+    {
+      "route": "/services/leaking-shower-repairs/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Leaking shower repairs",
+        "summary": "Assessment of escaping shower water, wet carpet and damp adjoining walls; repair scope follows the identified source.",
+        "evidence": "Shower leak assessment and repairs for wet carpet, damp adjoining walls and water escaping beyond the shower. "
+      },
+      "zh": {
+        "label": "淋浴漏水维修",
+        "summary": "评估淋浴外溢、相邻地毯或墙体受潮，按查明的水源确定维修范围。",
+        "evidence": "对湿区毯、潮湿的相邻墙壁以及从淋浴间漏水的淋浴间泄漏进行评估和维修。修复工作按照现场找到的来源进行。"
+      }
+    },
+    {
+      "route": "/services/bathroom-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Bathroom waterproofing and retiling",
+        "summary": "Wet-area waterproofing and retiling, including removal, preparation and finishing within the agreed scope.",
+        "evidence": "A clearly scoped bathroom waterproofing and retiling service for leaking showers, failed wet-area finishes and"
+      },
+      "zh": {
+        "label": "浴室防水与重新铺砖",
+        "summary": "介绍湿区防水与重新铺砖，以及商定范围内的拆除、准备和收尾工作。",
+        "evidence": "针对淋浴漏水、湿区饰面失败以及受进水影响的浴室提供范围明确的浴室防水和重铺服务。"
+      }
+    },
+    {
+      "route": "/services/shower-resealing-regrouting/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Shower resealing and regrouting",
+        "summary": "Replacement of deteriorated grout and silicone where suitable; surface joint work does not replace a failed membrane.",
+        "evidence": "Replace deteriorated shower grout and silicone where a surface joint repair suits the condition. Resealing and"
+      },
+      "zh": {
+        "label": "淋浴重新密封与填缝",
+        "summary": "适用情况下更换老化填缝及硅胶；表面接缝维修不能替代失效防水层。",
+        "evidence": "在表面接缝修复适合的情况下更换损坏的淋浴填缝和硅胶。重新密封和重新填缝不会更换瓷砖下方失效的薄膜。"
+      }
+    },
+    {
+      "route": "/services/balcony-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Balcony waterproofing and leak repairs",
+        "summary": "Tiled surfaces, thresholds, outlets and wall junctions, assessed alongside water damage in rooms below.",
+        "evidence": "Balcony waterproofing and leak repairs around tiled surfaces, thresholds, outlets and wall junctions. Inspecti"
+      },
+      "zh": {
+        "label": "阳台防水与漏水修复",
+        "summary": "评估瓷砖表面、门槛、排水口和墙面交界处，并考虑楼下房间的受潮情况。",
+        "evidence": "阳台防水以及瓷砖表面、门槛、插座和墙壁连接处周围的渗漏维修。检查考虑上方的阳台和下方任何受影响的房间。"
+      }
+    },
+    {
+      "route": "/services/kitchen-sealing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Kitchen sealing and resealing",
+        "summary": "Sink-edge and splashback joint sealing, distinguished from supply or waste plumbing leaks.",
+        "evidence": "Kitchen sink and splashback resealing for split or detached junctions. The assessment separates water passing "
+      },
+      "zh": {
+        "label": "厨房密封与重新密封",
+        "summary": "介绍水槽边缘及防溅板接缝密封，区分这些接缝问题与给排水管道泄漏。",
+        "evidence": "厨房水槽和防溅板重新密封分裂或分离的连接处。该评估将通过水槽边缘的水与其下方管道的泄漏分开。"
+      }
+    },
+    {
+      "route": "/services/external-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "External waterproofing and water ingress",
+        "summary": "Water entry around windows, doors and wall junctions, considered with rain exposure, ground levels and drainage.",
+        "evidence": "External water ingress assessment around windows, doors and wall junctions. Rain exposure, adjoining ground le"
+      },
+      "zh": {
+        "label": "外部防水与进水维修",
+        "summary": "评估窗户、门和墙面交界处进水，并结合雨水、地面高差和排水情况判断。",
+        "evidence": "窗户、门和墙壁连接处周围的外部进水评估。雨水暴露、邻近地面和排水系统为修复计划提供了信息。"
+      }
+    },
+    {
+      "route": "/services/laundry-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Laundry waterproofing",
+        "summary": "Wet-area floor and junction waterproofing for laundry renovation or repair, according to substrate and planned finishes.",
+        "evidence": "Laundry waterproofing for renovations and repairs to wet-area floors and junctions. The installation requireme"
+      },
+      "zh": {
+        "label": "洗衣房防水",
+        "summary": "介绍洗衣房翻新或维修中的湿区地板及交界处防水，结合基层与计划饰面确定要求。",
+        "evidence": "用于湿区地板和交界处翻新和维修的洗衣房防水。安装要求取决于房间、基材和计划的饰面。"
+      }
+    },
+    {
+      "route": "/services/roof-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Roof leak assessment and waterproofing",
+        "summary": "Membrane surfaces, penetrations and outlets; roof assembly and safe access determine the assessment scope.",
+        "evidence": "Roof leak assessment and waterproofing around membrane surfaces, penetrations and outlets. Safe roof access an"
+      },
+      "zh": {
+        "label": "屋顶漏水评估与防水",
+        "summary": "介绍防水层表面、穿透处和排水口的评估边界，检查范围取决于屋面结构和安全通道。",
+        "evidence": "屋顶渗漏评估以及膜表面、渗透和出口周围的防水。安全屋顶通道和屋顶组件的类型决定了可以检查的工作。"
+      }
+    },
+    {
+      "route": "/services/retaining-wall-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Retaining-wall waterproofing",
+        "summary": "Damp wall faces and adjoining water entry, with repair options limited by soil-side access and drainage conditions.",
+        "evidence": "Retaining-wall waterproofing assessment for damp wall faces and water entering adjoining areas. Soil-side acce"
+      },
+      "zh": {
+        "label": "挡土墙防水",
+        "summary": "评估墙面潮湿及邻接区域进水，说明土侧通道和排水条件对维修方式的限制。",
+        "evidence": "对潮湿墙面和进入邻近区域的水进行挡土墙防水评估。土壤侧的通道和排水条件决定了可用的修复路径。"
+      }
+    },
+    {
+      "route": "/services/tile-regrouting/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Tile regrouting",
+        "summary": "Worn or damaged tile joints, including floors outside bathrooms, with cement or epoxy grout options discussed on assessment.",
+        "evidence": "MEL ONE provides local tile regrouting for worn or damaged tile joints, including tiled floors outside bathroo"
+      },
+      "zh": {
+        "label": "瓷砖重新填缝",
+        "summary": "介绍磨损或损坏瓷砖接缝的重新填缝，包括浴室外地板，以及水泥基或环氧填缝材料选择。",
+        "evidence": "MEL ONE 为磨损或损坏的瓷砖接缝提供局部瓷砖重新填缝服务，包括浴室外的瓷砖地板。根据该区域的条件和用途讨论水泥或环氧树脂填缝的选择以及接缝的重新密封。"
+      }
+    },
+    {
+      "route": "/services/commercial-waterproofing/",
+      "group": "services",
+      "role": "service-owner",
+      "reason": "Existing canonical service owner, linked from the service directory.",
+      "en": {
+        "label": "Commercial waterproofing",
+        "summary": "Waterproofing assessments for owners, managers and strata representatives, including access requirements and separate trade tasks.",
+        "evidence": "Commercial waterproofing in Canberra for property owners, managers and strata representatives. The Ellis team "
+      },
+      "zh": {
+        "label": "商业防水",
+        "summary": "面向业主、物业经理及分层物业代表，说明防水评估、通道要求和需单独处理的工种任务。",
+        "evidence": "堪培拉为业主、经理和物业代表提供商业防水服务。Ellis团队评估受影响的区域并确定防水工作、进入要求和任何单独的其他专业工种工作。"
+      }
+    },
+    {
+      "route": "/about/",
+      "group": "company",
+      "role": "about",
+      "reason": "Existing primary navigation and contact/company destination.",
+      "en": {
+        "label": "About MEL ONE",
+        "summary": "Company background, waterproofing team, service capabilities and published company and insurance details.",
+        "evidence": "Waterproofing, leak repairs and regrouting for all property types, from homes and apartments to commercial pre"
+      },
+      "zh": {
+        "label": "关于 MEL ONE",
+        "summary": "介绍公司背景、防水团队、服务能力以及页面公开的公司与保险资料。",
+        "evidence": "为所有类型的房产（从住宅、公寓到商业场所）提供防水、渗漏修复和重新填缝服务。"
+      }
+    },
+    {
+      "route": "/service-areas/",
+      "group": "company",
+      "role": "area-hub",
+      "reason": "One real area directory instead of repeating district or locality pages.",
+      "en": {
+        "label": "Service-area directory",
+        "summary": "District and locality navigation across the ACT; other suburbs can be supplied through the contact form.",
+        "evidence": "Choose a listed locality to read about its waterproofing services. For other ACT suburbs, open Contact with yo"
+      },
+      "zh": {
+        "label": "服务区域目录",
+        "summary": "按地区查找ACT防水服务页面，其他郊区可通过联系入口提供地址并咨询。",
+        "evidence": "选择列出的地点以了解其防水服务。对于其他 ACT 郊区，请打开与您已输入的郊区的联系方式。"
+      }
+    },
+    {
+      "route": "/contact/",
+      "group": "company",
+      "role": "contact",
+      "reason": "Existing primary navigation and contact/company destination.",
+      "en": {
+        "label": "Contact and assessment requests",
+        "summary": "Provide the suburb, affected area and timing to arrange an assessment, repair plan and written quote.",
+        "evidence": "Tell us your suburb, the affected area and when the problem occurs. Our team will contact you to arrange an on"
+      },
+      "zh": {
+        "label": "联系与现场评估申请",
+        "summary": "提供郊区、受影响区域和问题发生时间，以安排现场评估、维修计划及书面报价。",
+        "evidence": "告诉我们您所在的郊区、受影响的区域以及问题发生的时间。我们的团队将联系您安排现场评估并确认维修计划和书面报价。"
+      }
+    },
+    {
+      "route": "/case-studies/",
+      "group": "evidence",
+      "role": "project-collection",
+      "reason": "Existing project photography with stated evidence limits.",
+      "en": {
+        "label": "Waterproofing project photographs",
+        "summary": "Membrane application and tiled wet-area photographs; the bathroom views are not presented as a same-job before-and-after record.",
+        "evidence": "See the membrane application and tiled bathroom details in our project photographs. Contact MEL ONE for the El"
+      },
+      "zh": {
+        "label": "防水施工照片与案例",
+        "summary": "查看防水层施工及瓷砖湿区照片；页面未将这些浴室照片表述为同一工程的前后对比。",
+        "evidence": "请参阅我们的项目照片中的膜应用和瓷砖浴室细节。联系 MEL ONE，让 Ellis 团队检查堪培拉受影响的区域，解释调查结果并确认修复计划和书面报价。"
+      }
+    },
+    {
+      "route": "/guides/shower-plumbing-or-waterproofing/",
+      "group": "evidence",
+      "role": "guide",
+      "reason": "Substantive scenario and educational guidance; other articles remain discoverable through website navigation.",
+      "en": {
+        "label": "Shower plumbing leaks and waterproofing failure",
+        "summary": "Wet carpet, damp walls and ceiling leaks: distinguishing plumbing, surface escape and concealed waterproofing problems.",
+        "evidence": "Pipework, escaping surface water and concealed waterproofing need different repairs. The visible wet patch alo"
+      },
+      "zh": {
+        "label": "淋浴管道泄漏与防水层问题指南",
+        "summary": "结合地毯、墙面及天花板受潮场景，区分管道、表面水外流和隐蔽防水层问题。",
+        "evidence": "管道故障、表面水外流和隐蔽防水层问题，需要不同的维修方法。仅凭可见的湿斑，无法确定施工范围。"
+      }
+    },
+    {
+      "route": "/guides/regrouting-resealing-or-rewaterproofing/",
+      "group": "evidence",
+      "role": "guide",
+      "reason": "Substantive scenario and educational guidance; other articles remain discoverable through website navigation.",
+      "en": {
+        "label": "Regrouting, resealing or membrane renewal",
+        "summary": "Grout, silicone and membrane repair boundaries, including epoxy versus cement grout and renewal scope.",
+        "evidence": "Grout, flexible sealant and the membrane serve separate roles. Compare the part being repaired before comparin"
+      },
+      "zh": {
+        "label": "填缝、密封与防水层更新指南",
+        "summary": "比较填缝、硅胶密封与防水层更新的边界，说明环氧与水泥基填缝材料的差别。",
+        "evidence": "填缝剂、柔性密封胶和防水层各有用途。比较表面维修与防水更新前，应先确认需要处理的部位。"
+      }
+    },
+    {
+      "route": "/guides/balcony-leaking-room-below/",
+      "group": "evidence",
+      "role": "guide",
+      "reason": "Substantive scenario and educational guidance; other articles remain discoverable through website navigation.",
+      "en": {
+        "label": "Balcony leaks affecting a room below",
+        "summary": "Ceiling stains below a balcony, drainage and junction details before choosing local sealing or membrane renewal.",
+        "evidence": "A stain below a balcony does not locate the water-entry point. Check connected details, drainage and the bound"
+      },
+      "zh": {
+        "label": "阳台漏水影响楼下房间指南",
+        "summary": "从阳台下方水渍、排水及连接细节出发，比较局部密封与防水层更新的适用范围。",
+        "evidence": "阳台下方的水渍，不能直接说明水从哪里进入。需要检查相关连接部位和排水情况，并区分局部密封与防水层更新的适用范围。"
+      }
+    }
+  ]
+}

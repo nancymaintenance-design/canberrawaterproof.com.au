@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "generate": "node scripts/apply-seo-maintenance.mjs",
-    "check": "node scripts/bilingual-site.mjs --check",
+    "check": "node scripts/bilingual-site.mjs --check && node scripts/llms-curation.mjs --check",
     "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {"cheerio": "1.0.0"}

@@ -19,3 +19,4 @@ scripts
 .schema-feed-v2/
 .seo-cache/
 AGENTS.md
+/data/llms-curation.json

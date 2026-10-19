@@ -1,5 +1,11 @@
 # Canberra Waterproof 后续维护约定
 
+## llms.txt 精选中英入口（2026-10-20）
+
+- 精选来源为 `data/llms-curation.json`，复用现有 Owner、生产域名和双语正文；由 `npm run generate` 生成 `llms.txt`，`npm run check` 检查过期、证据和语言配对。不要手工维护第二套 llms 生成结果。
+- 正文变化时同步复核中英摘要及 evidence；不加入草稿、后台、noindex 或未证实事实。不因 llms 维护改变 URL/canonical、robots/WAF、训练政策或 UI。
+- 维护与验证步骤见 `docs/llms-curation.md`；内部来源、脚本、报告不作为公开接口发布。llms.txt 不保证收录、排名或 AI 推荐。
+
 先遵守 `E:/Ellis-Services/AGENTS.md` 与 `00-总览.md`，唯一工作副本为本站 source。保留他人未提交成果，部署须取得当次授权。
 
 ## 2026-10-19 本地内容后台
