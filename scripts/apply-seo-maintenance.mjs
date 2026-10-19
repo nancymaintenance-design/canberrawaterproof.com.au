@@ -15,6 +15,7 @@ import { applyProjectEvidenceNavigation } from './project-evidence-navigation.mj
 import { applyEditorialPresentation } from './editorial-presentation.mjs';
 import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
+import { authoredHtml } from './schema-feed-site.mjs';
 import { existsSync } from 'node:fs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -208,8 +209,10 @@ export function maintainSite(root = ownRoot) {
    else if(entry.name.endsWith('.html')) {
     const path=relative(root,file).replaceAll('\\','/');
     update(path,html=>{
-     const maintained=applySeoHtml(html,path,{keywords,images});
-     return existsSync(resolve(root,'data/i18n/zh-Hans.json')) ? decorateEnglish(maintained,path) : maintained;
+     const base=authoredHtml(root,path,html);
+     const maintained=applySeoHtml(base,path,{keywords,images});
+     const output=existsSync(resolve(root,'data/i18n/zh-Hans.json')) ? decorateEnglish(maintained,path) : maintained;
+     return output===base ? html : output;
     });
    }
   }

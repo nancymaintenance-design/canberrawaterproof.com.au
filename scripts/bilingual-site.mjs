@@ -5,6 +5,7 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {createHash} from 'node:crypto';
 import editorial, {glossary} from '../data/i18n/zh-Hans-editorial.mjs';
+import {authoredHtml,prepareMachineSite} from './schema-feed-site.mjs';
 
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const HOST='https://www.canberrawaterproof.com.au';
@@ -73,7 +74,8 @@ export function decorateEnglish(html,file){
  html=html.replace(/(<nav\b[^>]*id="main-navigation"[^>]*>)([\s\S]*?)(<\/nav>)/,(whole,open,content,close)=>open+content.replace(/(<a\b[^>]*href="\/contact\/"[^>]*>Contact<\/a>)/,'$1'+`<a class="language-switch" data-language-switch href="${chineseRoute(file)}" lang="zh-Hans" hreflang="zh-Hans">中文服务</a>`)+close);
  return html;
 }
-export function renderChinese(english,file,dictionary){
+export function renderChinese(english,file,dictionary,root=ROOT){
+ english=authoredHtml(root,file,english);
  const translate=translator(dictionary);
  // Preserve option submission values so service prefill and the existing API contract work in both languages.
  english=english.replace(/<option>([^<]+)<\/option>/g,(_,value)=>`<option value="${value}">${value}</option>`);
@@ -159,16 +161,21 @@ function chineseSitemap(root,pages){
 }
 export function buildBilingual(root=ROOT,{check=false}={}){
  const dictionary=dictionaries(root),pages=englishPages(root),missing=new Set();
- for(const file of pages)for(const value of extract(fs.readFileSync(path.join(root,file),'utf8')))if(!dictionary[value])missing.add(value);
+ const authored=Object.fromEntries(pages.map(file=>[file,authoredHtml(root,file,fs.readFileSync(path.join(root,file),'utf8'))]));
+ for(const file of pages)for(const value of extract(authored[file]))if(!dictionary[value])missing.add(value);
  if(missing.size)throw Error(`${missing.size} untranslated strings. Update ${CATALOG} and reviewed overrides before building. First: ${[...missing][0]}`);
  const changes=[],manifest={version:1,languages:['en-AU','zh-Hans'],pages:{}};
  const update=(file,output)=>{const full=path.join(root,file),old=fs.existsSync(full)?fs.readFileSync(full,'utf8'):null;if(old!==output){changes.push(file);if(!check){fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,output);}}};
+ const localised={};
  for(const file of pages){
-  const en=decorateEnglish(fs.readFileSync(path.join(root,file),'utf8'),file);
-  const zh=renderChinese(en,file,dictionary);
-  update(file,en);update('zh/'+file,zh);
-  manifest.pages[file]={en:routeFor(file),zh:chineseRoute(file),sourceHash:hash(en),translationHash:hash(zh)};
+  const en=decorateEnglish(authored[file],file);
+  localised[file]=en;localised['zh/'+file]=renderChinese(en,file,dictionary,root);
  }
+ // Standalone locale-only content roots retain the bilingual-only contract;
+ // complete website roots additionally generate their deployment metadata/feeds.
+ const outputs=fs.existsSync(path.join(root,'vercel.json'))?prepareMachineSite(root,localised):localised;
+ for(const [file,output]of Object.entries(outputs))update(file,output);
+ for(const file of pages)manifest.pages[file]={en:routeFor(file),zh:chineseRoute(file),sourceHash:hash(outputs[file]),translationHash:hash(outputs['zh/'+file])};
  update('sitemap.xml',chineseSitemap(root,pages));
  update(MANIFEST,JSON.stringify(manifest,null,2)+'\n');
  if(check&&changes.length)throw Error(`Bilingual pages are out of sync: ${changes.join(', ')}. Run node scripts/bilingual-site.mjs, then review both languages.`);
@@ -177,7 +184,7 @@ export function buildBilingual(root=ROOT,{check=false}={}){
 const cleanChinese=text=>text.replaceAll('重新布线','重新填缝').replaceAll('重新灌浆','重新填缝').replaceAll('灌浆','填缝').replaceAll('防水卷材','防水层').replaceAll('湿润区域','湿区').replaceAll('湿润地区','湿区').replaceAll('筛网边缘','淋浴屏风边缘').replaceAll('埃利斯','Ellis').replaceAll('梅尔一号','MEL ONE').replaceAll('梅尔·1','MEL ONE');
 async function translateMissing(root){
  const dictionary=readJson(root,CATALOG,{}),overrides=readJson(root,OVERRIDES,{}),values=new Set();
- for(const file of englishPages(root))for(const value of extract(fs.readFileSync(path.join(root,file),'utf8')))if(!dictionary[value]&&!overrides[value])values.add(value);
+ for(const file of englishPages(root))for(const value of extract(authoredHtml(root,file,fs.readFileSync(path.join(root,file),'utf8'))))if(!dictionary[value]&&!overrides[value])values.add(value);
  const batches=[];let current=[],size=0;
  for(const value of values){if(size+value.length>3200&&current.length){batches.push(current);current=[];size=0;}current.push(value);size+=value.length+1;}if(current.length)batches.push(current);
  const translate=async values=>{

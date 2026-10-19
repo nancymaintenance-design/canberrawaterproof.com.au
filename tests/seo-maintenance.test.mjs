@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import * as api from '../scripts/apply-seo-maintenance.mjs';
 import { applyDeclarativeContent } from '../scripts/declarative-content.mjs';
 import { applyKeywordHeadings } from '../scripts/keyword-headings.mjs';
+import {attachAuthoringDependencies} from './helpers/authoring-fixture.mjs';
 const apply = api.applySeoHtml;
 const host = 'https://www.canberrawaterproof.com.au';
 const graph = (html) => JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
@@ -83,6 +84,7 @@ test('restores responsive sources retaining exact image fallback',()=>{
 });
 test('supported locality generation restores maintenance and is repeatable in isolated root',()=>{
  const root=mkdtempSync(join(tmpdir(),'melone-seo-'));
+ attachAuthoringDependencies(root);
  try {
   for(const path of ['scripts','data','services','guides','service-areas','waterproofing','llms.txt','sitemap.xml']) cpSync(new URL('../'+path,import.meta.url),join(root,path),{recursive:true});
   const path='services/bathroom-waterproofing/index.html', file=join(root,path);

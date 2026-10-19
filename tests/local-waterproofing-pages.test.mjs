@@ -2,10 +2,12 @@ import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync as readSource, cpSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
+import {attachAuthoringDependencies} from './helpers/authoring-fixture.mjs';
 
 const reports = resolve('../reports/2026-10-15-rectification/sdd');
 mkdirSync(reports, { recursive: true });
 const fixture = mkdtempSync(resolve(reports, 'task-1-locality-fixture-'));
+attachAuthoringDependencies(fixture);
 const generator = resolve(fixture, 'scripts/build-local-waterproofing-pages.mjs');
 const readFileSync = (path, ...options) => readSource(resolve(fixture, path), ...options);
 const canonicalHost = 'https://www.canberrawaterproof.com.au';

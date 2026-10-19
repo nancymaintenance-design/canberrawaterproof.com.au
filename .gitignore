@@ -2,3 +2,6 @@
 .env*
 .worktrees/
 .seo-cache/
+.local-editor/
+.local-tools/node_modules/
+node_modules/

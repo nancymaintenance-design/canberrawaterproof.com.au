@@ -10,6 +10,8 @@ import { applySeoHtml, applySitemap, maintainSite } from '../scripts/apply-seo-m
 import { applyDeclarativeContent } from '../scripts/declarative-content.mjs';
 import { applyRoofCaseStudy } from '../scripts/case-study-project.mjs';
 import { applyEnquiryFlow } from '../scripts/enquiry-flow.mjs';
+import {attachAuthoringDependencies} from './helpers/authoring-fixture.mjs';
+import {withoutMachine} from '../scripts/schema-feed-site.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const read = path => readFileSync(join(root, path), 'utf8');
@@ -146,6 +148,7 @@ test('maintenance leaves curated pages unchanged, preserves authored content and
 
 test('supported locality generation keeps curated pages free of retired photo groups in an isolated root',()=>{
  const isolated=mkdtempSync(join(tmpdir(),'melone-photo-'));
+ attachAuthoringDependencies(isolated);
  try {
   // Locality pages are generated inside this fixture; copying live generated
   // pages can lock them while the historical suite regenerates the real root.
@@ -156,7 +159,7 @@ test('supported locality generation keeps curated pages free of retired photo gr
   for(const path of paths) {
    const restored=readFileSync(join(isolated,path),'utf8');
    assert.equal(/supplied-project-photos|data-project-photo-group/.test(restored),false,'generator must not restore retired panels');
-   assert.equal(restored,read(path).replace(block,''));
+   assert.equal(withoutMachine(restored),withoutMachine(read(path).replace(block,'')));
   }
   assert.deepEqual(maintainSite(isolated).changed,[]);
  } finally {rmSync(isolated,{recursive:true,force:true});}

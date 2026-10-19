@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { applySeoHtml, applyLlms } from '../scripts/apply-seo-maintenance.mjs';
+import {authoredHtml} from '../scripts/schema-feed-site.mjs';
+import {ROOT} from '../scripts/bilingual-site.mjs';
 
 const host = 'https://www.canberrawaterproof.com.au';
 const nodes = html => JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
@@ -32,7 +34,7 @@ test('maintenance restores visible reception hours and matching seven-day busine
 // Catches inventing a human author, dropping an existing author, or leaving the real organization unlinked.
 test('existing MEL ONE organization author resolves to genuine business and About page without new dates', () => {
  const path = 'industry-news/preparing-for-wet-weather/index.html';
- const input = source(path).replace(/("author":\{"@type":"Organization","name":"MEL ONE"),"@id":"[^"]+","url":"[^"]+"\}/, '$1}');
+ const input = authoredHtml(ROOT,path,source(path)).replace(/("author":\{"@type":"Organization","name":"MEL ONE"),"@id":"[^"]+","url":"[^"]+"\}/, '$1}');
  const output = applySeoHtml(input, path);
  const article = nodes(output).find(n => ['Article','NewsArticle'].includes(n['@type']));
  assert.deepEqual(article.author, {'@type':'Organization', name:'MEL ONE', '@id':host+'/#business', url:host+'/about/'});
@@ -84,7 +86,7 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
  };
  walk(new URL('../',import.meta.url));
  assert.equal(pages.length, 112);
- let authors = 0;
+ let authors = 0, unsigned = 0;
  for (const html of pages) {
   const graph = nodes(html);
   const business = graph.find(n => n['@type'] === 'LocalBusiness');
@@ -95,12 +97,14 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
   assert.match(footer, /<html lang="zh-Hans">/.test(html) ? /办公室接待时间：每天 09:00–21:00/ : /Office reception: daily 09:00–21:00/);
   assert.match(footer.match(/<img\b[^>]*>/)[0], /loading="lazy" decoding="async"/);
   for (const article of graph.filter(n => ['Article','NewsArticle','BlogPosting'].includes(n['@type']))) {
+   if(!article.author){unsigned++;assert.doesNotMatch(html, /class="[^"]*content-author/);continue;}
    authors++;
    assert.equal(article.author['@id'], host+'/#business');
    assert.equal(article.author.url, host+(/<html lang="zh-Hans">/.test(html)?'/zh/about/':'/about/'));
   }
  }
- assert.equal(authors, 18);
+ assert.equal(authors, 12);
+ assert.equal(unsigned, 6);
  assert.equal((source('sitemap.xml').match(/<loc>/g)||[]).length, 78);
  const locality = pages.filter(html => /rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\//.test(html));
  assert.equal(locality.filter(html => /name="robots" content="noindex,follow"/.test(html)).length,15);
