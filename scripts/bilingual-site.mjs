@@ -7,6 +7,7 @@ import {createHash} from 'node:crypto';
 import editorial, {glossary} from '../data/i18n/zh-Hans-editorial.mjs';
 import {authoredHtml,prepareMachineSite} from './schema-feed-site.mjs';
 import {withoutCustomerNavigation,applyCustomerNavigation,navigationMapping} from './customer-navigation.mjs';
+import {applyExternalLinkPolicy} from './external-link-policy.mjs';
 
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const HOST='https://www.canberrawaterproof.com.au';
@@ -172,8 +173,8 @@ export function buildBilingual(root=ROOT,{check=false}={}){
  for(const file of pages){
   const en=decorateEnglish(authored[file],file);
   const zh=renderChinese(en,file,dictionary,root);
-  localised[file]=navigation?applyCustomerNavigation(en,file,root,navigation):en;
-  localised['zh/'+file]=navigation?applyCustomerNavigation(zh,'zh/'+file,root,navigation):zh;
+  localised[file]=applyExternalLinkPolicy(navigation?applyCustomerNavigation(en,file,root,navigation):en,'en');
+  localised['zh/'+file]=applyExternalLinkPolicy(navigation?applyCustomerNavigation(zh,'zh/'+file,root,navigation):zh,'zh');
  }
  // Standalone locale-only content roots retain the bilingual-only contract;
  // complete website roots additionally generate their deployment metadata/feeds.

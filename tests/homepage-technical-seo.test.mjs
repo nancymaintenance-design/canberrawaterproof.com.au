@@ -42,7 +42,6 @@ test('the sole LocalBusiness links its existing images and visible social profil
   assert.equal(businesses[0].image, 'https://www.canberrawaterproof.com.au/assets/mel-one-hero-bathroom.jpg');
   assert.equal(businesses[0].logo, 'https://www.canberrawaterproof.com.au/assets/mel-one-logo.png');
   assert.deepEqual(businesses[0].sameAs, [
-    'https://www.instagram.com/melone.maintenance1/',
     'https://www.youtube.com/@MelOneMaintenance',
     'https://www.tiktok.com/@melonemaintenance5/',
   ]);

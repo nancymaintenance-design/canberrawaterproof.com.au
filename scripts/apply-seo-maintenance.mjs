@@ -16,6 +16,7 @@ import { applyEditorialPresentation } from './editorial-presentation.mjs';
 import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
 import { applyHomepageFieldwork } from './homepage-fieldwork.mjs';
 import { applyServiceDirectoryLayout } from './service-directory-layout.mjs';
+import { applyExternalLinkPolicy } from './external-link-policy.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
 import { authoredHtml } from './schema-feed-site.mjs';
 import { renderLlms } from './llms-curation.mjs';
@@ -171,7 +172,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path);
+ return applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path));
 }
 
 export function applyLlms(text) {

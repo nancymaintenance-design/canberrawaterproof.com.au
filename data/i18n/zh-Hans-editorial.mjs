@@ -14,6 +14,7 @@ export const glossary = [
  ,['贸易任务','其他专业工种工作'],['贸易工作','其他专业工种工作'],['访问限制','现场进出限制'],['分契物业','分层产权物业'],['分层建筑','分层产权建筑'],['预订','预约'],['运动关节','伸缩接缝'],['关节','接缝'],['阈值','门槛'],['地层防水','分层产权物业防水'],['湿地','湿区'],['粘合剂破坏剂','防水层隔离材料'],['粘合破坏剂','防水层隔离材料'],['破键剂','防水层隔离材料'],['水泥浆','水泥基填缝剂'],['治疗方法','处理方法'],['硅树脂','硅酮密封胶']
 ];
 export default {
+ 'Related waterproofing services and projects':'相关防水服务与施工案例',
  'Bathroom Waterproofing':'浴室防水',
  'Balcony Waterproofing':'阳台防水',
  'MEL ONE applying waterproofing membrane to a bathroom floor and wall junction':'MEL ONE 在浴室地面与墙地接缝涂刷防水层',
