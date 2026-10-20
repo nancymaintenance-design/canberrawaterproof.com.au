@@ -1,5 +1,13 @@
 # Canberra Waterproof 后续维护约定
 
+## 客户服务导航与面包屑（2026-10-20，本地候选）
+
+- `data/customer-navigation.mjs` 是明确中英名称、服务承接页、真实父级和关联内容的维护源，不按slug拆分层级。首页保留城市综合防水角色，不能为面包屑新增同义页面或迁移现有Owner。
+- `scripts/customer-navigation.mjs` 接在既有维护和双语生成流程中，输出初始HTML；现有单套JSON-LD从可见导航提取同一条路径。不得再加第二套BreadcrumbList或手改生成中文页。
+- 新增/调整关系须同步真实父页的内容入口，执行 `npm run generate` 两次、`npm run check` 和 `npm test`；全量父级/语言/正文链接检查在 `scripts/customer-navigation-check.mjs`。内部映射被部署排除。
+- 咨询与电话沿用既有配置。`breadcrumb_click` 只表示导航点击，不设为转化；原 generate_lead、电话/邮件/预约点击保留。数据分析不记录查询参数或个人信息。
+- 后台草稿保持原文件及修订；可见正文/导航变化仍可能触发已有 stale/合并保护，不能为适配新组件绕过冲突检查。发布需要当次授权。
+
 ## llms.txt 精选中英入口（2026-10-20）
 
 - 精选来源为 `data/llms-curation.json`，复用现有 Owner、生产域名和双语正文；由 `npm run generate` 生成 `llms.txt`，`npm run check` 检查过期、证据和语言配对。不要手工维护第二套 llms 生成结果。

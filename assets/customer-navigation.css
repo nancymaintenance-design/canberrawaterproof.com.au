@@ -1,0 +1,21 @@
+/* Existing shared tokens remain the visual owner; no fixed-height shells. */
+.customer-breadcrumb{padding-block:12px;font-size:.875rem;color:var(--ink);}
+.customer-breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;}
+.customer-breadcrumb li{display:flex;align-items:center;gap:10px;min-width:0;max-width:100%;overflow-wrap:anywhere;}
+.customer-breadcrumb li+li::before{content:"";width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);flex:0 0 6px;}
+.customer-breadcrumb a{color:var(--teal);text-underline-offset:3px;padding-block:8px;cursor:pointer;}
+.customer-breadcrumb a:hover{color:var(--ink);text-decoration-thickness:2px;}
+.customer-breadcrumb a:focus-visible,.customer-service-shortcuts a:focus-visible,.customer-paths a:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+.customer-breadcrumb [aria-current]{font-weight:600;}
+.customer-service-shortcuts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;}
+.customer-service-shortcuts a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+.customer-service-shortcuts a:hover{color:var(--teal);}
+.customer-paths{margin-block:24px 36px;padding-block:24px;border-block:1px solid var(--line);}
+.customer-paths h2{font-size:clamp(1.3rem,2.5vw,1.8rem);max-width:none;}
+.customer-paths ul{display:flex;flex-wrap:wrap;gap:12px 32px;padding-left:20px;}
+.customer-paths--compact{margin:20px 0 0;padding:16px 20px;border:0;border-left:3px solid var(--teal);background:var(--white);}
+.customer-paths--compact p{margin:0 0 10px!important;max-width:76ch;}
+.customer-paths-links{font-weight:600;}
+.customer-paths .actions{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;}
+.customer-paths .secondary{color:var(--ink);border-color:var(--teal);}
+@media(max-width:620px){.customer-breadcrumb{font-size:.8125rem;}.customer-paths--compact{padding:14px;}.customer-paths .actions .button{white-space:normal;max-width:100%;}.customer-service-shortcuts{gap:8px 16px;}}

@@ -6,6 +6,7 @@ import {promisify} from 'node:util';
 import {createHash} from 'node:crypto';
 import editorial, {glossary} from '../data/i18n/zh-Hans-editorial.mjs';
 import {authoredHtml,prepareMachineSite} from './schema-feed-site.mjs';
+import {withoutCustomerNavigation,applyCustomerNavigation,navigationMapping} from './customer-navigation.mjs';
 
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const HOST='https://www.canberrawaterproof.com.au';
@@ -161,15 +162,18 @@ function chineseSitemap(root,pages){
 }
 export function buildBilingual(root=ROOT,{check=false}={}){
  const dictionary=dictionaries(root),pages=englishPages(root),missing=new Set();
- const authored=Object.fromEntries(pages.map(file=>[file,authoredHtml(root,file,fs.readFileSync(path.join(root,file),'utf8'))]));
+ const authored=Object.fromEntries(pages.map(file=>[file,withoutCustomerNavigation(authoredHtml(root,file,fs.readFileSync(path.join(root,file),'utf8')))]));
  for(const file of pages)for(const value of extract(authored[file]))if(!dictionary[value])missing.add(value);
  if(missing.size)throw Error(`${missing.size} untranslated strings. Update ${CATALOG} and reviewed overrides before building. First: ${[...missing][0]}`);
  const changes=[],manifest={version:1,languages:['en-AU','zh-Hans'],pages:{}};
  const update=(file,output)=>{const full=path.join(root,file),old=fs.existsSync(full)?fs.readFileSync(full,'utf8'):null;if(old!==output){changes.push(file);if(!check){fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,output);}}};
  const localised={};
+ const navigation=fs.existsSync(path.join(root,'data/customer-navigation.mjs'))?navigationMapping(root,{allowPartial:!fs.existsSync(path.join(root,'index.html'))}):null;
  for(const file of pages){
   const en=decorateEnglish(authored[file],file);
-  localised[file]=en;localised['zh/'+file]=renderChinese(en,file,dictionary,root);
+  const zh=renderChinese(en,file,dictionary,root);
+  localised[file]=navigation?applyCustomerNavigation(en,file,root,navigation):en;
+  localised['zh/'+file]=navigation?applyCustomerNavigation(zh,'zh/'+file,root,navigation):zh;
  }
  // Standalone locale-only content roots retain the bilingual-only contract;
  // complete website roots additionally generate their deployment metadata/feeds.

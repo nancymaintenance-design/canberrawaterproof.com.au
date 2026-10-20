@@ -14,9 +14,12 @@ import { applyServiceRepairContent } from './service-repair-content.mjs';
 import { applyProjectEvidenceNavigation } from './project-evidence-navigation.mjs';
 import { applyEditorialPresentation } from './editorial-presentation.mjs';
 import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
+import { applyHomepageFieldwork } from './homepage-fieldwork.mjs';
+import { applyServiceDirectoryLayout } from './service-directory-layout.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
 import { authoredHtml } from './schema-feed-site.mjs';
 import { renderLlms } from './llms-curation.mjs';
+import {navigationMapping,applyCustomerNavigation} from './customer-navigation.mjs';
 import { existsSync } from 'node:fs';
 
 const ownRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -168,7 +171,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyEnquiryFlow(html,path);
+ return applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path);
 }
 
 export function applyLlms(text) {
@@ -198,6 +201,7 @@ export function maintainSite(root = ownRoot) {
  const keywords=JSON.parse(readFileSync(resolve(root,'data/keyword-content-sections.json'),'utf8'));
  const images=JSON.parse(readFileSync(resolve(root,'data/responsive-images.json'),'utf8'));
  const changed=[];
+ const navigation=existsSync(resolve(root,'data/customer-navigation.mjs'))?navigationMapping(root,{allowPartial:!existsSync(resolve(root,'index.html'))}):null;
  function update(path,transform) {
   const file=resolve(root,path), before=readFileSync(file,'utf8'), after=transform(before);
   if(before!==after) {writeFileSync(file,after);changed.push(path);}
@@ -211,7 +215,8 @@ export function maintainSite(root = ownRoot) {
     const path=relative(root,file).replaceAll('\\','/');
     update(path,html=>{
      const base=authoredHtml(root,path,html);
-     const maintained=applySeoHtml(base,path,{keywords,images});
+     let maintained=applySeoHtml(base,path,{keywords,images});
+     if(navigation)maintained=applyCustomerNavigation(maintained,path,root,navigation);
      const output=existsSync(resolve(root,'data/i18n/zh-Hans.json')) ? decorateEnglish(maintained,path) : maintained;
      return output===base ? html : output;
     });

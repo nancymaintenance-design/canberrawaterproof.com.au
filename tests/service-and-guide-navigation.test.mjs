@@ -8,10 +8,10 @@ const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const read = path => readFileSync(resolve(root, path), 'utf8');
 const firstGridCards = html => [...html.match(/<div class="grid">([\s\S]*?)<\/div>/)?.[1].matchAll(/<article class="card">/g) || []].length;
 
-test('home has six service cards and a route to eleven complete services', () => {
+test('home provides direct service choices and a route to eleven complete services', () => {
   const home = read('index.html');
   const index = read('services/index.html');
-  assert.equal(firstGridCards(home), 6);
+  for(const slug of ['leaking-shower-repairs','bathroom-waterproofing','balcony-waterproofing']) assert.match(home,new RegExp('class="home-service-entry" href="/services/'+slug+'/"'));
   assert.match(home, /href="\/services\/">View All 11 Waterproofing Services<\/a>/);
   assert.equal(firstGridCards(index), 11);
   for (const slug of ['laundry-waterproofing', 'roof-waterproofing', 'retaining-wall-waterproofing', 'tile-regrouting', 'commercial-waterproofing']) {

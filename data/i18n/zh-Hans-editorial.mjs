@@ -14,6 +14,23 @@ export const glossary = [
  ,['贸易任务','其他专业工种工作'],['贸易工作','其他专业工种工作'],['访问限制','现场进出限制'],['分契物业','分层产权物业'],['分层建筑','分层产权建筑'],['预订','预约'],['运动关节','伸缩接缝'],['关节','接缝'],['阈值','门槛'],['地层防水','分层产权物业防水'],['湿地','湿区'],['粘合剂破坏剂','防水层隔离材料'],['粘合破坏剂','防水层隔离材料'],['破键剂','防水层隔离材料'],['水泥浆','水泥基填缝剂'],['治疗方法','处理方法'],['硅树脂','硅酮密封胶']
 ];
 export default {
+ 'Bathroom Waterproofing':'浴室防水',
+ 'Balcony Waterproofing':'阳台防水',
+ 'MEL ONE applying waterproofing membrane to a bathroom floor and wall junction':'MEL ONE 在浴室地面与墙地接缝涂刷防水层',
+ 'MEL ONE waterproofing':'MEL ONE 防水服务',
+ 'Waterproofing & Leak Repairs in Canberra':'堪培拉防水与漏水维修服务',
+ 'We repair leaking showers and waterproof bathrooms, balconies and other wet areas.':'我们维修淋浴间漏水，并提供浴室、阳台及其他湿区的防水施工。',
+ 'Main waterproofing services':'主要防水服务',
+ 'Shower leak assessment and repairs for wet carpet, damp adjoining walls and water escaping beyond the shower.':'针对淋浴间外地毯潮湿、相邻墙体受潮和淋浴用水外渗，提供漏水评估与维修。',
+ 'Bathroom waterproofing membrane application':'浴室防水层涂刷施工',
+ 'Waterproofing, sealing & regrouting':'防水施工、接缝密封与重新填缝',
+ 'We carry out waterproofing repairs for homeowners, landlords and property managers across bathrooms, showers, balconies, kitchens and external areas.':'我们为房主、房东和物业经理提供浴室、淋浴间、阳台、厨房及室外区域的防水维修。',
+ 'Our waterproofing work':'我们的防水施工',
+ 'Waterproofing Project Photographs':'防水施工照片',
+ 'Shower sealing work':'淋浴间密封施工',
+ 'Sealing at accessible shower joints.':'处理淋浴间可接触部位的密封接缝。',
+ 'Waterproofing work at an exterior balcony edge.':'室外阳台边缘的防水施工。',
+ 'Sealing and other waterproofing services':'接缝密封与其他防水服务',
  'MEL ONE waterproofing company':'MEL ONE 防水公司',
  'Pipework, escaping surface water and concealed waterproofing need different repairs. The visible wet patch alone cannot select the scope.':'管道故障、表面水外流和隐蔽防水层问题，需要不同的维修方法。仅凭可见的湿斑，无法确定施工范围。',
  'Grout, flexible sealant and the membrane serve separate roles. Compare the part being repaired before comparing surface treatments or renewal.':'填缝剂、柔性密封胶和防水层各有用途。比较表面维修与防水更新前，应先确认需要处理的部位。',

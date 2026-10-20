@@ -77,6 +77,16 @@ export function enrich(page,pages){
  }
  // Link only services actually linked in the visible article, never injected term pages.
  if(article&&services.length)article.about=services.map(s=>({'@id':s.id}));
+ // The visible mapped trail is the single source; retain the historical ID.
+ const visible=load(page.originalHtml),nav=visible('nav.customer-breadcrumb');
+ if(nav.length||rootPath==='/'){
+  const old=nodes.find(n=>n['@type']==='BreadcrumbList');
+  for(let i=nodes.length-1;i>=0;i--)if(nodes[i]['@type']==='BreadcrumbList')nodes.splice(i,1);
+  if(nav.length){const id=old?.['@id']||page.url+'#breadcrumb';const list=nav.find('li').map((i,li)=>({'@type':'ListItem',position:i+1,name:norm(visible(li).text()),item:visible(li).find('a').attr('href')||page.url})).get();
+   if(list.length<2)throw Error('Breadcrumb needs ancestors '+page.file);
+   nodes.push({'@type':'BreadcrumbList','@id':id,itemListElement:list});node.breadcrumb={'@id':id};
+  }else delete node.breadcrumb;
+ }
  return graph;
 }
 export function patchHtml(html,graph,language){

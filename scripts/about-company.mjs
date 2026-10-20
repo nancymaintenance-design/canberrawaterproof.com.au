@@ -34,7 +34,8 @@ const companyMain = `<main id="main" class="about-company">
 export function applyAboutCompany(html) {
  if (!/<main\b[\s\S]*?<\/main>/i.test(html)) return html;
  const newline = html.includes('\r\n') ? '\r\n' : '\n';
- html = html.replace(/<main\b[\s\S]*?<\/main>/i, applyEditorialPresentation(companyMain,'about/index.html').replace(/\n/g, newline));
+ const breadcrumb=html.match(/<!-- customer-navigation:breadcrumb:start -->[\s\S]*?<!-- customer-navigation:breadcrumb:end -->/)?.[0]||'';
+ html = html.replace(/<main\b[\s\S]*?<\/main>/i, applyEditorialPresentation(companyMain,'about/index.html').replace(/\n/g, newline).replace(/(<main\b[^>]*>)/,'$1'+breadcrumb));
  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>About MEL ONE Waterproofing in Canberra | MEL ONE</title>`)
   .replace(/(<meta\b[^>]*(?:name="description"|property="og:description")[^>]*content=")[^"]*(")/gi, '$1'+description+'$2')
   .replace(/(<meta\b[^>]*property="og:title"[^>]*content=")[^"]*(")/gi, '$1About MEL ONE Waterproofing in Canberra | MEL ONE$2');

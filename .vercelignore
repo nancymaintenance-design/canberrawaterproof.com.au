@@ -20,3 +20,6 @@ scripts
 .seo-cache/
 AGENTS.md
 /data/llms-curation.json
+/data/customer-navigation.mjs
+/design-qa.md
+/premium-audit.json

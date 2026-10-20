@@ -1,0 +1,19 @@
+/* Complete rows without invented filler services. Shared card styling is retained. */
+[data-service-directory] > .grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+[data-service-directory] > .grid > .card{grid-column:span 2;min-width:0;display:flex;flex-direction:column}
+[data-service-directory] > .grid > .card > a:last-child{margin-top:auto;align-self:flex-start}
+@media(min-width:901px){
+ [data-service-directory] > .grid:has(> .card:last-child:nth-child(3n + 2)) > .card:nth-last-child(-n + 2){grid-column:span 3}
+ [data-service-directory] > .grid > .card:last-child:nth-child(3n + 1){grid-column:1 / -1}
+}
+@media(max-width:900px){
+ [data-service-directory] > .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ [data-service-directory] > .grid > .card{grid-column:span 1}
+ [data-service-directory] > .grid > .card:last-child:nth-child(odd){grid-column:1 / -1}
+ [data-service-directory] > .grid > .card:last-child:nth-child(odd) .service-card-image img{aspect-ratio:2.1;object-fit:cover}
+}
+@media(max-width:620px){
+ [data-service-directory] > .grid{grid-template-columns:minmax(0,1fr)}
+ [data-service-directory] > .grid > .card{grid-column:1 / -1}
+ [data-service-directory] > .grid > .card:last-child:nth-child(odd) .service-card-image img{aspect-ratio:1.5;object-fit:cover}
+}
