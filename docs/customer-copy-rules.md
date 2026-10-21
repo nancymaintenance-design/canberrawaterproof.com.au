@@ -28,3 +28,12 @@ Run `npm run generate` twice (second final output unchanged), `npm run check`, `
 When upstream wording changes, check that the intended revised occurrence is still emitted. Do not silently leave an obsolete mapping: review the replacement row and its paired translation. Tests assert customer-visible outcomes and important meaning; exempt only legal/privacy, proper names, citations and genuine safety guidance, not entire pages from quality review.
 
 Changes stay local until the owner authorises deployment. Internal findings never belong in public page copy or the sitemap.
+
+## Follow-up checks (21 October 2026)
+
+- Service pages describe what we identify in our quote, rather than asking the customer to define our scope. Comparison guides may still explain useful questions to ask. Keep included, excluded and inspection-dependent work distinct.
+- Translate the building part in context: shower screen = 淋浴屏风, flashing = 泛水板, roof penetration = 穿出屋面的部位, waste connection = 排水连接, moisture timing = 出现潮湿的时间. Regrouting is 重新填缝, not pouring or relaying tiles. A photograph of a finish does not verify concealed waterproofing.
+- Preserve “in as little as” as 最快, together with availability, address and safe-access conditions. Keep 10,000+ customers tied to Australia-wide property maintenance and repairs. Neither claim becomes a guarantee or a Canberra-only waterproofing count.
+- Use consistent official English locality names where the cached translation has conflicting transliterations. Review complete exact source keys, including titles, FAQ answers, image descriptions and inline-link fragments; do not apply a global brand, modal or negation replacement.
+- Check headings keep their actual service or problem context. Check visible Chinese for English remnants as well as missing dictionary entries. A dictionary entry containing English can pass the missing-translation check.
+- Recheck llms evidence against revised visible text. Regenerate Schema and feeds from the same bilingual output; retain entity IDs, feed IDs, dates and existing link targets. Record privacy/legal issues separately instead of rewriting those pages as marketing copy.

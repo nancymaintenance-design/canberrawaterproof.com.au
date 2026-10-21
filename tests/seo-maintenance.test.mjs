@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import * as api from '../scripts/apply-seo-maintenance.mjs';
 import { applyDeclarativeContent } from '../scripts/declarative-content.mjs';
 import { applyKeywordHeadings } from '../scripts/keyword-headings.mjs';
+import { applyCustomerFirstCopy } from '../scripts/customer-first-copy.mjs';
 import {attachAuthoringDependencies} from './helpers/authoring-fixture.mjs';
 const apply = api.applySeoHtml;
 const host = 'https://www.canberrawaterproof.com.au';
@@ -16,7 +17,7 @@ test('restores exact missing keyword block while retaining authored content and 
  const path='services/bathroom-waterproofing/index.html';
  const sections=JSON.parse(readFileSync(new URL('../data/keyword-content-sections.json',import.meta.url)));
  const output=apply(fixture,path,{keywords:sections,images:{}});
- assert.ok(output.includes(applyDeclarativeContent(applyKeywordHeadings(sections[path],path),path)));
+ assert.ok(output.includes(applyCustomerFirstCopy(applyDeclarativeContent(applyKeywordHeadings(sections[path],path),path),path)));
  assert.ok(output.includes('<h1>Original heading</h1><p>Original marketing.</p>'));
  assert.equal(apply(output,path,{keywords:sections,images:{}}),output);
 });
@@ -94,7 +95,7 @@ test('supported locality generation restores maintenance and is repeatable in is
   assert.equal(result.status,0,result.stderr);
   assert.equal(JSON.parse(result.stdout).pages,24);
   const keyword=JSON.parse(readFileSync(join(root,'data/keyword-content-sections.json'),'utf8'))[path];
-  assert.ok(readFileSync(file,'utf8').includes(applyDeclarativeContent(applyKeywordHeadings(keyword,path),path)));
+  assert.ok(readFileSync(file,'utf8').includes(applyCustomerFirstCopy(applyDeclarativeContent(applyKeywordHeadings(keyword,path),path),path)));
   const local=readFileSync(join(root,'waterproofing/belconnen/index.html'),'utf8');
   assert.ok(local.includes('<picture data-responsive-image>'));
   assert.ok(graph(local).find(n=>n['@type']==='WebPage').mainEntity);

@@ -49,3 +49,34 @@ test('important quote and technical terms keep matched Chinese meanings',()=>{
  assert.ok(roof.includes('不能确定防水层有无缺陷'));
  assert.ok(!roof.includes('观察结果并未发现膜缺陷'));
 });
+
+test('Chinese shower and roof advice names the actual building parts and retains repair limits',()=>{
+ const text=f=>load(fs.readFileSync(new URL('../zh/'+f,import.meta.url),'utf8'))('main').text();
+ const shower=text('services/shower-resealing-regrouting/index.html');
+ assert.doesNotMatch(shower,/滤网|屏幕|筛网/,'screen means shower screen in this repair');
+ assert.ok(shower.includes('淋浴屏风'));
+ const roof=text('services/roof-waterproofing/index.html');
+ assert.ok(roof.includes('泛水板、穿出部位或防水层'),'roof paint does not repair these distinct details');
+ assert.ok(text('services/retaining-wall-waterproofing/index.html').includes('降雨后出现潮湿的时间'));
+});
+
+test('locality photo instructions retain the safety prohibition and customer-count scope',()=>{
+ const text=f=>load(fs.readFileSync(new URL('../zh/'+f,import.meta.url),'utf8'))('main').text();
+ for(const area of ['inner-north-city','weston-creek-molonglo']){
+  const main=text('waterproofing/'+area+'/index.html');
+  assert.ok(main.includes('不要为了拍照接近危险部位'));
+  assert.doesNotMatch(main,/不要接近危险并采取措施/);
+  const en=load(fs.readFileSync(new URL('../waterproofing/'+area+'/index.html',import.meta.url),'utf8'))('main').text();
+  assert.ok(en.includes('trusted MEL ONE for property maintenance and repair services. For urgent'));
+ }
+});
+
+test('our service scope paragraphs explain our quote rather than asking the customer to define it',()=>{
+ const text=f=>load(fs.readFileSync(new URL('../'+f,import.meta.url),'utf8'))('main').text();
+ assert.doesNotMatch(text('services/bathroom-waterproofing/index.html'),/Ask the quote to identify/);
+ assert.doesNotMatch(text('services/roof-waterproofing/index.html'),/Ask the proposed scope to identify/);
+ assert.doesNotMatch(text('industry-news/understanding-repair-scopes/index.html'),/the property owner should receive/);
+ assert.doesNotMatch(text('zh/industry-news/preparing-for-wet-weather/index.html'),/contact MEL ONE with the location/);
+ const page=load(fs.readFileSync(new URL('../zh/404.html',import.meta.url),'utf8'));
+ assert.equal(page('main a').first().text(),'返回首页');
+});
