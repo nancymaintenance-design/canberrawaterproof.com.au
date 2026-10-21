@@ -32,8 +32,8 @@
     "faq/index.html": {
       "en": "/faq/",
       "zh": "/zh/faq/",
-      "sourceHash": "3a0ad2e3f057a3f5e9a4bcb1096e07c71cce9804c2b497ea94f7e51fe599e5e5",
-      "translationHash": "456957d83c78870663bb2ade5be5db347bc759d56f19ad4a300cd727c3b22d92"
+      "sourceHash": "66c65bcd46f21a8a21d7e4b18950d0bc11e63988032092e626414f0539a2c899",
+      "translationHash": "c79547631c46855f037792bb60dbe28966813ce866745e1895b761a9560b7e68"
     },
     "guides/balcony-leaking-room-below/index.html": {
       "en": "/guides/balcony-leaking-room-below/",
@@ -92,14 +92,14 @@
     "industry-news/preparing-for-wet-weather/index.html": {
       "en": "/industry-news/preparing-for-wet-weather/",
       "zh": "/zh/industry-news/preparing-for-wet-weather/",
-      "sourceHash": "b79fd482bf27d99a691d0a87f4f2c0fe141c85e354967a6c0c3296c12c9f003b",
-      "translationHash": "77b23a59482162afbc52c0b76d24130b34adb4b4c61d45db6d8e0b4027bae82e"
+      "sourceHash": "0ced96e7a24b4c6b06a34f5923925a9decde3c1ecead149ca9cef9f314fc95f5",
+      "translationHash": "b11e3af8ff5a34efb8b9347c79ff0fd33d59aa04f1b34dff26138c29df836546"
     },
     "industry-news/understanding-repair-scopes/index.html": {
       "en": "/industry-news/understanding-repair-scopes/",
       "zh": "/zh/industry-news/understanding-repair-scopes/",
-      "sourceHash": "ba725a822ed283637e33db9035a6083997c21c8c5b87e33107033cdb2bb33ad4",
-      "translationHash": "3447df12180821d238d2a0886f20874fe7bdf04ff8578eb1d8f71ebc89d8f91a"
+      "sourceHash": "f0cc372f5d0c0a835b1527ba45f75c96dd25edaf15669e1f9fcb8ef66e3ae346",
+      "translationHash": "2bbdc93678f8b51c5e8f9930f66398b5281933d9dd7fd266ff405882491e99a7"
     },
     "industry-news/what-to-photograph-before-a-quote/index.html": {
       "en": "/industry-news/what-to-photograph-before-a-quote/",
@@ -122,26 +122,26 @@
     "services/balcony-waterproofing/index.html": {
       "en": "/services/balcony-waterproofing/",
       "zh": "/zh/services/balcony-waterproofing/",
-      "sourceHash": "9375fc377308035e56d72112ae57047d76c34cdf02e3518522d7706d2cbb719c",
-      "translationHash": "62517033651f72c4be74ff5e1f2dfb5dd3ecf5f28418742087be59f4dcce631c"
+      "sourceHash": "fd4f380329cdd8a3a1df669094a26806fef246ae9f75e626318fe844c1d0b905",
+      "translationHash": "4860f743b42275ff241b1a8f05b2464e40ca4f0c24a44cdb7612903dae5d45f2"
     },
     "services/bathroom-waterproofing/index.html": {
       "en": "/services/bathroom-waterproofing/",
       "zh": "/zh/services/bathroom-waterproofing/",
-      "sourceHash": "274b3218672642f9bb38f5241d8b5e418626254145f2a45fa000e7b01c688ee7",
-      "translationHash": "9b4a63f664a73d8675133b4b987eb90ec95229eae5811c594c3ff1fbf46e7138"
+      "sourceHash": "9d41890718f3085e259ef475f52d71433b58df9ed20c3d44888e63710fd22c5f",
+      "translationHash": "d825ca17a52f320e9f8d5c53c110715e252830c342eea2f3460f0bcf58aaba40"
     },
     "services/commercial-waterproofing/index.html": {
       "en": "/services/commercial-waterproofing/",
       "zh": "/zh/services/commercial-waterproofing/",
-      "sourceHash": "e6226b7b9f1405aafb66c30efc02d125a61b14ae755c1fe64e75386698d122ac",
-      "translationHash": "89dd31af54231dfed446c9fd19cb653fe8ea0f2a5f224393e14f6ace78afb3d4"
+      "sourceHash": "23e15ae386f98ffd36bb87eec53b70dca48bf93d0afcaf69899a8f2bc043265d",
+      "translationHash": "4e22dc4828238112bd445a2fd4f7a8a4f649fdbba80b7f6026bfa801ec9cbe56"
     },
     "services/external-waterproofing/index.html": {
       "en": "/services/external-waterproofing/",
       "zh": "/zh/services/external-waterproofing/",
-      "sourceHash": "304304ac3dd148259d8808f7e593a243cfb9913d13854dbc520cae8150f80551",
-      "translationHash": "830fa1072e174b37ae6c38e13e68bc26de61fdc3cec5b0a576d14ea907594626"
+      "sourceHash": "9da22dcbf23c053e4099e4e36ae56ab8eeaf78e37c700eec375d8523bcc69c19",
+      "translationHash": "f415686e487868eafe86b9840da883e01ab240306660043d33b4fb9fcc7f539c"
     },
     "services/index.html": {
       "en": "/services/",
@@ -152,44 +152,44 @@
     "services/kitchen-sealing/index.html": {
       "en": "/services/kitchen-sealing/",
       "zh": "/zh/services/kitchen-sealing/",
-      "sourceHash": "d4e59d6fb11bec979784e967e264adab51a66d85a173e9c81e0582807ea3a8cd",
-      "translationHash": "8edb1dd4a498ec625ded9141eba25c18e918a246bed7dbe47478335c060c5370"
+      "sourceHash": "ceaf2e1e7b11f9453ac89a4eeb892a0ff0eee8939a0eb2e4bb538f1e355b1bf2",
+      "translationHash": "fbcf392189c018381ad40cec73d4d60319969dc34d568564315aeadf884a35ed"
     },
     "services/laundry-waterproofing/index.html": {
       "en": "/services/laundry-waterproofing/",
       "zh": "/zh/services/laundry-waterproofing/",
-      "sourceHash": "d627d4c94707901fc05a0693a42dfe3b12082f83d245dfc55fb7a4fc07321c8f",
-      "translationHash": "431a885a5803cffb6354be091dfef7023cf82576515bb91b80406afe3abbd9f4"
+      "sourceHash": "df961f77a95962482df1e972ebaa550e23d3c1d83d71742a4197d128f8211cc7",
+      "translationHash": "bf012fa5d0f618d455ac7442abcd6f64a7f4e85d6db8d514323cbdf73509dd54"
     },
     "services/leaking-shower-repairs/index.html": {
       "en": "/services/leaking-shower-repairs/",
       "zh": "/zh/services/leaking-shower-repairs/",
-      "sourceHash": "81cc5c5fb3242cd146f9729d11888608093485a25b88144283a2ec3cc2d5a599",
-      "translationHash": "37f360760f989ad7026ef13f1c8db14fd888f70cc3cbcbfcefecc822e0df528d"
+      "sourceHash": "221a8b3eebf7f70d0f5395ec7f7d57e08642d9c27d3ce91bb2d0d6342f4bd04d",
+      "translationHash": "bb41f2c90b5e147880d1430c623d54129ab6a12467af1e4aae1fc587aa8f4faa"
     },
     "services/retaining-wall-waterproofing/index.html": {
       "en": "/services/retaining-wall-waterproofing/",
       "zh": "/zh/services/retaining-wall-waterproofing/",
-      "sourceHash": "ee1c88f0b53fc6245d305043fb994a730a62547fd2fbd98c148bffcc8e7848fe",
-      "translationHash": "1827a46d638cca5296f5bcc7753fb0e176b2a4bfcfe87368fe50bbeb1a01bae1"
+      "sourceHash": "417c57b99d7ff2eaa378a90a4473ed63d2ea69882c307daf8e6fe08772dd77dc",
+      "translationHash": "4dc68e5fd2615ba99c39ede82e8266ef5dd060d0dd3d9cd2eb56acd7163211c2"
     },
     "services/roof-waterproofing/index.html": {
       "en": "/services/roof-waterproofing/",
       "zh": "/zh/services/roof-waterproofing/",
-      "sourceHash": "72c835c1351c4b9e02b3091e869eb61a9c83e5ccc965d51b98e41b703025d515",
-      "translationHash": "343ced64f3d216f15978eab9bc8f96b001ff5866bfd31d9476707da37c4386bc"
+      "sourceHash": "9bffa47fc21b8a2c96d9f846cdefbcf31c2c118383a571c098c029f60ba48869",
+      "translationHash": "3ab28cf1b00c166f65dba47a8550727388d9b8632746857302cdbfbd7e1c95b3"
     },
     "services/shower-resealing-regrouting/index.html": {
       "en": "/services/shower-resealing-regrouting/",
       "zh": "/zh/services/shower-resealing-regrouting/",
-      "sourceHash": "b96fd71709c56c2869b4b4361b8cd51b0ca65b767cff23adcaac461434f4d265",
-      "translationHash": "435450109def60a5540dbae2c72d976415571a6df657fd013036ca6e0043754c"
+      "sourceHash": "75c7bc7d503224ff2f0497d6230c9eba572b6df738489567f641ef1efef0dde6",
+      "translationHash": "00309507eaf218e8208498d7a8e6e044acf0448e6524caf171fad7f440121dcf"
     },
     "services/tile-regrouting/index.html": {
       "en": "/services/tile-regrouting/",
       "zh": "/zh/services/tile-regrouting/",
-      "sourceHash": "188534645548528726c43a2bab3810b34c6fc2a426559e5d55a4b095ddc1ea8c",
-      "translationHash": "712e48a73367153686e27f744cab1c3cee9960a4f55d9a8a9b35a61db590c8e2"
+      "sourceHash": "6100990f7b63916579caaebde6686aae281ddcf5e2744d624e263ae79563cad6",
+      "translationHash": "e24578d7bc043d744ebab10a5e7e7e3e1e8efe0614a2288aa6e709c9889b0c2b"
     },
     "thank-you/index.html": {
       "en": "/thank-you/",

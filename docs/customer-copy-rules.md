@@ -29,6 +29,12 @@ When upstream wording changes, check that the intended revised occurrence is sti
 
 Changes stay local until the owner authorises deployment. Internal findings never belong in public page copy or the sitemap.
 
+## Post-rain intent content (21 October 2026, local revision)
+
+- `data/post-rain-content.mjs` owns the reviewed service H2 pairs, six additional FAQ answers and five sections within two existing news articles. `scripts/post-rain-content.mjs` applies them before bilingual generation; contextual resource headings are emitted by their existing `scripts/customer-navigation.mjs` owner in both languages. Preserve service H1, IDs, images and design attributes.
+- Queensland research supplies question intent only. Its AU keyword estimates and illustrative AI questions do not establish Canberra demand, storm events or additional services. Do not publish the research metrics as customer copy.
+- Reuse the existing news URLs and historical feed IDs. These article expansions have a fixed actual revision date of 2026-10-21; unknown original publication dates stay unknown. Specialist drying, mould treatment, drainage construction, structural work and insurance decisions remain separately confirmed scopes, not new advertised services.
+
 ## Follow-up checks (21 October 2026)
 
 - Service pages describe what we identify in our quote, rather than asking the customer to define our scope. Comparison guides may still explain useful questions to ask. Keep included, excluded and inspection-dependent work distinct.

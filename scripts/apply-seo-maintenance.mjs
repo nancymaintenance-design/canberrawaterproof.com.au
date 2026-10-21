@@ -18,6 +18,7 @@ import { applyHomepageFieldwork } from './homepage-fieldwork.mjs';
 import { applyServiceDirectoryLayout } from './service-directory-layout.mjs';
 import { applyExternalLinkPolicy } from './external-link-policy.mjs';
 import { applyCustomerFirstCopy } from './customer-first-copy.mjs';
+import {addRainFaq,applyPostRainContent} from './post-rain-content.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
 import { authoredHtml } from './schema-feed-site.mjs';
 import { renderLlms } from './llms-curation.mjs';
@@ -55,6 +56,7 @@ const guideServices = {
 // service/company/project editorial revision and collection semantics on 15 October.
 // Shared navigation and contextual evidence links alone do not reset article dates.
 export const contentChanges = Object.fromEntries([
+ ...['faq','industry-news/preparing-for-wet-weather','industry-news/understanding-repair-scopes'].map(slug=>[`${HOST}/${slug}/`,'2026-10-21']),
  ...Object.keys(guideServices).map(slug=>[`${HOST}/guides/${slug}/`,'2026-10-14']),
  ...Object.keys(serviceNames).map(slug=>[`${HOST}/services/${slug}/`,'2026-10-15']),
  ...['services','guides','industry-news','about','case-studies'].map(slug=>[`${HOST}/${slug}/`,'2026-10-15']),
@@ -164,7 +166,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  html = applyDeclarativeContent(applyKeywordHeadings(applyMobileNavigation(applyResponsiveImages(html,images)),path),path);
  if (path === 'about/index.html') html = applyAboutCompany(html);
  if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
- if (path === 'faq/index.html') html = applyFaqCategories(html);
+ if (path === 'faq/index.html') html = applyFaqCategories(addRainFaq(html));
  html = applyDeepGuide(html,path);
  html = applyServiceRepairContent(html,path);
  html = applyProjectEvidenceNavigation(html,path);
@@ -173,7 +175,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path);
+ return applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path);
 }
 
 export function applyLlms(text) {
@@ -219,6 +221,7 @@ export function maintainSite(root = ownRoot) {
      const base=authoredHtml(root,path,html);
      let maintained=applySeoHtml(base,path,{keywords,images});
      if(navigation)maintained=applyCustomerNavigation(maintained,path,root,navigation);
+     maintained=applyPostRainContent(maintained,path);
      const output=existsSync(resolve(root,'data/i18n/zh-Hans.json')) ? decorateEnglish(maintained,path) : maintained;
      return output===base ? html : output;
     });

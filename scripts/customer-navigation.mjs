@@ -1,3 +1,4 @@
+import {headingRows} from '../data/post-rain-content.mjs';
 import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';import {load} from 'cheerio';
 import {entries,services,servicePath,caseAnchors} from '../data/customer-navigation.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),HOST='https://www.canberrawaterproof.com.au';
@@ -39,7 +40,9 @@ export function applyCustomerNavigation(input,file,root=ROOT,provided){
  }else if(row.type==='service'){
   const children=rows.filter(p=>p.locale===row.locale&&p.parent===row.path),related=entries.filter(e=>e.type==='guide'&&e.related?.includes(row.group));
   const evidence=caseAnchors[row.group];const links=[...children.map(p=>link(p.path.replace(/^\/zh(?=\/)/,''),p.label)),...related.map(p=>link(p.path,p.labels[zh?1:0])),...(evidence?[link('/case-studies/#'+evidence,zh?'查看相关施工照片':'View related project photographs')]:[])];
-  if(links.length)html=html.replace('</main>',mark('paths',`<section class="customer-paths wrap" data-customer-paths aria-labelledby="customer-resources"><h2 id="customer-resources">${zh?'防水维修指南与施工照片':'Waterproofing repair guides and project photographs'}</h2><p>${zh?'了解维修选择，查看相关施工记录，再与我们确认适合您房产的工作。':'Explore the repair options and relevant work photographs, then talk with us about your property.'}</p><ul>${links.map(l=>'<li>'+l+'</li>').join('')}</ul><div class="actions">${form}${call}</div></section>` )+'</main>');
+  const resource=headingRows.find(([slug,before])=>row.path.replace(/^\/zh(?=\/)/,'')===`/services/${slug}/`&&before==='Waterproofing repair guides and project photographs');
+  const resourceHeading=resource?resource[zh?3:2]:(zh?'防水维修指南与施工照片':'Waterproofing repair guides and project photographs');
+  if(links.length)html=html.replace('</main>',mark('paths',`<section class="customer-paths wrap" data-customer-paths aria-labelledby="customer-resources"><h2 id="customer-resources">${resourceHeading}</h2><p>${zh?'了解维修选择，查看相关施工记录，再与我们确认适合您房产的工作。':'Explore the repair options and relevant work photographs, then talk with us about your property.'}</p><ul>${links.map(l=>'<li>'+l+'</li>').join('')}</ul><div class="actions">${form}${call}</div></section>` )+'</main>');
  }else if(['guide','location','news'].includes(row.type)){
   const ids=row.group&&services.some(s=>s[0]===row.group)?[row.group]:row.related||[];
   const links=ids.map(serviceLink);

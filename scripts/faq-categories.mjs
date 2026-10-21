@@ -1,3 +1,4 @@
+import {rainFaq} from '../data/post-rain-content.mjs';
 // Reclassify the authored FAQ without replacing its answers or related links.
 const categories = [
   { id: 'service-enquiries-quotes', title: 'Waterproofing Service Enquiries &amp; Quotes', description: 'Service coverage, assessment visits, costs and the information to prepare before booking.', questions: [
@@ -47,6 +48,7 @@ const categories = [
     'Is roof painting the same as roof waterproofing?',
   ] },
 ];
+categories[1].questions.push(...rainFaq.map(([,q])=>q));
 const aliases = {
   'Do you provide waterproofing services in all Canberra suburbs?': 'areas',
   'What information should a waterproofing quote include?': 'quotes',
@@ -70,12 +72,14 @@ export function applyFaqCategories(html) {
     if (questions.has(name)) throw new Error(`Duplicate FAQ question: ${name}`);
     questions.set(name, match[0]);
   }
-  if (questions.size !== 40) throw new Error(`Expected 40 authored FAQ questions; found ${questions.size}`);
+  const added=rainFaq.filter(([,q])=>questions.has(q)).length;
+  if (questions.size !== 40+added) throw new Error(`Expected 40 retained FAQ questions plus reviewed additions; found ${questions.size}`);
+  const activeCategories=categories.map(c=>({...c,questions:c.questions.filter(q=>!rainFaq.some(([,name])=>name===q)||questions.has(q))}));
   const intro = boundary[1].match(/<p class="faq-lede">[\s\S]*?<\/p>\s*<p>[\s\S]*?<\/p>/)?.[0];
   const note = boundary[1].match(/<p class="faq-source-note">[\s\S]*?<\/p>/)?.[0];
   if (!intro || !note) throw new Error('Missing FAQ introduction or source note');
   const schemaQuestions = [];
-  const panels = categories.map(category => {
+  const panels = activeCategories.map(category => {
     const details = category.questions.map(name => {
       let markup = questions.get(name);
       if (aliases[name] && !markup.includes(`id="${aliases[name]}"`)) markup = markup.replace('<details', `<details id="${aliases[name]}"`);
@@ -85,7 +89,7 @@ export function applyFaqCategories(html) {
     return `<section class="faq-category" aria-labelledby="${category.id}"><div class="faq-category-heading"><p class="eyebrow">${category.questions.length} waterproofing questions</p><h2 id="${category.id}">${category.title}</h2><p>${category.description}</p></div>${details}</section>`;
   }).join('');
   const shortLabels = ['Enquiries &amp; quotes', 'Leak symptoms', 'Materials &amp; systems'];
-  const navigation = `<nav class="faq-navigation" aria-label="Question categories"><p class="eyebrow">Waterproofing answers</p><div class="faq-category-links">${categories.map((category, i) => `<a href="#${category.id}" aria-label="${category.title}"${i === 0 ? ' aria-current="location"' : ''}><span>${shortLabels[i]}</span><small>${category.questions.length} questions</small></a>`).join('')}</div><p class="faq-navigation-help">Need help with an active leak? <a href="#safety">Read the immediate safety advice</a> or <a href="tel:+61482422607">call 0482 422 607</a>.</p></nav>`;
+  const navigation = `<nav class="faq-navigation" aria-label="Question categories"><p class="eyebrow">Waterproofing answers</p><div class="faq-category-links">${activeCategories.map((category, i) => `<a href="#${category.id}" aria-label="${category.title}"${i === 0 ? ' aria-current="location"' : ''}><span>${shortLabels[i]}</span><small>${category.questions.length} questions</small></a>`).join('')}</div><p class="faq-navigation-help">Need help with an active leak? <a href="#safety">Read the immediate safety advice</a> or <a href="tel:+61482422607">call 0482 422 607</a>.</p></nav>`;
   html = html.replace(boundary[0], `<section class="section wrap faq"><div class="faq-layout">${navigation}<div class="faq-questions"><div class="faq-introduction">${intro}</div>${panels}${note}</div></div></section></main>`);
   html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (block, json) => {
     const data = JSON.parse(json);

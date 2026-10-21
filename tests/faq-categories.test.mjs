@@ -20,7 +20,7 @@ test('FAQ groups retained questions in three navigable categories without losing
   const categories = [...output.matchAll(/<section class="faq-category" aria-labelledby="([^"]+)">/g)].map(m => m[1]);
   assert.deepEqual(categories, ['service-enquiries-quotes', 'leak-symptoms-repair-scenarios', 'waterproofing-knowledge-materials']);
   const before = questions(original), after = questions(output);
-  assert.equal(after.length, 40);
+  assert.equal(after.length, before.length, 'classification retains every authored question');
   assert.deepEqual([...after].sort((a,b) => a.name.localeCompare(b.name)), [...before].sort((a,b) => a.name.localeCompare(b.name)));
   for (const id of categories) assert.ok(output.includes(`href="#${id}"`));
   for (const id of ['areas', 'bathrooms', 'tile-joints', 'balconies', 'kitchen-laundry', 'roof-external', 'quotes', 'safety']) {
