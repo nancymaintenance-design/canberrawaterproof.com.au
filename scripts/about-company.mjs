@@ -2,6 +2,7 @@
 // This transform owns the About main region; shared navigation/footer stay authored.
 import {applyEditorialPresentation} from './editorial-presentation.mjs';
 import {applyExternalLinkPolicy} from './external-link-policy.mjs';
+import {applyCustomerFirstCopy} from './customer-first-copy.mjs';
 const pageName = 'About MEL ONE waterproofing in Canberra';
 const description = 'Meet MEL ONE’s Canberra waterproofing team: more than 10 years of experience, wet-area and external repairs, service capabilities and company details.';
 const services = [
@@ -33,7 +34,7 @@ const companyMain = `<main id="main" class="about-company">
 </article></main>`;
 
 export function applyAboutCompany(html) {
- return applyExternalLinkPolicy(renderAboutCompany(html));
+ return applyCustomerFirstCopy(applyExternalLinkPolicy(renderAboutCompany(html)),'about/index.html');
 }
 function renderAboutCompany(html) {
  if (!/<main\b[\s\S]*?<\/main>/i.test(html)) return html;

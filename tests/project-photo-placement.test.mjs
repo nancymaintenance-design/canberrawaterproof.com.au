@@ -12,6 +12,7 @@ import { applyRoofCaseStudy } from '../scripts/case-study-project.mjs';
 import { applyEnquiryFlow } from '../scripts/enquiry-flow.mjs';
 import {attachAuthoringDependencies} from './helpers/authoring-fixture.mjs';
 import {withoutMachine} from '../scripts/schema-feed-site.mjs';
+import {applyCustomerFirstCopy} from '../scripts/customer-first-copy.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const read = path => readFileSync(join(root, path), 'utf8');
@@ -72,7 +73,7 @@ test('approved service edits preserve original images, protected scenes, page id
   const baseline=execFileSync('git',['show',`13a086571453cc7f2589f373d46ceaf86562b2fb:${path}`],{cwd:root,encoding:'utf8'});
   const editorial=applyDeclarativeContent(baseline,path),current=read(path);
   assert.deepEqual([...current.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...baseline.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),path+' original image tags');
-  for(const block of editorial.matchAll(/<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g))assert.ok(current.includes(block[0]),path+' protected scene');
+  for(const block of editorial.matchAll(/<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g))assert.ok(current.includes(applyCustomerFirstCopy(block[0],path)),path+' protected scene');
   const canonical=baseline.match(/<link rel="canonical"[^>]*>/)[0];assert.ok(current.includes(canonical));
   assert.match(current,/href="\/case-studies\/"/);
   if(path!==gallery){assert.match(current,/on-site assessment/);assert.match(current,/written quote/);assert.doesNotMatch(current,/Visible damage can be a useful starting point|From the reported symptom to a defined repair scope/);}

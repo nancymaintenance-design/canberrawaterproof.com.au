@@ -10,7 +10,7 @@ const label=slug=>slug.split('-').join(' ');
 
 function renderReading(guide,cover) {
  const aid=reading[guide.slug];
- const contents=`<nav class="deep-guide-toc" aria-label="Article contents"><h2>Waterproofing guide contents</h2><ol>${guide.sections.map(s=>`<li><a href="#${s.id}">${escape(s.title)}</a></li>`).join('')}</ol><p><a href="#guide-questions">Related questions</a> · <a href="#guide-sources">Sources</a></p></nav>`;
+ const contents=`<nav class="deep-guide-toc" aria-label="Article contents"><h2>Waterproofing guide contents</h2><ol>${guide.sections.map(s=>`<li><a href="#${s.id}">${escape(s.title)}</a></li>`).join('')}</ol><p><a href="#guide-questions">Related questions</a> · <a href="#guide-sources">Services and projects</a></p></nav>`;
  const distinctions=`<section class="deep-guide-distinctions" aria-labelledby="guide-distinctions"><h2 id="guide-distinctions">Waterproofing repair distinctions</h2><div class="deep-guide-copy"><table><caption>Selected distinctions from this guide</caption><thead><tr><th scope="col">Consideration</th><th scope="col">Starting point for assessment</th></tr></thead><tbody>${aid.distinctions.map(([id,title,summary])=>{
   const section=guide.sections.find(s=>s.id===id);
   if(!section)throw new Error(`Unknown reading section ${guide.slug}#${id}`);

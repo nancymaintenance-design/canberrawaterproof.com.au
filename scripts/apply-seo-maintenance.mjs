@@ -17,6 +17,7 @@ import { applyLocalityContactCopy } from './locality-contact-copy.mjs';
 import { applyHomepageFieldwork } from './homepage-fieldwork.mjs';
 import { applyServiceDirectoryLayout } from './service-directory-layout.mjs';
 import { applyExternalLinkPolicy } from './external-link-policy.mjs';
+import { applyCustomerFirstCopy } from './customer-first-copy.mjs';
 import { buildBilingual, decorateEnglish } from './bilingual-site.mjs';
 import { authoredHtml } from './schema-feed-site.mjs';
 import { renderLlms } from './llms-curation.mjs';
@@ -96,7 +97,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  const source = keywords[path];
  if (source) {
   const present = [...html.matchAll(keywordPattern)];
-  const editorial = block => applyDeclarativeContent(applyKeywordHeadings(block,path),path);
+  const editorial = block => applyCustomerFirstCopy(applyDeclarativeContent(applyKeywordHeadings(block,path),path),path);
   if (present.length > 1 || (present.length && editorial(present[0][0]) !== editorial(source))) throw new Error(`Protected keyword section differs: ${path}`);
   if (!present.length) {
    if (!html.includes('</main>')) throw new Error(`Missing keyword insertion anchor: ${path}`);
@@ -172,7 +173,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path));
+ return applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path);
 }
 
 export function applyLlms(text) {
@@ -225,9 +226,9 @@ export function maintainSite(root = ownRoot) {
   }
  }
  walk(root);
- update('llms.txt',existsSync(resolve(root,'vercel.json'))&&existsSync(resolve(root,'data/llms-curation.json')) ? ()=>renderLlms(root) : applyLlms);
  update('sitemap.xml',applySitemap);
  if (existsSync(resolve(root,'data/i18n/zh-Hans.json'))) changed.push(...buildBilingual(root).changed);
+ update('llms.txt',existsSync(resolve(root,'vercel.json'))&&existsSync(resolve(root,'data/llms-curation.json')) ? ()=>renderLlms(root) : applyLlms);
  return {changed,keywordSections:Object.keys(keywords).length,contentChangePages:Object.keys(contentChanges).length};
 }
 

@@ -23,3 +23,7 @@ AGENTS.md
 /data/customer-navigation.mjs
 /design-qa.md
 /premium-audit.json
+/data/customer-first-copy.mjs
+/data/customer-first-locality.mjs
+/data/customer-first-locality-context.mjs
+/data/customer-first-zh.mjs

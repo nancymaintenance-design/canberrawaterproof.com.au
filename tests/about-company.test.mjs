@@ -37,7 +37,8 @@ test('About capabilities link to all eleven real services without presenting a p
  const expected = ['bathroom-waterproofing','leaking-shower-repairs','shower-resealing-regrouting','balcony-waterproofing','kitchen-sealing','laundry-waterproofing','external-waterproofing','roof-waterproofing','retaining-wall-waterproofing','tile-regrouting','commercial-waterproofing'];
  for (const slug of expected) assert.ok(result.includes('href="/services/'+slug+'/"'), slug);
  assert.match(result, /epoxy grout/i);
- assert.match(result, /balcony and general tile regrouting/i);
+ assert.match(result, /tile regrouting/i);
+ assert.match(result, /including balcony and epoxy grout work/i);
  assert.match(result, /all property types/i);
  assert.doesNotMatch(result, /Isaacs|documented-project|about-project|about-team-workshop|documented project work/);
  assert.match(result, /src="\/assets\/about-team-site\.jpg"/);

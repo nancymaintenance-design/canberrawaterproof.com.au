@@ -96,7 +96,7 @@ function testPages() {
   assert.match(aranda, /<h2>Waterproofing assessment and repairs in Aranda<\/h2>/);
   assert.doesNotMatch(aranda, /backed by proven experience/);
   assert.match(aranda, /<link rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\/aranda\/">/);
-  for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry']) {
+  for (const term of ['bathroom', 'shower', 'roof', 'kitchen', 'balcony', 'external water-entry|external waterproofing']) {
     assert.match(aranda.toLowerCase(), new RegExp(term));
   }
   for (const service of [

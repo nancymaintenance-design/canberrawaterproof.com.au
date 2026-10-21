@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {applySeoHtml} from '../scripts/apply-seo-maintenance.mjs';
 import {applyExternalLinkPolicy} from '../scripts/external-link-policy.mjs';
+import {applyCustomerFirstCopy} from '../scripts/customer-first-copy.mjs';
 import {deepGuides} from '../scripts/deep-guides.mjs';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const plain=value=>value.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
@@ -80,7 +81,7 @@ for(const guide of deepGuides)test(`${guide.slug} offers a reading column and so
  assert.ok(after.indexOf('class="deep-guide-toc"')<after.indexOf('class="guide-cover"'),'contents are available before the cover');
  const matrix=JSON.parse(after.match(/<script id="llm-entity-json" type="application\/json">([\s\S]*?)<\/script>/)[1]);
  assert.equal(matrix.knowledge_matrix.sections.length,8);
- for(const section of guide.sections)assert.ok(after.includes(applyExternalLinkPolicy(section.html)),`retained full section ${section.id}`);
+ for(const section of guide.sections)assert.ok(after.includes(applyCustomerFirstCopy(applyExternalLinkPolicy(section.html),path)),`retained full section ${section.id}`);
  for(const section of matrix.knowledge_matrix.sections)assert.ok(plain(after).includes(section.content),'feed reflects visible full section');
  assert.deepEqual([...after.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...before.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]));
  for(const section of guide.sections)for(const table of section.html.matchAll(/<table\b[\s\S]*?<\/table>/g))assert.ok(after.includes(table[0]),'authored full-context tables remain intact');

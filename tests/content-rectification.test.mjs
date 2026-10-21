@@ -5,6 +5,7 @@ import {resolve} from 'node:path';
 import {applySeoHtml,applySitemap} from '../scripts/apply-seo-maintenance.mjs';
 import {applyDeclarativeContent} from '../scripts/declarative-content.mjs';
 import {applyKeywordHeadings} from '../scripts/keyword-headings.mjs';
+import {applyCustomerFirstCopy} from '../scripts/customer-first-copy.mjs';
 const root=resolve(import.meta.dirname,'..');
 const read=p=>readFileSync(resolve(root,p),'utf8');
 const slugs=['leaking-shower-repairs','shower-resealing-regrouting','balcony-waterproofing','kitchen-sealing','external-waterproofing','laundry-waterproofing','roof-waterproofing','retaining-wall-waterproofing'];
@@ -32,7 +33,7 @@ test('maintenance keeps every protected scene and existing service photograph',(
   const original=read(p),out=applySeoHtml(original,p,{keywords});
   assert.ok(out.includes('<!-- keyword-content-expansion:start -->'));
   const paragraphs=applyDeclarativeContent(applyKeywordHeadings(block,p),p).match(/<p\b[\s\S]*?<\/p>/g)||[];
-  for(const paragraph of paragraphs)assert.ok(out.includes(paragraph),p+' protected paragraph');
+  for(const paragraph of paragraphs)assert.ok(out.includes(applyCustomerFirstCopy(paragraph,p)),p+' protected paragraph');
   for(const m of original.matchAll(/<img\b[^>]*src="([^"]+)"/g))assert.ok(out.includes(`src="${m[1]}"`),p+' '+m[1]);
  }
 });
@@ -46,7 +47,7 @@ test('headings are topical declarative statements without concatenated template 
 });
 test('case hub identifies photograph evidence and relevant anchors without inventing project results',()=>{
  const p='case-studies/index.html',h=applySeoHtml(read(p),p);
- assert.match(h,/not presented as a same-job before-and-after/i);
+ assert.match(h,/not a before-and-after pair from the same bathroom/i);
  for(const id of ['bathroom-work','balcony-stages','tile-joints','commercial-roof','isaacs-roof'])assert.ok(h.includes(`id="${id}"`),id);
  for(const slug of ['bathroom-waterproofing','balcony-waterproofing','tile-regrouting','commercial-waterproofing','roof-waterproofing'])assert.ok(h.includes(`/services/${slug}/`));
  assert.match(h,/April 2026/);assert.match(h,/chimney, ventilation outlets and eaves drainage outlets/);
