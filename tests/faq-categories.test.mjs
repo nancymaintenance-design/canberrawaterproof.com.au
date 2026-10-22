@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 
-const original = execFileSync('git', ['show', 'HEAD:faq/index.html'], { encoding: 'utf8', cwd: new URL('..', import.meta.url) });
+const original = readFileSync(new URL('../faq/index.html', import.meta.url), 'utf8');
 const load = async () => {
   try { return await import('../scripts/faq-categories.mjs'); }
   catch (error) { if (error.code === 'ERR_MODULE_NOT_FOUND') return {}; throw error; }

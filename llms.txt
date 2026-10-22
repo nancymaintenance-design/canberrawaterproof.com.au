@@ -58,5 +58,5 @@
 - [填缝、密封与防水层更新指南](https://www.canberrawaterproof.com.au/zh/guides/regrouting-resealing-or-rewaterproofing/): 比较填缝、硅胶密封与防水层更新的边界，说明环氧与水泥基填缝材料的差别。
 - [Balcony leaks affecting a room below](https://www.canberrawaterproof.com.au/guides/balcony-leaking-room-below/): Ceiling stains below a balcony, drainage and junction details before choosing local sealing or membrane renewal.
 - [阳台漏水影响楼下房间指南](https://www.canberrawaterproof.com.au/zh/guides/balcony-leaking-room-below/): 从阳台下方水渍、排水及连接细节出发，比较局部密封与防水层更新的适用范围。
-- [Waterproofing materials and installation systems](https://www.canberrawaterproof.com.au/guides/waterproofing-materials-and-systems/): Sheet, PVC, TPO, polymer-cement (JS) and liquid membrane uses, with preparation, joints, curing and quote checks.
-- [防水材料与施工系统指南](https://www.canberrawaterproof.com.au/zh/guides/waterproofing-materials-and-systems/): 说明卷材、PVC、TPO、聚合物水泥（JS）及液态膜的用途，以及基层、节点、固化和报价检查。
+- [Waterproofing materials and installation systems](https://www.canberrawaterproof.com.au/guides/waterproofing-materials-and-systems/): Sheet, PVC, TPO, polymer-modified cementitious and liquid membrane uses, with preparation, joints, curing and quote checks.
+- [防水材料与施工系统指南](https://www.canberrawaterproof.com.au/zh/guides/waterproofing-materials-and-systems/): 说明卷材、PVC、TPO、JS 防水（聚合物改性水泥基防水）及液态膜的用途，以及基层、节点、固化和报价检查。

@@ -1,3 +1,4 @@
+import {applyServiceMaterialsCopy} from './service-materials-copy.mjs';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -63,6 +64,7 @@ export const contentChanges = Object.fromEntries([
  ...['services','guides','industry-news','about','case-studies'].map(slug=>[`${HOST}/${slug}/`,'2026-10-15']),
  ...['belconnen','gungahlin','inner-north-city','inner-south','woden-valley','weston-creek-molonglo','tuggeranong','east-canberra','act-localities'].map(slug=>[`${HOST}/waterproofing/${slug}/`,'2026-10-15']),
  ...['guides/waterproofing-materials-and-systems','guides','faq'].map(slug=>[`${HOST}/${slug}/`,'2026-10-22']),
+ ...['bathroom-waterproofing','balcony-waterproofing','roof-waterproofing','retaining-wall-waterproofing','laundry-waterproofing','external-waterproofing','commercial-waterproofing'].map(slug=>[`${HOST}/services/${slug}/`,'2026-10-22']),
 ]);
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
@@ -177,7 +179,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyMaterialsContent(applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path),path);
+ return applyServiceMaterialsCopy(applyMaterialsContent(applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path),path),path);
 }
 
 export function applyLlms(text) {

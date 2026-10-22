@@ -65,7 +65,7 @@ test('lastmod only changes manifest content pages and retains other dates',()=>{
  const xml=`<urlset><url><loc>${host}/guides/shower-plumbing-or-waterproofing/</loc></url><url><loc>${host}/services/bathroom-waterproofing/</loc></url><url><loc>${host}/guides/waterproofing-or-drainage/</loc></url><url><loc>${host}/about/</loc><lastmod>2025-01-01</lastmod></url><url><loc>${host}/</loc></url></urlset>`;
  const output=fn(xml);
  assert.ok(output.includes('/guides/shower-plumbing-or-waterproofing/</loc><lastmod>2026-10-14</lastmod>'));
- assert.ok(output.includes('/services/bathroom-waterproofing/</loc><lastmod>2026-10-15</lastmod>'));
+ assert.ok(output.includes('/services/bathroom-waterproofing/</loc><lastmod>2026-10-22</lastmod>'));
  assert.ok(output.includes('/guides/waterproofing-or-drainage/</loc><lastmod>2026-10-14</lastmod>'));
  assert.ok(output.includes('/about/</loc><lastmod>2026-10-15</lastmod>'));
  assert.ok(output.includes(`${host}/</loc></url>`));

@@ -29,6 +29,13 @@ When upstream wording changes, check that the intended revised occurrence is sti
 
 Changes stay local until the owner authorises deployment. Internal findings never belong in public page copy or the sitemap.
 
+## Service material explanations (22 October 2026, local revision)
+
+- `data/service-materials-copy.mjs` owns 14 exact paragraph revisions on seven existing service pages; `scripts/service-materials-copy.mjs` applies visible paragraph changes after the upstream content owners. Each page adds one inline materials-guide link, using the existing paragraph and layout.
+- Explain the usual material approach and installation checkpoints positively: “For this location, we usually consider …”, followed by the substrate, exposure and exact-system conditions. Keep safety and related-trade responsibilities meaningful; do not globally remove negation or turn candidate systems into guaranteed brand use.
+- English customer copy uses Australian terminology such as “polymer-modified cementitious waterproofing”. Chinese uses “JS 防水（聚合物改性水泥基防水）” where appropriate. Language versions preserve the same uses and conditions without adding a Chinese terminology lesson to English.
+- The existing materials guide and its cementitious FAQ share that terminology. Keep their URLs, section/question anchors and historical feed IDs; regenerate the native English and reviewed Chinese text, metadata, knowledge matrix, Schema, feeds and llms evidence together. Local changes require a fresh deployment authorisation.
+
 ## Materials education (22 October 2026, local revision)
 
 - `data/materials-guide.mjs` owns the bilingual material/installation explanation, eight FAQ additions and reviewed technical source URLs; `scripts/materials-guide.mjs` emits the existing guide/card/disclosure markup. Do not hand-edit generated Chinese or derived machine bodies.

@@ -328,12 +328,12 @@
       "reason": "Reviewed cross-service material distinctions and installation checkpoints, without adding specialist service promises.",
       "en": {
         "label": "Waterproofing materials and installation systems",
-        "summary": "Sheet, PVC, TPO, polymer-cement (JS) and liquid membrane uses, with preparation, joints, curing and quote checks.",
+        "summary": "Sheet, PVC, TPO, polymer-modified cementitious and liquid membrane uses, with preparation, joints, curing and quote checks.",
         "evidence": "A shower, tiled balcony, exposed roof and soil-retaining wall can need different materials and detailing."
       },
       "zh": {
         "label": "防水材料与施工系统指南",
-        "summary": "说明卷材、PVC、TPO、聚合物水泥（JS）及液态膜的用途，以及基层、节点、固化和报价检查。",
+        "summary": "说明卷材、PVC、TPO、JS 防水（聚合物改性水泥基防水）及液态膜的用途，以及基层、节点、固化和报价检查。",
         "evidence": "淋浴间、铺砖阳台、外露屋面与挡土墙可能需要不同材料和节点做法。"
       }
     }

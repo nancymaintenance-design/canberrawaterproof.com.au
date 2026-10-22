@@ -170,7 +170,10 @@ test('photo batch lastmod includes retaining wall and gallery while unrelated da
  const host='https://www.canberrawaterproof.com.au';
  const input='<urlset>'+[...paths.map(p=>'/'+p.replace('index.html','')),'/about/'].map(p=>`<url><loc>${host}${p}</loc><lastmod>2026-01-01</lastmod></url>`).join('')+'</urlset>';
  const result=applySitemap(input);
- for(const path of paths) assert.ok(result.includes(`${host}/${path.replace('index.html','')}</loc><lastmod>2026-10-15</lastmod>`));
+ for(const path of paths) {
+  const date=path.startsWith('services/')?'2026-10-22':'2026-10-15';
+  assert.ok(result.includes(`${host}/${path.replace('index.html','')}</loc><lastmod>${date}</lastmod>`));
+ }
  assert.ok(result.includes('/about/</loc><lastmod>2026-10-15</lastmod>'));
  assert.equal(applySitemap(result),result);
 });

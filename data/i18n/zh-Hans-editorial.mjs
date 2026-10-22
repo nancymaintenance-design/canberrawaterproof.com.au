@@ -1,5 +1,6 @@
 import {rainTranslations} from '../post-rain-content.mjs';
 import {materialsTranslations} from '../materials-guide.mjs';
+import {serviceMaterialsTranslations} from '../service-materials-copy.mjs';
 // Reviewed translations override cached first-pass translations without changing English source copy.
 import {customerCopy} from '../customer-first-copy.mjs';
 import customerFirstZh from '../customer-first-zh.mjs';
@@ -104,4 +105,5 @@ export default {
  ,...customerFirstZh,
  ...rainTranslations,
  ...materialsTranslations,
+ ...serviceMaterialsTranslations,
 };
