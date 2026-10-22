@@ -320,6 +320,22 @@
         "summary": "从阳台下方水渍、排水及连接细节出发，比较局部密封与防水层更新的适用范围。",
         "evidence": "阳台下方的水渍，不能直接说明水从哪里进入。需要检查相关连接部位和排水情况，并区分局部密封与防水层更新的适用范围。"
       }
+    },
+    {
+      "route": "/guides/waterproofing-materials-and-systems/",
+      "group": "evidence",
+      "role": "guide",
+      "reason": "Reviewed cross-service material distinctions and installation checkpoints, without adding specialist service promises.",
+      "en": {
+        "label": "Waterproofing materials and installation systems",
+        "summary": "Sheet, PVC, TPO, polymer-cement (JS) and liquid membrane uses, with preparation, joints, curing and quote checks.",
+        "evidence": "A shower, tiled balcony, exposed roof and soil-retaining wall can need different materials and detailing."
+      },
+      "zh": {
+        "label": "防水材料与施工系统指南",
+        "summary": "说明卷材、PVC、TPO、聚合物水泥（JS）及液态膜的用途，以及基层、节点、固化和报价检查。",
+        "evidence": "淋浴间、铺砖阳台、外露屋面与挡土墙可能需要不同材料和节点做法。"
+      }
     }
   ]
 }

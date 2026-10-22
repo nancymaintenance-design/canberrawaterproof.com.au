@@ -41,7 +41,7 @@ test('breadcrumb click reuses tracking once, omits query data and never counts a
 });
 test('all mapped pages pass reciprocity checks and non-indexable ancestors are rejected',async()=>{
  const {navigationMapping}=await import('../scripts/customer-navigation.mjs');const {checkCustomerNavigation}=await import('../scripts/customer-navigation-check.mjs');
- const result=checkCustomerNavigation(fileURLToPath(root));assert.equal(result.covered,76);assert.equal(result.errors,0);
+ const result=checkCustomerNavigation(fileURLToPath(root));assert.equal(result.covered,78);assert.equal(result.errors,0);
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'cwp-navigation-'));try{
   for(const p of navigationMapping()){const target=path.join(temp,p.file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(new URL(p.file,root),target);}
   const target=path.join(temp,'about/index.html');fs.writeFileSync(target,fs.readFileSync(target,'utf8').replace('name="robots" content="index,follow"','name="robots" content="noindex,follow"'));

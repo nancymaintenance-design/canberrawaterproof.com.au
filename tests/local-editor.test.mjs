@@ -8,7 +8,7 @@ test('all current bilingual pages expose every nonempty paragraph as one field a
  assert.ok(editor,'local editor implementation must exist');
  const {createRequire}=await import('node:module');
  const {load}=createRequire(new URL('../.local-tools/package.json',import.meta.url))('cheerio');
- const pages=editor.pages();assert.equal(pages.length,56);
+ const pages=editor.pages();assert.equal(pages.length,57);
  for(const page of pages){
   const model=editor.readModel(page.file),$=load(model.chinese);
   const count=$('body p').filter((_,p)=>$(p).text().trim().length>0).length;
@@ -63,7 +63,7 @@ test('server rejects foreign requests and serves only registered previews and as
   assert.equal((await fetch(app.origin+'/__editor/api/state')).status,403);
   const headers={'x-editor-token':token};
   const state=await (await fetch(app.origin+'/__editor/api/state',{headers})).json();
-  assert.equal(state.pages.length,56);
+  assert.equal(state.pages.length,57);
   assert.equal((await fetch(app.origin+'/.git/config')).status,404);
   assert.equal((await fetch(app.origin+'/api/contact',{method:'POST'})).status,405);
   const foreign=await fetch(app.origin+'/__editor/api/save',{method:'POST',headers:{...headers,origin:'https://evil.test','content-type':'application/json'},body:'{}'});

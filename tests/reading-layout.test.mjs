@@ -7,13 +7,14 @@ import {applyExternalLinkPolicy} from '../scripts/external-link-policy.mjs';
 import {applyCustomerFirstCopy} from '../scripts/customer-first-copy.mjs';
 import {deepGuides} from '../scripts/deep-guides.mjs';
 import {rainFaq} from '../data/post-rain-content.mjs';
+import {materialsFaq} from '../data/materials-guide.mjs';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const plain=value=>value.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 
 test('FAQ categories precede the long reading introduction without losing native questions',()=>{
  const before=read('faq/index.html'),after=applySeoHtml(before,'faq/index.html');
  assert.ok(after.indexOf('class="faq-navigation"')<after.indexOf('class="faq-introduction"'),'early category discovery');
- assert.equal((after.match(/<details\b/g)||[]).length,40+rainFaq.length);
+ assert.equal((after.match(/<details\b/g)||[]).length,40+rainFaq.length+materialsFaq.length);
  assert.match(after,/aria-label="Waterproofing Service Enquiries &amp; Quotes"/);
  assert.match(after,/<span>Enquiries &amp; quotes<\/span>/);
  assert.equal(applySeoHtml(after,'faq/index.html'),after);

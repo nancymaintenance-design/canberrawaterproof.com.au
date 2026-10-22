@@ -1,4 +1,5 @@
 import {rainFaq} from '../data/post-rain-content.mjs';
+import {materialsFaq} from '../data/materials-guide.mjs';
 // Reclassify the authored FAQ without replacing its answers or related links.
 const categories = [
   { id: 'service-enquiries-quotes', title: 'Waterproofing Service Enquiries &amp; Quotes', description: 'Service coverage, assessment visits, costs and the information to prepare before booking.', questions: [
@@ -49,6 +50,8 @@ const categories = [
   ] },
 ];
 categories[1].questions.push(...rainFaq.map(([,q])=>q));
+categories[2].questions.push(...materialsFaq.map(([,q])=>q));
+const reviewedAdditions=[...rainFaq,...materialsFaq];
 const aliases = {
   'Do you provide waterproofing services in all Canberra suburbs?': 'areas',
   'What information should a waterproofing quote include?': 'quotes',
@@ -72,9 +75,9 @@ export function applyFaqCategories(html) {
     if (questions.has(name)) throw new Error(`Duplicate FAQ question: ${name}`);
     questions.set(name, match[0]);
   }
-  const added=rainFaq.filter(([,q])=>questions.has(q)).length;
+  const added=reviewedAdditions.filter(([,q])=>questions.has(q)).length;
   if (questions.size !== 40+added) throw new Error(`Expected 40 retained FAQ questions plus reviewed additions; found ${questions.size}`);
-  const activeCategories=categories.map(c=>({...c,questions:c.questions.filter(q=>!rainFaq.some(([,name])=>name===q)||questions.has(q))}));
+  const activeCategories=categories.map(c=>({...c,questions:c.questions.filter(q=>!reviewedAdditions.some(([,name])=>name===q)||questions.has(q))}));
   const intro = boundary[1].match(/<p class="faq-lede">[\s\S]*?<\/p>\s*<p>[\s\S]*?<\/p>/)?.[0];
   const note = boundary[1].match(/<p class="faq-source-note">[\s\S]*?<\/p>/)?.[0];
   if (!intro || !note) throw new Error('Missing FAQ introduction or source note');

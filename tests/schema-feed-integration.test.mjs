@@ -33,7 +33,7 @@ test('bilingual schema/feed build is deterministic, preserves the UI and per-for
   assert.deepEqual(buildBilingual(temp,{check:true}).changed,[]);
   for(const file of files)assert.equal(strip(fs.readFileSync(path.join(temp,file),'utf8')),before[file],file+' visible HTML changed');
   const feedFile=path.join(temp,'feed.json'),feed=JSON.parse(fs.readFileSync(feedFile,'utf8'));
-  assert.equal(feed.items.length,9);assert.ok(feed.items.every(i=>i.content_html.length>1000));
+  assert.equal(feed.items.length,10);assert.ok(feed.items.every(i=>i.content_html.length>1000));
   feed.items[0].id='historic-json-guid';fs.writeFileSync(feedFile,JSON.stringify(feed));
   const rssFile=path.join(temp,'feed.xml');fs.writeFileSync(rssFile,fs.readFileSync(rssFile,'utf8').replace(/<guid isPermaLink="false">[^<]+<\/guid>/,'<guid isPermaLink="false">historic-rss-guid</guid>'));
   buildBilingual(temp);

@@ -32,8 +32,8 @@
     "faq/index.html": {
       "en": "/faq/",
       "zh": "/zh/faq/",
-      "sourceHash": "66c65bcd46f21a8a21d7e4b18950d0bc11e63988032092e626414f0539a2c899",
-      "translationHash": "c79547631c46855f037792bb60dbe28966813ce866745e1895b761a9560b7e68"
+      "sourceHash": "58efdaa6990c008cbcee635f860b28faf877e03b9913792e745175d217f10f55",
+      "translationHash": "ff5b046a7774652c37027f04c50b040a8e949894515c84edbb446c290bb51b7b"
     },
     "guides/balcony-leaking-room-below/index.html": {
       "en": "/guides/balcony-leaking-room-below/",
@@ -44,8 +44,8 @@
     "guides/index.html": {
       "en": "/guides/",
       "zh": "/zh/guides/",
-      "sourceHash": "3687c1018852ee29d5efa6397f1f9a6c6b0d2c4b4108c90bd58ed15717f2a793",
-      "translationHash": "2c9500b312935cf1c2d0bc8c682c5254e89817decd04e317914da4f52977c605"
+      "sourceHash": "a83faa9f67fd5ea3ca500a9d0e57e324b7979e97e4510275b34a4d427b224864",
+      "translationHash": "e55c4c2d4c5e06a61bbb8d3439fcc8242955c6818ef7b186d92f08188bf2fec8"
     },
     "guides/kitchen-sink-resealing-or-plumbing/index.html": {
       "en": "/guides/kitchen-sink-resealing-or-plumbing/",
@@ -64,6 +64,12 @@
       "zh": "/zh/guides/shower-plumbing-or-waterproofing/",
       "sourceHash": "a1837dfb31a72478ce0da7827dd11e562a19889484ed90aa635c7ac9a6cd4542",
       "translationHash": "6db7a5ad61146910586ce07a95ea80ff1fc157d8e3fbdbae6e4fc29680e1befc"
+    },
+    "guides/waterproofing-materials-and-systems/index.html": {
+      "en": "/guides/waterproofing-materials-and-systems/",
+      "zh": "/zh/guides/waterproofing-materials-and-systems/",
+      "sourceHash": "97d981c56e310ef10378e1447c7c2a0e19c4373f997a48c61b78a5dcbfb235ad",
+      "translationHash": "0c7b01bbfb80382f965ce45c8e3140df5c4eca027e9107b5ecb38e79d343aaa8"
     },
     "guides/waterproofing-or-drainage/index.html": {
       "en": "/guides/waterproofing-or-drainage/",

@@ -224,6 +224,10 @@
     "waterproofing/woden/index.html": {
       "legacyHash": "29ee56afbbc5f8d3bd50996c1bbb909d8abef64a602c400bce411ba1d40b0d2f",
       "contentHash": "a04bff6e531c05984bfc6c5d73e057bdb6a50250174d1973ced8859d039aa415"
+    },
+    "guides/waterproofing-materials-and-systems/index.html": {
+      "legacyHash": "77a6d4324b0d42f6ad5331afa087b9ece0856c754436eb2143e3cbcc0ff4782d",
+      "contentHash": "84f218ca6833da824f78398dc5c07e13022d4fc3a80b76d4c07cf67ba4abf23d"
     }
   }
 }

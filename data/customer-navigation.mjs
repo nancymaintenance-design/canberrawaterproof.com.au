@@ -15,6 +15,7 @@ export const services=[
 ];
 export const servicePath=id=>'/services/'+id+'/';
 export const entries=[
+ {path:'/guides/waterproofing-materials-and-systems/',type:'guide',labels:['Waterproofing materials & installation systems','防水材料与施工系统'],parent:'/guides/',owner:'/',related:[],reason:'Cross-service material education with explicit service links in its body; directory is the real parent, without creating a service claim.'},
  {path:'/',type:'home',labels:['Home','首页'],parent:null,owner:'/',reason:'Existing homepage retains the city-wide waterproofing role.'},
  ...services.map(([id,en,zh])=>({path:servicePath(id),type:'service',labels:[en,zh],parent:'/',owner:servicePath(id),group:id,reason:'Existing service page and service catalogue; actual service scope verified, not a new query page.'})),
  {path:'/services/',type:'collection',labels:['Waterproofing services','防水服务'],parent:'/',owner:'/',reason:'Existing useful service catalogue.'},

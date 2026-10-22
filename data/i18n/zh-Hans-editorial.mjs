@@ -1,4 +1,5 @@
 import {rainTranslations} from '../post-rain-content.mjs';
+import {materialsTranslations} from '../materials-guide.mjs';
 // Reviewed translations override cached first-pass translations without changing English source copy.
 import {customerCopy} from '../customer-first-copy.mjs';
 import customerFirstZh from '../customer-first-zh.mjs';
@@ -102,4 +103,5 @@ export default {
  'Photos can support an initial conversation, but concealed conditions, access, demolition and reinstatement can change the work scope. A written quote should identify the observed issue, included preparation, waterproofing or sealing work, retiling if required, exclusions and any related trade coordination. Plumbing faults and drainage repairs may need a separate trade scope.':'照片可以帮助初步沟通，但隐蔽部位、拆检条件、拆除及恢复要求，都可能影响实际施工范围。书面报价应说明已观察到的问题、准备工作、防水或密封内容、必要的重新铺砖、不包含的项目及工种协调安排。水管故障和排水维修可能需要另行确定施工范围。'
  ,...customerFirstZh,
  ...rainTranslations,
+ ...materialsTranslations,
 };

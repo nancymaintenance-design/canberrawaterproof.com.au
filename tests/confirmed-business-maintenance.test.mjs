@@ -86,7 +86,7 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
   }
  };
  walk(new URL('../',import.meta.url));
- assert.equal(pages.length, 112);
+ assert.equal(pages.length, 114);
  let authors = 0, unsigned = 0;
  for (const html of pages) {
   const graph = nodes(html);
@@ -104,9 +104,9 @@ test('every shipped business has confirmed hours and a lazy footer, retaining th
    assert.equal(article.author.url, host+(/<html lang="zh-Hans">/.test(html)?'/zh/about/':'/about/'));
   }
  }
- assert.equal(authors, 12);
+ assert.equal(authors, 14);
  assert.equal(unsigned, 6);
- assert.equal((source('sitemap.xml').match(/<loc>/g)||[]).length, 78);
+ assert.equal((source('sitemap.xml').match(/<loc>/g)||[]).length, 80);
  const locality = pages.filter(html => /rel="canonical" href="https:\/\/www\.canberrawaterproof\.com\.au\/waterproofing\//.test(html));
  assert.equal(locality.filter(html => /name="robots" content="noindex,follow"/.test(html)).length,15);
  assert.equal(locality.filter(html => /name="robots" content="index,follow"/.test(html)).length,9);

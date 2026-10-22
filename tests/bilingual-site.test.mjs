@@ -13,7 +13,7 @@ const count=(html,pattern)=>(html.match(pattern)||[]).length;
 const schema=html=>[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>{const d=JSON.parse(m[1]);return d['@graph']||[d];});
 
 test('every original page has a complete Chinese page with matching sections, images, tables and disclosures',()=>{
- assert.equal(pages.length,56);
+ assert.equal(pages.length,57);
  for(const file of pages){const en=read(file),zh=read('zh/'+file);
   assert.match(en,/<html lang="en-AU">/);assert.match(zh,/<html lang="zh-Hans">/);
   for(const p of [/<h1\b/g,/<h2\b/g,/<h3\b/g,/<img\b/g,/<details\b/g,/<table\b/g])assert.equal(count(zh,p),count(en,p),file+': '+p);
@@ -38,7 +38,7 @@ test('language alternates are reciprocal and canonicals and schema describe the 
   for(const [lang,target]of [['en-AU',HOST+routeFor(file)],['zh-Hans',HOST+chineseRoute(file)],['x-default',HOST+routeFor(file)]])assert.ok(html.includes(`hreflang="${lang}" href="${target}"`),prefix+file);
   for(const node of schema(html).filter(n=>['WebPage','Article','BlogPosting','NewsArticle'].includes(n['@type'])))assert.equal(node.inLanguage,language,prefix+file);
  }
- assert.equal(count(read('sitemap.xml'),/<loc>/g),78);
+ assert.equal(count(read('sitemap.xml'),/<loc>/g),80);
 });
 
 test('Chinese content links, anchors and assets resolve and contact targets retain the original business details',()=>{
@@ -60,7 +60,7 @@ test('Chinese content links, anchors and assets resolve and contact targets reta
   }
  }
  // Existing phone targets plus contextual assessment actions; no email change.
- assert.ok(phones>=175);assert.equal(emails,86);
+ assert.ok(phones>=175);assert.equal(emails,87);
 });
 
 test('offline synchronisation rejects missing translations and confirms all source and output hashes',()=>{

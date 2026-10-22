@@ -29,6 +29,14 @@ When upstream wording changes, check that the intended revised occurrence is sti
 
 Changes stay local until the owner authorises deployment. Internal findings never belong in public page copy or the sitemap.
 
+## Materials education (22 October 2026, local revision)
+
+- `data/materials-guide.mjs` owns the bilingual material/installation explanation, eight FAQ additions and reviewed technical source URLs; `scripts/materials-guide.mjs` emits the existing guide/card/disclosure markup. Do not hand-edit generated Chinese or derived machine bodies.
+- Sheet is a product form; PVC/TPO, polymer-cement, PU and acrylic describe different chemistry. Water-based can overlap with those chemistries. JS is a Chinese category term, not an Australian approval or an equivalent product specification.
+- Product examples explain distinctions, not MEL ONE's confirmed stock, certifications or promised systems. Preserve boundaries for immersion, water-pressure direction, UV exposure and separately required specialist work. Require the exact Australian product/system documentation; do not publish universal coat counts, film thicknesses, lap sizes, welding temperatures or curing times.
+- The new guide is an educational child of `/guides/`, with existing service links. Existing articles retain their historical IDs; bilingual feeds now include seven guides plus three news articles. Its visible review date and authored article dates are 2026-10-22, not build timestamps. The legacy guide knowledge matrix remains aligned with its eight visible sections.
+- Preserve the outbound-link policy: visible references are normal text; technical citation URLs may remain in the existing machine source fields. No additional clickable outbound services or brand endorsement claims.
+
 ## Post-rain intent content (21 October 2026, local revision)
 
 - `data/post-rain-content.mjs` owns the reviewed service H2 pairs, six additional FAQ answers and five sections within two existing news articles. `scripts/post-rain-content.mjs` applies them before bilingual generation; contextual resource headings are emitted by their existing `scripts/customer-navigation.mjs` owner in both languages. Preserve service H1, IDs, images and design attributes.

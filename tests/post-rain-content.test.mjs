@@ -4,11 +4,12 @@ import fs from 'node:fs';
 import {load} from 'cheerio';
 import {addRainFaq,applyPostRainContent} from '../scripts/post-rain-content.mjs';
 import {rainFaq,headingRows,newsSections} from '../data/post-rain-content.mjs';
+import {materialsFaq} from '../data/materials-guide.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('rain questions preserve native FAQ interaction and match bilingual visible schema',()=>{
  for(const prefix of ['', 'zh/']) {
   const q=load(read(prefix+'faq/index.html'));
-  assert.equal(q('details').length,46);
+  assert.equal(q('details').length,46+materialsFaq.length);
   for(const [id,en,zh,a,za] of rainFaq){
    assert.equal(q('#'+id).length,1);
    assert.equal(q('#'+id+' summary').text(),prefix?zh:en);
@@ -16,7 +17,7 @@ test('rain questions preserve native FAQ interaction and match bilingual visible
   }
   const graph=JSON.parse(q('script[type="application/ld+json"]').first().html())['@graph'];
   const faq=graph.find(n=>n['@type']==='FAQPage');
-  assert.equal(faq.mainEntity.length,46);
+  assert.equal(faq.mainEntity.length,46+materialsFaq.length);
   for(const item of faq.mainEntity)assert.ok(q('details').toArray().some(e=>q(e).find('summary').text()===item.name&&q(e).find('p').map((i,p)=>q(p).text()).get().join(' ').replace(/\s+/g,' ').trim()===item.acceptedAnswer.text));
  }
  assert.equal(addRainFaq(read('faq/index.html')),read('faq/index.html'));
@@ -37,5 +38,5 @@ test('news additions use existing routes and retain historical feed items',()=>{
   assert.equal(applyPostRainContent(html,p),html);
   for(const [h,zh,p,zp] of sections){assert.ok(html.includes(h)&&html.includes(p));const translated=read('zh/'+`industry-news/${slug}/index.html`);assert.ok(translated.includes(zh)&&translated.includes(zp));}
  }
- for(const prefix of ['', 'zh/']){const feed=JSON.parse(read(prefix+'feed.json'));assert.equal(feed.items.length,9);assert.equal(new Set(feed.items.map(i=>i.id)).size,9);}
+ for(const prefix of ['', 'zh/']){const feed=JSON.parse(read(prefix+'feed.json'));assert.equal(feed.items.length,10);assert.equal(new Set(feed.items.map(i=>i.id)).size,10);}
 });
