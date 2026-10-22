@@ -103,12 +103,12 @@
       "role": "service-owner",
       "reason": "Existing canonical service owner, linked from the service directory.",
       "en": {
-        "label": "Kitchen sealing and resealing",
+        "label": "Kitchen caulking and silicone replacement",
         "summary": "Sink-edge and splashback joint sealing, distinguished from supply or waste plumbing leaks.",
         "evidence": "We reseal split or detached joints around kitchen sinks, benchtops and splashbacks. We check whether wat"
       },
       "zh": {
-        "label": "厨房密封与重新密封",
+        "label": "厨房台面与水槽打胶密封",
         "summary": "介绍水槽边缘及防溅板接缝密封，区分这些接缝问题与给排水管道泄漏。",
         "evidence": "我们更换厨房水槽、台面和防溅板周围开裂或脱落的密封胶。施工前先区分表面接缝渗水与下方管道漏水，再确认密封维修范围。"
       }
@@ -135,12 +135,12 @@
       "role": "service-owner",
       "reason": "Existing canonical service owner, linked from the service directory.",
       "en": {
-        "label": "Laundry waterproofing",
+        "label": "Laundry silicone resealing and waterproofing",
         "summary": "Wet-area floor and junction waterproofing for laundry renovation or repair, according to substrate and planned finishes.",
         "evidence": "We waterproof laundry floors and wet-area junctions for renovations and repairs. We check the substrate "
       },
       "zh": {
-        "label": "洗衣房防水",
+        "label": "洗衣房打胶密封与防水",
         "summary": "介绍洗衣房翻新或维修中的湿区地板及交界处防水，结合基层与计划饰面确定要求。",
         "evidence": "我们为洗衣房翻新与维修提供地面和湿区接缝防水，先检查基层及计划使用的饰面，再明确基层处理和防水施工内容。"
       }
@@ -151,12 +151,12 @@
       "role": "service-owner",
       "reason": "Existing canonical service owner, linked from the service directory.",
       "en": {
-        "label": "Roof leak assessment and waterproofing",
+        "label": "Roof membrane waterproofing and leak repairs",
         "summary": "Membrane surfaces, penetrations and outlets; roof assembly and safe access determine the assessment scope.",
         "evidence": "We assess roof leaks and carry out waterproofing at membrane surfaces, penetrations and outlets. We plan"
       },
       "zh": {
-        "label": "屋顶漏水评估与防水",
+        "label": "屋面卷材防水与渗漏维修",
         "summary": "介绍防水层表面、穿透处和排水口的评估边界，检查范围取决于屋面结构和安全通道。",
         "evidence": "我们提供屋顶漏水评估，处理防水层、穿出屋面的管件周边及排水口等部位。现场按屋面结构与安全进场条件安排检查，再说明维修范围。"
       }

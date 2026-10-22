@@ -1,0 +1,12 @@
+.roof-membrane-photo-record{margin:34px 0;padding:28px;background:#eef5f5;border-top:3px solid var(--teal)}
+.roof-membrane-photo-record>h2{font-size:clamp(1.45rem,2.4vw,1.9rem);line-height:1.35;margin:0 0 16px}
+.roof-membrane-photo-record>p{margin:0 0 24px}
+.roof-membrane-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.roof-membrane-photo-grid figure{margin:0;min-width:0}
+.roof-membrane-photo-grid picture{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:14px}
+.roof-membrane-photo-grid img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.roof-membrane-photo-grid figcaption{margin-top:10px;font-size:.9rem;line-height:1.5;font-weight:700;color:var(--navy)}
+.roof-membrane-context{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.roof-membrane-context p{margin:8px 0 0}
+.roof-sheet-explanation{margin:36px 0}
+@media(max-width:620px){.roof-membrane-photo-record{padding:20px 16px}.roof-membrane-photo-grid{gap:20px 14px}.roof-membrane-photo-grid figcaption{font-size:.8rem}}

@@ -5,10 +5,10 @@ export const services=[
  ['bathroom-waterproofing','Bathroom waterproofing & retiling','浴室防水与重新铺砖'],
  ['shower-resealing-regrouting','Shower resealing & regrouting','淋浴重新密封与填缝'],
  ['balcony-waterproofing','Balcony waterproofing & leak repairs','阳台防水与漏水维修'],
- ['kitchen-sealing','Kitchen sealing & resealing','厨房打胶与重新密封'],
+ ['kitchen-sealing','Kitchen caulking & silicone replacement','厨房台面与水槽打胶密封'],
  ['external-waterproofing','External waterproofing & water ingress repairs','外部防水与渗水维修'],
- ['laundry-waterproofing','Laundry waterproofing','洗衣房防水'],
- ['roof-waterproofing','Roof waterproofing & leak repairs','屋顶防水与漏水维修'],
+ ['laundry-waterproofing','Laundry silicone resealing & waterproofing','洗衣房打胶密封与防水'],
+ ['roof-waterproofing','Roof membrane waterproofing & leak repairs','屋面卷材防水与渗漏维修'],
  ['retaining-wall-waterproofing','Retaining wall waterproofing','挡土墙防水'],
  ['tile-regrouting','Tile regrouting','瓷砖重新填缝'],
  ['commercial-waterproofing','Commercial waterproofing','商业防水']

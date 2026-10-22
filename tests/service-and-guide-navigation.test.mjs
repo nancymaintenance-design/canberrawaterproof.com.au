@@ -23,9 +23,10 @@ test('home provides direct service choices and a route to eleven complete servic
     assert.match(detail, new RegExp(`rel="canonical" href="https://www.canberrawaterproof.com.au/services/${slug}/"`));
   }
   const retaining = read('services/retaining-wall-waterproofing/index.html');
-  assert.match(index, /src="\/assets\/service-retaining-wall.jpg"/);
-  assert.match(retaining, /src="\/assets\/service-retaining-wall.jpg"/);
-  assert.match(retaining, /src="\/assets\/detail-retaining-wall.jpg"/);
+  assert.match(index, /src="\/assets\/balcony-stone-wall-detail.jpg"/);
+  assert.match(retaining, /src="\/assets\/balcony-stone-wall-detail.jpg"/);
+  assert.match(retaining, /src="\/assets\/balcony-front-overview.jpg"/);
+  assert.match(retaining, /src="\/assets\/balcony-stair-and-railing.jpg"/);
 });
 
 test('all six guides have scenario-specific declarative headings and service links', () => {

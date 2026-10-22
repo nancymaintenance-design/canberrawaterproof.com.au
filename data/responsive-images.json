@@ -2240,5 +2240,483 @@
         "bytes": 122432
       }
     ]
+  },
+  "/assets/kitchen-cooktop-cabinet-junction.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "bytes": 185863,
+    "sha256": "30331bb0a3c960c358b5b71ff4fe43946f5041e117793ecebd11e4d43b03ced8",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/kitchen-cooktop-cabinet-junction-480.webp",
+        "bytes": 28936
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/kitchen-cooktop-cabinet-junction-800.webp",
+        "bytes": 68122
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/responsive/kitchen-cooktop-cabinet-junction-1200.webp",
+        "bytes": 124574
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "url": "/assets/responsive/kitchen-cooktop-cabinet-junction-1280.webp",
+        "bytes": 137628
+      }
+    ]
+  },
+  "/assets/kitchen-benchtop-splashback-joint.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "bytes": 372199,
+    "sha256": "213366ef4bbe8ef81e282e11d90a98004a5f1505d58108e325c152a314b95e2a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/kitchen-benchtop-splashback-joint-480.webp",
+        "bytes": 52344
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/kitchen-benchtop-splashback-joint-800.webp",
+        "bytes": 162434
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/responsive/kitchen-benchtop-splashback-joint-1200.webp",
+        "bytes": 349596
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "url": "/assets/responsive/kitchen-benchtop-splashback-joint-1280.webp",
+        "bytes": 388124
+      }
+    ]
+  },
+  "/assets/kitchen-dining-overview.jpg": {
+    "width": 1702,
+    "height": 1276,
+    "bytes": 216432,
+    "sha256": "6c970e7bee93dffb68272c943f17ba000487ff585858eb0706ddd1ec3a859c28",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/kitchen-dining-overview-480.webp",
+        "bytes": 26164
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/kitchen-dining-overview-800.webp",
+        "bytes": 57420
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/kitchen-dining-overview-1200.webp",
+        "bytes": 102164
+      },
+      {
+        "width": 1702,
+        "height": 1276,
+        "url": "/assets/responsive/kitchen-dining-overview-1702.webp",
+        "bytes": 166116
+      }
+    ]
+  },
+  "/assets/kitchen-cabinet-benchtop-detail.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 88874,
+    "sha256": "229c57327037dcb7542fc874106f95c135a27c5124b1e67ff076543b3a27f334",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/kitchen-cabinet-benchtop-detail-480.webp",
+        "bytes": 20946
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/kitchen-cabinet-benchtop-detail-800.webp",
+        "bytes": 43906
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "url": "/assets/responsive/kitchen-cabinet-benchtop-detail-960.webp",
+        "bytes": 57386
+      }
+    ]
+  },
+  "/assets/roof-existing-surface-outlet.jpg": {
+    "width": 1280,
+    "height": 1698,
+    "bytes": 252770,
+    "sha256": "ed5704e10ebb15e5312db2205efb0cad17651214cfd4269e8e6ccba38fd7b327",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 637,
+        "url": "/assets/responsive/roof-existing-surface-outlet-480.webp",
+        "bytes": 80230
+      },
+      {
+        "width": 800,
+        "height": 1061,
+        "url": "/assets/responsive/roof-existing-surface-outlet-800.webp",
+        "bytes": 188520
+      },
+      {
+        "width": 1200,
+        "height": 1592,
+        "url": "/assets/responsive/roof-existing-surface-outlet-1200.webp",
+        "bytes": 318328
+      },
+      {
+        "width": 1280,
+        "height": 1698,
+        "url": "/assets/responsive/roof-existing-surface-outlet-1280.webp",
+        "bytes": 313862
+      }
+    ]
+  },
+  "/assets/roof-torch-applied-sheet-installation.jpg": {
+    "width": 1280,
+    "height": 1698,
+    "bytes": 226808,
+    "sha256": "be7e23a05defd16731063a3dbf4cba9c07cbe02ce09eeb803a419d3bdd9f3919",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 637,
+        "url": "/assets/responsive/roof-torch-applied-sheet-installation-480.webp",
+        "bytes": 71966
+      },
+      {
+        "width": 800,
+        "height": 1061,
+        "url": "/assets/responsive/roof-torch-applied-sheet-installation-800.webp",
+        "bytes": 164440
+      },
+      {
+        "width": 1200,
+        "height": 1592,
+        "url": "/assets/responsive/roof-torch-applied-sheet-installation-1200.webp",
+        "bytes": 274908
+      },
+      {
+        "width": 1280,
+        "height": 1698,
+        "url": "/assets/responsive/roof-torch-applied-sheet-installation-1280.webp",
+        "bytes": 274444
+      }
+    ]
+  },
+  "/assets/roof-lapped-sheet-membrane.jpg": {
+    "width": 1280,
+    "height": 1698,
+    "bytes": 268718,
+    "sha256": "f80557f006db84954d2f3abb3491d4d998403d80ab03d38a69713abdc066b0b0",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 637,
+        "url": "/assets/responsive/roof-lapped-sheet-membrane-480.webp",
+        "bytes": 79716
+      },
+      {
+        "width": 800,
+        "height": 1061,
+        "url": "/assets/responsive/roof-lapped-sheet-membrane-800.webp",
+        "bytes": 205804
+      },
+      {
+        "width": 1200,
+        "height": 1592,
+        "url": "/assets/responsive/roof-lapped-sheet-membrane-1200.webp",
+        "bytes": 357012
+      },
+      {
+        "width": 1280,
+        "height": 1698,
+        "url": "/assets/responsive/roof-lapped-sheet-membrane-1280.webp",
+        "bytes": 355988
+      }
+    ]
+  },
+  "/assets/roof-light-surface-upstand-detail.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "bytes": 143664,
+    "sha256": "74365dd49d81645b823ea7552fe686868cbeac7e7309c36bf3850fe938ed1e09",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/roof-light-surface-upstand-detail-480.webp",
+        "bytes": 19582
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/roof-light-surface-upstand-detail-800.webp",
+        "bytes": 50488
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/responsive/roof-light-surface-upstand-detail-1200.webp",
+        "bytes": 93168
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "url": "/assets/responsive/roof-light-surface-upstand-detail-1280.webp",
+        "bytes": 102472
+      }
+    ]
+  },
+  "/assets/laundry-tiled-floor-wall-seal.jpg": {
+    "width": 1366,
+    "height": 1024,
+    "bytes": 195762,
+    "sha256": "6c38ed57cf32ae4cee84b5a33f8240690933678f0c9b6ce26544fa9e519afa7b",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/laundry-tiled-floor-wall-seal-480.webp",
+        "bytes": 30564
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/laundry-tiled-floor-wall-seal-800.webp",
+        "bytes": 78518
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/laundry-tiled-floor-wall-seal-1200.webp",
+        "bytes": 143266
+      },
+      {
+        "width": 1366,
+        "height": 1024,
+        "url": "/assets/responsive/laundry-tiled-floor-wall-seal-1366.webp",
+        "bytes": 167348
+      }
+    ]
+  },
+  "/assets/laundry-floor-waste-junction.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "bytes": 375376,
+    "sha256": "3ed1f303b409b7d3a41b58d41709e09184e9c761e2bc033a51269fff616e358c",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/laundry-floor-waste-junction-480.webp",
+        "bytes": 69568
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/laundry-floor-waste-junction-800.webp",
+        "bytes": 182846
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/responsive/laundry-floor-waste-junction-1200.webp",
+        "bytes": 323866
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "url": "/assets/responsive/laundry-floor-waste-junction-1280.webp",
+        "bytes": 343368
+      }
+    ]
+  },
+  "/assets/laundry-floor-edge-sealant.jpg": {
+    "width": 1707,
+    "height": 1280,
+    "bytes": 308444,
+    "sha256": "cdfeebf5a5f0290604cb41fd0193b8f0fe84de1c072354c8b617725ce7e9bd14",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/laundry-floor-edge-sealant-480.webp",
+        "bytes": 27008
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/laundry-floor-edge-sealant-800.webp",
+        "bytes": 81836
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/laundry-floor-edge-sealant-1200.webp",
+        "bytes": 162342
+      },
+      {
+        "width": 1707,
+        "height": 1280,
+        "url": "/assets/responsive/laundry-floor-edge-sealant-1707.webp",
+        "bytes": 270972
+      }
+    ]
+  },
+  "/assets/laundry-corner-joint-sealant.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 158262,
+    "sha256": "159e6dc3e1e28147eab0dfaa50f9e50bc262cbb29cf0f8fa2c229ee47e3c337f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/laundry-corner-joint-sealant-480.webp",
+        "bytes": 44314
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/laundry-corner-joint-sealant-800.webp",
+        "bytes": 104338
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "url": "/assets/responsive/laundry-corner-joint-sealant-960.webp",
+        "bytes": 131774
+      }
+    ]
+  },
+  "/assets/balcony-grey-surface-overview.png": {
+    "width": 575,
+    "height": 712,
+    "bytes": 648958,
+    "sha256": "295b8ee17a54a06b605ce303d35cc848924517bf9e300b9e252a992a02c72bed",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 594,
+        "url": "/assets/responsive/balcony-grey-surface-overview-480.webp",
+        "bytes": 31180
+      },
+      {
+        "width": 575,
+        "height": 712,
+        "url": "/assets/responsive/balcony-grey-surface-overview-575.webp",
+        "bytes": 53470
+      }
+    ]
+  },
+  "/assets/balcony-worn-surface-detail.png": {
+    "width": 557,
+    "height": 720,
+    "bytes": 691287,
+    "sha256": "4043baad2922e1c81d313265de1ab24fb2d80497660a4076e01e6b13ce4a059a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 620,
+        "url": "/assets/responsive/balcony-worn-surface-detail-480.webp",
+        "bytes": 45648
+      },
+      {
+        "width": 557,
+        "height": 720,
+        "url": "/assets/responsive/balcony-worn-surface-detail-557.webp",
+        "bytes": 65892
+      }
+    ]
+  },
+  "/assets/balcony-existing-surface-railing.png": {
+    "width": 348,
+    "height": 728,
+    "bytes": 405915,
+    "sha256": "c1c9eacef9975809705a912ecac2f01ff5a19bc75af6f35545e9e7da390fc054",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 348,
+        "height": 728,
+        "url": "/assets/responsive/balcony-existing-surface-railing-348.webp",
+        "bytes": 41002
+      }
+    ]
+  },
+  "/assets/balcony-grey-surface-railing.png": {
+    "width": 647,
+    "height": 276,
+    "bytes": 223448,
+    "sha256": "6d044f67b808eba5e5d10873253c9a7387c1b185dec1e8f8a9b0816a854839cf",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 205,
+        "url": "/assets/responsive/balcony-grey-surface-railing-480.webp",
+        "bytes": 14160
+      },
+      {
+        "width": 647,
+        "height": 276,
+        "url": "/assets/responsive/balcony-grey-surface-railing-647.webp",
+        "bytes": 20522
+      }
+    ]
   }
 }

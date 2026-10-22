@@ -1,0 +1,11 @@
+.kitchen-photo-record{margin:34px 0;padding:28px;background:#eef5f5;border-top:3px solid var(--teal)}
+.kitchen-photo-record>h2{font-size:clamp(1.45rem,2.4vw,1.9rem);line-height:1.35;margin:0 0 16px}
+.kitchen-photo-record>p{margin:0 0 24px}
+.kitchen-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.kitchen-photo-grid figure{margin:0;min-width:0}
+.kitchen-photo-grid picture{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:14px}
+.kitchen-photo-grid img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.kitchen-photo-grid figcaption{margin-top:10px;font-size:.9rem;line-height:1.5;font-weight:700;color:var(--navy)}
+.kitchen-photo-context{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.kitchen-photo-context p{margin:8px 0 0}
+@media(max-width:620px){.kitchen-photo-record{padding:20px 16px}.kitchen-photo-grid{gap:20px 14px}.kitchen-photo-grid figcaption{font-size:.8rem}}

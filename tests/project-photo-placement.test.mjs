@@ -72,8 +72,8 @@ test('approved service edits preserve original images, protected scenes, page id
   // enquiry transforms, while the exact comparison still rejects other edits.
   const baseline=execFileSync('git',['show',`13a086571453cc7f2589f373d46ceaf86562b2fb:${path}`],{cwd:root,encoding:'utf8'});
   const editorial=applyDeclarativeContent(baseline,path),current=read(path);
-  if(path==='services/balcony-waterproofing/index.html'){
-   assert.deepEqual([...current.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(m=>m[1]),['/assets/mel-one-logo.png','/assets/balcony-front-overview.jpg','/assets/balcony-stone-wall-detail.jpg','/assets/balcony-front-overview.jpg','/assets/balcony-stair-and-railing.jpg','/assets/mel-one-logo.png'],path+' user-approved balcony photographs');
+  if(path==='services/balcony-waterproofing/index.html'||path==='services/retaining-wall-waterproofing/index.html'){
+   assert.deepEqual([...current.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(m=>m[1]),['/assets/mel-one-logo.png',...originalImages[path],'/assets/mel-one-logo.png'],path+' user-approved photo allocation');
   }else assert.deepEqual([...current.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),[...baseline.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]),path+' original image tags');
   for(const block of editorial.matchAll(/<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g))assert.ok(current.includes(applyCustomerFirstCopy(block[0],path)),path+' protected scene');
   const canonical=baseline.match(/<link rel="canonical"[^>]*>/)[0];assert.ok(current.includes(canonical));
@@ -93,9 +93,9 @@ test('approved service edits preserve original images, protected scenes, page id
 });
 
 const originalImages={
- 'services/balcony-waterproofing/index.html':['/assets/balcony-front-overview.jpg','/assets/balcony-stone-wall-detail.jpg','/assets/balcony-front-overview.jpg','/assets/balcony-stair-and-railing.jpg'],
+ 'services/balcony-waterproofing/index.html':['/assets/balcony-grey-surface-overview.png','/assets/balcony-grey-surface-overview.png','/assets/balcony-worn-surface-detail.png','/assets/balcony-existing-surface-railing.png','/assets/balcony-grey-surface-railing.png'],
  'services/external-waterproofing/index.html':['/assets/service-external.jpg','/assets/detail-external.jpg'],
- 'services/retaining-wall-waterproofing/index.html':['/assets/service-retaining-wall.jpg','/assets/detail-retaining-wall.jpg'],
+ 'services/retaining-wall-waterproofing/index.html':['/assets/balcony-stone-wall-detail.jpg','/assets/balcony-stone-wall-detail.jpg','/assets/balcony-front-overview.jpg','/assets/balcony-stair-and-railing.jpg'],
  'case-studies/index.html':['/assets/bathroom-membrane-application.png','/assets/bathroom-finished-wide.png','/assets/balcony-waterproofing-before.png','/assets/balcony-waterproofing-during.png','/assets/balcony-waterproofing-after.png'],
 };
 for (const group of groups) test(`${group.slug} retains its approved content images and no retired appended panels`,()=>{
@@ -104,7 +104,7 @@ for (const group of groups) test(`${group.slug} retains its approved content ima
  assert.deepEqual([...main.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(m=>m[1]),originalImages[path]);
  assert.equal(/supplied-project-photos|data-project-photo-group|supplied-project-photo-grid/.test(html),false,'retired panels must be absent');
  const hashes=originalImages[path].map(url=>hash(readFileSync(join(root,url))));
- assert.equal(new Set(hashes).size,group.slug==='balcony-waterproofing'?3:2,'approved service imagery must remain distinct');
+ assert.equal(new Set(hashes).size,group.slug==='balcony-waterproofing'?4:group.slug==='retaining-wall-waterproofing'?3:2,'approved service imagery must remain distinct');
 });
 
 test('nine untouched originals and every responsive candidate resolve with truthful metadata',()=>{
