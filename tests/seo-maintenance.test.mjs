@@ -68,7 +68,7 @@ test('lastmod only changes manifest content pages and retains other dates',()=>{
  assert.ok(output.includes('/services/bathroom-waterproofing/</loc><lastmod>2026-10-22</lastmod>'));
  assert.ok(output.includes('/guides/waterproofing-or-drainage/</loc><lastmod>2026-10-14</lastmod>'));
  assert.ok(output.includes('/about/</loc><lastmod>2026-10-15</lastmod>'));
- assert.ok(output.includes(`${host}/</loc></url>`));
+ assert.ok(output.includes(`${host}/</loc><lastmod>2026-10-22</lastmod></url>`));
  assert.equal(fn(output),output);
 });
 test('protects modified authored keyword sections instead of silently replacing them',()=>{

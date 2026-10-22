@@ -1738,5 +1738,507 @@
         "bytes": 165248
       }
     ]
+  },
+  "/assets/bathroom-shower-base-junctions.jpg": {
+    "width": 1706,
+    "height": 1280,
+    "bytes": 101417,
+    "sha256": "08496bf8fbc648994ff5d021342359f24569ee89692275493872dc3bb90f8456",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/bathroom-shower-base-junctions-480.webp",
+        "bytes": 14202
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/bathroom-shower-base-junctions-800.webp",
+        "bytes": 31074
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/bathroom-shower-base-junctions-1200.webp",
+        "bytes": 54590
+      },
+      {
+        "width": 1706,
+        "height": 1280,
+        "url": "/assets/responsive/bathroom-shower-base-junctions-1706.webp",
+        "bytes": 92668
+      }
+    ]
+  },
+  "/assets/bathroom-shower-base-close-view.jpg": {
+    "width": 1280,
+    "height": 1706,
+    "bytes": 38140,
+    "sha256": "e97767d2849f764f71d2173f69760c24b848fba3fa5d29e14431bc3ae438e2d5",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/bathroom-shower-base-close-view-480.webp",
+        "bytes": 5072
+      },
+      {
+        "width": 800,
+        "height": 1066,
+        "url": "/assets/responsive/bathroom-shower-base-close-view-800.webp",
+        "bytes": 11546
+      },
+      {
+        "width": 1200,
+        "height": 1599,
+        "url": "/assets/responsive/bathroom-shower-base-close-view-1200.webp",
+        "bytes": 22318
+      },
+      {
+        "width": 1280,
+        "height": 1706,
+        "url": "/assets/responsive/bathroom-shower-base-close-view-1280.webp",
+        "bytes": 25186
+      }
+    ]
+  },
+  "/assets/bathroom-shower-threshold-view.jpg": {
+    "width": 1280,
+    "height": 1706,
+    "bytes": 60445,
+    "sha256": "b02e1e8db503b22aae30fcaf06b8afc093de969dd085a683064c2805c6abebdd",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/bathroom-shower-threshold-view-480.webp",
+        "bytes": 12344
+      },
+      {
+        "width": 800,
+        "height": 1066,
+        "url": "/assets/responsive/bathroom-shower-threshold-view-800.webp",
+        "bytes": 24484
+      },
+      {
+        "width": 1200,
+        "height": 1599,
+        "url": "/assets/responsive/bathroom-shower-threshold-view-1200.webp",
+        "bytes": 42782
+      },
+      {
+        "width": 1280,
+        "height": 1706,
+        "url": "/assets/responsive/bathroom-shower-threshold-view-1280.webp",
+        "bytes": 48594
+      }
+    ]
+  },
+  "/assets/bathroom-shower-enclosure-overview.jpg": {
+    "width": 1280,
+    "height": 1706,
+    "bytes": 73745,
+    "sha256": "a3fcb1c3c8b972d959df0661795186286382f54ea9cb75f0e09a3630fb969a80",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/bathroom-shower-enclosure-overview-480.webp",
+        "bytes": 15696
+      },
+      {
+        "width": 800,
+        "height": 1066,
+        "url": "/assets/responsive/bathroom-shower-enclosure-overview-800.webp",
+        "bytes": 30416
+      },
+      {
+        "width": 1200,
+        "height": 1599,
+        "url": "/assets/responsive/bathroom-shower-enclosure-overview-1200.webp",
+        "bytes": 52514
+      },
+      {
+        "width": 1280,
+        "height": 1706,
+        "url": "/assets/responsive/bathroom-shower-enclosure-overview-1280.webp",
+        "bytes": 58162
+      }
+    ]
+  },
+  "/assets/shower-waterproofing-home-detail.jpg": {
+    "width": 1080,
+    "height": 1440,
+    "bytes": 249841,
+    "sha256": "87b826977e6b6754878eae6751c9e31687de626749c5cfe8f3edbffc86626f70",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/shower-waterproofing-home-detail-480.webp",
+        "bytes": 24962
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/shower-waterproofing-home-detail-800.webp",
+        "bytes": 56748
+      },
+      {
+        "width": 1080,
+        "height": 1440,
+        "url": "/assets/responsive/shower-waterproofing-home-detail-1080.webp",
+        "bytes": 93274
+      }
+    ]
+  },
+  "/assets/shower-membrane-recess-detail.jpg": {
+    "width": 1080,
+    "height": 1440,
+    "bytes": 133842,
+    "sha256": "d99a4bbd0e99034b303668dcc01e33a2e1f77b5b26b19c37817156e6da8ae25f",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/shower-membrane-recess-detail-480.webp",
+        "bytes": 9540
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/shower-membrane-recess-detail-800.webp",
+        "bytes": 19344
+      },
+      {
+        "width": 1080,
+        "height": 1440,
+        "url": "/assets/responsive/shower-membrane-recess-detail-1080.webp",
+        "bytes": 34860
+      }
+    ]
+  },
+  "/assets/shower-membrane-area-coverage.jpg": {
+    "width": 1080,
+    "height": 1440,
+    "bytes": 223300,
+    "sha256": "4772db57f7d29d46ec7f4cd4a62fee2ea08d33540ff63ce1da0c3fa38858e958",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/shower-membrane-area-coverage-480.webp",
+        "bytes": 23114
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/shower-membrane-area-coverage-800.webp",
+        "bytes": 49422
+      },
+      {
+        "width": 1080,
+        "height": 1440,
+        "url": "/assets/responsive/shower-membrane-area-coverage-1080.webp",
+        "bytes": 83560
+      }
+    ]
+  },
+  "/assets/shower-wall-joint-preparation.jpg": {
+    "width": 1440,
+    "height": 1080,
+    "bytes": 176117,
+    "sha256": "cfe42c1271001afe154e5256c9932fe650fef40809416b3243bb34f8300a67d2",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/shower-wall-joint-preparation-480.webp",
+        "bytes": 10902
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/shower-wall-joint-preparation-800.webp",
+        "bytes": 24974
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/shower-wall-joint-preparation-1200.webp",
+        "bytes": 47238
+      },
+      {
+        "width": 1440,
+        "height": 1080,
+        "url": "/assets/responsive/shower-wall-joint-preparation-1440.webp",
+        "bytes": 66392
+      }
+    ]
+  },
+  "/assets/shower-membrane-room-overview.jpg": {
+    "width": 1080,
+    "height": 1440,
+    "bytes": 233047,
+    "sha256": "09b26239eefec82482688ee16c9a5a8764466d3fea16df0a386f1d4e6da6e43e",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/shower-membrane-room-overview-480.webp",
+        "bytes": 24192
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/shower-membrane-room-overview-800.webp",
+        "bytes": 52012
+      },
+      {
+        "width": 1080,
+        "height": 1440,
+        "url": "/assets/responsive/shower-membrane-room-overview-1080.webp",
+        "bytes": 88118
+      }
+    ]
+  },
+  "/assets/balcony-stone-wall-detail.jpg": {
+    "width": 800,
+    "height": 600,
+    "bytes": 160436,
+    "sha256": "5b3cb0a9b95176eb5190155b7d21a568fabcd20780056f3c3e62f3b9d7c1cf40",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/balcony-stone-wall-detail-480.webp",
+        "bytes": 39990
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/balcony-stone-wall-detail-800.webp",
+        "bytes": 94610
+      }
+    ]
+  },
+  "/assets/balcony-front-overview.jpg": {
+    "width": 2048,
+    "height": 1536,
+    "bytes": 437537,
+    "sha256": "7bdd524489d7801ab091c2bcc4b7090be43348f9ba0d1b3afe74d5ab2277d014",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/balcony-front-overview-480.webp",
+        "bytes": 27752
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/balcony-front-overview-800.webp",
+        "bytes": 67938
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/balcony-front-overview-1200.webp",
+        "bytes": 128524
+      },
+      {
+        "width": 2048,
+        "height": 1536,
+        "url": "/assets/responsive/balcony-front-overview-2048.webp",
+        "bytes": 266294
+      }
+    ]
+  },
+  "/assets/balcony-stair-and-railing.jpg": {
+    "width": 2048,
+    "height": 1536,
+    "bytes": 767592,
+    "sha256": "718ffd1271ebf350da1ab6e90acc0cdcccef0fbf3d584b75fb6464b294ad132a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "/assets/responsive/balcony-stair-and-railing-480.webp",
+        "bytes": 47838
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "url": "/assets/responsive/balcony-stair-and-railing-800.webp",
+        "bytes": 122978
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "url": "/assets/responsive/balcony-stair-and-railing-1200.webp",
+        "bytes": 257460
+      },
+      {
+        "width": 2048,
+        "height": 1536,
+        "url": "/assets/responsive/balcony-stair-and-railing-2048.webp",
+        "bytes": 548580
+      }
+    ]
+  },
+  "/assets/bathroom-renovation-exposed-surfaces.jpg": {
+    "width": 1280,
+    "height": 1700,
+    "bytes": 94620,
+    "sha256": "ae38b47f5bf2e4bf7fca74f9ef41801ff1d78487c97549680978b7909feec56a",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 638,
+        "url": "/assets/responsive/bathroom-renovation-exposed-surfaces-480.webp",
+        "bytes": 20416
+      },
+      {
+        "width": 800,
+        "height": 1063,
+        "url": "/assets/responsive/bathroom-renovation-exposed-surfaces-800.webp",
+        "bytes": 42466
+      },
+      {
+        "width": 1200,
+        "height": 1594,
+        "url": "/assets/responsive/bathroom-renovation-exposed-surfaces-1200.webp",
+        "bytes": 73636
+      },
+      {
+        "width": 1280,
+        "height": 1700,
+        "url": "/assets/responsive/bathroom-renovation-exposed-surfaces-1280.webp",
+        "bytes": 85076
+      }
+    ]
+  },
+  "/assets/bathroom-renovation-wall-tiling.jpg": {
+    "width": 1280,
+    "height": 1700,
+    "bytes": 96651,
+    "sha256": "a640d9e65093d6799466594da9c617ce975d0099fa546f7f7c9afd755dfe4ef5",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 638,
+        "url": "/assets/responsive/bathroom-renovation-wall-tiling-480.webp",
+        "bytes": 20926
+      },
+      {
+        "width": 800,
+        "height": 1063,
+        "url": "/assets/responsive/bathroom-renovation-wall-tiling-800.webp",
+        "bytes": 43048
+      },
+      {
+        "width": 1200,
+        "height": 1594,
+        "url": "/assets/responsive/bathroom-renovation-wall-tiling-1200.webp",
+        "bytes": 76458
+      },
+      {
+        "width": 1280,
+        "height": 1700,
+        "url": "/assets/responsive/bathroom-renovation-wall-tiling-1280.webp",
+        "bytes": 86806
+      }
+    ]
+  },
+  "/assets/bathroom-renovation-tiled-finishes.jpg": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 128364,
+    "sha256": "0748d700624efe0992a91a6be535b2b4b48d62e7b11e03979897bd1161bc2dc3",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 853,
+        "url": "/assets/responsive/bathroom-renovation-tiled-finishes-480.webp",
+        "bytes": 25002
+      },
+      {
+        "width": 800,
+        "height": 1422,
+        "url": "/assets/responsive/bathroom-renovation-tiled-finishes-800.webp",
+        "bytes": 49780
+      },
+      {
+        "width": 1080,
+        "height": 1920,
+        "url": "/assets/responsive/bathroom-renovation-tiled-finishes-1080.webp",
+        "bytes": 73772
+      }
+    ]
+  },
+  "/assets/bathroom-renovation-fixtures-overview.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "bytes": 186166,
+    "sha256": "1330e65640fa127a2576cde48bb3d27f0291c9ee1441a7787c0bf94e38d3b241",
+    "hasAlpha": false,
+    "lossless": false,
+    "candidates": [
+      {
+        "width": 480,
+        "height": 640,
+        "url": "/assets/responsive/bathroom-renovation-fixtures-overview-480.webp",
+        "bytes": 26220
+      },
+      {
+        "width": 800,
+        "height": 1067,
+        "url": "/assets/responsive/bathroom-renovation-fixtures-overview-800.webp",
+        "bytes": 58522
+      },
+      {
+        "width": 1200,
+        "height": 1600,
+        "url": "/assets/responsive/bathroom-renovation-fixtures-overview-1200.webp",
+        "bytes": 109768
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "url": "/assets/responsive/bathroom-renovation-fixtures-overview-1280.webp",
+        "bytes": 122432
+      }
+    ]
   }
 }

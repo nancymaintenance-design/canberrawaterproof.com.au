@@ -1,0 +1,93 @@
+/* Bathroom service only: selected editorial direction, using existing brand tokens. */
+main[data-bathroom-design]{background:#fff}
+main[data-bathroom-design] a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+main[data-bathroom-design] .service-hero{padding:48px 0 54px;background:var(--paper)}
+main[data-bathroom-design] .service-hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:72px;align-items:center;border-left:0}
+main[data-bathroom-design] .service-hero-grid>div{border-left:4px solid var(--gold);padding:12px 0 12px 32px}
+main[data-bathroom-design] .service-hero h1{font-size:clamp(2.25rem,4.3vw,3.8rem);line-height:1.15;max-width:17ch;margin:18px 0 24px;letter-spacing:-.035em}
+main[data-bathroom-design] .service-hero .lede{font-size:1.08rem;max-width:52ch}
+main[data-bathroom-design] .service-proof{max-width:60ch;border-top:1px solid var(--line);padding-top:22px;margin-top:28px;font-size:.94rem;line-height:1.8}
+main[data-bathroom-design] .service-hero-image{max-width:420px;justify-self:end;width:100%}
+main[data-bathroom-design] .bathroom-hero-photos{position:relative;padding-left:26px;margin-bottom:16px}
+main[data-bathroom-design] .bathroom-hero-photos>picture{display:block;background:#fff;border:5px solid #fff;border-radius:18px;overflow:hidden}
+main[data-bathroom-design] .bathroom-hero-photos>picture>img{display:block;width:100%;height:auto;object-fit:contain;border-radius:0}
+main[data-bathroom-design] .bathroom-hero-detail{position:absolute;left:-28px;bottom:26px;width:34%;border:4px solid #fff;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px #102c4515}
+main[data-bathroom-design] .bathroom-hero-detail picture,main[data-bathroom-design] .bathroom-hero-detail img{display:block;width:100%;height:auto;border-radius:0}
+main[data-bathroom-design] .bathroom-hero-detail span{display:block;padding:7px 5px;font-size:.7rem;color:var(--navy);text-align:center;line-height:1.3}
+main[data-bathroom-design] .service-hero-image>figcaption{padding-left:26px;font-size:.8rem}
+main[data-bathroom-design] .service-story{max-width:1200px;padding-top:52px;padding-bottom:12px}
+main[data-bathroom-design] .service-story>h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.3;margin-top:42px;margin-bottom:18px;max-width:36ch}
+main[data-bathroom-design] article.service-story>h2:first-child{margin-top:0}
+main[data-bathroom-design] .service-story>p{max-width:none}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 32px;padding-top:36px;padding-bottom:20px}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:is(h2,h3){font-size:1.3rem;line-height:1.4;margin:0;padding-top:16px;border-top:2px solid var(--teal)}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>p{margin:0;font-size:.96rem}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(1){grid-column:1;grid-row:1}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(2){grid-column:1;grid-row:2}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(3){grid-column:2;grid-row:1}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(4){grid-column:2;grid-row:2}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(5){grid-column:3;grid-row:1}
+main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>:nth-child(6){grid-column:3;grid-row:2}
+main[data-bathroom-design] article.service-story{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:36px}
+main[data-bathroom-design] article.service-story>:not(p),main[data-bathroom-design] article.service-story>.bathroom-scope-intro{grid-column:1/-1}
+main[data-bathroom-design] article.service-story>p{margin:0 0 18px}
+main[data-bathroom-design] .service-list{list-style:none;padding:0;margin:28px 0 42px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:scope}
+main[data-bathroom-design] .service-list li{margin:0;padding:18px 0 0;border-top:2px solid var(--teal);font-size:.95rem}
+main[data-bathroom-design] .service-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:26px 0 54px;padding-left:24px}
+main[data-bathroom-design] .service-steps li{padding:0 16px 0 4px;font-size:.95rem}
+main[data-bathroom-design] .service-steps li::marker{color:var(--teal);font-weight:800}
+main[data-bathroom-design] .service-steps strong{display:block;margin-bottom:10px;color:var(--navy)}
+main[data-bathroom-design] .bathroom-project{display:block;padding:32px;margin:54px 0 26px;border:0;background:#fbf6e9;border-radius:0}
+main[data-bathroom-design] .bathroom-project>div:first-child{max-width:80ch;margin-bottom:28px;padding-left:20px;border-left:4px solid var(--gold)}
+main[data-bathroom-design] .bathroom-project h2{font-size:clamp(1.65rem,2.8vw,2.25rem);margin:8px 0 16px}
+main[data-bathroom-design] .bathroom-project .project-evidence-link{font-size:.85rem;margin-bottom:0}
+main[data-bathroom-design] .bathroom-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;align-items:start}
+main[data-bathroom-design] .bathroom-photo-grid figure{margin:0;min-width:0}
+main[data-bathroom-design] .bathroom-photo-grid picture,main[data-bathroom-design] .bathroom-photo-grid img{display:block;width:100%;height:auto;border-radius:10px}
+main[data-bathroom-design] .bathroom-photo-grid picture{aspect-ratio:4/3;overflow:hidden;background:#eee9de}
+main[data-bathroom-design] .bathroom-photo-grid img{height:100%;object-fit:cover;object-position:center 65%;border-radius:0}
+main[data-bathroom-design] .bathroom-photo-grid figcaption{margin:12px 0 0;color:#405662;font-size:.85rem;line-height:1.65}
+main[data-bathroom-design] .bathroom-photo-grid .evidence-label{display:block;color:var(--navy);font-weight:700;font-size:.85rem}
+main[data-bathroom-design] .bathroom-photo-grid figcaption p{margin:6px 0 0}
+main[data-bathroom-design] .bathroom-practical{border-top:1px solid var(--line);margin-top:34px;padding-top:10px;padding-bottom:40px}
+main[data-bathroom-design] .bathroom-materials{background:#eef7f7;padding:32px;border-left:4px solid var(--teal);margin:0 auto 48px}
+main[data-bathroom-design] .bathroom-materials>h2:first-child{margin-top:0}
+main[data-bathroom-design]>.service-booking{width:min(calc(100% - 40px),1200px);margin:0 auto 48px;padding:30px;background:var(--navy);color:#fff;border:0;border-radius:0}
+main[data-bathroom-design]>.service-booking h2,main[data-bathroom-design]>.service-booking h3,main[data-bathroom-design]>.service-booking .eyebrow{color:#fff}
+main[data-bathroom-design]>.service-booking>p{max-width:78ch}
+main[data-bathroom-design]>.service-booking .grid{margin-top:28px;grid-template-columns:repeat(2,minmax(0,1fr))}
+main[data-bathroom-design]>.service-booking .card{background:#fff;color:var(--ink);box-shadow:none;border-radius:6px}
+main[data-bathroom-design]>.service-booking .card h3{color:var(--navy)}
+main[data-bathroom-design]>.service-booking .bathroom-related-cover{display:block;margin-bottom:16px}
+main[data-bathroom-design]>.service-booking .bathroom-related-cover:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+main[data-bathroom-design]>.service-booking .card img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 70%;border-radius:4px}
+@media(max-width:900px){
+ main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]{grid-template-columns:1fr;gap:12px}
+ main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>*{grid-column:auto!important;grid-row:auto!important}
+ main[data-bathroom-design] section[aria-labelledby="bathroom-planning"]>p{margin-bottom:16px}
+ main[data-bathroom-design] .service-hero-grid{gap:32px;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr)}
+ main[data-bathroom-design] .service-hero-grid>div{padding-left:20px}
+ main[data-bathroom-design] .service-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ main[data-bathroom-design] .bathroom-photo-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ main[data-bathroom-design] .service-hero{padding:28px 0 34px}
+ main[data-bathroom-design] .service-hero-grid{grid-template-columns:1fr;gap:28px}
+ main[data-bathroom-design] .service-hero h1{font-size:2.25rem}
+ main[data-bathroom-design] .service-hero-image{max-width:320px;justify-self:center}
+ main[data-bathroom-design] .bathroom-hero-detail{left:-8px}
+ main[data-bathroom-design] .service-steps{grid-template-columns:1fr;gap:22px;margin-bottom:32px}
+ main[data-bathroom-design] .service-list{gap:18px}
+ main[data-bathroom-design] .bathroom-project{padding:22px 16px;margin-top:32px}
+ main[data-bathroom-design] .bathroom-project>div:first-child{padding-left:14px}
+ main[data-bathroom-design] .bathroom-photo-grid{gap:22px 14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ main[data-bathroom-design] .bathroom-photo-overview{max-width:none;margin:0!important}
+ main[data-bathroom-design] article.service-story{display:block}
+ main[data-bathroom-design]>.service-booking .grid{grid-template-columns:1fr}
+ main[data-bathroom-design] .bathroom-materials{padding:24px 20px}
+ main[data-bathroom-design]>.service-booking{padding:24px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+ html:has(main[data-bathroom-design]){scroll-behavior:auto}
+ main[data-bathroom-design] .button{transition:none;transform:none}
+}

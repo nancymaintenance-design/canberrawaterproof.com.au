@@ -1,4 +1,9 @@
 import {applyServiceMaterialsCopy} from './service-materials-copy.mjs';
+import {applyBathroomProjectPhotos} from './bathroom-project-photos.mjs';
+import {applyBathroomServiceDesign} from './bathroom-service-design.mjs';
+import {applyResealingProjectPhotos} from './resealing-project-photos.mjs';
+import {applyBalconyProjectPhotos} from './balcony-project-photos.mjs';
+import {applyBathroomLeakPhotoAllocation} from './bathroom-leak-photo-allocation.mjs';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -65,6 +70,7 @@ export const contentChanges = Object.fromEntries([
  ...['belconnen','gungahlin','inner-north-city','inner-south','woden-valley','weston-creek-molonglo','tuggeranong','east-canberra','act-localities'].map(slug=>[`${HOST}/waterproofing/${slug}/`,'2026-10-15']),
  ...['guides/waterproofing-materials-and-systems','guides','faq'].map(slug=>[`${HOST}/${slug}/`,'2026-10-22']),
  ...['bathroom-waterproofing','balcony-waterproofing','roof-waterproofing','retaining-wall-waterproofing','laundry-waterproofing','external-waterproofing','commercial-waterproofing'].map(slug=>[`${HOST}/services/${slug}/`,'2026-10-22']),
+ ...['','services/','services/shower-resealing-regrouting/','services/leaking-shower-repairs/'].map(route=>[`${HOST}/${route}`,'2026-10-22']),
 ]);
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
@@ -167,6 +173,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  if (!/<script\b[^>]*src=["']\/assets\/conversion-events\.js["']/.test(html)) {
   html=html.replace('</head>','<script src="/assets/conversion-events.js" defer></script></head>');
  }
+ html = applyBathroomProjectPhotos(html,path);
  html = applyDeclarativeContent(applyKeywordHeadings(applyMobileNavigation(applyResponsiveImages(html,images)),path),path);
  if (path === 'about/index.html') html = applyAboutCompany(html);
  if (path === 'case-studies/index.html') html = applyRoofCaseStudy(html);
@@ -179,7 +186,8 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  }
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
- return applyServiceMaterialsCopy(applyMaterialsContent(applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path),path),path);
+ const composed=applyResealingProjectPhotos(applyBathroomServiceDesign(applyServiceMaterialsCopy(applyMaterialsContent(applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path),path),path),path,images),path,images);
+ return applyBathroomLeakPhotoAllocation(applyBalconyProjectPhotos(composed,path,images),path,images);
 }
 
 export function applyLlms(text) {

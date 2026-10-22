@@ -1,4 +1,9 @@
 import {rainTranslations} from '../post-rain-content.mjs';
+import {bathroomPhotoTranslations} from '../../scripts/bathroom-project-photos.mjs';
+import {bathroomDesignTranslations} from '../../scripts/bathroom-service-design.mjs';
+import {resealingPhotoTranslations} from '../../scripts/resealing-project-photos.mjs';
+import {balconyPhotoTranslations} from '../../scripts/balcony-project-photos.mjs';
+import {bathroomLeakTranslations} from '../../scripts/bathroom-leak-photo-allocation.mjs';
 import {materialsTranslations} from '../materials-guide.mjs';
 import {serviceMaterialsTranslations} from '../service-materials-copy.mjs';
 // Reviewed translations override cached first-pass translations without changing English source copy.
@@ -106,4 +111,9 @@ export default {
  ...rainTranslations,
  ...materialsTranslations,
  ...serviceMaterialsTranslations,
+ ...bathroomPhotoTranslations,
+ ...bathroomDesignTranslations,
+ ...resealingPhotoTranslations,
+ ...balconyPhotoTranslations,
+ ...bathroomLeakTranslations,
 };
