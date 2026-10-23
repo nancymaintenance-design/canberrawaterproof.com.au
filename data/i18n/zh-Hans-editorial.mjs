@@ -7,6 +7,7 @@ import {bathroomLeakTranslations} from '../../scripts/bathroom-leak-photo-alloca
 import {kitchenPhotoTranslations} from '../../scripts/kitchen-project-photos.mjs';
 import {roofMembraneTranslations} from '../../scripts/roof-membrane-project.mjs';
 import {laundrySealantTranslations} from '../../scripts/laundry-sealant-project.mjs';
+import {conversionTranslations} from '../../scripts/local-conversion-copy.mjs';
 import {materialsTranslations} from '../materials-guide.mjs';
 import {serviceMaterialsTranslations} from '../service-materials-copy.mjs';
 // Reviewed translations override cached first-pass translations without changing English source copy.
@@ -122,4 +123,5 @@ export default {
  ...kitchenPhotoTranslations,
  ...roofMembraneTranslations,
  ...laundrySealantTranslations,
+ ...conversionTranslations,
 };

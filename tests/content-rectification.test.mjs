@@ -99,7 +99,7 @@ test('all contextual project links and hub service anchors reach unique existing
 test('fixed content dates reflect guide baseline and current service edits without refreshing unrelated pages',()=>{
  const host='https://www.canberrawaterproof.com.au';
  const xml='<urlset>'+['/services/roof-waterproofing/','/guides/waterproofing-or-drainage/','/privacy-policy/'].map(p=>`<url><loc>${host}${p}</loc><lastmod>2026-01-01</lastmod></url>`).join('')+'</urlset>';
- const out=applySitemap(xml);assert.match(out,/roof-waterproofing\/<\/loc><lastmod>2026-10-22/);
+ const out=applySitemap(xml);assert.match(out,/roof-waterproofing\/<\/loc><lastmod>2026-10-23/);
  assert.match(out,/waterproofing-or-drainage\/<\/loc><lastmod>2026-10-14/);
  assert.match(out,/privacy-policy\/<\/loc><lastmod>2026-01-01/);assert.equal(applySitemap(out),out);
 });

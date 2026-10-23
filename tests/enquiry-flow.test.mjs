@@ -46,7 +46,8 @@ test('five required fields have labels and associated error nodes, optional phon
   for (const name of ['name', 'phone', 'email', 'suburb', 'area', 'message']) {
     const field = browser.fields.get(name), errorId = `${field.id}-error`;
     assert.ok(form.includes(`for="${field.id}"`));
-    assert.equal(field.getAttribute('aria-describedby'), errorId);
+    assert.ok(field.getAttribute('aria-describedby').split(/\s+/).includes(errorId));
+    for (const id of field.getAttribute('aria-describedby').split(/\s+/)) assert.ok(form.includes(`id="${id}"`));
     assert.ok(browser.errors.has(errorId));
   }
   assert.equal(browser.fields.get('name').getAttribute('autocomplete'), 'name');
@@ -59,7 +60,7 @@ test('invalid input focuses the first field, associates guidance and preserves e
   await browser.submit();
   assert.equal(browser.focused, 'name'); assert.equal(browser.status.dataset.state, 'error');
   for (const name of ['name', 'email', 'phone', 'area']) {
-    const field = browser.fields.get(name), error = browser.errors.get(field.getAttribute('aria-describedby'));
+    const field = browser.fields.get(name), error = browser.errors.get(`${field.id}-error`);
     assert.equal(field.getAttribute('aria-invalid'), 'true'); assert.ok(error.textContent.length); assert.equal(error.hidden, false);
   }
   assert.equal(browser.fields.get('email').value, 'wrong'); assert.equal(browser.resets, 0);
@@ -74,7 +75,7 @@ test('native email type mismatches show linked guidance and preserve values with
     const browser = serviceFormBrowser({ values: { ...validEnquiry, email }, nativeValidity: { email: { typeMismatch: true } },
       hook: () => { leads++; }, fetch: async () => { requests++; return { ok: true, json: async () => ({ ok: true, confirmationSent: false }) }; } });
     await browser.submit();
-    const field = browser.fields.get('email'), error = browser.errors.get(field.getAttribute('aria-describedby'));
+    const field = browser.fields.get('email'), error = browser.errors.get(`${field.id}-error`);
     assert.equal(field.getAttribute('type'), 'email');
     assert.equal(requests, 0, email); assert.equal(leads, 0); assert.equal(browser.resets, 0);
     assert.equal(browser.status.dataset.state, 'error'); assert.equal(browser.focused, 'email');

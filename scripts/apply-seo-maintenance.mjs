@@ -7,6 +7,7 @@ import {applyBathroomLeakPhotoAllocation} from './bathroom-leak-photo-allocation
 import {applyKitchenProjectPhotos} from './kitchen-project-photos.mjs';
 import {applyRoofMembraneProject} from './roof-membrane-project.mjs';
 import {applyLaundrySealantProject} from './laundry-sealant-project.mjs';
+import {applyLocalConversionCopy} from './local-conversion-copy.mjs';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -74,6 +75,7 @@ export const contentChanges = Object.fromEntries([
  ...['guides/waterproofing-materials-and-systems','guides','faq'].map(slug=>[`${HOST}/${slug}/`,'2026-10-22']),
  ...['bathroom-waterproofing','balcony-waterproofing','roof-waterproofing','retaining-wall-waterproofing','laundry-waterproofing','external-waterproofing','commercial-waterproofing'].map(slug=>[`${HOST}/services/${slug}/`,'2026-10-22']),
  ...['','services/','services/shower-resealing-regrouting/','services/leaking-shower-repairs/','services/kitchen-sealing/'].map(route=>[`${HOST}/${route}`,'2026-10-22']),
+ ...['','services/','contact/',...Object.keys(serviceNames).map(slug=>`services/${slug}/`)].map(route=>[`${HOST}/${route}`,'2026-10-23']),
 ]);
 const keywordPattern = /<!-- keyword-content-expansion:start -->[\s\S]*?<!-- keyword-content-expansion:end -->/g;
 const relatedPattern = /<!-- seo-maintenance-related:start -->[\s\S]*?<!-- seo-maintenance-related:end -->/;
@@ -190,7 +192,7 @@ export function applySeoHtml(html, path, { keywords = {}, images = {} } = {}) {
  html = applyEditorialPresentation(html,path);
  html = applyLocalityContactCopy(html,path);
  const composed=applyResealingProjectPhotos(applyBathroomServiceDesign(applyServiceMaterialsCopy(applyMaterialsContent(applyPostRainContent(applyCustomerFirstCopy(applyExternalLinkPolicy(applyServiceDirectoryLayout(applyHomepageFieldwork(applyEnquiryFlow(html,path),path),path)),path),path),path),path),path,images),path,images);
- return applyLaundrySealantProject(applyRoofMembraneProject(applyKitchenProjectPhotos(applyBathroomLeakPhotoAllocation(applyBalconyProjectPhotos(composed,path,images),path,images),path,images),path,images),path,images);
+ return applyLocalConversionCopy(applyLaundrySealantProject(applyRoofMembraneProject(applyKitchenProjectPhotos(applyBathroomLeakPhotoAllocation(applyBalconyProjectPhotos(composed,path,images),path,images),path,images),path,images),path,images),path);
 }
 
 export function applyLlms(text) {

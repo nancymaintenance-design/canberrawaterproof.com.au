@@ -26,8 +26,8 @@
     "contact/index.html": {
       "en": "/contact/",
       "zh": "/zh/contact/",
-      "sourceHash": "3148926cb2a6e301695e5db009f1f428f34639ab843e1b6bc000ed50fa605d60",
-      "translationHash": "4de77cf64c4542f0b583e27c93a67090995e24f4ad40ecbe5c97f5442f6be5d5"
+      "sourceHash": "a9e09164cfb74d2756340859d1a68e6c06774e3602e3be8a1842b4f6104d944c",
+      "translationHash": "dce56c3e637140de433e055e300b743e61b7050c91235ae99b0b3049f212af77"
     },
     "faq/index.html": {
       "en": "/faq/",
@@ -86,8 +86,8 @@
     "index.html": {
       "en": "/",
       "zh": "/zh/",
-      "sourceHash": "ed44d68b849ad136d592b6bff671bd9c5d2c86be34807cec32d8d9facd470ffb",
-      "translationHash": "e0bc451c3ca9d260222d2b1f2b8718dfa996ff3778d79645ab04f4548bbbb506"
+      "sourceHash": "cddcccaa263152c34519fd8cf7382c02d5cba65f392f0d6f513232934be29ee4",
+      "translationHash": "4d33c92de36c2d506fb67dc7d1322ea7bd5e606ff7ccf87e92890c89c67896e8"
     },
     "industry-news/index.html": {
       "en": "/industry-news/",
@@ -128,74 +128,74 @@
     "services/balcony-waterproofing/index.html": {
       "en": "/services/balcony-waterproofing/",
       "zh": "/zh/services/balcony-waterproofing/",
-      "sourceHash": "d2d822db395b31d7b55c3275b3c48577a741aba42e138783dc5e10ae3fe11902",
-      "translationHash": "9d04d742f9ab4f2a80090f66efd8db1c1a8a22a657fbd303145bf715eeaada21"
+      "sourceHash": "a0c34eacef3c2462a41208ba71b11390f19350c47f9a54777cab9d2ce829fee2",
+      "translationHash": "41bb0224334f094556845743b72dca4356d1d82e3669636c896eefb7700303ae"
     },
     "services/bathroom-waterproofing/index.html": {
       "en": "/services/bathroom-waterproofing/",
       "zh": "/zh/services/bathroom-waterproofing/",
-      "sourceHash": "b800f48f9ff80f138696e9571653c69c8226bd5cb8e1405ee124b92b042b6692",
-      "translationHash": "a4985d70e988052502c6ea3a6ff0ec0d3bc70aa0a7203a4a6d9b61ec190fdd31"
+      "sourceHash": "3b8e41fa32fc290f0fea5798aeffb3bb8a47b6e674896a7cf184bc0a83fecdd0",
+      "translationHash": "ac149a46bfeabb47ad64f9f7b7ea697221f9339af1f4150ed0b3fd7920fc8895"
     },
     "services/commercial-waterproofing/index.html": {
       "en": "/services/commercial-waterproofing/",
       "zh": "/zh/services/commercial-waterproofing/",
-      "sourceHash": "82b2af093d4fdb1f1df25ff63f801cf58fdb6e0197ea4c4f8028f07c01d7af1a",
-      "translationHash": "582aa9a6ced92da63e3bb08e9a060d6cc4a636b2f09345aa7b857e8a423ecd44"
+      "sourceHash": "ca8d2f4b7375d0bbbde6485253944b689b8f9c6947316a183cdaa6872c9d37b3",
+      "translationHash": "e13555fcf204cc5081fb9dc31dcb816710b09f009d3d98a98790e71424dc9225"
     },
     "services/external-waterproofing/index.html": {
       "en": "/services/external-waterproofing/",
       "zh": "/zh/services/external-waterproofing/",
-      "sourceHash": "b579962677b711832f5ec5b87013562fee0fbd3bff446f8d4785c127a0296bf8",
-      "translationHash": "a5e029a373f663214f872475ee5d2893d7a35340073606cb3c685dcc97979464"
+      "sourceHash": "f2fd67c9f481fc846d50a50225939ff57ae7a7033e77ae54eb08793a0fb82dca",
+      "translationHash": "3bbf0166607c8939a5618d9a47faf10088da5802bdcd520d170ec101398c8369"
     },
     "services/index.html": {
       "en": "/services/",
       "zh": "/zh/services/",
-      "sourceHash": "9b2c599ac747fcb4e8a350efd2a7d062cd35db20d92f9d10490aac8ef9e3f093",
-      "translationHash": "555464cce92fa06d35796e4c3832a0857b9e0a046fa7cd93de6d019ef0693d7d"
+      "sourceHash": "28abc551deb121bb30f8aaf7a7918adaf4d2905d3777c131c66fd091ebd64d43",
+      "translationHash": "80200ce776cac81b8cdd2fab47c829094eea083dc5c2d66302a7f4b769b20625"
     },
     "services/kitchen-sealing/index.html": {
       "en": "/services/kitchen-sealing/",
       "zh": "/zh/services/kitchen-sealing/",
-      "sourceHash": "3240b83cb62818b746b318630848209966182e881310b20c8b661d0c5275022b",
-      "translationHash": "052f2381f6bb9c51305059746d8325b621ef93099ae7f852a0b2234771e6ff19"
+      "sourceHash": "92adb664e3974a60cbb4551b144f713ede4b66e87ae8827cab9836706a674119",
+      "translationHash": "a995b730203df04a05c137b34248e106d12e23bc64a6193c58ee6d35f8788aa1"
     },
     "services/laundry-waterproofing/index.html": {
       "en": "/services/laundry-waterproofing/",
       "zh": "/zh/services/laundry-waterproofing/",
-      "sourceHash": "45d55c192df62c9956eba53e1e1955148d930625105ec6d82cb1094fde2816c3",
-      "translationHash": "05cad1d47e827c6a082afbac965557de6da8d8f8f308f512648094e0ed557e25"
+      "sourceHash": "f9c0a61e60c07b82976d3a3aa9163b840b34cbddbc2df4f1aed6247708ca3b93",
+      "translationHash": "a84820d365a5adf9f0a0f2974af7e2b5f71f710cbed4fe7b723e1256dabded43"
     },
     "services/leaking-shower-repairs/index.html": {
       "en": "/services/leaking-shower-repairs/",
       "zh": "/zh/services/leaking-shower-repairs/",
-      "sourceHash": "41156ba9bd9a21003c7293068f9792843d536c3307ed1077dec34cc98016a473",
-      "translationHash": "428fdaf540e35e03962091d7560b49490f3e545045394bf50d018414d76e1870"
+      "sourceHash": "b58e1e91939635df83b0103c38650f7669621130bed4b117ca842c212bd9c08e",
+      "translationHash": "2373b612445532c0fd12b180cdd1e1f92a3346afe1836a3ba2aa9a6b986a453c"
     },
     "services/retaining-wall-waterproofing/index.html": {
       "en": "/services/retaining-wall-waterproofing/",
       "zh": "/zh/services/retaining-wall-waterproofing/",
-      "sourceHash": "d775679e0517173b6ba3a7e0b2c854866f04f5bf32a4ce018d4d10c78df16c79",
-      "translationHash": "e832cbef2edd45afe71960630b20aa8c17902f6146be8e3b3eec56ba6ee89ad5"
+      "sourceHash": "466fd794e1221c2c7df1a44b4adea069bbf0e838a51a299b814758484353a6cb",
+      "translationHash": "972597f5463280f71af95cf4c23d5b12f2f4ebc18be7938a7e745648b447dba9"
     },
     "services/roof-waterproofing/index.html": {
       "en": "/services/roof-waterproofing/",
       "zh": "/zh/services/roof-waterproofing/",
-      "sourceHash": "8c4686f4c63406d740467a2521ce8d38981248d6e0a5f7f17687c0b70d9fada0",
-      "translationHash": "abbdf127f27985831156b2fcb1ac2acd81f4884864131f86d8b025da4bf9d25e"
+      "sourceHash": "9aa13097439ecb903187ec095537f5d9f7bab1155aa685210b534ab174be8c46",
+      "translationHash": "63a78484ff4937b9e131b702a87dde1d0c019f8bc888d50f24c1fe992232a2a3"
     },
     "services/shower-resealing-regrouting/index.html": {
       "en": "/services/shower-resealing-regrouting/",
       "zh": "/zh/services/shower-resealing-regrouting/",
-      "sourceHash": "30309e8d8cc75eba22367d873965740e3d6a498b1eba6d141a953840a268a413",
-      "translationHash": "73fc913954c2046cfd6a2eafa82fddd5236e424326bd1124538cfa35a914b91d"
+      "sourceHash": "bf87dc5de96de9e49c93ac9e20cf9b512c6e793fe0812a6b2ddaa3898080914b",
+      "translationHash": "0fe929ea73d6e8bf208263bd412d23a3237a96c54526f1a44579bf2f56d191a1"
     },
     "services/tile-regrouting/index.html": {
       "en": "/services/tile-regrouting/",
       "zh": "/zh/services/tile-regrouting/",
-      "sourceHash": "6100990f7b63916579caaebde6686aae281ddcf5e2744d624e263ae79563cad6",
-      "translationHash": "e24578d7bc043d744ebab10a5e7e7e3e1e8efe0614a2288aa6e709c9889b0c2b"
+      "sourceHash": "d43e6399163ffadd47d033b95053bd0b19e2e3d6b6e6a6007d9883f14a2e207e",
+      "translationHash": "70891aff86fe84d5b78872f41a0ca7a359824adb8c85db920c708b42190ecc0b"
     },
     "thank-you/index.html": {
       "en": "/thank-you/",
